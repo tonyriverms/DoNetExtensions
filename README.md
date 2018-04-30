@@ -55,7 +55,7 @@ if (dict.IsNotNullOrEmpty())
 
 **_IsNotEmpty_**: Returns true if a collection is not an empty collection (throws an NullReferenceException if it is a null reference).
 
-### 4. Collection to Concatenated String
+### 3. Collection to Concatenated String
 
 **_ToConcatString_**: Outputs a concatenated string representation for elements in a collection. For each element, their _ToString()_ method is used.
 
@@ -77,6 +77,8 @@ var arr4 = arr.AddFirst(0); // returns a new array instance [0,1,2,3]
 var arr5 = arr.AddLast(4); // returns a new array instance [1,2,3,4]
 var arr6 = arr.Insert(18, index:2); // returns a new array [1,2,18,3], with 18 inserted at position 2
 var arr7 = arr.Insert(arr, index:2); // returns a new array [1,2,1,2,3,3], with "1,2,3" inserted at position 2
+
+var merged = (new[] { arr, arr2, arr3, arr4, arr5, arr6, arr7}).Merge(); // merges all above arrays into on single array.
 ```
 
 **_AddFirst_**: Returns a new array with one or more elements appended at the beginning of the current array.
@@ -88,4 +90,6 @@ var arr7 = arr.Insert(arr, index:2); // returns a new array [1,2,1,2,3,3], with 
 **_RemoveAt_**: Returns a new array with the element at the specified index(es) removed.
 
 **_Insert_**: Returns a new array with one or more elements inserted at the specified index.
+
+**_Merge_**: Merges a collection of arrays into a single array.
 
