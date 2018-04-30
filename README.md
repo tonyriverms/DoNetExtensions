@@ -1,13 +1,26 @@
 # .NET Extensions
-The project aims to provide hundreds of useful and tested extension methods to existing standard .NET classes, which we have accumulated through the years. We hope this can help save coding time for others by avoiding rewriting these potentially frequently used methods.
+The project aims to provide hundreds of fully-documented, tested, and useful extension methods to existing standard .NET classes, which we have accumulated through the years. 
 
-We have been coding with .NET for more than ten years, and we notice many standard classes (like array, list, dictionary, etc.) lack rich methods to facilitate their use and quick development. This project simply aims to enrich these standard classes and brings convenience to other .NET programmers.
+We have been coding with .NET for more than ten years, and we notice many standard classes (like array, list, dictionary, etc.) lack rich methods to facilitate their use and quick development. Although each piece extension method in this library is not much, we believe as a whole they bring great convenience and help enhance producitivity for other .NET programmers.
 
 ## Initial Release
 
 This initial release includes **_several extensions for arrays and collections_** as shown below. Currently all methods are under the same namespace as the classes they extend. Therefore, the **_usage_** is to just add reference to the extension library and then benefit from the added methods.
 
-### 1. Collection to Array Conversion
+### 1. The "In" Method
+
+Instead of "a.Contains(b)", we provide an alternative "b.In(a)", where "a" is a collection, and "b" is an element to check.
+
+```c#
+var a = new[] {1,2,3};
+var b = 1;
+if (b.In(a))
+  Do something.
+```
+
+**_In_**: returns true if the element to check is contained in an array/list/collection.
+
+### 2. Collection to Array Conversion
 
 **_ToArrayOrNull_**: returns a null reference if the collection is empty (rather than returns an empty array by the build-in ToArray() method), or otherwise works like build-in ToArray() method.
 
@@ -17,7 +30,7 @@ This initial release includes **_several extensions for arrays and collections_*
 
 All added methods support conversion starting at a specified index.
 
-### 2. Unified Emptiness Check
+### 3. Unified Emptiness Check
 
 Although incredibly useful, the emptiness of an array or a collection has to be checked in a clumsy way, even for today after 10 years.
 
@@ -55,7 +68,7 @@ if (dict.IsNotNullOrEmpty())
 
 **_IsNotEmpty_**: Returns true if a collection is not an empty collection (throws an NullReferenceException if it is a null reference).
 
-### 3. Collection to Concatenated String
+### 4. Collection to Concatenated String
 
 **_ToConcatString_**: Outputs a concatenated string representation for elements in a collection. For each element, their _ToString()_ method is used.
 
@@ -65,7 +78,7 @@ Console.WriteLine(arr.ToConcatString(',')); // prints "1,2,3"
 Console.WriteLine(arr.ToConcatString("--")); // prints "1--2--3"
 ```
 
-### 4. Basic Operations on Array
+### 5. Basic Operations on Array
 
 It is not uncommon that we might need to just add/remove one specified item to/from an array, and return a new array with the item added/removed (for example, such addition/removal is rarely used by the client, and it is not desirable to complicate the code design with other data structure like list or linked list).
 
