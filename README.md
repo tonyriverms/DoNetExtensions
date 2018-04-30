@@ -4,7 +4,6 @@ The project aims to provide hundreds of useful and tested extension methods to e
 We have been coding with .NET for more than ten years, and we notice many standard classes (like array, list, dictionary, etc.) lack rich methods to facilitate their use and quick development. This project simply aims to enrich these standard classes and brings convenience to other .NET programmers.
 
 ## Initial Release
-======
 
 This initial release includes **_several categories of extensions for arrays and collections_** as shown below. Currently all methods are under the same namespace as the classes they extend. Therefore, the **_usage_** is to just add reference to the extension library and then benefit from the added methods.
 
@@ -18,15 +17,7 @@ This initial release includes **_several categories of extensions for arrays and
 
 All added methods support conversion starting at a specified index.
 
-### 2. Dummy Methods for IsNullOrEmpty
-
-**_IsNullOrEmpty_**: Returns true if a collection is a null reference or is an empty collection.
-
-**_IsNotNullOrEmpty_**: Returns true if a collection is not a null reference or is not an empty collection.
-
-**_IsEmpty_**: Returns true if a collection is an empty collection (throws an NullReferenceException if it is a null reference).
-
-**_IsNotEmpty_**: Returns true if a collection is not an empty collection (throws an NullReferenceException if it is a null reference).
+### 2. Unified Emptiness Check
 
 Although incredibly useful, the emptiness of an array has to be checked in a clumsy way, even for today
 
@@ -55,3 +46,16 @@ var dict = new Dictionary<string, int> { { "a", 1 } }
 if (dict.IsNotNullOrEmpty())
   Do something...
 ```
+
+**_IsNullOrEmpty_**: Returns true if a collection is a null reference or is an empty collection.
+
+**_IsNotNullOrEmpty_**: Returns true if a collection is not a null reference or is not an empty collection.
+
+**_IsEmpty_**: Returns true if a collection is an empty collection (throws an NullReferenceException if it is a null reference).
+
+**_IsNotEmpty_**: Returns true if a collection is not an empty collection (throws an NullReferenceException if it is a null reference).
+
+### 3. Basic Operations on An Array
+
+Ocassionally, we might want to
+
