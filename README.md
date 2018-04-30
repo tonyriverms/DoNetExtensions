@@ -55,7 +55,17 @@ if (dict.IsNotNullOrEmpty())
 
 **_IsNotEmpty_**: Returns true if a collection is not an empty collection (throws an NullReferenceException if it is a null reference).
 
-### 3. Basic Operations on Array
+### 4. Collection to Concatenated String
+
+**_ToConcatString_**: Outputs a concatenated string representation for elements in a collection. For each element, their _ToString()_ method is used.
+
+```c#
+var arr = new int[] {1,2,3};
+Console.WriteLine(arr.ToConcatString(',')); // prints "1,2,3"
+Console.WriteLine(arr.ToConcatString("--")); // prints "1--2--3"
+```
+
+### 4. Basic Operations on Array
 
 It is not uncommon that we might need to just add/remove one specified item to/from an array, and return a new array with the item added/removed (for example, such addition/removal is rarely used by the client, and it is not desirable to complicate the code design with other data structure like list or linked list).
 
@@ -78,3 +88,4 @@ var arr7 = arr.Insert(arr, index:2); // returns a new array [1,2,1,2,3,3], with 
 **_RemoveAt_**: Returns a new array with the element at the specified index(es) removed.
 
 **_Insert_**: Returns a new array with one or more elements inserted at the specified index.
+
