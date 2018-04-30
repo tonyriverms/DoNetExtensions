@@ -5,7 +5,7 @@ We have been coding with .NET for more than ten years, and we notice many standa
 
 ## Initial Release
 
-This initial release includes **_several categories of extensions for arrays and collections_** as shown below. Currently all methods are under the same namespace as the classes they extend. Therefore, the **_usage_** is to just add reference to the extension library and then benefit from the added methods.
+This initial release includes **_several extensions for arrays and collections_** as shown below. Currently all methods are under the same namespace as the classes they extend. Therefore, the **_usage_** is to just add reference to the extension library and then benefit from the added methods.
 
 ### 1. Collection to Array Conversion
 
