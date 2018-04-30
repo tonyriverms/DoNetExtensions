@@ -1,4 +1,4 @@
-# DoNetExtension
+# .Net Extensions
 The project aims to provide hundreds of useful and tested extension methods to existing standard .Net classes.
 
 We have been coding with .NET for more than ten years, and we notice many standard classes (like array, list, dictionary, etc.) lack rich methods to facilitate their use and quick development. This project simply aims to enrich these standard classes and brings convenience to other .NET programmers.
@@ -19,25 +19,25 @@ All added methods support conversion starting at a specified index.
 
 ### 2. Unified Emptiness Check
 
-Although incredibly useful, the emptiness of an array has to be checked in a clumsy way, even for today
+Although incredibly useful, the emptiness of an array or a collection has to be checked in a clumsy way, even for today
 
 ```c#
 var arr = new int[] {1,2,3};
 if (arr != null && arr.Length != 0) // NOTE: the new syntax "arr?.Length != 0" will not do the check as desired!
   Do something...
+  
+var list = new List<int> {1,2,3};
+if (list != null && arr.Count != 0) // NOTE: have to use a different property "Count"
+  Do something...
 ```
 
-Now with the extension, above can be greatly simplified as
+Now with the extension, above can be greatly simplified and more readable. The method is added to both arrays and collections.
 
 ```c#
 var arr = new int[] {1,2,3};
 if (arr.IsNotNullOrEmpty())
   Do something...
-```
-
-The method is added to both arrays and collections.
-
-```c#
+  
 var list = new List<int> { 1,2,3};
 if (list.IsNotNullOrEmpty())
   Do something...
@@ -56,6 +56,4 @@ if (dict.IsNotNullOrEmpty())
 **_IsNotEmpty_**: Returns true if a collection is not an empty collection (throws an NullReferenceException if it is a null reference).
 
 ### 3. Basic Operations on An Array
-
-Ocassionally, we might want to
 
