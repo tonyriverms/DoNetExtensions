@@ -57,3 +57,14 @@ if (dict.IsNotNullOrEmpty())
 
 ### 3. Basic Operations on An Array
 
+It is not uncommon that we might need to just add/remove one specified item to/from an array, and return a new array with the item added/removed (for example, such addition/removal is rarely used by the client, and it is not desirable to complicate the code design with other data structure like list or linked list).
+
+```c#
+var arr = new int[] {1,2,3};
+var arr2 = arr.Remove(2); // returns a new array instance [1,3]
+var arr3 = arr.RemoveAt(2); // returns a new array instance [1,2]
+var arr4 = arr.AddFirst(0); // returns a new array instance [0,1,2,3]
+var arr5 = arr.AddLast(4); // returns a new array instance [1,2,3,4]
+var arr6 = arr.Insert(18, index:2); // returns a new array [1,2,18,3], with 18 inserted at position 2
+var arr7 = arr.Insert(arr, index:2); // returns a new array [1,2,1,2,3,3], with "1,2,3" inserted at position 2
+```
