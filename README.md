@@ -22,6 +22,16 @@ if (b.In(a))
 
 ### 2. Collection to Array Conversion
 
+```c#
+var list = new List<int>();
+var arr = list.ToArrayOrNull(); // returns a null reference
+list.Add(1);
+list.Add(2);
+arr = list.ToArrayOrNull(); // returns an array [1,2]
+arr = list.ToArrayThenClear(); // returns an array [1,2] and clears the list
+arr = list.ToArrayOrNull(); // returns a null reference because list has been cleared.
+```
+
 **_ToArrayOrNull_**: returns a null reference if the collection is empty (rather than returns an empty array by the build-in ToArray() method), or otherwise works like build-in ToArray() method.
 
 **_ToArrayThenClear_**: works like the build-in ToArray() method, but clears the collection after the elements are output to the array.
