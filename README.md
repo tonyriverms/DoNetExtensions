@@ -19,7 +19,7 @@ All added methods support conversion starting at a specified index.
 
 ### 2. Unified Emptiness Check
 
-Although incredibly useful, the emptiness of an array or a collection has to be checked in a clumsy way, even for today
+Although incredibly useful, the emptiness of an array or a collection has to be checked in a clumsy way, even for today after 10 years.
 
 ```c#
 var arr = new int[] {1,2,3};
