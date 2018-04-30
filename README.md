@@ -1,5 +1,5 @@
-# .Net Extensions
-The project aims to provide hundreds of useful and tested extension methods to existing standard .Net classes.
+# .NET Extensions
+The project aims to provide hundreds of useful and tested extension methods to existing standard .NET classes.
 
 We have been coding with .NET for more than ten years, and we notice many standard classes (like array, list, dictionary, etc.) lack rich methods to facilitate their use and quick development. This project simply aims to enrich these standard classes and brings convenience to other .NET programmers.
 
@@ -55,7 +55,7 @@ if (dict.IsNotNullOrEmpty())
 
 **_IsNotEmpty_**: Returns true if a collection is not an empty collection (throws an NullReferenceException if it is a null reference).
 
-### 3. Basic Operations on An Array
+### 3. Basic Operations on Array
 
 It is not uncommon that we might need to just add/remove one specified item to/from an array, and return a new array with the item added/removed (for example, such addition/removal is rarely used by the client, and it is not desirable to complicate the code design with other data structure like list or linked list).
 
@@ -68,3 +68,13 @@ var arr5 = arr.AddLast(4); // returns a new array instance [1,2,3,4]
 var arr6 = arr.Insert(18, index:2); // returns a new array [1,2,18,3], with 18 inserted at position 2
 var arr7 = arr.Insert(arr, index:2); // returns a new array [1,2,1,2,3,3], with "1,2,3" inserted at position 2
 ```
+
+**_AddFirst_**: Returns a new array with one or more elements appended at the beginning of the current array.
+
+**_AddLast_**: Returns a new array with one or more elements appended at the end of the current array.
+
+**_Remove_**: Returns a new array with the specified element(s) removed.
+
+**_RemoveAt_**: Returns a new array with the element at the specified index(es) removed.
+
+**_Insert_**: Returns a new array with one or more elements inserted at the specified index.
