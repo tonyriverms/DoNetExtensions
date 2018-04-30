@@ -1,5 +1,5 @@
 # .NET Extensions
-The project aims to provide hundreds of useful and tested extension methods to existing standard .NET classes.
+The project aims to provide hundreds of useful and tested extension methods to existing standard .NET classes, which we have accumulated through the years.
 
 We have been coding with .NET for more than ten years, and we notice many standard classes (like array, list, dictionary, etc.) lack rich methods to facilitate their use and quick development. This project simply aims to enrich these standard classes and brings convenience to other .NET programmers.
 
