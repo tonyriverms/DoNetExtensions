@@ -170,10 +170,7 @@ namespace System
         /// <param name="collection">The current collection.</param>
         /// <returns><c>true</c> if the current collection is an empty collection.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsEmpty<T>(this ICollection<T> collection)
-        {
-            return collection.Count == 0;
-        }
+        public static bool IsEmpty<T>(this ICollection<T> collection) => collection.Count == 0;
 
         /// <summary>
         /// Determines whether the current collection is not empty.
@@ -324,7 +321,7 @@ namespace System
         /// <param name="shiftLimit">Defining the segment of the array where shift occurs starting at the position specified by <paramref name="index"/>. The number of elements shifted backward is determined by <c><paramref name="shiftLimit"/> - <paramref name="index"/> - 1</c>.</param>
         internal static void InternalShiftInsert<T>(this T[] array, T item, int index, int shiftLimit)
         {
-            for (int i = shiftLimit - 1; i > index; --i) array[i] = array[i - 1];
+            for (var i = shiftLimit - 1; i > index; --i) array[i] = array[i - 1];
             array[index] = item;
         }
 
@@ -350,7 +347,7 @@ namespace System
         /// <param name="array">The current array.</param>
         /// <param name="item">The new element to be inserted into the array.</param>
         /// <param name="index">The shift begins at this position. <paramref name="item"/> will be placed at this position after the shift.</param>
-        /// <param name="shiftLength">Defining the segment of the array where shift occurs starting at position specified by <paramref name="index"/>. The number of elements shifted backward is determined by c><paramref name="shiftLength"/> - 1</c>.</param>
+        /// <param name="shiftLength">Defining the segment of the array where shift occurs starting at position specified by <paramref name="index"/>. The number of elements shifted backward is determined by <c><paramref name="shiftLength"/> - 1</c>.</param>
         public static void ShiftInsert<T>(this T[] array, T item, int index, int shiftLength)
         {
             var shiftLimit = ExceptionHelper.ForwardCheckStartIndexAndLength(index, shiftLength, array.Length, "index", "shiftLength");
@@ -462,7 +459,7 @@ namespace System
         /// <typeparam name="T">The type of elements in the array.</typeparam>
         /// <param name="array">The current array.</param>
         /// <param name="index">The element at this position will be removed.</param>
-        /// <param name="shiftLimit">Defining the segment of the array where shift occurs starting at the position specified by <paramref name="index"/>. The number of elements shifted forward is determined by <c><paramref name="shiftLimit"/> - <paramref name="index"/> - 1</c>.</param>
+        /// <param name="shiftLimit">Defining the segment of the array where shift occurs starting at the position specified by <paramref name="index"/>. The number of elements shifted leftward is determined by <c><paramref name="shiftLimit"/> - <paramref name="index"/> - 1</c>.</param>
         internal static void InternalShiftRemove<T>(this T[] array, int index, int shiftLimit)
         {
             --shiftLimit;
@@ -476,7 +473,7 @@ namespace System
         /// <typeparam name="T">The type of elements in the arrray.</typeparam>
         /// <param name="array">The current array.</param>
         /// <param name="index">The element at this position will be removed.</param>
-        /// <param name="shiftLength">Defining the segment of the array where shift occurs starting at position specified by <paramref name="index"/>. The number of elements shifted forward is determined by c><paramref name="shiftLength"/> - 1</c>.</param>
+        /// <param name="shiftLength">Defining the segment of the array where shift occurs starting at position specified by <paramref name="index"/>. The number of elements shifted leftward is determined by c><paramref name="shiftLength"/> - 1</c>.</param>
         public static void ShiftRemove<T>(this T[] array, int index, int shiftLength)
         {
             var shiftLimit = ExceptionHelper.ForwardCheckStartIndexAndLength(index, shiftLength, array.Length, "index", "shiftLength");
@@ -872,7 +869,7 @@ namespace System
         }
 
         /// <summary>
-        /// Creates a new <see cref="System.Array"/> instance containing all elements of the current <see cref="System.Array"/> objects.
+        /// Creates a new <see cref="System.Array"/> instance that merges all elements of the current <see cref="System.Array"/> objects.
         /// </summary>
         /// <typeparam name="T">The type of elements in every <see cref="System.Array"/>.</typeparam>
         /// <param name="arrays">The current <see cref="System.Array"/> objects.</param>
@@ -893,6 +890,23 @@ namespace System
             }
             return mergedArr;
         }
+
+
+        /// <summary>
+        /// Creates a new <see cref="System.Array"/> instance that merges all elements of the current collection of <see cref="System.Array"/> objects.
+        /// </summary>
+        /// <typeparam name="T">The type of elements in every <see cref="System.Array"/>.</typeparam>
+        /// <param name="arraySeq">The current collection of <see cref="System.Array"/> objects.</param>
+        /// <returns>A new <see cref="System.Array"/> instance that merges all elements of the current <see cref="System.Array"/> collection.</returns>
+        public static T[] Merge<T>(this IEnumerable<T[]> arraySeq)
+        {
+            var list = new List<T>();
+            foreach (var arr in arraySeq)
+                list.AddRange(arr);
+
+            return list.ToArray();
+        }
+
         /// <summary>
         /// Returns a string that concatenates all string representations of the elements in the current <see cref="IEnumerable"/> sequence by the specified <paramref name="connector"/>.
         /// </summary>
@@ -903,14 +917,12 @@ namespace System
         {
             var ie = sequence.GetEnumerator();
             var sb = new StringBuilder();
-            if (ie.MoveNext())
+            if (!ie.MoveNext()) return sb.ToString();
+            sb.Append(ie.Current);
+            while (ie.MoveNext())
             {
+                sb.Append(connector);
                 sb.Append(ie.Current);
-                while (ie.MoveNext())
-                {
-                    sb.Append(connector);
-                    sb.Append(ie.Current);
-                }
             }
             return sb.ToString();
         }
@@ -925,14 +937,12 @@ namespace System
         {
             var ie = sequence.GetEnumerator();
             var sb = new StringBuilder();
-            if (ie.MoveNext())
+            if (!ie.MoveNext()) return sb.ToString();
+            sb.Append(ie.Current);
+            while (ie.MoveNext())
             {
-                sb.Append(ie.Current.ToString());
-                while (ie.MoveNext())
-                {
-                    sb.Append(connector);
-                    sb.Append(ie.Current.ToString());
-                }
+                sb.Append(connector);
+                sb.Append(ie.Current);
             }
             return sb.ToString();
         }

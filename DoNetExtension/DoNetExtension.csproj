@@ -2,6 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>DoNetExtensions</PackageId>
+    <Version>0.0.1</Version>
+    <Authors>tony</Authors>
+    <Company>Drexel University</Company>
+    <Product>,Net Extensions</Product>
+    <Description>The project aims to provide hundreds of useful and tested extension methods to existing standard .NET classes, which we have accumulated through the years. We hope this can help save coding time for others by avoiding rewriting these potentially frequently used methods.
+
+We have been coding with .NET for more than ten years, and we notice many standard classes (like array, list, dictionary, etc.) lack rich methods to facilitate their use and quick development. This project simply aims to enrich these standard classes and brings convenience to other .NET programmers.</Description>
+    <Copyright>Tony Chen</Copyright>
+    <PackageLicenseUrl>MIT License</PackageLicenseUrl>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/tonyriverms/DoNetExtensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/tonyriverms/DoNetExtensions</RepositoryUrl>
+    <RepositoryType />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
