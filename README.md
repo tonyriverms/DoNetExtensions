@@ -13,7 +13,7 @@ Latest Update: [Convenient Swap & Bit Operations](#ConvenientSwapBitOperations)
 
 Each method may have multiple overloads. We are unable to present them one by one here, but these methods are very intuitive and have full XML documentation. We carefully tag _AggressiveInlining_ attribute to "short" extensions to avoid impacting performance.
 
-Currently version includes 1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Convenient Swap & Bit Operations](#ConvenientSwapBitOperations).
+Currently version includes 1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations).
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check -- The "In" Method
 
@@ -151,7 +151,7 @@ var merged = (new[] { arr, arr2, arr3, arr4, arr5, arr6, arr7}).Merge(); // merg
 
 **_Merge_**: Merges a collection of arrays into a single array.
 
-### <a name="ConvenientSwapBitOperations"></a>7. Value Swap
+### <a name="ValueSwap"></a>7. Value Swap
 
 Swapping two values have been an annoying issue that disrupts code readability. The following extensions address this problem. It is implemented by efficient bit operations when possible.
 
@@ -171,7 +171,7 @@ Console.WriteLine(t2); // prints the recorded time
 
 **_Swap_**: Swaps the current value of struct types with another value.
 
-### <a name="ConvenientSwapBitOperations"></a>8. Bit Operations
+### <a name="BitOperations"></a>8. Bit Operations
 
 We provide convenient extensions to retrieve higer bits or lower bits of a value of type _long_/_ulong_, _int_/_uint_, _short_/_ushort_ or _byte_. Following gives two examples, for full description see the method XML documentation.
 
