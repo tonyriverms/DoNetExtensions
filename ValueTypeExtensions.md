@@ -1,4 +1,10 @@
-These extensions enrich methods for value types.
+# Value-Type Extensions
+
+If you feel the intellisense for value types looks really bleak, these extensions make potentially useful enrichment. This category currently includes:
+
+[8. Bit Operations](#BitOperations)
+
+[9. Conversion to Hexical String](#ConversiontoHexicalString)
 
 ### <a name="BitOperations"></a>8. Bit Operations
 
@@ -27,3 +33,14 @@ var h_high_bytes = a.High().ToBytes(); // combines with High, Low methods to get
 **_Low_**: Returns the lower-half bits (the right half if you write the value as a 0-1 string) of a supported value.
 
 **_ToBytes_**: Returns a byte array representing a value of basic value type.
+
+### <a name="ConversiontoHexicalString"></a>9. Conversion to Hexical String
+
+If a hexical string of a value type is needed, than the following comes handy.
+```c#
+var a = 1234;
+a.ToHex(); // returns full 32-bit representation "000004D2"
+a.ToHex(fullLength:false); // returns "4D2"
+```
+
+**_ToHex_**: Returns the hexical representation of the basic value types (byte, int, float, etc.).
