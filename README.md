@@ -82,7 +82,7 @@ if (dict.IsNotNullOrEmpty())
 
 ### 4. Convenient IndexOf
 
-Adds extension methods that dummpy the _Array.IndexOf_ static methods. Also adds support for searches of subarrays.
+Adds extension methods that dummpy the _Array.IndexOf_ and static _Array.IndexOf_ methods. Also adds support for searches of subarrays.
 
 ```c#
 var arr = new [] {1, 2, 3, 4};
@@ -95,6 +95,7 @@ arr.IndexOf(new[] {3, 4}); // searches the subarray and returns 2.
 ```
 
 **_IndexOf_**: Returns the index of the first occurrence of a target element or a target subarray in the current array.
+**_LastIndexOf_**: Returns the index of the first occurrence of a target element ~~or a target subarray~~ in the current array (subarray search support not added yet).
 
 ### 5. Collection to Concatenated String
 
