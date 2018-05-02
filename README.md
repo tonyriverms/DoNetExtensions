@@ -54,8 +54,8 @@ dict = null;
 We also provide "InAny" and "InAll".
 
 ```c#
-1.InAny(new []{1,2,3}, new[]{2,3,4}); // returns true
-1.InAll(new []{1,2,3}, new[]{2,3,4}); // returns false
+1.InAny(new []{1,2,3}, new []{2,3,4}); // returns true
+1.InAll(new []{1,2,3}, new []{2,3,4}); // returns false
 ```
 
 The same extension is added for string.
