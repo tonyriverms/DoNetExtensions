@@ -41,6 +41,7 @@ The same extension is added for string.
 
 ```c#
 'c'.In("string to check"); // returns true
+'c'.NotIn("string to check"); // returns false
 'c'.InAll("string to check", "another string"); // returns false
 'c'.InAny("string to check", "another string"); // returns true
 ```
