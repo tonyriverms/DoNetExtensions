@@ -95,6 +95,7 @@ arr.IndexOf(new[] {3, 4}); // searches the subarray and returns 2.
 ```
 
 **_IndexOf_**: Returns the index of the first occurrence of a target element or a target subarray in the current array.
+
 **_LastIndexOf_**: Returns the index of the first occurrence of a target element ~~or a target subarray~~ in the current array (subarray search support not added yet).
 
 ### 5. Collection to Concatenated String
