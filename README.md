@@ -11,7 +11,7 @@ Latest Update: [Value Swap](#ValueSwap) and [Bit Operations](#BitOperations).
 
 **Usage**: Currently all methods are under the same namespace as the classes they extend. Therefore just add reference to the extension library (enter "**Install-Package DoNetExtensions**" in the nuget package manager), import the standard namespaces like "System.Collections" as usual, and then benefit from the added methods. 
 
-Each method may have multiple overloads. We are unable to present them one by one here, but these methods are very intuitive and have full XML documentation. We carefully tag _AggressiveInlining_ attribute to "short" extensions to avoid impacting performance. Currently version includes 
+Each method may have multiple overloads. We are unable to present them one by one here, but these methods are very intuitive and have full XML documentation. We carefully tag _AggressiveInlining_ attribute to "short" extensions to avoid impacting performance. 
 
 By category: 
 
@@ -25,7 +25,7 @@ d. [String Extensions](StringExtensions.md)
 
 e. [IO Extensions](IOExtensions.md)
 
-All:
+All extensions:
 
 1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations).
 
@@ -185,6 +185,8 @@ Console.WriteLine(t2); // prints the recorded time
 
 **_Swap_**: Swaps the current value of struct types with another value.
 
+These extensions enrich methods for value types.
+
 ### <a name="BitOperations"></a>8. Bit Operations
 
 We provide convenient extensions to retrieve higer bits or lower bits of a value of type _long_/_ulong_, _int_/_uint_, _short_/_ushort_ or _byte_. Following gives two examples, for full description see the method XML documentation.
@@ -202,6 +204,9 @@ In addition, you can retrieve all bytes of basic values types float/double, long
 ```c#
 var t = DateTime.Now;
 t.ToBytes(); // gets a byte array representing the DateTime instance t
+
+long a = 100;
+var h_high_bytes = a.High().ToBytes(); // combines with High, Low methods to get high/low bytes.
 ```
 
 **_High_**: Returns the higher-half bits (the left half if you write the value as a 0-1 string) of a supported value.
