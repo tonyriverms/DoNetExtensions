@@ -16,11 +16,17 @@ Each method may have multiple overloads. We are unable to present them one by on
 By category: 
 
 a. [Must-Have Extensions](MustHaveExtensions.md)
-b. Array and Collection Extensions
-b. Value Type Extensions
-d. String Extensions
+
+b. [Array and Collection Extensions](ArrayAndCollectionExtensions.md)
+
+b. [Value Type Extensions](ValueTypeExtensions.md)
+
+d. [String Extensions](StringExtensions.md)
+
+e. [IO Extensions](IOExtensions.md)
 
 All:
+
 1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations).
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check -- The "In" Method
