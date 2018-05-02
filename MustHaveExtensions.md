@@ -1,4 +1,6 @@
-We believe these simple yet thoughtful "must-have" extensions would bring better consistency, readability and productivity to your code. This category currently includes:
+# Must-Have Extensions
+
+The "must-haves" are those extensions that could prevail our coding and projects. We hope these simple yet thoughtful "must-have" extensions would bring better consistency, readability and productivity to your code. This category currently includes:
 
 [1. Consistent Containment Check](#ConsistentContainmentCheck)
 
