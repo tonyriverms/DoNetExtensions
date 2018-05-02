@@ -5,7 +5,7 @@ We have been coding with .NET for more than ten years, and we notice many standa
 
 Nuget: https://www.nuget.org/packages/DoNetExtensions/. In nuget package manager, enter "**Install-Package DoNetExtensions**" to get the latest version. 
 
-Latest Update: [Value Swap](#ValueSwap), [Bit Operations](#BitOperations), [Conversion to Hexical String](#ConversiontoHexicalString)
+Latest Update: [Value Swap](#ValueSwap), [Bit Operations](#BitOperations), [Conversion to Hexical String](#ConversiontoHexicalString), [Char Extensions](#CharExtensions)
 
 ## Initial Release (version 8)
 
@@ -44,9 +44,11 @@ if ("a".In(dict)) // equivalent to dict.ContainsKey("a")
 
 arr = null;
 1.In(arr); // returns false
+1.NotIn(arr); // returns true
 
 dict = null;
 "a".In(dict); // returns false
+"a".NotIn(dict); // returns true
 ```
 
 We also provide "InAny" and "InAll".
@@ -60,11 +62,14 @@ The same extension is added for string.
 
 ```c#
 'c'.In("string to check"); // returns true
+'c'.NotIn("string to check"); // returns false
 'c'.InAll("string to check", "another string"); // returns false
 'c'.InAny("string to check", "another string"); // returns true
 ```
 
 **_In_**: returns _true_ if the element to check is contained in an array/list/collection/string, or a key of a dictionary.
+
+**_NotIn_**: negation of **_In_**.
 
 **_InAny_**: returns _true_ if the element to check is contained in any of the provided arrays/lists/collections/strings.
 

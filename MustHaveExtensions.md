@@ -8,8 +8,7 @@ The "must-haves" are those extensions that prevail our coding and projects. We h
 
 [7. Value Swap](#ValueSwap)
 
-
-### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check for Collections & Strings -- The "In" Method
+### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check for Collections and Strings -- The "In" Method
 
 Instead of "_a.Contains(b)_", we provide an alternative "_b.In(a)_". If "_a_" is a collection, the the method checks if "_b_" is an element in "_a_"; if "_a_" is a dictionary, then the method checks if "_b_" is a key in "_a_". This "In" method is somewhat "python" style, **_shorter_** and **_more consistent_**; besides that, it returns _false_ for null reference.
 
@@ -24,9 +23,11 @@ if ("a".In(dict)) // equivalent to dict.ContainsKey("a")
 
 arr = null;
 1.In(arr); // returns false
+1.NotIn(arr); // returns true
 
 dict = null;
 "a".In(dict); // returns false
+"a".NotIn(dict); // returns true
 ```
 
 We also provide "InAny" and "InAll".
@@ -40,11 +41,14 @@ The same extension is added for string.
 
 ```c#
 'c'.In("string to check"); // returns true
+'c'.NotIn("string to check"); // returns false
 'c'.InAll("string to check", "another string"); // returns false
 'c'.InAny("string to check", "another string"); // returns true
 ```
 
 **_In_**: returns _true_ if the element to check is contained in an array/list/collection/string, or a key of a dictionary.
+
+**_NotIn_**: negation of **_In_**.
 
 **_InAny_**: returns _true_ if the element to check is contained in any of the provided arrays/lists/collections/strings.
 
