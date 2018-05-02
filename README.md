@@ -44,9 +44,11 @@ if ("a".In(dict)) // equivalent to dict.ContainsKey("a")
 
 arr = null;
 1.In(arr); // returns false
+1.NotIn(arr); // returns true
 
 dict = null;
 "a".In(dict); // returns false
+"a".NotIn(dict); // returns true
 ```
 
 We also provide "InAny" and "InAll".
