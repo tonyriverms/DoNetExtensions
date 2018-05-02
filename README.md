@@ -27,7 +27,7 @@ e. [IO Extensions](IOExtensions.md)
 
 All extensions:
 
-1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations).
+1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9 [Conversion to Hexical String](ConversiontoHexicalString)
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check -- The "In" Method
 
@@ -214,3 +214,15 @@ var h_high_bytes = a.High().ToBytes(); // combines with High, Low methods to get
 **_Low_**: Returns the lower-half bits (the right half if you write the value as a 0-1 string) of a supported value.
 
 **_ToBytes_**: Returns a byte array representing a value of basic value type.
+
+### <a name="ConversiontoHexicalString"></a>9. Conversion to Hexical String
+
+If a hexical string of a value type is needed, than the following comes handy.
+```c#
+var a = 1234;
+a.ToHex(); // returns full 32-bit representation "000004D2"
+a.ToHex(fullLength:false); // returns "4D2"
+```
+
+**_ToHex_**: Returns the hexical representation of the basic value types (byte, int, float, etc.).
+
