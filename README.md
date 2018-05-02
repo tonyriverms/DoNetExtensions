@@ -66,6 +66,8 @@ The same extension is added for string.
 
 **_In_**: returns _true_ if the element to check is contained in an array/list/collection/string, or a key of a dictionary.
 
+**_NotIn_**: negation of **_In_**.
+
 **_InAny_**: returns _true_ if the element to check is contained in any of the provided arrays/lists/collections/strings.
 
 **_InAll_**: returns _true_ if the element to check is contained in all of the provided arrays/lists/collections/strings.
