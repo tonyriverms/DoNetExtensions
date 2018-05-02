@@ -786,6 +786,26 @@ namespace System
         #region Misc
 
         /// <summary>
+        /// Returns <c>true</c> if the current object is a <c>null</c> reference.
+        /// </summary>
+        /// <param name="obj">The current object.</param>
+        /// <returns>Returns <c>true</c> if the current object is a <c>null</c> reference; otherwise, returns <c>false</c>.</returns>
+        public static bool IsNull(this object obj)
+        {
+            return obj == null;
+        }
+
+        /// <summary>
+        /// Returns <c>true</c> if the current object is not a <c>null</c> reference.
+        /// </summary>
+        /// <param name="obj">The current object.</param>
+        /// <returns>Returns <c>true</c> if the current object is not a <c>null</c> reference; otherwise, returns <c>false</c>.</returns>
+        public static bool IsNotNull(this object obj)
+        {
+            return obj != null;
+        }
+
+        /// <summary>
         /// Restarts this System.Timers.Timer object.
         /// </summary>
         /// <param name="timer">The System.Timers.Timer object to reset.</param>
