@@ -5,15 +5,23 @@ We have been coding with .NET for more than ten years, and we notice many standa
 
 Nuget: https://www.nuget.org/packages/DoNetExtensions/. In nuget package manager, enter "**Install-Package DoNetExtensions**" to get the latest version. 
 
-Latest Update: [Convenient Swap & Bit Operations](#ConvenientSwapBitOperations)
+Latest Update: [Value Swap](#ValueSwap) and [Bit Operations](#BitOperations).
 
 ## Initial Release (version 7)
 
 **Usage**: Currently all methods are under the same namespace as the classes they extend. Therefore just add reference to the extension library (enter "**Install-Package DoNetExtensions**" in the nuget package manager), import the standard namespaces like "System.Collections" as usual, and then benefit from the added methods. 
 
-Each method may have multiple overloads. We are unable to present them one by one here, but these methods are very intuitive and have full XML documentation. We carefully tag _AggressiveInlining_ attribute to "short" extensions to avoid impacting performance.
+Each method may have multiple overloads. We are unable to present them one by one here, but these methods are very intuitive and have full XML documentation. We carefully tag _AggressiveInlining_ attribute to "short" extensions to avoid impacting performance. Currently version includes 
 
-Currently version includes 1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations).
+By category: 
+
+a. [Must-Have Extensions](MustHaveExtensions.md)
+b. Array and Collection Extensions
+b. Value Type Extensions
+d. String Extensions
+
+All:
+1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations).
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check -- The "In" Method
 
