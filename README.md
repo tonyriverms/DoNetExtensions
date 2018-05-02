@@ -157,7 +157,8 @@ Console.WriteLine(a); // prints 2
 Console.WriteLine(b); // prints 1
 
 var t1 = DateTime.Now;
-var t2 = var b = new DateTime(2010, 10, 22);
+var t2 = new DateTime(2010, 10, 22);
+t1.Swap(ref t2);
 Console.WriteLine(t1); // prints "[10/22/2010 12:00:00 AM]"
 Console.WriteLine(t2); // prints the recorded time
 ```
