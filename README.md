@@ -3,6 +3,8 @@ The project aims to provide hundreds of fully-documented, tested, and useful ext
 
 We have been coding with .NET for more than ten years, and we notice many standard classes (like array, list, dictionary, etc.) lack rich methods to facilitate their use and quick development. Although each piece extension method in this library is not much, we believe as a whole they bring great convenience and help enhance producitivity for other .NET programmers.
 
+Nuget: https://www.nuget.org/packages/DoNetExtensions/
+
 ## Initial Release
 
 This initial release includes **_several extensions for arrays and collections_** as shown below. Currently all methods are under the same namespace as the classes they extend. Therefore, the **_usage_** is to just add reference to the extension library, import the namespace like "System.Collections" as usual, and then benefit from the added methods.
