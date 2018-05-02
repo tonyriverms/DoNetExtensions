@@ -5,7 +5,7 @@ We have been coding with .NET for more than ten years, and we notice many standa
 
 Nuget: https://www.nuget.org/packages/DoNetExtensions/. In nuget package manager, enter "**Install-Package DoNetExtensions**" to get the latest version. 
 
-Latest Update: [Value Swap](#ValueSwap), [Bit Operations](#BitOperations), [Conversion to Hexical String](#ConversiontoHexicalString)
+Latest Update: [Value Swap](#ValueSwap), [Bit Operations](#BitOperations), [Conversion to Hexical String](#ConversiontoHexicalString), [Char Extensions](#CharExtensions)
 
 ## Initial Release (version 8)
 
