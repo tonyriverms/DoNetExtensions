@@ -5,13 +5,17 @@ We have been coding with .NET for more than ten years, and we notice many standa
 
 Nuget: https://www.nuget.org/packages/DoNetExtensions/
 
-## Initial Release
+Latest Update: [Convenient Swap & Bit Operations](#ConvenientSwapBitOperations)
+
+## Initial Release (version 7)
 
 This initial release includes **_several extensions for arrays and collections_** as shown below. Currently all methods are under the same namespace as the classes they extend. Therefore, the **_usage_** is to just add reference to the extension library, import the namespace like "System.Collections" as usual, and then benefit from the added methods.
 
 Each method may have multiple overloads. We are unable to present them one by one here, but these methods are very intuitive and have full XML documentation. We carefully tag _AggressiveInlining_ attribute to "short" extensions to avoid impacting performance.
 
-### 1. Consistent Containment Check -- The "In" Method
+Currently this library includes 1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Convenient Swap & Bit Operations](#ConvenientSwapBitOperations).
+
+### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check -- The "In" Method
 
 Instead of "_a.Contains(b)_", we provide an alternative "_b.In(a)_". If "_a_" is a collection, the the method checks if "_b_" is an element in "_a_"; if "_a_" is a dictionary, then the method checks if "_b_" is a key in "_a_". This "In" method is somewhat "python" style, **_shorter_** and **_more consistent_**; besides that, it returns _false_ for null reference.
 
@@ -33,7 +37,7 @@ dict = null;
 
 **_In_**: returns true if the element to check is contained in an array/list/collection, or a key of a dictionary.
 
-### 2. Collection to Array Conversion
+### <a name="CollectiontoArrayConversion"></a> 2. Collection to Array Conversion
 
 ```c#
 var list = new List<int>();
@@ -53,7 +57,7 @@ arr = list.ToArrayOrNull(); // returns a null reference because list has been cl
 
 All added methods support conversion starting at a specified index.
 
-### 3. Consistent Emptiness Check
+### <a name="ConsistentEmptinessCheck"></a> 3. Consistent Emptiness Check
 
 Although incredibly useful, the emptiness of an array or a collection has to be checked in a clumsy way, even for today after 10 years.
 
@@ -91,7 +95,7 @@ if (dict.IsNotNullOrEmpty())
 
 **_IsNotEmpty_**: Returns true if a collection is not an empty collection (throws an NullReferenceException if it is a null reference).
 
-### 4. Convenient IndexOf
+### <a name="ConvenientIndexOf"></a>4. Convenient IndexOf
 
 Adds extension methods that dummpy the _Array.IndexOf_ and static _Array.IndexOf_ methods. Also adds support for searches of subarrays.
 
@@ -109,7 +113,7 @@ arr.IndexOf(new[] {3, 4}); // searches the subarray and returns 2.
 
 **_LastIndexOf_**: Returns the index of the first occurrence of a target element ~~or a target subarray~~ in the current array (subarray search support not added yet).
 
-### 5. Collection to Concatenated String
+### <a name="CollectiontoConcatenatedString"></a>5. Collection to Concatenated String
 
 **_ToConcatString_**: Outputs a concatenated string representation for elements in a collection. For each element, their _ToString()_ method is used.
 
@@ -119,7 +123,7 @@ arr.ToConcatString(','); // returns "1,2,3"
 arr.ToConcatString("--"); // returns "1--2--3"
 ```
 
-### 6. Array Updating Operations
+### <a name="BasicArrayOperations"></a>6. Array Operations
 
 It is not uncommon that we might need to just add/remove one specified item to/from an array, and return a new array with the item added/removed (for example, such addition/removal is rarely used by the client, and it is not desirable to complicate the code design with other data structure like list or linked list).
 
@@ -147,7 +151,7 @@ var merged = (new[] { arr, arr2, arr3, arr4, arr5, arr6, arr7}).Merge(); // merg
 
 **_Merge_**: Merges a collection of arrays into a single array.
 
-### 7. Convenient Swap & Bit Operations
+### <a name="ConvenientSwapBitOperations"></a>7. Convenient Swap & Bit Operations
 
 Swapping two values have been an annoying issue that disrupts code readability. The following extensions address this problem. It is implemented by efficient bit operations when possible.
 
