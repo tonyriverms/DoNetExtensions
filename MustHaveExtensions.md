@@ -1,4 +1,7 @@
-We believe these simple yet thoughtful "must-have" extensions would bring better consistency, readability and productivity to your code.
+We believe these simple yet thoughtful "must-have" extensions would bring better consistency, readability and productivity to your code. This category currently includes:
+1. [Consistent Containment Check](#ConsistentContainmentCheck)
+3. [Consistent Emptiness Check](#ConsistentEmptinessCheck)
+7. [Value Swap](#ValueSwap)
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check -- The "In" Method
 
@@ -60,7 +63,7 @@ if (dict.IsNotNullOrEmpty())
 
 **_IsNotEmpty_**: Returns true if a collection is not an empty collection (throws an NullReferenceException if it is a null reference).
 
-### <a name="ConvenientSwapBitOperations"></a>7. Swap Method
+### <a name="ValueSwap"></a>7. Value Swap
 
 Swapping two values have been an annoying issue that disrupts code readability. The following extensions address this problem. It is implemented by efficient bit operations when possible.
 
@@ -76,23 +79,6 @@ var t2 = new DateTime(2010, 10, 22);
 t1.Swap(ref t2);
 Console.WriteLine(t1); // prints "[10/22/2010 12:00:00 AM]"
 Console.WriteLine(t2); // prints the recorded time
-```
-
-In this category, we also provide convenient extensions to retrieve higer bits or lower bits of a value of type _long_/_ulong_, _int_/_uint_, _short_/_ushort_ or _byte_. Following gives two examples, for full description see the method XML documentation.
-
-```c#
-int a = 100;
-var a_high = a.High(); // gets the higher 16 bits of this 32-bit integer, represented by a 16-bit unsigned integer, which is 0 in this case.
-
-byte b = 100;
-var b_low = b.Low(); // gets the lower 4 bits of _b_. The returned value is a byte, and the lower 4 bits of _b_ is positioned at the lower half of the returned byte. For example, the bits of this case is _01100100_, and it returns _00000100_.
-var b_high = b.High(); // gets the higher 4 bits of _b_. The returned value is a byte, and the higher 4 bits of _b_ is positioned at the LOWER half of the returned byte. For example, the bits of this case is _01100100_, and it returns _00000110_.
-```
-
-In addition, you can retrieve all bytes of basic values types float/double, long/ulong, int/uint, short/ushort and DateTime.
-```c#
-var t = DateTime.Now;
-t.ToBytes(); // gets a byte array representing the DateTime instance t
 ```
 
 **_Swap_**: Swaps the current value of struct types with another value.
