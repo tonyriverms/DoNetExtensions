@@ -3,7 +3,7 @@ The project aims to provide hundreds of fully-documented, tested, and useful ext
 
 We have been coding with .NET for more than ten years, and we notice many standard classes (like array, list, dictionary, etc.) lack rich methods to facilitate their use and quick development. Although each piece extension method in this library is not much, we believe as a whole they bring great convenience and help enhance producitivity for other .NET programmers.
 
-Nuget: https://www.nuget.org/packages/DoNetExtensions/
+Nuget: https://www.nuget.org/packages/DoNetExtensions/. In nuget package manager, enter "**Install-Package DoNetExtensions**" to get the latest version. 
 
 Latest Update: [Convenient Swap & Bit Operations](#ConvenientSwapBitOperations)
 
