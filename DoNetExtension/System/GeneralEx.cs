@@ -41,6 +41,197 @@ namespace System
     public static partial class GeneralEx
     {
 
+
+        #region Swap
+
+        /// <summary>
+        /// Swaps the values of two long integers.
+        /// </summary>
+        /// <param name="x">The first long integer.</param>
+        /// <param name="y">The second long integer.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref long x, ref long y)
+        {
+            x ^= y;
+            y ^= x;
+            x ^= y;
+        }
+
+
+        /// <summary>
+        /// Swaps the values of two unsigned long integers.
+        /// </summary>
+        /// <param name="x">The first unsigned long integer.</param>
+        /// <param name="y">The second unsigned long integer.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref ulong x, ref ulong y)
+        {
+            x ^= y;
+            y ^= x;
+            x ^= y;
+        }
+
+        /// <summary>
+        /// Swaps the values of two integers.
+        /// </summary>
+        /// <param name="x">The first integer.</param>
+        /// <param name="y">The second integer.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref int x, ref int y)
+        {
+            x ^= y;
+            y ^= x;
+            x ^= y;
+        }
+
+        /// <summary>
+        /// Swaps the values of two unsigned integers.
+        /// </summary>
+        /// <param name="x">The first unsigned integer.</param>
+        /// <param name="y">The second unsigned integer.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref uint x, ref uint y)
+        {
+            x ^= y;
+            y ^= x;
+            x ^= y;
+        }
+
+
+        /// <summary>
+        /// Swaps the values of two short integers.
+        /// </summary>
+        /// <param name="x">The first short integer.</param>
+        /// <param name="y">The second short integer.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref short x, ref short y)
+        {
+            x ^= y;
+            y ^= x;
+            x ^= y;
+        }
+
+        /// <summary>
+        /// Swaps the values of two unsigned short integers.
+        /// </summary>
+        /// <param name="x">The first unsigned short integer.</param>
+        /// <param name="y">The second unsigned short integer.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref ushort x, ref ushort y)
+        {
+            x ^= y;
+            y ^= x;
+            x ^= y;
+        }
+
+        /// <summary>
+        /// Swaps the values of two bytes.
+        /// </summary>
+        /// <param name="x">The first byte.</param>
+        /// <param name="y">The second byte.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref byte x, ref byte y)
+        {
+            x ^= y;
+            y ^= x;
+            x ^= y;
+        }
+
+
+        /// <summary>
+        /// Swaps the values of two signed bytes.
+        /// </summary>
+        /// <param name="x">The first signed byte.</param>
+        /// <param name="y">The second signed byte.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref sbyte x, ref sbyte y)
+        {
+            x ^= y;
+            y ^= x;
+            x ^= y;
+        }
+
+        /// <summary>
+        /// Swaps the values of two characters.
+        /// </summary>
+        /// <param name="x">The first character.</param>
+        /// <param name="y">The second character.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref char x, ref char y)
+        {
+            x ^= y;
+            y ^= x;
+            x ^= y;
+        }
+
+        /// <summary>
+        /// Swaps the values of two bool values.
+        /// </summary>
+        /// <param name="x">The first bool value.</param>
+        /// <param name="y">The second bool value.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref bool x, ref bool y)
+        {
+            x ^= y;
+            y ^= x;
+            x ^= y;
+        }
+
+        /// <summary>
+        /// Swaps the values of two <see cref="float"/> values.
+        /// </summary>
+        /// <param name="x">The first <see cref="float"/> value.</param>
+        /// <param name="y">The second <see cref="float"/> value.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref float x, ref float y)
+        {
+            var z = x;
+            x = y;
+            y = z;
+        }
+
+
+        /// <summary>
+        /// Swaps the values of two <see cref="double"/> values.
+        /// </summary>
+        /// <param name="x">The first <see cref="double"/> value.</param>
+        /// <param name="y">The second <see cref="double"/> value.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref double x, ref double y)
+        {
+            var z = x;
+            x = y;
+            y = z;
+        }
+
+        /// <summary>
+        /// Swaps the values of two <see cref="DateTime"/> values.
+        /// </summary>
+        /// <param name="x">The first <see cref="DateTime"/> value.</param>
+        /// <param name="y">The second <see cref="DateTime"/> value.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap(this ref DateTime x, ref DateTime y)
+        {
+            var z = x;
+            x = y;
+            y = z;
+        }
+
+        /// <summary>
+        /// Swaps the values of two <see cref="DateTime"/> values.
+        /// </summary>
+        /// <param name="x">The first <see cref="DateTime"/> value.</param>
+        /// <param name="y">The second <see cref="DateTime"/> value.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void Swap<T>(this ref T x, ref T y) where T : struct
+        {
+            var z = x;
+            x = y;
+            y = z;
+        }
+
+        #endregion
+
         #region In
 
         /// <summary>
@@ -103,32 +294,34 @@ namespace System
         #region Two Halfs
 
         /// <summary>
-        /// Gets the lower 4 bits of this byte.
+        /// Gets the lower 4 bits of this byte positioned the lower half of the returned byte. For example, the return value of <see cref="Low(byte)"/> of 01100100 is 00000100.
         /// </summary>
         /// <param name="value">This byte.</param>
         /// <returns>The lower 4 bits of this byte.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static byte Low(this byte value)
         {
             return (byte)(value & 0x0F);
         }
 
         /// <summary>
-        /// Gets the higher 4 bits of this byte. 
-        /// <para>!!! These 4 bits will be positioned the lower half of the returned byte. For example, the return value of <c>High</c> of 01100100 is 00000110.</para>
+        /// Gets the higher 4 bits of this byte positioned the lower half of the returned byte. For example, the return value of <see cref="High(byte)"/> of 01100100 is 00000110.
         /// </summary>
         /// <param name="value">This byte.</param>
         /// <returns>The higher 4 bits of this byte.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static byte High(this byte value)
         {
             return (byte)(((byte)value & 0xF0) >> 4);
         }
 
         /// <summary>
-        /// Gets the lower 8 bits of this 16-bit integer.
+        /// Gets the lower 8 bits of this 16-bit integer, represented by a 8-bit byte.
         /// </summary>
         /// <param name="value">This 16-bit integer.</param>
         /// <returns>The lower 8 bits of this 16-bit integer, represented by a 8-bit byte.</returns>
-        public unsafe static Byte Low(this Int16 value)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe Byte Low(this Int16 value)
         {
             var ptr = (Byte*)&value;
             return ptr[0];
@@ -139,117 +332,128 @@ namespace System
         /// </summary>
         /// <param name="value">This 16-bit integer.</param>
         /// <returns>The higher 8 bits of this 16-bit integer, represented by a 8-bit byte.</returns>
-        public unsafe static Byte High(this Int16 value)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe Byte High(this Int16 value)
         {
             var ptr = (Byte*)&value;
             return ptr[1];
         }
 
         /// <summary>
-        /// Gets the lower 8 bits of this 16-bit unsigned integer.
+        /// Gets the lower 8 bits of this 16-bit unsigned integer, represented by a 8-bit byte.
         /// </summary>
         /// <param name="value">This 16-bit integer.</param>
         /// <returns>The lower 8 bits of this 16-bit unsigned integer, represented by a 8-bit byte.</returns>
-        public unsafe static Byte Low(this UInt16 value)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe Byte Low(this UInt16 value)
         {
             var ptr = (Byte*)&value;
             return ptr[0];
         }
 
         /// <summary>
-        /// Gets the higher 8 bits of this 16-bit unsigned integer.
+        /// Gets the higher 8 bits of this 16-bit unsigned integer, represented by a 8-bit byte.
         /// </summary>
         /// <param name="value">This 16-bit integer.</param>
         /// <returns>The higher 8 bits of this 16-bit unsigned integer, represented by a 8-bit byte.</returns>
-        public unsafe static Byte High(this UInt16 value)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe Byte High(this UInt16 value)
         {
             var ptr = (Byte*)&value;
             return ptr[1];
         }
 
         /// <summary>
-        /// Gets the lower 16 bits of this 32-bit integer.
+        /// Gets the lower 16 bits of this 32-bit integer, represented by a 16-bit unsigned integer.
         /// </summary>
         /// <param name="value">This 32-bit integer.</param>
         /// <returns>The lower 16 bits of this 32-bit integer, represented by a 16-bit unsigned integer.</returns>
-        public unsafe static UInt16 Low(this Int32 value)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe UInt16 Low(this Int32 value)
         {
             var ptr = (UInt16*)&value;
             return ptr[0];
         }
 
         /// <summary>
-        /// Gets the higher 16 bits of this 32-bit integer.
+        /// Gets the higher 16 bits of this 32-bit integer, represented by a 16-bit unsigned integer.
         /// </summary>
         /// <param name="value">This 32-bit integer.</param>
         /// <returns>The higher 16 bits of this 32-bit unsigned integer, represented by a 16-bit unsigned integer.</returns>
-        public unsafe static UInt16 High(this Int32 value)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe UInt16 High(this Int32 value)
         {
             var ptr = (UInt16*)&value;
             return ptr[1];
         }
 
         /// <summary>
-        /// Gets the lower 16 bits of this 32-bit unsigned integer.
+        /// Gets the lower 16 bits of this 32-bit unsigned integer, represented by a 16-bit unsigned integer.
         /// </summary>
         /// <param name="value">This 32-bit integer.</param>
         /// <returns>The lower 16 bits of this 32-bit integer, represented by a 16-bit unsigned integer.</returns>
-        public unsafe static UInt16 Low(this UInt32 value)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe UInt16 Low(this UInt32 value)
         {
             var ptr = (UInt16*)&value;
             return ptr[0];
         }
 
         /// <summary>
-        /// Gets the higher 16 bits of this 32-bit unsigned integer.
+        /// Gets the higher 16 bits of this 32-bit unsigned integer, represented by a 16-bit unsigned integer.
         /// </summary>
         /// <param name="value">This 32-bit integer.</param>
         /// <returns>The higher 16 bits of this 32-bit unsigned integer, represented by a 16-bit unsigned integer.</returns>
-        public unsafe static UInt16 High(this UInt32 value)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe UInt16 High(this UInt32 value)
         {
             var ptr = (UInt16*)&value;
             return ptr[1];
         }
 
         /// <summary>
-        /// Gets the lower 32 bits of this 64-bit integer.
+        /// Gets the lower 32 bits of this 64-bit integer, represented by a 32-bit unsigned integer.
         /// </summary>
         /// <param name="value">This 64-bit integer.</param>
         /// <returns>The lower 32 bits of this 64-bit integer, represented by a 32-bit unsigned integer.</returns>
-        public unsafe static UInt32 Low(this Int64 value)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe UInt32 Low(this Int64 value)
         {
             var ptr = (UInt32*)&value;
             return ptr[0];
         }
 
         /// <summary>
-        /// Gets the higher 32 bits of this 64-bit integer.
+        /// Gets the higher 32 bits of this 64-bit integer, represented by a 32-bit unsigned integer.
         /// </summary>
         /// <param name="value">This 64-bit integer.</param>
         /// <returns>The lower 32 bits of this 64-bit integer, represented by a 32-bit unsigned integer.</returns>
-        public unsafe static UInt32 High(this Int64 value)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe UInt32 High(this Int64 value)
         {
             var ptr = (UInt32*)&value;
             return ptr[1];
         }
 
         /// <summary>
-        /// Gets the lower 32 bits of this 64-bit unsigned integer.
+        /// Gets the lower 32 bits of this 64-bit unsigned integer, represented by a 32-bit unsigned integer.
         /// </summary>
         /// <param name="value">This 64-bit integer.</param>
         /// <returns>The lower 32 bits of this 64-bit unsigned integer, represented by a 32-bit unsigned integer.</returns>
-        public unsafe static UInt32 Low(this UInt64 value)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe UInt32 Low(this UInt64 value)
         {
             var ptr = (UInt32*)&value;
             return ptr[0];
         }
 
         /// <summary>
-        /// Gets the higher 32 bits of this 64-bit unsigned integer.
+        /// Gets the higher 32 bits of this 64-bit unsigned integer, represented by a 32-bit unsigned integer
         /// </summary>
         /// <param name="value">This 64-bit integer.</param>
         /// <returns>The lower 32 bits of this 64-bit unsigned integer, represented by a 32-bit unsigned integer.</returns>
-        public unsafe static UInt32 High(this UInt64 value)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe UInt32 High(this UInt64 value)
         {
             var ptr = (UInt32*)&value;
             return ptr[1];
@@ -373,6 +577,7 @@ namespace System
         /// For example, array {5, 18, 123, 214} will be converted to "05 12 7B D6" if a single space is used as the delimiter.
         /// </summary>
         /// <param name="bytes">This byte array.</param>
+        /// <param name="delimiter">The delimiter used to delimit the hex string representations in the output string.</param>
         /// <returns>A hex string equivalent to the current byte array.</returns>
         public static string ToHex(this byte[] bytes, char delimiter)
         {
@@ -392,6 +597,7 @@ namespace System
         /// For example, array {5, 18, 123, 214} will be converted to "05 , 12 , 7B , D6" if string " , " is used as the delimiter.
         /// </summary>
         /// <param name="bytes">This byte array.</param>
+        /// <param name="delimiter">The delimiter used to delimit the hex string representations in the output string.</param>
         /// <returns>A hex string equivalent to the current byte array.</returns>
         public static string ToHex(this byte[] bytes, string delimiter)
         {
@@ -413,7 +619,7 @@ namespace System
         /// </summary>
         /// <param name="value">This value.</param>
         /// <returns>A byte array converted from the numeric value of the current instance.</returns>
-        public unsafe static byte[] ToBytes(this UInt32 value)
+        public static unsafe byte[] ToBytes(this UInt32 value)
         {
             byte[] buffer = new byte[sizeof(UInt32)];
             fixed (byte* numRef = buffer)
@@ -428,7 +634,7 @@ namespace System
         /// </summary>
         /// <param name="value">This value.</param>
         /// <returns>A byte array converted from the numeric value of the current instance.</returns>
-        public unsafe static byte[] ToBytes(this UInt64 value)
+        public static unsafe byte[] ToBytes(this UInt64 value)
         {
             byte[] buffer = new byte[sizeof(UInt64)];
             fixed (byte* numRef = buffer)
@@ -443,7 +649,7 @@ namespace System
         /// </summary>
         /// <param name="value">This value.</param>
         /// <returns>A byte array converted from the numeric value of the current instance.</returns>
-        public unsafe static byte[] ToBytes(this UInt16 value)
+        public static unsafe byte[] ToBytes(this UInt16 value)
         {
             byte[] buffer = new byte[sizeof(UInt16)];
             fixed (byte* numRef = buffer)
@@ -458,7 +664,7 @@ namespace System
         /// </summary>
         /// <param name="value">This value.</param>
         /// <returns>A byte array converted from the numeric value of the current instance.</returns>
-        public unsafe static byte[] ToBytes(this Int32 value)
+        public static unsafe byte[] ToBytes(this Int32 value)
         {
             byte[] buffer = new byte[sizeof(Int32)];
             fixed (byte* numRef = buffer)
@@ -473,7 +679,7 @@ namespace System
         /// </summary>
         /// <param name="value">This value.</param>
         /// <returns>A byte array converted from the numeric value of the current instance.</returns>
-        public unsafe static byte[] ToBytes(this Int64 value)
+        public static unsafe byte[] ToBytes(this Int64 value)
         {
             byte[] buffer = new byte[sizeof(Int64)];
             fixed (byte* numRef = buffer)
@@ -488,7 +694,7 @@ namespace System
         /// </summary>
         /// <param name="value">This value.</param>
         /// <returns>A byte array converted from the numeric value of the current instance.</returns>
-        public unsafe static byte[] ToBytes(this Int16 value)
+        public static unsafe byte[] ToBytes(this Int16 value)
         {
             byte[] buffer = new byte[sizeof(Int16)];
             fixed (byte* numRef = buffer)
@@ -503,7 +709,7 @@ namespace System
         /// </summary>
         /// <param name="value">This value.</param>
         /// <returns>A byte array converted from the numeric value of the current instance.</returns>
-        public unsafe static byte[] ToBytes(this Double value)
+        public static unsafe byte[] ToBytes(this Double value)
         {
             byte[] buffer = new byte[sizeof(Double)];
             fixed (byte* numRef = buffer)
@@ -518,7 +724,7 @@ namespace System
         /// </summary>
         /// <param name="value">This value.</param>
         /// <returns>A byte array converted from the numeric value of the current instance.</returns>
-        public unsafe static byte[] ToBytes(this Single value)
+        public static unsafe byte[] ToBytes(this Single value)
         {
             byte[] buffer = new byte[sizeof(Single)];
             fixed (byte* numRef = buffer)
@@ -533,7 +739,7 @@ namespace System
         /// </summary>
         /// <param name="value">This value.</param>
         /// <returns>A byte array converted from the numeric value of the current instance.</returns>
-        public unsafe static byte[] ToBytes(this DateTime value)
+        public static unsafe byte[] ToBytes(this DateTime value)
         {
             byte[] buffer = new byte[sizeof(DateTime)];
             fixed (byte* numRef = buffer)
@@ -583,6 +789,7 @@ namespace System
         /// Restarts this System.Timers.Timer object.
         /// </summary>
         /// <param name="timer">The System.Timers.Timer object to reset.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Reset(this System.Timers.Timer timer)
         {
             timer.Stop();
@@ -608,61 +815,14 @@ namespace System
     /// <summary>
     /// Provides methods to swap values of two objects.
     /// </summary>
-    public static class Swaper
+    public static class Swapper
     {
-        /// <summary>
-        /// Swaps the values of two long integers.
-        /// </summary>
-        /// <param name="x">The first long integer.</param>
-        /// <param name="y">The second long integer.</param>
-        public static void Swap(ref long x, ref long y)
-        {
-            x = x ^ y;
-            y = x ^ y;
-            x = x ^ y;
-        }
-
-        /// <summary>
-        /// Swaps the values of two integers.
-        /// </summary>
-        /// <param name="x">The first integer.</param>
-        /// <param name="y">The second integer.</param>
-        public static void Swap(ref int x, ref int y)
-        {
-            x = x ^ y;
-            y = x ^ y;
-            x = x ^ y;
-        }
-
-        /// <summary>
-        /// Swaps the values of two bytes.
-        /// </summary>
-        /// <param name="x">The first byte.</param>
-        /// <param name="y">The second byte.</param>
-        public static void Swap(ref byte x, ref byte y)
-        {
-            x = (byte)(x ^ y);
-            y = (byte)(x ^ y);
-            x = (byte)(x ^ y);
-        }
-
-        /// <summary>
-        /// Swaps the values of two characters.
-        /// </summary>
-        /// <param name="x">The first character.</param>
-        /// <param name="y">The second character.</param>
-        public static void Swap(ref char x, ref char y)
-        {
-            x = (char)((int)x ^ (int)y);
-            y = (char)((int)x ^ (int)y);
-            x = (char)((int)x ^ (int)y);
-        }
-
         /// <summary>
         /// Swap the values of two objects.
         /// </summary>
         /// <param name="x">The first object.</param>
         /// <param name="y">The second object.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Swap<T>(ref T x, ref T y)
         {
             T z = y;

@@ -10,8 +10,8 @@ namespace PackageTest
     {
         static void Main(string[] args)
         {
-            var arr = new[] {1, 2, 3};
-           
+            var arr = new[] { 1, 2, 3 };
+
         }
     }
 }

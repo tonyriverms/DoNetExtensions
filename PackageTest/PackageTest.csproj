@@ -32,8 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DoNetExtension, Version=0.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DoNetExtensions.0.0.2\lib\netstandard2.0\DoNetExtension.dll</HintPath>
+    <Reference Include="DoNetExtension, Version=0.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DoNetExtensions.0.0.7\lib\netstandard2.0\DoNetExtension.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
