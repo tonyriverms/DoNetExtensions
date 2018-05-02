@@ -5,7 +5,9 @@ We have been coding with .NET for more than ten years, and we notice many standa
 
 ## Initial Release
 
-This initial release includes **_several extensions for arrays and collections_** as shown below. Currently all methods are under the same namespace as the classes they extend. Therefore, the **_usage_** is to just add reference to the extension library and then benefit from the added methods.
+This initial release includes **_several extensions for arrays and collections_** as shown below. Currently all methods are under the same namespace as the classes they extend. Therefore, the **_usage_** is to just add reference to the extension library, import the namespace like "System.Collections" as usual, and then benefit from the added methods.
+
+Each method may have multiple overloads. We are unable to present them one by one here, but these methods are very intuitive and have full XML documentation.
 
 ### 1. The "In" Method
 
@@ -78,17 +80,33 @@ if (dict.IsNotNullOrEmpty())
 
 **_IsNotEmpty_**: Returns true if a collection is not an empty collection (throws an NullReferenceException if it is a null reference).
 
-### 4. Collection to Concatenated String
+### 4. Convenient IndexOf
+
+Adds extension methods that dummpy the _Array.IndexOf_ static methods. Also adds support for searches of subarrays.
+
+```c#
+var arr = new [] {1, 2, 3, 4};
+arr.IndexOf(2); //returns 1, equivalent to Array.IndexOf(arr, 2)
+arr.IndexOf(2, 2); // searches for 2 starting at position 2 of the array, so returns -1
+arr.IndexOf(4, 1, 2); // searches for 4 starting at position 1 of the array, and only compares 2 elements afterwards, so returns -1
+arr.IndexOf(4, 1, 3); // return 3
+
+arr.IndexOf(new[] {3, 4}); // searches the subarray and returns 2.
+```
+
+**_IndexOf_**: Returns the index of the first occurrence of a target element or a target subarray in the current array.
+
+### 5. Collection to Concatenated String
 
 **_ToConcatString_**: Outputs a concatenated string representation for elements in a collection. For each element, their _ToString()_ method is used.
 
 ```c#
 var arr = new int[] {1,2,3};
-Console.WriteLine(arr.ToConcatString(',')); // prints "1,2,3"
-Console.WriteLine(arr.ToConcatString("--")); // prints "1--2--3"
+arr.ToConcatString(','); // returns "1,2,3"
+arr.ToConcatString("--"); // returns "1--2--3"
 ```
 
-### 5. Basic Operations on Array
+### 6. Basic Operations on Array
 
 It is not uncommon that we might need to just add/remove one specified item to/from an array, and return a new array with the item added/removed (for example, such addition/removal is rarely used by the client, and it is not desirable to complicate the code design with other data structure like list or linked list).
 
@@ -115,4 +133,3 @@ var merged = (new[] { arr, arr2, arr3, arr4, arr5, arr6, arr7}).Merge(); // merg
 **_Insert_**: Returns a new array with one or more elements inserted at the specified index.
 
 **_Merge_**: Merges a collection of arrays into a single array.
-
