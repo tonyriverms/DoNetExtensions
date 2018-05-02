@@ -1,7 +1,7 @@
 We believe these simple yet thoughtful "must-have" extensions would bring better consistency, readability and productivity to your code. This category currently includes:
-1. [Consistent Containment Check](#ConsistentContainmentCheck)
-3. [Consistent Emptiness Check](#ConsistentEmptinessCheck)
-7. [Value Swap](#ValueSwap)
+[Consistent Containment Check](#ConsistentContainmentCheck)
+[Consistent Emptiness Check](#ConsistentEmptinessCheck)
+[Value Swap](#ValueSwap)
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check -- The "In" Method
 
