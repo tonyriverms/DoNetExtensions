@@ -9,18 +9,27 @@ This initial release includes **_several extensions for arrays and collections_*
 
 Each method may have multiple overloads. We are unable to present them one by one here, but these methods are very intuitive and have full XML documentation.
 
-### 1. The "In" Method
+### 1. Consistent Containment Check -- The "In" Method
 
-Instead of "a.Contains(b)", we provide an alternative "b.In(a)", where "a" is a collection, and "b" is an element to check.
+Instead of "_a.Contains(b)_", we provide an alternative "_b.In(a)_". If "_a_" is a collection, the the method checks if "_b_" is an element in "_a_"; if "_a_" is a dictionary, then the method checks if "_b_" is a key in "_a_". This "In" method is somewhat "python" style, **_shorter_** and **_more consistent_**; besides that, it returns _false_ for null reference.
 
 ```c#
-var a = new[] {1,2,3};
-var b = 1;
-if (b.In(a))
-  Do something.
+var arr = new[] {1,2,3};
+if (1.In(arr)) // equivalent to arr.Contains(1)
+  Do something...
+
+var dict = new Dictionary<string, int> { { "a", 1 } };
+if ("a".In(dict)) // equivalent to dict.ContainsKey("a")
+  Do something...
+
+arr = null;
+1.In(arr); // returns false
+
+dict = null;
+"a".In(dict); // returns false
 ```
 
-**_In_**: returns true if the element to check is contained in an array/list/collection.
+**_In_**: returns true if the element to check is contained in an array/list/collection, or a key of a dictionary.
 
 ### 2. Collection to Array Conversion
 
@@ -42,7 +51,7 @@ arr = list.ToArrayOrNull(); // returns a null reference because list has been cl
 
 All added methods support conversion starting at a specified index.
 
-### 3. Unified Emptiness Check
+### 3. Consistent Emptiness Check
 
 Although incredibly useful, the emptiness of an array or a collection has to be checked in a clumsy way, even for today after 10 years.
 
@@ -67,7 +76,7 @@ var list = new List<int> { 1,2,3};
 if (list.IsNotNullOrEmpty())
   Do something...
   
-var dict = new Dictionary<string, int> { { "a", 1 } }
+var dict = new Dictionary<string, int> { { "a", 1 } };
 if (dict.IsNotNullOrEmpty())
   Do something...
 ```
