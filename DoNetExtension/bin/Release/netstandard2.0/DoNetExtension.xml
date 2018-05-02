@@ -1,0 +1,1839 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DoNetExtension</name>
+    </assembly>
+    <members>
+        <member name="M:System.ArrayEx.ToArrayOrNull``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Returns <c>null</c> if the current list is empty or <c>null</c>; otherwise returns a new array containing the elements of the current list.
+            </summary>
+            <typeparam name="T">The type of elements in the list.</typeparam>
+            <param name="list">The current list.</param>
+            <returns><c>null</c> if the current list is empty or <c>null</c>; otherwise, a new array containing the elements of the current list.</returns>
+        </member>
+        <member name="M:System.ArrayEx.ToArrayOrNull``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Returns <c>null</c> if the current list is empty or <c>null</c>; otherwise returns a new array containing the elements of the current list.
+            </summary>
+            <typeparam name="T">The type of elements in the list.</typeparam>
+            <param name="list">The current list.</param>
+            <returns><c>null</c> if the current list is empty or <c>null</c>; otherwise, a new array containing the elements of the current list.</returns>
+        </member>
+        <member name="M:System.ArrayEx.ToArrayOrNull``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns <c>null</c> if the current collection is empty or <c>null</c>; otherwise returns a new array containing the elements of the current list.
+            </summary>
+            <typeparam name="T">The type of elements in the collection.</typeparam>
+            <param name="collection">The current collection.</param>
+            <returns><c>null</c> if the current collection is empty or <c>null</c>; otherwise, a new array containing the elements of the current collection.</returns>
+        </member>
+        <member name="M:System.ArrayEx.ToArrayOrNull``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            Returns a new array containing the elements of the current list starting at the specified <paramref name="startIndex" />.
+            </summary>
+            <typeparam name="T">The type of elements in the list.</typeparam>
+            <param name="list">The current list.</param>
+            <param name="startIndex">The element at and after this position in the <paramref name="list"/> are copied to the new array.</param>
+            <returns><c>null</c> if the current list is empty or <c>null</c>, or there is no element at or after the specified <paramref name="startIndex"/>; otherwise, a new array containing the elements at and after the specified <paramref name="startIndex"/> of the current list.</returns>
+        </member>
+        <member name="M:System.ArrayEx.ToArrayOrNull``1(System.Collections.Generic.IList{``0},System.Int32)">
+            <summary>
+            Returns a new array containing the elements of the current list starting at the specified <paramref name="startIndex" />.
+            </summary>
+            <typeparam name="T">The type of elements in the list.</typeparam>
+            <param name="list">The current list.</param>
+            <param name="startIndex">The element at and after this position in the <paramref name="list"/> are copied to the new array.</param>
+            <returns><c>null</c> if the current list is empty or <c>null</c>, or there is no element at or after the specified <paramref name="startIndex"/>; otherwise, a new array containing the elements at and after the specified <paramref name="startIndex"/> of the current list.</returns>
+        </member>
+        <member name="M:System.ArrayEx.ToArrayOrNull``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            Returns a new array containing the elements of the current collection starting at the specified <paramref name="startIndex" />.
+            </summary>
+            <typeparam name="T">The type of elements in the collection.</typeparam>
+            <param name="collection">The current collection.</param>
+            <param name="startIndex">The element at and after this position in the <paramref name="collection"/> are copied to the new array.</param>
+            <returns><c>null</c> if the current collection is empty or <c>null</c>, or there is no element at or after the specified <paramref name="startIndex"/>; otherwise, a new array containing the elements at and after the specified <paramref name="startIndex"/> of the current collection.</returns>
+        </member>
+        <member name="M:System.ArrayEx.ToArrayThenClear``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Copies the elements of this <see cref="T:System.Collections.Generic.List`1"/> to an array of <typeparamref name="T"/> and then clear this <see cref="T:System.Collections.Generic.List`1"/>.
+            </summary>
+            <typeparam name="T">The type of elements in this <see cref="T:System.Collections.Generic.List`1"/>.</typeparam>
+            <param name="list">This list.</param>
+            <returns>An array containing copies of the elements of the <see cref="T:System.Collections.Generic.List`1"/>.</returns>
+        </member>
+        <member name="M:System.ArrayEx.ToArrayThenClear``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Copies the elements of this <see cref="T:System.Collections.Generic.IList`1"/> to an array of <typeparamref name="T"/> and then clear this <see cref="T:System.Collections.Generic.IList`1"/>.
+            </summary>
+            <typeparam name="T">The type of elements in this <see cref="T:System.Collections.Generic.IList`1"/>.</typeparam>
+            <param name="list">This list.</param>
+            <returns>An array containing copies of the elements of the <see cref="T:System.Collections.Generic.IList`1"/>.</returns>
+        </member>
+        <member name="M:System.ArrayEx.ToArrayOrNullThenClear``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Copies the elements of this <see cref="T:System.Collections.Generic.List`1"/> to an array of <typeparamref name="T"/> if this <see cref="T:System.Collections.Generic.List`1"/> is not <c>null</c> or empty, and then clear this <see cref="T:System.Collections.Generic.List`1"/>.
+            </summary>
+            <typeparam name="T">The type of elements in this <see cref="T:System.Collections.Generic.List`1"/>.</typeparam>
+            <param name="list">This list.</param>
+            <returns>An array containing copies of the elements of the <see cref="T:System.Collections.Generic.List`1"/> if it is neither <c>null</c> or empty; otherwise <c>null</c>.</returns>
+        </member>
+        <member name="M:System.ArrayEx.ToArrayOrNullThenClear``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Copies the elements of this <see cref="T:System.Collections.Generic.IList`1"/> to an array of <typeparamref name="T"/> if this <see cref="T:System.Collections.Generic.IList`1"/> is not <c>null</c> or empty, and then clear this <see cref="T:System.Collections.Generic.IList`1"/>.
+            </summary>
+            <typeparam name="T">The type of elements in this <see cref="T:System.Collections.Generic.IList`1"/>.</typeparam>
+            <param name="list">This list.</param>
+            <returns>An array containing copies of the elements of the <see cref="T:System.Collections.Generic.IList`1"/> if it is neither <c>null</c> or empty; otherwise <c>null</c>.</returns>
+        </member>
+        <member name="M:System.ArrayEx.IsEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Determines whether the current collection is empty.
+            </summary>
+            <typeparam name="T">The type of elements in the collection.</typeparam>
+            <param name="collection">The current collection.</param>
+            <returns><c>true</c> if the current collection is an empty collection.</returns>
+        </member>
+        <member name="M:System.ArrayEx.IsNotEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Determines whether the current collection is not empty.
+            </summary>
+            <typeparam name="T">The type of elements in the collection.</typeparam>
+            <param name="collection">The current collection.</param>
+            <returns><c>true</c> if the current collection is not empty; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.ArrayEx.IsEmpty``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Determines whether the current list is empty.
+            </summary>
+            <typeparam name="T">The type of elements in the list.</typeparam>
+            <param name="list">The current list.</param>
+            <returns><c>true</c> if the current list is empty.</returns>
+        </member>
+        <member name="M:System.ArrayEx.IsNotEmpty``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Determines whether the current list is not empty.
+            </summary>
+            <typeparam name="T">The type of elements in the list.</typeparam>
+            <param name="list">The current list.</param>
+            <returns><c>true</c> if the current list is not empty; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.ArrayEx.IsNullOrEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Determines whether the current collection is <c>null</c> or empty.
+            </summary>
+            <typeparam name="T">The type of elements in the collection.</typeparam>
+            <param name="collection">The current collection.</param>
+            <returns><c>true</c> if the current collection is a <c>null</c> reference or an empty collection.</returns>
+        </member>
+        <member name="M:System.ArrayEx.IsNotNullOrEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Determines whether the current collection is not <c>null</c> or empty.
+            </summary>
+            <typeparam name="T">The type of elements in the collection.</typeparam>
+            <param name="collection">The current collection.</param>
+            <returns><c>true</c> if the current collection is not a <c>null</c> reference or an empty collection; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:System.ArrayEx.IsNullOrEmpty``1(``0[])">
+            <summary>
+            Determines whether the current <see cref="T:System.Array"/> is <c>null</c> or empty.
+            </summary>
+            <typeparam name="T">The type of elements in the current array.</typeparam>
+            <param name="array">The current array.</param>
+            <returns><c>true</c> if the current array is a <c>null</c> reference or an empty array.</returns>
+        </member>
+        <member name="M:System.ArrayEx.IsNullOrEmpty``1(System.Collections.Generic.Stack{``0})">
+            <summary>
+            Determines whether the current <see cref="T:System.Collections.Generic.Stack`1"/> is <c>null</c> or empty.
+            </summary>
+            <typeparam name="T">The type of elements in the current stack.</typeparam>
+            <param name="stack">The current stack.</param>
+            <returns><c>true</c> if the current stack is a <c>null</c> reference or an empty stack.</returns>
+        </member>
+        <member name="M:System.ArrayEx.Insert``1(``0[],``0[],System.Int32)">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with items from another array inserted at the specified index.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="array">All elements of this array will be inserted at the specified <paramref name="index"/>.</param>
+            <param name="index">The zero-based index at which items from argument <paramref name="array"/> should be inserted.</param>
+            <returns>A new <see cref="T:System.Array"/> instance with all elements of the current array and items from another specified array inserted at the specified index.</returns>
+        </member>
+        <member name="M:System.ArrayEx.Insert``1(``0[],``0,System.Int32)">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with a given item inserted at the specified index.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="item">The item to be inserted at the specified <paramref name="index"/>.</param>
+            <param name="index">The zero-based index at which the <paramref name="item"/> should be inserted.</param>
+            <returns>A new <see cref="T:System.Array"/> instance with all elements of the current array and the given item inserted at the specified index. </returns>
+        </member>
+        <member name="M:System.ArrayEx.InternalShiftInsert``1(``0[],``0,System.Int32,System.Int32)">
+            <summary>
+            For internal use only. Inserts an element into the current array at a specified position by shifting rightward a number of elements at and after the insert position. The number is specified by <c><paramref name="shiftLimit"/> - <paramref name="index"/> - 1</c>. The element at position <c><paramref name="shiftLimit"/> - 1</c> will be removed. NOTE that this method bypasses the argument check for better performance.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="array">The current array.</param>
+            <param name="item">The new element to be inserted into the array.</param>
+            <param name="index">The shift begins at this position. <paramref name="item"/> will be placed at this position after the shift.</param>
+            <param name="shiftLimit">Defining the segment of the array where shift occurs starting at the position specified by <paramref name="index"/>. The number of elements shifted backward is determined by <c><paramref name="shiftLimit"/> - <paramref name="index"/> - 1</c>.</param>
+        </member>
+        <member name="M:System.ArrayEx.ShiftInsert``1(``0[],``0,System.Int32)">
+            <summary>
+            Inserts an element into the current array at a specified position by shifting rightward all the elements at and after the position. The last element of the array will be removed.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="array">The current array.</param>
+            <param name="item">The new element to be inserted into the array.</param>
+            <param name="index">The shift begins at this position. <paramref name="item"/> will be placed at this position after the shift.</param>
+        </member>
+        <member name="M:System.ArrayEx.ShiftInsert``1(``0[],``0,System.Int32,System.Int32)">
+            <summary>
+            Inserts an element into the current array at a specified position by shifting rightward a number of elements at and after the insert position. The number is specified by <c><paramref name="shiftLength"/> - 1</c>. The element at position <c><paramref name="index"/> + <paramref name="shiftLength"/> - 1</c> will be removed.
+            </summary>
+            <typeparam name="T">The type of elements in the arrray.</typeparam>
+            <param name="array">The current array.</param>
+            <param name="item">The new element to be inserted into the array.</param>
+            <param name="index">The shift begins at this position. <paramref name="item"/> will be placed at this position after the shift.</param>
+            <param name="shiftLength">Defining the segment of the array where shift occurs starting at position specified by <paramref name="index"/>. The number of elements shifted backward is determined by <c><paramref name="shiftLength"/> - 1</c>.</param>
+        </member>
+        <member name="M:System.ArrayEx.RemoveAt``1(``0[],System.Int32)">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with the item at the specified index removed.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="index">The index of the item to be removed.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that duplicates the current array with the item at the specified index removed. </returns>
+        </member>
+        <member name="M:System.ArrayEx.Remove``1(``0[],``0)">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with the specified <paramref name="item"/> removed if it is found; or returns the current array if <paramref name="item"/> is not found.
+            <para>You may check if the item is found be checking if the reference to the returned array equals the current array.</para>
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="item">The item to remove.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that duplicates the current array with the specified <paramref name="item"/> removed if it is found; otherwise, the current array.</returns>
+        </member>
+        <member name="M:System.ArrayEx.Remove``1(``0[],``0[])">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with the specified <paramref name="items"/> removed if they are found. This method always returns a new array.
+            <para>You may check if the item is found be checking if the reference to the returned array equals the current array.</para>
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="items">The items to remove.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that duplicates the current array with the specified <paramref name="items"/> removed if they are found.</returns>
+        </member>
+        <member name="M:System.ArrayEx.Remove``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            Returns an array that duplicates elements in the current collectino with the specified <paramref name="item"/> removed.
+            </summary>
+            <typeparam name="T">The type of elements in the current collection.</typeparam>
+            <param name="collection">The current collection.</param>
+            <param name="item">The item to remove.</param>
+            <returns>An array that duplicates elements in the current collectino with the specified <paramref name="item"/> removed.</returns>
+        </member>
+        <member name="M:System.ArrayEx.Remove``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns an array that duplicates elements in the current collectino with the specified <paramref name="items"/> removed.
+            </summary>
+            <typeparam name="T">The type of elements in the current collection.</typeparam>
+            <param name="collection">The current collection.</param>
+            <param name="items">The items to remove.</param>
+            <returns>An array that duplicates elements in the current collectino with the specified <paramref name="items"/> removed.</returns>
+        </member>
+        <member name="M:System.ArrayEx.InternalShiftRemove``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            For internal use only. Removes an element in the current array at a specified position by shifting a number of elements after the position foward. The number is specified by <c><paramref name="shiftLimit"/> - <paramref name="index"/> - 1</c>. The element at position <c><paramref name="shiftLimit"/> - 1</c> will be replaced the default value of type <typeparamref name="T"/>. NOTE that this method bypasses the argument check for better performance.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="array">The current array.</param>
+            <param name="index">The element at this position will be removed.</param>
+            <param name="shiftLimit">Defining the segment of the array where shift occurs starting at the position specified by <paramref name="index"/>. The number of elements shifted leftward is determined by <c><paramref name="shiftLimit"/> - <paramref name="index"/> - 1</c>.</param>
+        </member>
+        <member name="M:System.ArrayEx.ShiftRemove``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Removes an element in the current array at a specified position by shifting a number of elements after the position foward. The number is specified by <c><paramref name="shiftLength"/> - 1</c>. The element at position <c><paramref name="index"/> + <paramref name="shiftLength"/> - 1</c> will be replaced the default value of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of elements in the arrray.</typeparam>
+            <param name="array">The current array.</param>
+            <param name="index">The element at this position will be removed.</param>
+            <param name="shiftLength">Defining the segment of the array where shift occurs starting at position specified by <paramref name="index"/>. The number of elements shifted leftward is determined by <c><paramref name="shiftLength"/> - 1</c>.</param>
+        </member>
+        <member name="M:System.ArrayEx.ShiftRemove``1(``0[],System.Int32)">
+            <summary>
+            Removes an element in the current array at a specified position by shifting all the elements after the position foward. The last element of the array will be replaced the default value of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="array">The current array.</param>
+            <param name="index">The element at this position will be removed.</param>
+        </member>
+        <member name="M:System.ArrayEx.RemoveFirst``1(``0[])">
+            <summary>
+            Creates a new <see cref="T:System.Array" /> instance that duplicates the current array with the first item removed.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <returns>
+            A new <see cref="T:System.Array" /> instance that duplicates the current array with the first item removed.
+            </returns>
+        </member>
+        <member name="M:System.ArrayEx.RemoveLast``1(``0[])">
+            <summary>
+            Creates a new <see cref="T:System.Array" /> instance that duplicates the current array with the last item removed.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <returns>
+            A new <see cref="T:System.Array" /> instance that duplicates the current array with the last item removed.
+            </returns>
+        </member>
+        <member name="M:System.ArrayEx.AddLast``1(``0[],System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with specified collection of items appended at the end. However, if <paramref name="items"/> is <c>null</c> or empty, the instance of the current array will be returned. ALSO NOTE that the current array can be a <c>null</c> reference, in which case a new array containing objects in <paramref name="items"/> will be returned.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="items">The collection of items to be appended at the end.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that duplicates the current array with the specified itmes appended at the end.</returns>
+        </member>
+        <member name="M:System.ArrayEx.AddLast``1(``0[],System.Collections.Generic.IList{``0})">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with specified list of items appended at the end. However, if <paramref name="items"/> is <c>null</c> or empty, the instance of the current array will be returned. ALSO NOTE that the current array can be a <c>null</c> reference, in which case a new array containing objects in <paramref name="items"/> will be returned.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="items">The list of items to be appended at the end.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that duplicates the current array with the specified itmes appended at the end.</returns>
+        </member>
+        <member name="M:System.ArrayEx.AddLast``1(``0[],``0[])">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with specified items appended at the end. However, if <paramref name="items"/> is <c>null</c> or empty, the instance of the current array will be returned. ALSO NOTE that the current array can be a <c>null</c> reference, in which case a copy of <paramref name="items"/> will be returned.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="items">The items to be appended at the end.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that duplicates the current array with the specified itmes appended at the end.</returns>
+        </member>
+        <member name="M:System.ArrayEx.AddFirst``1(``0[],``0[])">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with spcified items inserted at the beginning. However, if <paramref name="items"/> is <c>null</c> or empty, the instance of the current array will be returned. ALSO NOTE that the current array can be a <c>null</c> reference.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="items">The items to be inserted at the beginning.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that duplicates the current array with the specified items inserted at the beginning.</returns>
+        </member>
+        <member name="M:System.ArrayEx.AddFirst``1(``0[],System.Collections.Generic.IList{``0})">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with specified list of items inserted at the beginning. However, if <paramref name="items"/> is <c>null</c> or empty, the instance of the current array will be returned. ALSO NOTE that the current array can be a <c>null</c> reference.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="items">The list of items to be inserted at the beginning.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that duplicates the current array with the specified items inserted at the beginning.</returns>
+        </member>
+        <member name="M:System.ArrayEx.AddLast``1(``0[],``0[][])">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with specified items appended at the end.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="arrayOfItems">Elements from all provided arrays will be appended at the end.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that duplicates the current array with the specified itmes appended at the end.</returns>
+        </member>
+        <member name="M:System.ArrayEx.AddFirst``1(``0[],``0[][])">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with spcified items inserted at the beginning.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="arrayOfItems">Elements from all provided arrays will be appended at the beginning.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that duplicates the current array with the specified items inserted at the beginning.</returns>
+        </member>
+        <member name="M:System.ArrayEx.AddLast``1(``0[],``0)">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with a specified item appended at the end.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="item">The item to be appended at the end.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that duplicates the current array with the specified item appended at the end.</returns>
+        </member>
+        <member name="M:System.ArrayEx.AddFirst``1(``0[],``0)">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that duplicates the current array with a specified item inserted at the beginning.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="sourceArray">The current array.</param>
+            <param name="item">The item to be inserted at the beginning.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that duplicates the current array with the specified item inserted at the beginning.</returns>
+        </member>
+        <member name="M:System.ArrayEx.GetValueOrDefault``1(System.Object[],System.Int32)">
+            <summary>
+            Gets the value at the specified position from this array; of the position is invalid (e.g. this array is <c>null</c> or empty, or the position exceeds this array's length), then a <c>default<typeparamref name="T"/>)</c> is returned.
+            </summary>
+            <typeparam name="T">They type of elements in the array.</typeparam>
+            <param name="array">The current array.</param>
+            <param name="index">The position of the element to retrieve.</param>
+            <returns>The value at the specified position from this array, if the position is valid; otherwise, <c>default<typeparamref name="T"/>)</c>.</returns>
+        </member>
+        <member name="M:System.ArrayEx.GetValueOrDefault``1(System.Object[],System.Int32,``0)">
+            <summary>
+            Gets the value at the specified position from this array; of the position is invalid (e.g. this array is <c>null</c> or empty, or the position exceeds this array's length), then the specified <paramref name="default" /> is returned.
+            </summary>
+            <typeparam name="T">They type of elements in the array.</typeparam>
+            <param name="array">The current array.</param>
+            <param name="index">The position of the element to retrieve.</param>
+            <param name="default">The default object to return when the <paramref name="index"/> is invalid.</param>
+            <returns>The value at the specified position from this array, if the position is valid; otherwise, the specified <paramref name="default" />.</returns>
+        </member>
+        <member name="M:System.ArrayEx.Swap``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Swaps two elements at the specified indexes.
+            </summary>
+            <typeparam name="T">The type of the elements of the array.</typeparam>
+            <param name="arr">The current array.</param>
+            <param name="indexA">The element at this index will be replaced by the element at <paramref name="indexB"/>.</param>
+            <param name="indexB">The element at this index will be replaced by the element at <paramref name="indexA"/>.</param>
+        </member>
+        <member name="M:System.ArrayEx.AsReadOnly``1(``0[])">
+            <summary>
+            Returns a read-only wrapper for the current array.
+            </summary>
+            <typeparam name="T">The type of the elements of the array.</typeparam>
+            <param name="array">The current array.</param>
+            <returns>A read-only <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> wrapper for the current array.</returns>
+        </member>
+        <member name="M:System.ArrayEx.AsReadOnly``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Returns a read-only wrapper for a segment of the current array.
+            </summary>
+            <typeparam name="T">The type of the elements of the array.</typeparam>
+            <param name="offset">The zero-based index of the first element of the segment.</param>
+            <param name="count">The number of elements in the segment.</param>
+            <param name="array">The current array.</param>
+            <returns>A read-only <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1"/> wrapper for the specified segment of the current array.</returns>
+        </member>
+        <member name="M:System.ArrayEx.Copy``1(``0[])">
+            <summary>
+            Creates a shallow copy of the current <see cref="T:System.Array"/>. This method is a simple wrap of the <see cref="!:Clone"/> method but returns a strong-typed array.
+            </summary>
+            <typeparam name="T">The type of elements in the current array.</typeparam>
+            <param name="array">The current array.</param>
+            <returns>A shallow copy of the current <see cref="T:System.Array"/>.</returns>
+        </member>
+        <member name="M:System.ArrayEx.Copy``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Creates a shallow copy of the current <see cref="T:System.Array" />, starting from <paramref name="startIndex" />, of length <paramref name="length" />.
+            </summary>
+            <typeparam name="T">The type of elements in the current array.</typeparam>
+            <param name="array">The current array.</param>
+            <param name="startIndex">The start position of the copy.</param>
+            <param name="length">The number of elements to copy.</param>
+            <returns>A shallow copy of the current <see cref="T:System.Array" />, starting from <paramref name="startIndex" />, of length <paramref name="length" />.</returns>
+        </member>
+        <member name="M:System.ArrayEx.Merge``1(``0[][])">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that merges all elements of the current <see cref="T:System.Array"/> objects.
+            </summary>
+            <typeparam name="T">The type of elements in every <see cref="T:System.Array"/>.</typeparam>
+            <param name="arrays">The current <see cref="T:System.Array"/> objects.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that merges all elements of the current <see cref="T:System.Array"/> objects.</returns>
+        </member>
+        <member name="M:System.ArrayEx.Merge``1(System.Collections.Generic.IEnumerable{``0[]})">
+            <summary>
+            Creates a new <see cref="T:System.Array"/> instance that merges all elements of the current collection of <see cref="T:System.Array"/> objects.
+            </summary>
+            <typeparam name="T">The type of elements in every <see cref="T:System.Array"/>.</typeparam>
+            <param name="arraySeq">The current collection of <see cref="T:System.Array"/> objects.</param>
+            <returns>A new <see cref="T:System.Array"/> instance that merges all elements of the current <see cref="T:System.Array"/> collection.</returns>
+        </member>
+        <member name="M:System.ArrayEx.ToConcatString(System.Collections.IEnumerable,System.String)">
+            <summary>
+            Returns a string that concatenates all string representations of the elements in the current <see cref="T:System.Collections.IEnumerable"/> sequence by the specified <paramref name="connector"/>.
+            </summary>
+            <param name="sequence">The sequence of which the elements' string representations are to be concatenated.</param>
+            <param name="connector">The connector that connects the string representations.</param>
+            <returns>A string that concatenates all string representations of the elements in the current enumerable sequence.</returns>
+        </member>
+        <member name="M:System.ArrayEx.ToConcatString(System.Collections.IEnumerable,System.Char)">
+            <summary>
+            Returns a string that concatenates all string representations of the elements in the current <see cref="T:System.Collections.IEnumerable"/> sequence by the specified <paramref name="connector"/>.
+            </summary>
+            <param name="sequence">The sequence of which the elements' string representations are to be concatenated.</param>
+            <param name="connector">The connector that connects the string representations.</param>
+            <returns>A string that concatenates all string representations of the elements in the current enumerable sequence.</returns>
+        </member>
+        <member name="M:System.ArrayEx.IndexOfSubArray``1(``0[],``0[])">
+            <summary>
+            Searches for the specified one-dimensional <paramref name="target"/> array in the current one-dimensional array of the same type of elements, and returns the index of its first occurrence. This method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <typeparam name="T">The type of elements in the current array.</typeparam>
+            <param name="src">The current array.</param>
+            <param name="target">The target array to locate in array.</param>
+            <returns>The index of the first occurrence of <paramref name="target"/> in the current array, if found; otherwise, -1.</returns>
+        </member>
+        <member name="M:System.ArrayEx.IndexOfSubArray``1(``0[],``0[],System.Func{``0,``0,System.Boolean})">
+            <summary>
+            Searches for the specified one-dimensional <paramref name="target" /> array in the current one-dimensional array of the same type of elements, and returns the index of its first occurrence. Equality comparison is based on the provided <paramref name="comparer"/>.
+            </summary>
+            <typeparam name="T">The type of elements in the current array.</typeparam>
+            <param name="src">The current array.</param>
+            <param name="target">The target array to locate in array.</param>
+            <param name="comparer">The comparer to determine if two element of <typeparamref name="T"/> equals.</param>
+            <returns>The index of the first occurrence of <paramref name="target" /> in the current array, if found; otherwise, -1.</returns>
+        </member>
+        <member name="M:System.ArrayEx.IndexOf``1(``0[],``0)">
+            <summary>
+            Searches for the specified object and returns the index of the first occurrence within the entire one-dimensional array. NOTE that this method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <typeparam name="T">The type of the elements of the array.</typeparam>
+            <param name="array">The current one-dimensional array to search.</param>
+            <param name="value">The object to locate in array.</param>
+            <returns>The index of the first occurrence of <paramref name="value"/> within the entire array, if found; otherwise, -1.</returns>
+            <remarks>This is a dummy method of the <c>Array.IndexOf</c> method for convenience.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+        </member>
+        <member name="M:System.ArrayEx.IndexOf``1(``0[],``0,System.Int32)">
+            <summary>
+            Searches for the specified object and returns the index of the first occurrence within the range of elements in this one-dimensional Array that starts at the specified index. NOTE that this method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <typeparam name="T">The type of the elements of the array.</typeparam>
+            <param name="array">The one-dimensional array to search.</param>
+            <param name="value">The object to locate in this array.</param>
+            <param name="startIndex">The starting index of the search. 0 (zero) is valid in an empty array.</param>
+            <returns>The index of the first occurrence of value within the range of elements in array that starts at <paramref name="startIndex"/>, if found; otherwise, -1.</returns>
+            <remarks>This is a dummy method of the <c>Array.IndexOf</c> method for convenience.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex"/> is outside the range of valid indexes for array.</exception>
+        </member>
+        <member name="M:System.ArrayEx.IndexOf``1(``0[],``0,System.Int32,System.Int32)">
+            <summary>
+            Searches for the specified object and returns the index of the first occurrence within the range of elements in this one-dimensional Array that starts at the specified index and contains the specified number of elements. NOTE that this method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <typeparam name="T">The type of the elements of the array.</typeparam>
+            <param name="array">The one-dimensional array to search.</param>
+            <param name="value">The object to locate in this array.</param>
+            <param name="startIndex">The starting index of the search. 0 (zero) is valid in an empty array.</param>
+            <param name="count">The number of elements in the section to search.</param>
+            <returns>The index of the first occurrence of value within the range of elements in array that starts at <paramref name="startIndex"/> and contains the number of elements specified in <paramref name="count"/>, if found; otherwise, -1.</returns>
+            <remarks>This is a dummy method of the <c>Array.IndexOf</c> method for convenience.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex"/> is outside the range of valid indexes for array; or <paramref name="count"/> is less than zero; or <paramref name="startIndex"/> and <paramref name="count"/> do not specify a valid section in array.</exception>
+        </member>
+        <member name="M:System.ArrayEx.IndexOf``1(System.Array,System.Object)">
+            <summary>
+            Searches for the specified object and returns the index of the first occurrence within the entire one-dimensional <see cref="T:System.Array"/>. NOTE that this method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <param name="array">The current one-dimensional <see cref="T:System.Array"/> to search.</param>
+            <param name="obj">The object to locate in array.</param>
+            <returns>The index of the first occurrence of value within the entire array, if found; otherwise, the lower bound of the array minus 1, typically -1.</returns>
+            <remarks>This is a dummy method of the <c>Array.IndexOf</c> method for convenience.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.RankException"><paramref name="array"/> is multidimensional.</exception>
+        </member>
+        <member name="M:System.ArrayEx.IndexOf(System.Array,System.Object,System.Int32)">
+            <summary>
+            Searches for the specified object and returns the index of the first occurrence within the range of elements in this one-dimensional Array that starts at the specified index. NOTE that this method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array" /> to search.</param>
+            <param name="value">The object to locate in this array.</param>
+            <param name="startIndex">The starting index of the search. 0 (zero) is valid in an empty array.</param>
+            <returns>The index of the first occurrence of value within the range of elements in array that starts at <paramref name="startIndex"/>, if found; otherwise, the lower bound of the array minus 1 (typically -1).</returns>
+            <remarks>This is a dummy method of the <c>Array.IndexOf</c> method for convenience.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.RankException"><paramref name="array"/> is multidimensional.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex"/> is outside the range of valid indexes for array.</exception>
+        </member>
+        <member name="M:System.ArrayEx.IndexOf(System.Array,System.Object,System.Int32,System.Int32)">
+            <summary>
+            Searches for the specified object and returns the index of the first occurrence within the range of elements in this one-dimensional Array that starts at the specified index and contains the specified number of elements. NOTE that this method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array" /> to search.</param>
+            <param name="value">The object to locate in this array.</param>
+            <param name="startIndex">The starting index of the search. 0 (zero) is valid in an empty array.</param>
+            <param name="count">The number of elements in the section to search.</param>
+            <returns>The index of the first occurrence of value within the range of elements in array that starts at <paramref name="startIndex"/> and contains the number of elements specified in <paramref name="count"/>, if found; otherwise, the lower bound of the array minus 1 (typically -1).</returns>
+            <remarks>This is a dummy method of the <c>Array.IndexOf</c> method for convenience.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.RankException"><paramref name="array"/> is multidimensional.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex"/> is outside the range of valid indexes for array; or <paramref name="count"/> is less than zero; or <paramref name="startIndex"/> and <paramref name="count"/> do not specify a valid section in array.</exception>
+        </member>
+        <member name="M:System.ArrayEx.LastIndexOf``1(``0[],``0)">
+            <summary>
+            Searches for the specified object and returns the index of the last occurrence within the entire one-dimensional <see cref="T:System.Array"/>. NOTE that this method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <typeparam name="T">The type of the elements of the array.</typeparam>
+            <param name="array">The current one-dimensional array to search.</param>
+            <param name="value">The object to locate in array.</param>
+            <returns>The index of the last occurrence of <paramref name="value"/> within the entire array, if found; otherwise, the lower bound of the array minus 1, typically -1.</returns>
+            <remarks>This is a dummy method of the <c>Array.LastIndexOf</c> method for convenience purpose.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+        </member>
+        <member name="M:System.ArrayEx.LastIndexOf``1(``0[],``0,System.Int32)">
+            <summary>
+            Searches for the specified object and returns the index of the last occurrence within the range of elements in this one-dimensional Array that starts at the specified index. NOTE that this method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <typeparam name="T">The type of the elements of the array.</typeparam>
+            <param name="array">The one-dimensional array to search.</param>
+            <param name="value">The object to locate in this array.</param>
+            <param name="startIndex">The starting index of the search. 0 (zero) is valid in an empty array.</param>
+            <returns>The index of the last occurrence of value within the range of elements in array that starts at <paramref name="startIndex"/>, if found; otherwise, the lower bound of the array minus 1 (typically -1).</returns>
+            <remarks>This is a dummy method of the <c>Array.LastIndexOf</c> method for convenience purpose.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex"/> is outside the range of valid indexes for array.</exception>
+        </member>
+        <member name="M:System.ArrayEx.LastIndexOf``1(``0[],``0,System.Int32,System.Int32)">
+            <summary>
+            Searches for the specified object and returns the index of the last occurrence within the range of elements in this one-dimensional Array that starts at the specified index and contains the specified number of elements. NOTE that this method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <typeparam name="T">The type of the elements of the array.</typeparam>
+            <param name="array">The one-dimensional array to search.</param>
+            <param name="value">The object to locate in this array.</param>
+            <param name="startIndex">The starting index of the search. 0 (zero) is valid in an empty array.</param>
+            <param name="count">The number of elements in the section to search.</param>
+            <returns>The index of the last occurrence of value within the range of elements in array that starts at <paramref name="startIndex"/> and contains the number of elements specified in <paramref name="count"/>, if found; otherwise, the lower bound of the array minus 1 (typically -1).</returns>
+            <remarks>This is a dummy method of the <c>Array.LastIndexOf</c> method for convenience purpose.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex"/> is outside the range of valid indexes for array; or <paramref name="count"/> is less than zero; or <paramref name="startIndex"/> and <paramref name="count"/> do not specify a valid section in array.</exception>
+        </member>
+        <member name="M:System.ArrayEx.LastIndexOf``1(System.Array,System.Object)">
+            <summary>
+            Searches for the specified object and returns the index of the last occurrence within the entire one-dimensional <see cref="T:System.Array"/>. NOTE that this method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <param name="array">The current one-dimensional <see cref="T:System.Array"/> to search.</param>
+            <param name="obj">The object to locate in array.</param>
+            <returns>The index of the last occurrence of value within the entire array, if found; otherwise, the lower bound of the array minus 1, typically -1.</returns>
+            <remarks>This is a dummy method of the <c>Array.LastIndexOf</c> method for convenience purpose.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.RankException"><paramref name="array"/> is multidimensional.</exception>
+        </member>
+        <member name="M:System.ArrayEx.LastIndexOf(System.Array,System.Object,System.Int32)">
+            <summary>
+            Searches for the specified object and returns the index of the last occurrence within the range of elements in this one-dimensional Array that starts at the specified index. NOTE that this method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array" /> to search.</param>
+            <param name="value">The object to locate in this array.</param>
+            <param name="startIndex">The starting index of the search. 0 (zero) is valid in an empty array.</param>
+            <returns>The index of the last occurrence of value within the range of elements in array that starts at <paramref name="startIndex"/>, if found; otherwise, the lower bound of the array minus 1 (typically -1).</returns>
+            <remarks>This is a dummy method of the <c>Array.LastIndexOf</c> method for convenience purpose.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.RankException"><paramref name="array"/> is multidimensional.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex"/> is outside the range of valid indexes for array.</exception>
+        </member>
+        <member name="M:System.ArrayEx.LastIndexOf(System.Array,System.Object,System.Int32,System.Int32)">
+            <summary>
+            Searches for the specified object and returns the index of the last occurrence within the range of elements in this one-dimensional Array that starts at the specified index and contains the specified number of elements. NOTE that this method performs an equality comparison by calling each element's <c>Equals</c> method.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array" /> to search.</param>
+            <param name="value">The object to locate in this array.</param>
+            <param name="startIndex">The starting index of the search. 0 (zero) is valid in an empty array.</param>
+            <param name="count">The number of elements in the section to search.</param>
+            <returns>The index of the last occurrence of value within the range of elements in array that starts at <paramref name="startIndex"/> and contains the number of elements specified in <paramref name="count"/>, if found; otherwise, the lower bound of the array minus 1 (typically -1).</returns>
+            <remarks>This is a dummy method of the <c>Array.LastIndexOf</c> method for convenience purpose.</remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="array"/> is null.</exception>
+            <exception cref="T:System.RankException"><paramref name="array"/> is multidimensional.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex"/> is outside the range of valid indexes for array; or <paramref name="count"/> is less than zero; or <paramref name="startIndex"/> and <paramref name="count"/> do not specify a valid section in array.</exception>
+        </member>
+        <member name="T:System.ElementSearchResult`1">
+            <summary>
+            Stores the result of an element search (usually by the <c>IndexOfAny</c> method of an array).
+            </summary>
+            <typeparam name="TElement">The type of the found element stored in this object.</typeparam>
+        </member>
+        <member name="F:System.ElementSearchResult`1.Position">
+            <summary>
+            The position of the found element (property <see cref="F:System.ElementSearchResult`1.Value"/>) in the original array.
+            </summary>
+        </member>
+        <member name="F:System.ElementSearchResult`1.Value">
+            <summary>
+            The found element.
+            </summary>
+        </member>
+        <member name="F:System.ElementSearchResult`1.HitIndex">
+            <summary>
+            The index of the found element in the element array to search.
+            </summary>
+        </member>
+        <member name="T:System.CharExtension">
+            <summary>
+            Provides rich methods to operate on a character instance.
+            </summary>
+        </member>
+        <member name="M:System.CharExtension.In(System.Char,System.String)">
+            <summary>
+            Determines whether this Unicode character exists in the specified string instance.
+            </summary>
+            <param name="c">This Unicode character.</param>
+            <param name="target">The string instance to search the current Unicode character.</param>
+            <returns>true if the specified string instance contains the current Unicode character; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.NotIn(System.Char,System.String)">
+            <summary>
+            Returns <c>true</c> if this Unicode character exists is not contained in the specified string instance.
+            </summary>
+            <param name="c">This Unicode character.</param>
+            <param name="target">The string instance to search the current Unicode character.</param>
+            <returns><c>true</c> if the specified string instance does not contain the current Unicode character; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.InAny(System.Char,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Determines whether this Unicode character exists in any element of the specified string sequence.
+            </summary>
+            <param name="c">This Unicode character.</param>
+            <param name="target">The string sequence whose elements will be searched for the current Unicode character.</param>
+            <returns>true if any element of the specified string sequence contains the current Unicode character; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.InAll(System.Char,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Determines whether this Unicode character exists in every element of the specified string sequence.
+            </summary>
+            <param name="c">This Unicode character.</param>
+            <param name="target">The string sequence whose elements will be searched for the current Unicode character.</param>
+            <returns>true if every element of the specified string sequence contains the current Unicode character; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.InAny(System.Char,System.String[])">
+            <summary>
+            Determines whether this Unicode character exists in any element of the specified string array.
+            </summary>
+            <param name="c">This Unicode character.</param>
+            <param name="target">The string array whose elements will be searched for the current Unicode character.</param>
+            <returns>true if any element of the specified string array contains the current Unicode character; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.InAll(System.Char,System.String[])">
+            <summary>
+            Determines whether this Unicode character exists in any element of the specified string array.
+            </summary>
+            <param name="c">This Unicode character.</param>
+            <param name="target">The string array whose elements will be searched for the current Unicode character.</param>
+            <returns>true if every element of the specified string array contains the current Unicode character; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.ToString(System.Char,System.Int32)">
+            <summary>
+            Returns a new instance of the <see cref="T:System.String"/> class to the value indicated by the current Unicode character repeated a specified number of times.
+            </summary>
+            <param name="c">A Unicode character.</param>
+            <param name="repeat">The number of times the current character repeats.</param>
+            <returns>A <see cref="T:System.String" /> that contains the current character repeated by the specified number of times.</returns>
+        </member>
+        <member name="M:System.CharExtension.GetNumericValue(System.Char)">
+            <summary>Converts the specified numeric Unicode character to a double-precision floating point number. This is a dummy method of <see cref="M:System.Char.GetNumericValue(System.Char)"/> for convenience.</summary>
+            <param name="c">The Unicode character to convert. </param>
+            <returns>The numeric value of the current character if that character represents a number; otherwise, -1.0.</returns>
+        </member>
+        <member name="M:System.CharExtension.ToUpper(System.Char,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the value of a Unicode character to its uppercase equivalent using the casing rules of the invariant culture. This is a dummy method of <see cref="M:System.Char.ToUpper(System.Char,System.Globalization.CultureInfo)" /> for convenience.
+            </summary>
+            <param name="c">The Unicode character to convert.</param>
+            <param name="culture">An object that supplies culture-specific casing rules.</param>
+            <returns>The uppercase equivalent of the current character, or the unchanged value of the current character, if the current character is already uppercase or not alphabetic.</returns>
+        </member>
+        <member name="M:System.CharExtension.ToLower(System.Char,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the value of a Unicode character to its lowercase equivalent using the casing rules of the invariant culture. This is a dummy method of <see cref="M:System.Char.ToLower(System.Char,System.Globalization.CultureInfo)" /> for convenience.
+            </summary>
+            <param name="c">The Unicode character to convert.</param>
+            <param name="culture">An object that supplies culture-specific casing rules.</param>
+            <returns>The lowercase equivalent of the current character, or the unchanged value of the current character, if  the current character is already lowercase or not alphabetic.</returns>
+        </member>
+        <member name="M:System.CharExtension.ToUpper(System.Char)">
+            <summary>
+            Gets the uppercase equivalent of the current Unicode character. This is a dummy method of <see cref="M:System.Char.ToUpperInvariant(System.Char)"/> for convenience.
+            </summary>
+            <param name="c">This Unicode character</param>
+            <returns>The uppercase equivalent of the current Unicode character, or the original value if it is already uppercase, has no uppercase equivalent, or is not alphabetic.</returns>
+        </member>
+        <member name="M:System.CharExtension.ToLower(System.Char)">
+            <summary>
+            Gets the lowercase equivalent of the current Unicode character. This is a dummy method of <see cref="M:System.Char.ToLowerInvariant(System.Char)"/> for convenience.
+            </summary>
+            <param name="c">This Unicode character</param>
+            <returns>The lowercase equivalent of the current Unicode character, 
+            or the original value if it is already lowercase, has no lowercase equivalent, or is not alphabetic.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsWhiteSpace(System.Char)">
+            <summary>
+            Indicates whether this instance of Unicode character is categorized as white space. This is a dummy method of <see cref="M:System.Char.IsWhiteSpace(System.Char)"/> for convenience.
+            </summary>
+            <param name="c">An instance of <see cref="T:System.Char"/></param>
+            <returns><c>true</c> if this instance of Unicode character is white space; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsDigit(System.Char)">
+            <summary>
+            Indicates whether this instance of Unicode character is categorized as a decimal digit. This is a dummy method of <see cref="M:System.Char.IsDigit(System.Char)"/> for convenience.
+            </summary>
+            <param name="c">An instance of <see cref="T:System.Char"/></param>
+            <returns><c>true</c> if this instance of Unicode character is a decimal digit; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsLetter(System.Char)">
+            <summary>
+            Indicates whether this instance of Unicode character is categorized as a letter. This is a dummy method of <see cref="M:System.Char.IsLetter(System.Char)"/> for convenience.
+            </summary>
+            <param name="c">An instance of <see cref="T:System.Char"/></param>
+            <returns><c>true</c> if this instance of Unicode character is a letter; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsASCIILetter(System.Char)">
+            <summary>
+            Inidcates whether this instance of Unicode character is categoriazed as an ASCII letter.
+            </summary>
+            <param name="c">An instance of <see cref="T:System.Char"/></param>
+            <returns><c>true</c> if this instance of Unicode character is an ASCII letter; otherwise, <c>false</c>.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:System.CharExtension.IsASCIIUpper(System.Char)" -->
+        <!-- Badly formed XML comment ignored for member "M:System.CharExtension.IsASCIILower(System.Char)" -->
+        <member name="M:System.CharExtension.IsASCIILetterOrDigit(System.Char)">
+            <summary>
+            Inidcates whether this instance of Unicode character is categoriazed as an ASCII letter or ASCII digit.
+            </summary>
+            <param name="c">An instance of <see cref="T:System.Char"/></param>
+            <returns><c>true</c> if this instance of Unicode character is an ASCII letter or an ASCII digit; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsASCIIDigit(System.Char)">
+            <summary>
+            Inidcates whether this instance of Unicode character is categoriazed as an ASCII digit (i.e. 0-9).
+            </summary>
+            <param name="c">An instance of <see cref="T:System.Char"/></param>
+            <returns><c>true</c> if this instance of Unicode character is an ASCII digit; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsASCII(System.Char)">
+            <summary>
+            Inidcates whether this instance of Unicode character is categoriazed as an ASCII character (i.e. the character's code is smaller than or equal to 127).
+            </summary>
+            <param name="c">An instance of <see cref="T:System.Char"/></param>
+            <returns><c>true</c> if this instance of Unicode character is an ASCII character; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsLetterOrDigit(System.Char)">
+            <summary>
+            Indicates whether this instance of Unicode character is categorized as a letter or a decimal digit. This is a dummy method of <see cref="M:System.Char.IsLetterOrDigit(System.Char)"/> for convenience.
+            </summary>
+            <param name="c">An instance of <see cref="T:System.Char"/></param>
+            <returns><c>true</c> if this instance of Unicode character is a letter or a decimal digit; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsUpper(System.Char)">
+            <summary>
+            Indicates whether this instance of Unicode character is categorized as an upper case letter. This is a dummy method of <see cref="M:System.Char.IsUpper(System.Char)"/> for convenience.
+            </summary>
+            <param name="c">An instance of <see cref="T:System.Char"/></param>
+            <returns><c>true</c> if this instance of Unicode character is an upper case letter; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsLower(System.Char)">
+            <summary>
+            Indicates whether this instance of Unicode character is categorized as a lower case letter. This is a dummy method of <see cref="M:System.Char.IsLower(System.Char)"/> for convenience.
+            </summary>
+            <param name="c">An instance of <see cref="T:System.Char"/></param>
+            <returns><c>true</c> if this instance of Unicode character is a lower case letter; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsPunctuation(System.Char)">
+            <summary>
+            Indicates whether this instance of Unicode character is categorized as a punctuation. This is a dummy method of <see cref="M:System.Char.IsPunctuation(System.Char)"/> for convenience.
+            </summary>
+            <param name="c">An instance of <see cref="T:System.Char"/></param>
+            <returns><c>true</c> if this instance of Unicode character is a punctuation; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsNumber(System.Char)">
+            <summary>
+            Indicates whether this instance of Unicode character is categorized as a number. This is a dummy method of <see cref="M:System.Char.IsNumber(System.Char)"/> for convenience.
+            </summary>
+            <param name="c">An instance of <see cref="T:System.Char"/></param>
+            <returns><c>true</c> if this instance of Unicode character is a number; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsCurrencySymbol(System.Char)">
+            <summary>
+            Determines whether the current character is the currency symbol under the current culture.
+            </summary>
+            <param name="c">The current character.</param>
+            <returns><c>true</c> the current character is a currency symbol under the current culture; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsCurrencySymbol(System.Char,System.Globalization.CultureInfo)">
+            <summary>
+            Determines whether the current character is the currency symbol under the specified culture.
+            </summary>
+            <param name="c">The current character.</param>
+            <param name="culture">An object that supplies culture-specific casing rules.</param>
+            <returns><c>true</c> the current character is a currency symbol under the specified culture; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsNegativeSign(System.Char)">
+            <summary>
+            Determines whether the current character represents the numerical negative sign under the current culture.
+            </summary>
+            <param name="c">The current character.</param>
+            <returns><c>true</c> the current character represents the numerical negative sign under the current culture; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.CharExtension.IsNegativeSign(System.Char,System.Globalization.CultureInfo)">
+            <summary>
+            Determines whether the current character represents the numerical negative sign under the specified culture.
+            </summary>
+            <param name="c">The current character.</param>
+            <param name="culture">An object that supplies culture-specific casing rules.</param>
+            <returns><c>true</c> the current character represents the numerical negative sign under the specified culture; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:System.ExceptionHelper">
+            <summary>
+            Provides frequently used exceptions and messages.
+            </summary>
+        </member>
+        <member name="M:System.ExceptionHelper.ArrayLengthCheck``1(System.Array,System.Int32,System.String)">
+            <summary>
+            For internal use only. Checks if the length of an array equals a specified value.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="array">The array to check.</param>
+            <param name="validLength">The length of the specified <paramref name="array"/> must equal this value.</param>
+            <param name="nameForTheArrayToCheck">The name for the array to check.</param>
+            <exception cref="T:System.ArgumentException">Occurs when the length of the specified array does not equal the valid value.</exception>
+        </member>
+        <member name="M:System.ExceptionHelper.MinMaxArgumentCheck(System.Object,System.Object,System.String,System.String)">
+            <summary>
+            Checks if <paramref name="min"/> is smaller or equal to <paramref name="max"/>. If not, an <see cref="T:System.ArgumentOutOfRangeException"/> will be thrown.
+            </summary>
+            <param name="min">The "min" argument.</param>
+            <param name="max">The "max" argument.</param>
+            <param name="argNameForMin">The name for the "min" argument.</param>
+            <param name="argNameForMax">The name for the "max argument".</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Occurs when <paramref name="min"/> is greater than <paramref name="max"/>.</exception>
+        </member>
+        <member name="M:System.ExceptionHelper.ForwardCheckStartIndexAndLength(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            For internal use only. Checks whether the arguments <paramref name="startIndex"/> and <paramref name="length"/> are valid for a forward search method.
+            </summary>
+            <param name="startIndex">The start index indicating the position of the first character of the search scope.</param>
+            <param name="length">The length of the search scope.</param>
+            <param name="searchLimit">The maximum value that <paramref name="startIndex"/> plus <paramref name="length"/> can reach.</param>
+            <param name="argNameForStartIndex">The argument name for <paramref name="startIndex"/> which will be displayed in the exception message.</param>
+            <param name="argNameForLength">The argument name for <paramref name="length"/> which will be displayed in the exception message.</param>
+            <returns>The end index, namely <paramref name="startIndex"/> plus <paramref name="length"/>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Occurs when the value of either <paramref name="startIndex"/> or <paramref name="length"/> is not valid.</exception>
+        </member>
+        <member name="M:System.ExceptionHelper.BackwardCheckStartIndexAndLength(System.Int32,System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            For internal use only. Checks whether the arguments <paramref name="startIndex"/> and <paramref name="length"/> are valid for a backward search method.
+            </summary>
+            <param name="startIndex">The start index indicating the position of the last character of the search scope.</param>
+            <param name="length">The length of the search scope.</param>
+            <param name="startIndexLimit">The integer immediately larger than maximum value which <paramref name="startIndex"/> can reach.</param>
+            <param name="argNameForStartIndex">The argument name for <paramref name="startIndex"/> which will be displayed in the exception message.</param>
+            <param name="argNameForLength">The argument name for <paramref name="length"/> which will be displayed in the exception message.</param>
+            <returns>The end index, namely <paramref name="startIndex"/> plus <paramref name="length"/>.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">Occurs when the value of either <paramref name="startIndex"/> or <paramref name="length"/> is not valid.</exception>
+        </member>
+        <member name="M:System.ExceptionHelper.ArgumentRangeRequired``1(System.String,``0,``0,System.Boolean,``0,System.Boolean)">
+            <summary>
+            Throws a <see cref="T:System.ArgumentOutOfRangeException"/> when the provided argument is out of range.
+            </summary>
+            <typeparam name="T">The type of the argument.</typeparam>
+            <param name="argumentName">The name of the argument. This name will be displayed in the exception message.</param>
+            <param name="argumentValue">The value of the argument.</param>
+            <param name="lowerBound">The lower bound of the valid range.</param>
+            <param name="lowerBoundInclusive"><c>true</c> to indicate the lower bound is inclusive; otherwise, <c>false</c>.</param>
+            <param name="higherBound">The higher bound of the valid range.</param>
+            <param name="higherBoundInclusive"><c>true</c> to indicate the higher bound is inclusive; otherwise, <c>false</c>.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:System.ExceptionHelper.GetArgumentOutOfRangeMessage(System.String,System.Object,System.Boolean,System.Object,System.Boolean)">
+            <summary>
+            Gets a message indicating the value of an argument is out of valid range.
+            </summary>
+            <param name="argumentName">The name of the argument whose value is out of range.</param>
+            <param name="lowerBound">The lower bound of the valid range.</param>
+            <param name="lowerBoundInclusive"><c>true</c> to indicate the lower bound is inclusive; otherwise, <c>false</c>.</param>
+            <param name="higherBound">The higher bound of the valid range.</param>
+            <param name="higherBoundInclusive"><c>true</c> to indicate the higher bound is inclusive; otherwise, <c>false</c>.</param>
+            <returns>A message indicating some argument's value is out of valid range.</returns>
+        </member>
+        <member name="M:System.ExceptionHelper.PositiveArgumentRequired(System.String,System.Object)">
+            <summary>
+            Throws a <see cref="T:System.ArgumentOutOfRangeException" /> when the provided argument is not positive.
+            </summary>
+            <param name="argumentName">The name of the argument whose value should be positive. This name will be displayed in the exception message.</param>
+            <param name="argumentValue">The value of the argument.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:System.ExceptionHelper.GetPositiveArgumentRequiredMessage(System.String)">
+            <summary>
+            Gets a message indicating an argument value should be positive yet it is assigned a non-positive value.
+            </summary>
+            <param name="argumentName">The name of the argument whose value should be positive.</param>
+            <returns>A message indicating the argument of the provided name should be positive.</returns>
+        </member>
+        <member name="M:System.ExceptionHelper.NonNegativeArgumentRequired(System.String,System.Object)">
+            <summary>
+            Throws a <see cref="T:System.ArgumentOutOfRangeException" /> when the provided argument is negative.
+            </summary>
+            <param name="argumentName">The name of the argument whose value should not be negative. This name will be displayed in the exception message.</param>
+            <param name="argumentValue">The value of the argument.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:System.ExceptionHelper.GetNonNegativeArgumentRequiredMessage(System.String)">
+            <summary>
+            Gets a message indicating an argument value should be non-negative yet it is assigned a negative value.
+            </summary>
+            <param name="argumentName">The name of the argument whose value should be non-negative.</param>
+            <returns>A message indicating the argument of the provided name should be non-negative.</returns>
+        </member>
+        <member name="M:System.ExceptionHelper.NonEmptyArrayRequired``1(``0[],System.String)">
+            <summary>
+            Throws a <see cref="T:System.ArgumentNullException" /> when the provided <paramref name="array" /> is <c>null</c>, or throws a <see cref="T:System.ArgumentException" /> when the provided <paramref name="array" /> is <c>empty</c>.
+            </summary>
+            <typeparam name="T">The type of the element in the array.</typeparam>
+            <param name="array">The array.</param>
+            <param name="arrayName">Provides the name of the array that will be shown in the exception message.</param>
+            <returns>The number of elements contained in <paramref name="array" />. This return is for your convenience.</returns>
+            <exception cref="T:System.ArgumentNullException">Occurs when <paramref name="array" /> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">Occurs when <paramref name="array" /> is empty.</exception>
+        </member>
+        <member name="M:System.ExceptionHelper.NonEmptyListRequired``1(System.Collections.Generic.IList{``0},System.String)">
+            <summary>
+            Throws a <see cref="T:System.ArgumentNullException" /> when the provided <paramref name="list" /> is <c>null</c>, or throws a <see cref="T:System.ArgumentException" /> when the provided <paramref name="list" /> is <c>empty</c>.
+            </summary>
+            <typeparam name="T">The type of the element in the list.</typeparam>
+            <param name="list">The list.</param>
+            <param name="listName">Provides the name of the list that will be shown in the exception message.</param>
+            <returns>The number of elements contained in <paramref name="list" />. This return is for your convenience.</returns>
+            <exception cref="T:System.ArgumentNullException">Occurs when <paramref name="list" /> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">Occurs when <paramref name="list" /> is empty.</exception>
+        </member>
+        <member name="M:System.ExceptionHelper.NonEmptyCollectionRequired``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Throws a <see cref="T:System.ArgumentNullException" /> when the provided <paramref name="collection" /> is <c>null</c>, or throws a <see cref="T:System.ArgumentException" /> when the provided <paramref name="collection" /> is <c>empty</c>.
+            </summary>
+            <typeparam name="T">The type of the element in the collection.</typeparam>
+            <param name="collection">The collection.</param>
+            <param name="collectionName">Name of the collection.</param>
+            <returns>The number of elements contained in <paramref name="collection" />. This return is for your convenience.</returns>
+            <exception cref="T:System.ArgumentNullException">Occurs when <paramref name="collection" /> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException">Occurs when <paramref name="collection" /> is empty.</exception>
+        </member>
+        <member name="M:System.ExceptionHelper.EqualArrayLengthRequired``2(``0[],``1[],System.String,System.String)">
+            <summary>
+            Throws an <see cref="T:System.ArgumentException"/> when the lengths of <paramref name="array1"/> and <paramref name="array2"/> are not equal.
+            </summary>
+            <typeparam name="TArray1">The type of element in <paramref name="array1"/>.</typeparam>
+            <typeparam name="TArray2">The type of element in <paramref name="array2"/>.</typeparam>
+            <param name="array1">The first array, whose length must be equal to <paramref name="array2"/>. This argument cannot be <c>null</c>.</param>
+            <param name="array2">The second array, whose length must be equal to <paramref name="array1"/>. This argument cannot be <c>null</c>.</param>
+            <param name="array1Name">The name for <paramref name="array1"/>.</param>
+            <param name="array2Name">The name for <paramref name="array2"/>.</param>
+            <returns>The length of <paramref name="array1"/> and <paramref name="array2"/>.</returns>
+            <exception cref="T:System.ArgumentException">Occurs when the lengths of <paramref name="array1"/> and <paramref name="array2"/> are not equal.</exception>
+        </member>
+        <member name="M:System.ExceptionHelper.EqualArrayLengthRequiredOrBothNull``2(``0[],``1[],System.String,System.String)">
+            <summary>
+            Throws an <see cref="T:System.ArgumentException"/> when the lengths of <paramref name="array1"/> and <paramref name="array2"/> are not equal; or only one of <paramref name="array1"/> and <paramref name="array2"/> is <c>null</c>.
+            </summary>
+            <typeparam name="TArray1">The type of element in <paramref name="array1"/>.</typeparam>
+            <typeparam name="TArray2">The type of element in <paramref name="array2"/>.</typeparam>
+            <param name="array1">The first array, whose length must be equal to <paramref name="array2"/>. This argument can be <c>null</c>, in which case <paramref name="array2"/> should also be <c>null</c>.</param>
+            <param name="array2">The second array, whose length must be equal to <paramref name="array1"/>. This argument can be <c>null</c>, in which case <paramref name="array1"/> should also be <c>null</c>.</param>
+            <param name="array1Name">The name for <paramref name="array1"/>.</param>
+            <param name="array2Name">The name for <paramref name="array2"/>.</param>
+            <returns>The length of <paramref name="array1"/> and <paramref name="array2"/>.</returns>
+            <exception cref="T:System.ArgumentException">Occurs when the lengths of <paramref name="array1"/> and <paramref name="array2"/> are not equal; or only one of <paramref name="array1"/> and <paramref name="array2"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:System.GeneralEx">
+            <summary>
+            Provides extension methods for a variety of built-in framework classes.
+            </summary>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.Int64@,System.Int64@)">
+            <summary>
+            Swaps the values of two long integers.
+            </summary>
+            <param name="x">The first long integer.</param>
+            <param name="y">The second long integer.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.UInt64@,System.UInt64@)">
+            <summary>
+            Swaps the values of two unsigned long integers.
+            </summary>
+            <param name="x">The first unsigned long integer.</param>
+            <param name="y">The second unsigned long integer.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.Int32@,System.Int32@)">
+            <summary>
+            Swaps the values of two integers.
+            </summary>
+            <param name="x">The first integer.</param>
+            <param name="y">The second integer.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.UInt32@,System.UInt32@)">
+            <summary>
+            Swaps the values of two unsigned integers.
+            </summary>
+            <param name="x">The first unsigned integer.</param>
+            <param name="y">The second unsigned integer.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.Int16@,System.Int16@)">
+            <summary>
+            Swaps the values of two short integers.
+            </summary>
+            <param name="x">The first short integer.</param>
+            <param name="y">The second short integer.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.UInt16@,System.UInt16@)">
+            <summary>
+            Swaps the values of two unsigned short integers.
+            </summary>
+            <param name="x">The first unsigned short integer.</param>
+            <param name="y">The second unsigned short integer.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.Byte@,System.Byte@)">
+            <summary>
+            Swaps the values of two bytes.
+            </summary>
+            <param name="x">The first byte.</param>
+            <param name="y">The second byte.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.SByte@,System.SByte@)">
+            <summary>
+            Swaps the values of two signed bytes.
+            </summary>
+            <param name="x">The first signed byte.</param>
+            <param name="y">The second signed byte.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.Char@,System.Char@)">
+            <summary>
+            Swaps the values of two characters.
+            </summary>
+            <param name="x">The first character.</param>
+            <param name="y">The second character.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.Boolean@,System.Boolean@)">
+            <summary>
+            Swaps the values of two bool values.
+            </summary>
+            <param name="x">The first bool value.</param>
+            <param name="y">The second bool value.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.Single@,System.Single@)">
+            <summary>
+            Swaps the values of two <see cref="T:System.Single"/> values.
+            </summary>
+            <param name="x">The first <see cref="T:System.Single"/> value.</param>
+            <param name="y">The second <see cref="T:System.Single"/> value.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.Double@,System.Double@)">
+            <summary>
+            Swaps the values of two <see cref="T:System.Double"/> values.
+            </summary>
+            <param name="x">The first <see cref="T:System.Double"/> value.</param>
+            <param name="y">The second <see cref="T:System.Double"/> value.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap(System.DateTime@,System.DateTime@)">
+            <summary>
+            Swaps the values of two <see cref="T:System.DateTime"/> values.
+            </summary>
+            <param name="x">The first <see cref="T:System.DateTime"/> value.</param>
+            <param name="y">The second <see cref="T:System.DateTime"/> value.</param>
+        </member>
+        <member name="M:System.GeneralEx.Swap``1(``0@,``0@)">
+            <summary>
+            Swaps the values of two <see cref="T:System.DateTime"/> values.
+            </summary>
+            <param name="x">The first <see cref="T:System.DateTime"/> value.</param>
+            <param name="y">The second <see cref="T:System.DateTime"/> value.</param>
+        </member>
+        <member name="M:System.GeneralEx.In``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Determines whether this object is in a sequence. If the sequence is null or empty, <c>false</c> is always returned.
+            </summary>
+            <typeparam name="T">The type of this object.</typeparam>
+            <param name="obj">This object.</param>
+            <param name="sequence">A sequence of objects.</param>
+            <returns><c>true</c> if this object is found in the specified sequence; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.GeneralEx.InAny``1(``0,System.Collections.Generic.IEnumerable{``0}[])">
+            <summary>
+            Determines whether this object is in any of the provided sequences. If <paramref name="sequences"/> is null or empty, <c>false</c> is always returned.
+            </summary>
+            <typeparam name="T">The type of this object.</typeparam>
+            <param name="obj">This object.</param>
+            <param name="sequences">An array of sequences to check.</param>
+            <returns><c>true</c> if this object is found in any of the provided sequences; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.GeneralEx.InAll``1(``0,System.Collections.Generic.IEnumerable{``0}[])">
+            <summary>
+            Determines whether this object is in all of the provided sequences. If <paramref name="sequences"/> is null or empty, <c>false</c> is always returned.
+            </summary>
+            <typeparam name="T">The type of this object.</typeparam>
+            <param name="obj">This object.</param>
+            <param name="sequences">An array of sequences to check.</param>
+            <returns><c>true</c> if this object is found in all of the provided sequences; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.GeneralEx.In``2(``0,System.Collections.Generic.IDictionary{``0,``1})">
+            <summary>
+            Determines whether this object is a key in a dictionary. If the dictionary is null or empty, <c>false</c> is always returned.
+            </summary>
+            <typeparam name="T">The type of the object as well as the key of the dictionary.</typeparam>
+            <typeparam name="TValue">The type of value of the dictionary.</typeparam>
+            <param name="obj">This object.</param>
+            <param name="dict">The dictionary.</param>
+            <returns><c>true</c> if <paramref name="obj"/> is a key in <paramref name="dict"/>, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:System.GeneralEx.InAny``2(``0,System.Collections.Generic.IDictionary{``0,``1}[])">
+            <summary>
+            Determines whether this object is a key in any of the provided dictionaries. If the <paramref name="dicts"/> is null or empty, <c>false</c> is always returned.
+            </summary>
+            <typeparam name="T">The type of the object as well as the key of the dictionary.</typeparam>
+            <typeparam name="TValue">The type of value of the dictionary.</typeparam>
+            <param name="obj">This object.</param>
+            <param name="dicts">The dictionaryies to check.</param>
+            <returns><c>true</c> if <paramref name="obj"/> is a key in any of the provided <paramref name="dicts"/>, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:System.GeneralEx.InAll``2(``0,System.Collections.Generic.IDictionary{``0,``1}[])">
+            <summary>
+            Determines whether this object is a key in all of the provided dictionaries. If the <paramref name="dicts"/> is null or empty, <c>false</c> is always returned.
+            </summary>
+            <typeparam name="T">The type of the object as well as the key of the dictionary.</typeparam>
+            <typeparam name="TValue">The type of value of the dictionary.</typeparam>
+            <param name="obj">This object.</param>
+            <param name="dicts">The dictionaryies to check.</param>
+            <returns><c>true</c> if <paramref name="obj"/> is a key in all of the provided <paramref name="dicts"/>, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:System.GeneralEx.In``1(``0,System.Collections.Generic.IList{``0})">
+            <summary>
+            Determines whether this object is in an array/list. If the array/list is null or empty, this method always returns <c>false</c>.
+            </summary>
+            <typeparam name="T">The type of this object.</typeparam>
+            <param name="obj">This object.</param>
+            <param name="list">An array/list of objects.</param>
+            <returns><c>true</c> if this object is in the specified array/list; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.GeneralEx.In``1(``0,``0[])">
+            <summary>
+            Determines whether this object is in an array of objects. NOTE that if the array is <c>null</c> or empty, this method always returns <c>false</c>.
+            </summary>
+            <typeparam name="T">The type of this object.</typeparam>
+            <param name="obj">This object.</param>
+            <param name="array">An array of objects.</param>
+            <returns><c>true</c> if this object is in the specified array; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.GeneralEx.NotIn``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Determines whether this object is in a sequence. If the sequence is null or empty, <c>false</c> is always returned.
+            </summary>
+            <typeparam name="T">The type of this object.</typeparam>
+            <param name="obj">This object.</param>
+            <param name="sequence">A sequence of objects.</param>
+            <returns><c>true</c> if this object is found in the specified sequence; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.GeneralEx.NotIn``2(``0,System.Collections.Generic.IDictionary{``0,``1})">
+            <summary>
+            Determines whether this object is a key in a dictionary. If the dictionary is null or empty, <c>false</c> is always returned.
+            </summary>
+            <typeparam name="T">The type of the object as well as the key of the dictionary.</typeparam>
+            <typeparam name="TValue">The type of value of the dictionary.</typeparam>
+            <param name="obj">This object.</param>
+            <param name="dict">The dictionary.</param>
+            <returns><c>true</c> if <paramref name="obj"/> is a key in <paramref name="dict"/>, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="M:System.GeneralEx.NotIn``1(``0,System.Collections.Generic.IList{``0})">
+            <summary>
+            Determines whether this object is in an array/list. If the array/list is null or empty, this method always returns <c>false</c>.
+            </summary>
+            <typeparam name="T">The type of this object.</typeparam>
+            <param name="obj">This object.</param>
+            <param name="list">An array/list of objects.</param>
+            <returns><c>true</c> if this object is in the specified array/list; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.GeneralEx.NotIn``1(``0,``0[])">
+            <summary>
+            Determines whether this object is in an array of objects. NOTE that if the array is <c>null</c> or empty, this method always returns <c>false</c>.
+            </summary>
+            <typeparam name="T">The type of this object.</typeparam>
+            <param name="obj">This object.</param>
+            <param name="array">An array of objects.</param>
+            <returns><c>true</c> if this object is in the specified array; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.GeneralEx.Low(System.Byte)">
+            <summary>
+            Gets the lower 4 bits of this byte positioned the lower half of the returned byte. For example, the return value of <see cref="M:System.GeneralEx.Low(System.Byte)"/> of 01100100 is 00000100.
+            </summary>
+            <param name="value">This byte.</param>
+            <returns>The lower 4 bits of this byte.</returns>
+        </member>
+        <member name="M:System.GeneralEx.High(System.Byte)">
+            <summary>
+            Gets the higher 4 bits of this byte positioned the lower half of the returned byte. For example, the return value of <see cref="M:System.GeneralEx.High(System.Byte)"/> of 01100100 is 00000110.
+            </summary>
+            <param name="value">This byte.</param>
+            <returns>The higher 4 bits of this byte.</returns>
+        </member>
+        <member name="M:System.GeneralEx.Low(System.Int16)">
+            <summary>
+            Gets the lower 8 bits of this 16-bit integer, represented by a 8-bit byte.
+            </summary>
+            <param name="value">This 16-bit integer.</param>
+            <returns>The lower 8 bits of this 16-bit integer, represented by a 8-bit byte.</returns>
+        </member>
+        <member name="M:System.GeneralEx.High(System.Int16)">
+            <summary>
+            Gets the higher 8 bits of this 16-bit integer.
+            </summary>
+            <param name="value">This 16-bit integer.</param>
+            <returns>The higher 8 bits of this 16-bit integer, represented by a 8-bit byte.</returns>
+        </member>
+        <member name="M:System.GeneralEx.Low(System.UInt16)">
+            <summary>
+            Gets the lower 8 bits of this 16-bit unsigned integer, represented by a 8-bit byte.
+            </summary>
+            <param name="value">This 16-bit integer.</param>
+            <returns>The lower 8 bits of this 16-bit unsigned integer, represented by a 8-bit byte.</returns>
+        </member>
+        <member name="M:System.GeneralEx.High(System.UInt16)">
+            <summary>
+            Gets the higher 8 bits of this 16-bit unsigned integer, represented by a 8-bit byte.
+            </summary>
+            <param name="value">This 16-bit integer.</param>
+            <returns>The higher 8 bits of this 16-bit unsigned integer, represented by a 8-bit byte.</returns>
+        </member>
+        <member name="M:System.GeneralEx.Low(System.Int32)">
+            <summary>
+            Gets the lower 16 bits of this 32-bit integer, represented by a 16-bit unsigned integer.
+            </summary>
+            <param name="value">This 32-bit integer.</param>
+            <returns>The lower 16 bits of this 32-bit integer, represented by a 16-bit unsigned integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.High(System.Int32)">
+            <summary>
+            Gets the higher 16 bits of this 32-bit integer, represented by a 16-bit unsigned integer.
+            </summary>
+            <param name="value">This 32-bit integer.</param>
+            <returns>The higher 16 bits of this 32-bit unsigned integer, represented by a 16-bit unsigned integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.Low(System.UInt32)">
+            <summary>
+            Gets the lower 16 bits of this 32-bit unsigned integer, represented by a 16-bit unsigned integer.
+            </summary>
+            <param name="value">This 32-bit integer.</param>
+            <returns>The lower 16 bits of this 32-bit integer, represented by a 16-bit unsigned integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.High(System.UInt32)">
+            <summary>
+            Gets the higher 16 bits of this 32-bit unsigned integer, represented by a 16-bit unsigned integer.
+            </summary>
+            <param name="value">This 32-bit integer.</param>
+            <returns>The higher 16 bits of this 32-bit unsigned integer, represented by a 16-bit unsigned integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.Low(System.Int64)">
+            <summary>
+            Gets the lower 32 bits of this 64-bit integer, represented by a 32-bit unsigned integer.
+            </summary>
+            <param name="value">This 64-bit integer.</param>
+            <returns>The lower 32 bits of this 64-bit integer, represented by a 32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.High(System.Int64)">
+            <summary>
+            Gets the higher 32 bits of this 64-bit integer, represented by a 32-bit unsigned integer.
+            </summary>
+            <param name="value">This 64-bit integer.</param>
+            <returns>The lower 32 bits of this 64-bit integer, represented by a 32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.Low(System.UInt64)">
+            <summary>
+            Gets the lower 32 bits of this 64-bit unsigned integer, represented by a 32-bit unsigned integer.
+            </summary>
+            <param name="value">This 64-bit integer.</param>
+            <returns>The lower 32 bits of this 64-bit unsigned integer, represented by a 32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.High(System.UInt64)">
+            <summary>
+            Gets the higher 32 bits of this 64-bit unsigned integer, represented by a 32-bit unsigned integer
+            </summary>
+            <param name="value">This 64-bit integer.</param>
+            <returns>The lower 32 bits of this 64-bit unsigned integer, represented by a 32-bit unsigned integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToHex(System.UInt64,System.Boolean)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent hex string representation.
+            </summary>
+            <param name="number">This integer.</param>
+            <param name="fullLength">Indicates whether this integer will be converted to a full-length hex equivalent. 
+            For example, integer 10 will be converted to "A" if this parameter is set false and "000000000000000A" if otherwise.</param>
+            <returns>A hex string equivalent to the current integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToHex(System.Int64,System.Boolean)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent hex string representation.
+            </summary>
+            <param name="number">This integer.</param>
+            <param name="fullLength">Indicates whether this integer will be converted to a full-length hex equivalent. 
+            For example, integer 10 will be converted to "A" if this parameter is set false and "000000000000000A" if otherwise.</param>
+            <returns>A hex string equivalent to the current integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToHex(System.UInt32,System.Boolean)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent hex string representation.
+            </summary>
+            <param name="number">This integer.</param>
+            <param name="fullLength">Indicates whether this integer will be converted to a full-length hex equivalent. 
+            For example, integer 10 will be converted to "A" if this parameter is set false and "0000000A" if otherwise.</param>
+            <returns>A hex string equivalent to the current integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToHex(System.Int32,System.Boolean)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent hex string representation.
+            </summary>
+            <param name="number">This integer.</param>
+            <param name="fullLength">Indicates whether this integer will be converted to a full-length hex equivalent. 
+            For example, integer 10 will be converted to "A" if this parameter is set false and "0000000A" if otherwise.</param>
+            <returns>A hex string equivalent to the current integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToHex(System.UInt16,System.Boolean)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent hex string representation.
+            </summary>
+            <param name="number">This integer.</param>
+            <param name="fullLength">Indicates whether this integer will be converted to a full-length hex equivalent. 
+            For example, integer 10 will be converted to "A" if this parameter is set false and "000A" if otherwise.</param>
+            <returns>A hex string equivalent to the current integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToHex(System.Int16,System.Boolean)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent hex string representation.
+            </summary>
+            <param name="number">This integer.</param>
+            <param name="fullLength">Indicates whether this integer will be converted to a full-length hex equivalent. 
+            For example, integer 10 will be converted to "A" if this parameter is set false and "000A" if otherwise.</param>
+            <returns>A hex string equivalent to the current integer.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToHex(System.Byte,System.Boolean)">
+            <summary>
+            Converts this byte to its equivalent hex string representation.
+            </summary>
+            <param name="number">This integer.</param>
+            <param name="fullLength">Indicates whether this integer will be converted to a full-length hex equivalent. 
+            For example, integer 10 will be converted to "A" if this parameter is set false and "0A" if otherwise.</param>
+            <returns>A hex string equivalent to the current byte.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToHex(System.SByte,System.Boolean)">
+            <summary>
+            Converts this byte to its equivalent hex string representation.
+            </summary>
+            <param name="number">This integer.</param>
+            <param name="fullLength">Indicates whether this integer will be converted to a full-length hex equivalent. 
+            For example, integer 10 will be converted to "A" if this parameter is set false and "0A" if otherwise.</param>
+            <returns>A hex string equivalent to the current byte.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToHex(System.Byte[])">
+            <summary>
+            Converts this byte array to its equivalent hex string representation. For example, array {5, 18, 123, 214} will be converted to "05127BD6".
+            </summary>
+            <param name="bytes">This byte array.</param>
+            <returns>A hex string equivalent to the current byte array.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToHex(System.Byte[],System.Char)">
+            <summary>
+            Converts this byte array to its equivalent hex string representation. A Unicode character is used to delimiter values.
+            For example, array {5, 18, 123, 214} will be converted to "05 12 7B D6" if a single space is used as the delimiter.
+            </summary>
+            <param name="bytes">This byte array.</param>
+            <param name="delimiter">The delimiter used to delimit the hex string representations in the output string.</param>
+            <returns>A hex string equivalent to the current byte array.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToHex(System.Byte[],System.String)">
+            <summary>
+            Converts this byte array to its equivalent hex string representation. A string is used to delimiter values.
+            For example, array {5, 18, 123, 214} will be converted to "05 , 12 , 7B , D6" if string " , " is used as the delimiter.
+            </summary>
+            <param name="bytes">This byte array.</param>
+            <param name="delimiter">The delimiter used to delimit the hex string representations in the output string.</param>
+            <returns>A hex string equivalent to the current byte array.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToBytes(System.UInt32)">
+            <summary>
+            Converts the numeric value of this instance to a byte array.
+            </summary>
+            <param name="value">This value.</param>
+            <returns>A byte array converted from the numeric value of the current instance.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToBytes(System.UInt64)">
+            <summary>
+            Converts the numeric value of this instance to a byte array.
+            </summary>
+            <param name="value">This value.</param>
+            <returns>A byte array converted from the numeric value of the current instance.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToBytes(System.UInt16)">
+            <summary>
+            Converts the numeric value of this instance to a byte array.
+            </summary>
+            <param name="value">This value.</param>
+            <returns>A byte array converted from the numeric value of the current instance.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToBytes(System.Int32)">
+            <summary>
+            Converts the numeric value of this instance to a byte array.
+            </summary>
+            <param name="value">This value.</param>
+            <returns>A byte array converted from the numeric value of the current instance.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToBytes(System.Int64)">
+            <summary>
+            Converts the numeric value of this instance to a byte array.
+            </summary>
+            <param name="value">This value.</param>
+            <returns>A byte array converted from the numeric value of the current instance.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToBytes(System.Int16)">
+            <summary>
+            Converts the numeric value of this instance to a byte array.
+            </summary>
+            <param name="value">This value.</param>
+            <returns>A byte array converted from the numeric value of the current instance.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToBytes(System.Double)">
+            <summary>
+            Converts the numeric value of this instance to a byte array.
+            </summary>
+            <param name="value">This value.</param>
+            <returns>A byte array converted from the numeric value of the current instance.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToBytes(System.Single)">
+            <summary>
+            Converts the numeric value of this instance to a byte array.
+            </summary>
+            <param name="value">This value.</param>
+            <returns>A byte array converted from the numeric value of the current instance.</returns>
+        </member>
+        <member name="M:System.GeneralEx.ToBytes(System.DateTime)">
+            <summary>
+            Converts the numeric value of this instance to a byte array.
+            </summary>
+            <param name="value">This value.</param>
+            <returns>A byte array converted from the numeric value of the current instance.</returns>
+        </member>
+        <member name="M:System.GeneralEx.InclusiveBetween``1(``0,``0,``0)">
+            <summary>
+            Determines whether this comparable object is inclusively between two bounds.
+            <para>For example, both 1,2 is inclusively between 1 and 3.</para>
+            </summary>
+            <typeparam name="T">A type that conforms to System.IComparable{T} interface.</typeparam>
+            <param name="obj">This comparable object.</param>
+            <param name="lowerBound">The lower bound to compare.</param>
+            <param name="upperBound">The upper bound to compare.</param>
+            <returns>true if this comparable object is inclusively between the given bounds; otherwise, false.</returns>
+        </member>
+        <member name="M:System.GeneralEx.Between``1(``0,``0,``0)">
+            <summary>
+            Determines whether this comparable object is between two bounds.
+            <para>For example, both 2 is between 1 and 3, but 1 is not between 1 and 3.</para>
+            </summary>
+            <typeparam name="T">A type that conforms to System.IComparable{T} interface.</typeparam>
+            <param name="obj">This comparable object.</param>
+            <param name="lowerBound">The lower bound to compare.</param>
+            <param name="upperBound">The upper bound to compare.</param>
+            <returns>true if this comparable object is between the given bounds; otherwise, false.</returns>
+        </member>
+        <member name="M:System.GeneralEx.IsNull(System.Object)">
+            <summary>
+            Returns <c>true</c> if the current object is a <c>null</c> reference.
+            </summary>
+            <param name="obj">The current object.</param>
+            <returns>Returns <c>true</c> if the current object is a <c>null</c> reference; otherwise, returns <c>false</c>.</returns>
+        </member>
+        <member name="M:System.GeneralEx.IsNotNull(System.Object)">
+            <summary>
+            Returns <c>true</c> if the current object is not a <c>null</c> reference.
+            </summary>
+            <param name="obj">The current object.</param>
+            <returns>Returns <c>true</c> if the current object is not a <c>null</c> reference; otherwise, returns <c>false</c>.</returns>
+        </member>
+        <member name="M:System.GeneralEx.Reset(System.Timers.Timer)">
+            <summary>
+            Restarts this System.Timers.Timer object.
+            </summary>
+            <param name="timer">The System.Timers.Timer object to reset.</param>
+        </member>
+        <member name="M:System.GeneralEx.ToString(System.Text.StringBuilder,System.Boolean)">
+            <summary>
+            Converts the value of this instance to a string.
+            </summary>
+            <param name="builder">A System.StringBuilder object.</param>
+            <param name="clear">Specifies whether to clear the content of this System.StringBuilder object after conversion.</param>
+            <returns>A string whose value is the same as this instance.</returns>
+        </member>
+        <member name="T:System.Swapper">
+            <summary>
+            Provides methods to swap values of two objects.
+            </summary>
+        </member>
+        <member name="M:System.Swapper.Swap``1(``0@,``0@)">
+            <summary>
+            Swap the values of two objects.
+            </summary>
+            <param name="x">The first object.</param>
+            <param name="y">The second object.</param>
+        </member>
+        <member name="M:System.StringEx.IsNullOrEmpty(System.String)">
+            <summary>
+            Returns <c>true</c> if current string instance is null or empty. This is a dummy of <see cref="M:System.String.IsNullOrEmpty(System.String)"/> method for convenience.
+            </summary>
+            <param name="str">This string instance.</param>
+            <returns><c>true</c> if this string instance is null or empty; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.StringEx.IsEmpty(System.String)">
+            <summary>
+            Returns <c>true</c> if the current string instance is empty.
+            </summary>
+            <param name="str">The string instance.</param>
+            <returns><c>true</c> if the current string is empty; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.StringEx.IsEmptyOrBlank(System.String)">
+            <summary>
+            Indicates whether the current string instance is empty or contains only whitespace characters defined by <see cref="M:System.Char.IsWhiteSpace(System.Char)"/>.
+            </summary>
+            <param name="str">This string instance.</param>
+            <returns><c>true</c> if this string instance is empty or contains only whitespace characters; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.NullReferenceException">Occurs when <paramref name="str"/> is a <c>null</c> reference.</exception>
+        </member>
+        <member name="M:System.StringEx.IsNullOrEmptyOrBlank(System.String)">
+            <summary>
+            Indicates whether the current string instance is null, empty or contains only white space characters defined by <see cref="M:System.Char.IsWhiteSpace(System.Char)"/>.
+            </summary>
+            <param name="str">This string instance.</param>
+            <returns><c>true</c> if this string instance is null or empty or contains only white space characters; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.StringEx.IsNotNullOrEmpty(System.String)">
+            <summary>
+            Returns <c>true</c> if current string instance is not null and not empty.
+            </summary>
+            <param name="str">This string instance.</param>
+            <returns><c>true</c> if this string instance is not null and not empty; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.StringEx.IsNotEmpty(System.String)">
+            <summary>
+            Returns <c>true</c> if the current string instance is not empty.
+            </summary>
+            <param name="str">The string instance.</param>
+            <returns><c>true</c> if the current string is not empty; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.StringEx.IsNotEmptyOrBlank(System.String)">
+            <summary>
+            Indicates whether the current string instance is not empty and contains characters other than white spaces defined by <see cref="M:System.Char.IsWhiteSpace(System.Char)"/>.
+            </summary>
+            <param name="str">This string instance.</param>
+            <returns><c>true</c> if this string instance is not empty and contains at least one non-whitespace character; otherwise, <c>false</c>.</returns>
+            <exception cref="T:System.NullReferenceException">Occurs when <paramref name="str"/> is a <c>null</c> reference.</exception>
+        </member>
+        <member name="M:System.StringEx.IsNotNullOrEmptyOrBlank(System.String)">
+            <summary>
+            Indicates whether the current string instance is not null null, not empty, and contains characters other than white spaces defined by <see cref="M:System.Char.IsWhiteSpace(System.Char)"/>.
+            </summary>
+            <param name="str">This string instance.</param>
+            <returns><c>true</c> if this string instance is not null, not empty, and contains at least one non-whitespace character; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:System.StringEx.Scan(System.String,System.Object)">
+            <summary>
+            Replaces one or more format items with the string representation of a specified object.
+            <para>This is a dummy of the <c>string.Format</c> method for convenience.</para>
+            </summary>
+            <param name="str">This string instance that contains one or more format items.</param>
+            <param name="arg0">The object to format.</param>
+            <returns>A copy of the original string in which the format items are replaced by the string representation of <paramref name="arg0"/>.</returns>
+        </member>
+        <member name="M:System.StringEx.Scan(System.String,System.Object,System.Object)">
+            <summary>
+            Replaces format items with the string representation of two specified objects.
+            <para>This is a dummy of the <c>string.Format</c> method for convenience.</para>
+            </summary>
+            <param name="str">This string instance that contains one or more format items.</param>
+            <param name="arg0">The first object to format.</param>
+            <param name="arg1">The second object to format.</param>
+            <returns>A copy of the original string in which the format items are replaced by the string representations of <paramref name="arg0"/> and <paramref name="arg1"/>.</returns>
+        </member>
+        <member name="M:System.StringEx.Scan(System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Replaces format items with the string representation of three specified objects.
+            <para>This is a dummy of the <c>string.Format</c> method for convenience.</para>
+            </summary>
+            <param name="str">This string instance that contains one or more format items.</param>
+            <param name="arg0">The first object to format.</param>
+            <param name="arg1">The second object to format.</param>
+            <param name="arg2">The third object to format.</param>
+            <returns>A copy of the original string in which the format items are replaced by the string representations of <paramref name="arg0"/>, <paramref name="arg1"/> and <paramref name="arg2"/>.</returns>
+        </member>
+        <member name="M:System.StringEx.Scan(System.String,System.Object[])">
+            <summary>
+            Replaces each format item in this string with the string representation of a corresponding object in a specified array.
+            <para>This is a dummy of the <c>string.Format</c> method for convenience.</para>
+            </summary>
+            <param name="str">This string instance that contains one or more format items.</param>
+            <param name="args">An object array that contains zero or more objects to format.</param>
+            <returns>A copy of the original string in which the format items are replaced by the string representation of the corresponding objects in <paramref name="args"/>.</returns>
+        </member>
+        <member name="T:System_Extension_Library.System.GeneralResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_ArgumentOutOfRange">
+            <summary>
+              Looks up a localized string similar to Make sure the argument &quot;{0}&quot; is between {1} ({2}) and {3} ({4})..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_ArrayLengthMustBeEqualToASpecificValue">
+            <summary>
+              Looks up a localized string similar to The length of array &quot;{0}&quot; must be equal to {1}..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_EmptyArray">
+            <summary>
+              Looks up a localized string similar to Array &quot;{0}&quot; is empty..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_EmptyCollection">
+            <summary>
+              Looks up a localized string similar to Collection &quot;{0}&quot; is empty..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_EmptyList">
+            <summary>
+              Looks up a localized string similar to List &quot;{0}&quot; is empty..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_EqualArrayLengthRequired">
+            <summary>
+              Looks up a localized string similar to The length of array &quot;{0}&quot; must be equal to the length of array &quot;{1}&quot;..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_IndexOutOfRange">
+            <summary>
+              Looks up a localized string similar to Make sure the index is no smaller than {0} and no larger than {1}..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_InvalidLength">
+            <summary>
+              Looks up a localized string similar to Make sure the specified length is a valid value..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_InvalidMinMax">
+            <summary>
+              Looks up a localized string similar to The value of parameter {0} must be no larger than the value of parameter {1}..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_InvalidOutOfRange">
+            <summary>
+              Looks up a localized string similar to Value range for parameter {0} is from {1} to {2}..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_InvalidValue">
+            <summary>
+              Looks up a localized string similar to Value for parameter {0} is invalid..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_KeyAlreadyExist">
+            <summary>
+              Looks up a localized string similar to An object with the same key already exists..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_MisMatch">
+            <summary>
+              Looks up a localized string similar to Mismatch to &quot;{0}&quot; at position {1} detected..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_NonNegativeArgumentRequired">
+            <summary>
+              Looks up a localized string similar to Argument &quot;{0}&quot; must be non-negative..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_NonNegativeValueRequired">
+            <summary>
+              Looks up a localized string similar to Value of &quot;{0}&quot; must be non-negative..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_NullArray">
+            <summary>
+              Looks up a localized string similar to Array &quot;{0}&quot; is null..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_NullCollection">
+            <summary>
+              Looks up a localized string similar to Collection &quot;{0}&quot; is null..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_NullList">
+            <summary>
+              Looks up a localized string similar to List &quot;{0}&quot; is null..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_PositiveArgumentRequired">
+            <summary>
+              Looks up a localized string similar to Argument &quot;{0}&quot; must be positive..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_PositiveValueRequired">
+            <summary>
+              Looks up a localized string similar to Value of &quot;{0}&quot; must be positive..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_ProgrammingError">
+            <summary>
+              Looks up a localized string similar to A programming error occurs..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_StringEx_InvalidEscape">
+            <summary>
+              Looks up a localized string similar to The Unicode character used for escape is invalid..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_StringEx_InvalidSearchTarget">
+            <summary>
+              Looks up a localized string similar to Make sure no value to search is also the escape character or a quote character..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_Substring_InvalidStartIndex">
+            <summary>
+              Looks up a localized string similar to The start index of a substring must be non-negative and less than the length of the original string..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_ValueIllegallyLargerThanAnother">
+            <summary>
+              Looks up a localized string similar to {0}  must be smaller or equal to the {1}.
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_ValueMustInclusivelyBetween">
+            <summary>
+              Looks up a localized string similar to {0} must be inclusively between {1} and {2}.
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_ValueOutOfRange_L_S">
+            <summary>
+              Looks up a localized string similar to Value of &quot;{0}&quot; must be larger than {1} and smaller than {2}..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_ValueOutOfRange_L_SE">
+            <summary>
+              Looks up a localized string similar to Value of &quot;{0}&quot; must be larger than {1} and smaller than or equal to {2}..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_ValueOutOfRange_LE_S">
+            <summary>
+              Looks up a localized string similar to Value of &quot;{0}&quot; must be larger than or equal to {1} and smaller than {2}..
+            </summary>
+        </member>
+        <member name="P:System_Extension_Library.System.GeneralResources.ERR_ValueOutOfRange_LE_SE">
+            <summary>
+              Looks up a localized string similar to Value of &quot;{0}&quot; must be larger than or equal to {1} and smaller than or equal to {2}..
+            </summary>
+        </member>
+    </members>
+</doc>
