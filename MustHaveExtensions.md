@@ -8,7 +8,8 @@ The "must-haves" are those extensions that prevail our coding and projects. We h
 
 [7. Value Swap](#ValueSwap)
 
-### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check -- The "In" Method
+
+### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check for Collections & Strings -- The "In" Method
 
 Instead of "_a.Contains(b)_", we provide an alternative "_b.In(a)_". If "_a_" is a collection, the the method checks if "_b_" is an element in "_a_"; if "_a_" is a dictionary, then the method checks if "_b_" is a key in "_a_". This "In" method is somewhat "python" style, **_shorter_** and **_more consistent_**; besides that, it returns _false_ for null reference.
 
@@ -28,9 +29,28 @@ dict = null;
 "a".In(dict); // returns false
 ```
 
-**_In_**: returns true if the element to check is contained in an array/list/collection, or a key of a dictionary.
+We also provide "InAny" and "InAll".
 
-### <a name="ConsistentEmptinessCheck"></a> 3. Consistent Emptiness Check
+```c#
+1.InAny(new []{1,2,3}, new[]{2,3,4}); // returns true
+1.InAll(new []{1,2,3}, new[]{2,3,4}); // returns false
+```
+
+The same extension is added for string.
+
+```c#
+'c'.In("string to check"); // returns true
+'c'.InAll("string to check", "another string"); // returns false
+'c'.InAny("string to check", "another string"); // returns true
+```
+
+**_In_**: returns _true_ if the element to check is contained in an array/list/collection/string, or a key of a dictionary.
+
+**_InAny_**: returns _true_ if the element to check is contained in any of the provided arrays/lists/collections/strings.
+
+**_InAll_**: returns _true_ if the element to check is contained in all of the provided arrays/lists/collections/strings.
+
+### <a name="ConsistentEmptinessCheck"></a> 3. Consistent Emptiness Check for Collections & Strings
 
 Although incredibly useful, the emptiness of an array or a collection has to be checked in a clumsy way, even for today after 10 years.
 
@@ -41,6 +61,10 @@ if (arr != null && arr.Length != 0) // NOTE: the new syntax "arr?.Length != 0" w
   
 var list = new List<int> {1,2,3};
 if (list != null && arr.Count != 0) // NOTE: have to use a different property "Count"
+  Do something...
+  
+var str = "abc";
+if (!string.IsNullOrEmpty(str)) // another style of emptiness check, inconsistent with all others
   Do something...
 ```
 
@@ -58,15 +82,23 @@ if (list.IsNotNullOrEmpty())
 var dict = new Dictionary<string, int> { { "a", 1 } };
 if (dict.IsNotNullOrEmpty())
   Do something...
+  
+var str = "abc";
+if (str.IsNotNullOrEmpty())
+  Do something...
 ```
 
-**_IsNullOrEmpty_**: Returns true if a collection is a null reference or is an empty collection.
+**_IsNullOrEmpty_**: Returns true if a collection/string is a null reference or is an empty collection/string.
 
-**_IsNotNullOrEmpty_**: Returns true if a collection is not a null reference or is not an empty collection.
+**_IsNotNullOrEmpty_**: the negation of **_IsNullOrEmpty_**.
 
-**_IsEmpty_**: Returns true if a collection is an empty collection (throws an NullReferenceException if it is a null reference).
+**_IsEmpty_**: Returns true if a collection/string is an empty collection/string (throws an NullReferenceException if it is a null reference).
 
-**_IsNotEmpty_**: Returns true if a collection is not an empty collection (throws an NullReferenceException if it is a null reference).
+**_IsNotEmpty_**: the negation of **_IsEmpty_**.
+
+**_IsNullOrEmptyOrBlank_**: Returns true if a the string is a null reference, or is an empty string, or is a string with only white-sapce characters.
+
+**_IsNotNullOrEmptyOrBlank_**: the negation of **_IsNullOrEmptyOrBlank_**.
 
 ### <a name="ValueSwap"></a>7. Value Swap
 
