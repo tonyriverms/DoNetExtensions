@@ -86,4 +86,12 @@ Console.WriteLine(t1); // prints "[10/22/2010 12:00:00 AM]"
 Console.WriteLine(t2); // prints the recorded time
 ```
 
-**_Swap_**: Swaps the current value of struct types with another value.
+Due to complier limitation, currently the extension only supports value types or structs. For reference type, you could consider use _Swaper.Swap_ static method.
+
+```c#
+var a = "123";
+var b = "456";
+Swaper.Swap(ref a, ref b);
+```
+
+**_Swap_**: Swaps the current value of struct types with another value. 
