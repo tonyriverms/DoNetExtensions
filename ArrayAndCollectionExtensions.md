@@ -1,6 +1,12 @@
 # Array and Collection Extensions
 
+[2. Collection to Array Conversion](#CollectiontoArrayConversion)
 
+[4. Convenient IndexOf](#ConvenientIndexOf)
+
+[5. Collection to Concatenated String](#CollectiontoConcatenatedString)
+
+[6. Basic Array Operations](#BasicArrayOperations)
 
 ### <a name="CollectiontoArrayConversion"></a> 2. Collection to Array Conversion
 
@@ -50,7 +56,7 @@ arr.ToConcatString(','); // returns "1,2,3"
 arr.ToConcatString("--"); // returns "1--2--3"
 ```
 
-### <a name="BasicArrayOperations"></a>6. Array Operations
+### <a name="BasicArrayOperations"></a>6. Basic Array Operations
 
 It is not uncommon that we might need to just add/remove one specified item to/from an array, and return a new array with the item added/removed (for example, such addition/removal is rarely used by the client, and it is not desirable to complicate the code design with other data structure like list or linked list).
 
