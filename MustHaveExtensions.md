@@ -96,9 +96,13 @@ if (str.IsNotNullOrEmpty())
 
 **_IsNotEmpty_**: the negation of **_IsEmpty_**.
 
+**_IsEmptyOrBlank_**: Returns true if a string is an empty string or contains only white-space characters (throws an NullReferenceException if it is a null reference).
+
+**_IsNotEmptyOrBlank_**: the negation of **_IsEmptyOrBlank_**, for strings only.
+
 **_IsNullOrEmptyOrBlank_**: Returns true if a the string is a null reference, or is an empty string, or is a string with only white-sapce characters.
 
-**_IsNotNullOrEmptyOrBlank_**: the negation of **_IsNullOrEmptyOrBlank_**.
+**_IsNotNullOrEmptyOrBlank_**: the negation of **_IsNullOrEmptyOrBlank_**, for strings only.
 
 ### <a name="ValueSwap"></a>7. Value Swap
 
