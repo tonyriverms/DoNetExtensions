@@ -29,7 +29,7 @@ All extensions:
 
 1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9) [Conversion to Hexical String](ConversiontoHexicalString); 10) [Char Extensions](#CharExtensions).
 
-### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check -- The "In" Method
+### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check for Collections and Strings -- The "In" Method
 
 Instead of "_a.Contains(b)_", we provide an alternative "_b.In(a)_". If "_a_" is a collection, the the method checks if "_b_" is an element in "_a_"; if "_a_" is a dictionary, then the method checks if "_b_" is a key in "_a_". This "In" method is somewhat "python" style, **_shorter_** and **_more consistent_**; besides that, it returns _false_ for null reference.
 
@@ -49,7 +49,26 @@ dict = null;
 "a".In(dict); // returns false
 ```
 
-**_In_**: returns true if the element to check is contained in an array/list/collection, or a key of a dictionary.
+We also provide "InAny" and "InAll".
+
+```c#
+1.InAny(new []{1,2,3}, new[]{2,3,4}); // returns true
+1.InAll(new []{1,2,3}, new[]{2,3,4}); // returns false
+```
+
+The same extension is added for string.
+
+```c#
+'c'.In("string to check"); // returns true
+'c'.InAll("string to check", "another string"); // returns false
+'c'.InAny("string to check", "another string"); // returns true
+```
+
+**_In_**: returns _true_ if the element to check is contained in an array/list/collection/string, or a key of a dictionary.
+
+**_InAny_**: returns _true_ if the element to check is contained in any of the provided arrays/lists/collections/strings.
+
+**_InAll_**: returns _true_ if the element to check is contained in all of the provided arrays/lists/collections/strings.
 
 ### <a name="CollectiontoArrayConversion"></a> 2. Collection to Array Conversion
 
