@@ -21,13 +21,13 @@ b. [Array and Collection Extensions](ArrayAndCollectionExtensions.md)
 
 b. [Value Type Extensions](ValueTypeExtensions.md)
 
-d. [String Extensions](StringExtensions.md)
+d. [Char and String Extensions](StringExtensions.md)
 
 e. [IO Extensions](IOExtensions.md)
 
 All extensions:
 
-1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9 [Conversion to Hexical String](ConversiontoHexicalString)
+1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9) [Conversion to Hexical String](ConversiontoHexicalString); 10) [Char Extensions](#CharExtensions).
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check -- The "In" Method
 
@@ -234,7 +234,7 @@ a.ToHex(fullLength:false); // returns "4D2"
 
 ### <a name="CharExtensions"></a>10. Char Extensions
 
-Some static methods of Char class is now available as extension methods. Some useful ones include **_IsWhiteSpace_**, **_IsLetter_**, **_IsNumber_**, **_IsDigit_**, **_IsLetterOrDigit_**, **_IsUpper_**, **_IsLower_**, **_IsPunctuation_**, **_IsCurrencySymbol_**, **_GetNumericValue_**, **_ToLower_**,  etc.
+Some static methods of Char class is now available as extension methods. Some useful ones include **_IsWhiteSpace_**, **_IsLetter_**, **_IsNumber_**, **_IsDigit_**, **_IsLetterOrDigit_**, **_IsUpper_**, **_IsLower_**, **_IsPunctuation_**, **_IsCurrencySymbol_**, **_GetNumericValue_**, **_ToLower_**, **_ToUpper_**, etc.
 
 We add some new methods for ASCII characters.
 
@@ -251,9 +251,8 @@ We add some new methods for ASCII characters.
 **_IsNegativeSign_**: returns _true_ if the character represents the numerical negative sign (e.g. '-') under a culture.
 
 ```c#
-var a = 1234;
-a.ToHex(); // returns full 32-bit representation "000004D2"
-a.ToHex(fullLength:false); // returns "4D2"
+var a = ' ';
+a.IsWhiteSpace(); // returns true
+a.IsASCIIUpper(); // returns false
+a.IsASCII(); // returns true
 ```
-
-**_ToHex_**: Returns the hexical representation of the basic value types (byte, int, float, etc.).
