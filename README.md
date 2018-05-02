@@ -151,7 +151,7 @@ var merged = (new[] { arr, arr2, arr3, arr4, arr5, arr6, arr7}).Merge(); // merg
 
 **_Merge_**: Merges a collection of arrays into a single array.
 
-### <a name="ConvenientSwapBitOperations"></a>7. Convenient Swap & Bit Operations
+### <a name="ConvenientSwapBitOperations"></a>7. Value Swap
 
 Swapping two values have been an annoying issue that disrupts code readability. The following extensions address this problem. It is implemented by efficient bit operations when possible.
 
@@ -169,7 +169,11 @@ Console.WriteLine(t1); // prints "[10/22/2010 12:00:00 AM]"
 Console.WriteLine(t2); // prints the recorded time
 ```
 
-In this category, we also provide convenient extensions to retrieve higer bits or lower bits of a value of type _long_/_ulong_, _int_/_uint_, _short_/_ushort_ or _byte_. Following gives two examples, for full description see the method XML documentation.
+**_Swap_**: Swaps the current value of struct types with another value.
+
+### <a name="ConvenientSwapBitOperations"></a>8. Bit Operations
+
+We provide convenient extensions to retrieve higer bits or lower bits of a value of type _long_/_ulong_, _int_/_uint_, _short_/_ushort_ or _byte_. Following gives two examples, for full description see the method XML documentation.
 
 ```c#
 int a = 100;
@@ -185,8 +189,6 @@ In addition, you can retrieve all bytes of basic values types float/double, long
 var t = DateTime.Now;
 t.ToBytes(); // gets a byte array representing the DateTime instance t
 ```
-
-**_Swap_**: Swaps the current value of struct types with another value.
 
 **_High_**: Returns the higher-half bits (the left half if you write the value as a 0-1 string) of a supported value.
 
