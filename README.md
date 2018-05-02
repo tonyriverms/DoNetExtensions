@@ -7,7 +7,7 @@ We have been coding with .NET for more than ten years, and we notice many standa
 
 This initial release includes **_several extensions for arrays and collections_** as shown below. Currently all methods are under the same namespace as the classes they extend. Therefore, the **_usage_** is to just add reference to the extension library, import the namespace like "System.Collections" as usual, and then benefit from the added methods.
 
-Each method may have multiple overloads. We are unable to present them one by one here, but these methods are very intuitive and have full XML documentation.
+Each method may have multiple overloads. We are unable to present them one by one here, but these methods are very intuitive and have full XML documentation. We carefully tag _AggressiveInlining_ attribute to "short" extensions to avoid impacting performance.
 
 ### 1. Consistent Containment Check -- The "In" Method
 
@@ -117,7 +117,7 @@ arr.ToConcatString(','); // returns "1,2,3"
 arr.ToConcatString("--"); // returns "1--2--3"
 ```
 
-### 6. Basic Operations on Array
+### 6. Array Updating Operations
 
 It is not uncommon that we might need to just add/remove one specified item to/from an array, and return a new array with the item added/removed (for example, such addition/removal is rarely used by the client, and it is not desirable to complicate the code design with other data structure like list or linked list).
 
@@ -144,3 +144,24 @@ var merged = (new[] { arr, arr2, arr3, arr4, arr5, arr6, arr7}).Merge(); // merg
 **_Insert_**: Returns a new array with one or more elements inserted at the specified index.
 
 **_Merge_**: Merges a collection of arrays into a single array.
+
+### 7. Convenient Swap & Bit Operations
+
+Swapping two values have been an annoying issue that disrupts code readability. The following extensions address this problem. It is implemented by efficient bit operations when possible.
+
+```c#
+var a = 1;
+var b = 2;
+a.Swap(ref b);
+Console.WriteLine(a); // prints 2
+Console.WriteLine(b); // prints 1
+
+var t1 = DateTime.Now;
+var t2 = var b = new DateTime(2010, 10, 22);
+Console.WriteLine(t1); // prints "[10/22/2010 12:00:00 AM]"
+Console.WriteLine(t2); // prints the recorded time
+```
+
+**_Swap_**: Swaps the current value of struct types with another value.
+
+
