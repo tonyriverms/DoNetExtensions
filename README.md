@@ -188,7 +188,7 @@ Due to complier limitation, currently the extension only supports value types or
 ```c#
 var a = "123";
 var b = "456";
-Swapper.Swap(ref a, ref b);
+Swapper.Swap(ref a, ref b); // due to compiler limitation, a static method has to be used for reference types
 ```
 
 **_Swap_**: Swaps the current value of struct types with another value. 
