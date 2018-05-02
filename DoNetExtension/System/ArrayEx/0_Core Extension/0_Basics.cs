@@ -473,7 +473,7 @@ namespace System
         /// <typeparam name="T">The type of elements in the arrray.</typeparam>
         /// <param name="array">The current array.</param>
         /// <param name="index">The element at this position will be removed.</param>
-        /// <param name="shiftLength">Defining the segment of the array where shift occurs starting at position specified by <paramref name="index"/>. The number of elements shifted leftward is determined by c><paramref name="shiftLength"/> - 1</c>.</param>
+        /// <param name="shiftLength">Defining the segment of the array where shift occurs starting at position specified by <paramref name="index"/>. The number of elements shifted leftward is determined by <c><paramref name="shiftLength"/> - 1</c>.</param>
         public static void ShiftRemove<T>(this T[] array, int index, int shiftLength)
         {
             var shiftLimit = ExceptionHelper.ForwardCheckStartIndexAndLength(index, shiftLength, array.Length, "index", "shiftLength");
@@ -682,8 +682,8 @@ namespace System
         {
             if (sourceArray == null) return arrayOfItems.Merge();
 
-            int k = sourceArray.Length;
-            var count = arrayOfItems.Sum(array => array == null ? 0 : array.Length) + k;
+            var k = sourceArray.Length;
+            var count = arrayOfItems.Sum(array => array?.Length ?? 0) + k;
             var narr = new T[count];
             sourceArray.CopyTo(narr, 0);
             --k;
