@@ -27,6 +27,17 @@ namespace System
         }
 
         /// <summary>
+        /// Returns <c>true</c> if this Unicode character exists is not contained in the specified string instance.
+        /// </summary>
+        /// <param name="c">This Unicode character.</param>
+        /// <param name="target">The string instance to search the current Unicode character.</param>
+        /// <returns><c>true</c> if the specified string instance does not contain the current Unicode character; otherwise, <c>false</c>.</returns>
+        public static bool NotIn(this char c, string target)
+        {
+            return target.IndexOf(c) == -1;
+        }
+
+        /// <summary>
         /// Determines whether this Unicode character exists in any element of the specified string sequence.
         /// </summary>
         /// <param name="c">This Unicode character.</param>

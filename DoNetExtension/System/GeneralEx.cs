@@ -248,6 +248,46 @@ namespace System
         }
 
         /// <summary>
+        /// Determines whether this object is in any of the provided sequences. If <paramref name="sequences"/> is null or empty, <c>false</c> is always returned.
+        /// </summary>
+        /// <typeparam name="T">The type of this object.</typeparam>
+        /// <param name="obj">This object.</param>
+        /// <param name="sequences">An array of sequences to check.</param>
+        /// <returns><c>true</c> if this object is found in any of the provided sequences; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool InAny<T>(this T obj, params IEnumerable<T>[] sequences)
+        {
+            if (sequences.IsNullOrEmpty()) return false;
+            foreach (var seq in sequences)
+            {
+                if (obj.In(seq))
+                    return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Determines whether this object is in all of the provided sequences. If <paramref name="sequences"/> is null or empty, <c>false</c> is always returned.
+        /// </summary>
+        /// <typeparam name="T">The type of this object.</typeparam>
+        /// <param name="obj">This object.</param>
+        /// <param name="sequences">An array of sequences to check.</param>
+        /// <returns><c>true</c> if this object is found in all of the provided sequences; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool InAll<T>(this T obj, params IEnumerable<T>[] sequences)
+        {
+            if (sequences.IsNullOrEmpty()) return false;
+            foreach (var seq in sequences)
+            {
+                if (!obj.In(seq))
+                    return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Determines whether this object is a key in a dictionary. If the dictionary is null or empty, <c>false</c> is always returned.
         /// </summary>
         /// <typeparam name="T">The type of the object as well as the key of the dictionary.</typeparam>
@@ -259,6 +299,48 @@ namespace System
         public static bool In<T, TValue>(this T obj, IDictionary<T, TValue> dict)
         {
             return dict != null && dict.ContainsKey(obj);
+        }
+
+        /// <summary>
+        /// Determines whether this object is a key in any of the provided dictionaries. If the <paramref name="dicts"/> is null or empty, <c>false</c> is always returned.
+        /// </summary>
+        /// <typeparam name="T">The type of the object as well as the key of the dictionary.</typeparam>
+        /// <typeparam name="TValue">The type of value of the dictionary.</typeparam>
+        /// <param name="obj">This object.</param>
+        /// <param name="dicts">The dictionaryies to check.</param>
+        /// <returns><c>true</c> if <paramref name="obj"/> is a key in any of the provided <paramref name="dicts"/>, <c>false</c> otherwise.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool InAny<T, TValue>(this T obj, params IDictionary<T, TValue>[] dicts)
+        {
+            if (dicts.IsNullOrEmpty()) return false;
+            foreach (var dict in dicts)
+            {
+                if (obj.In(dict))
+                    return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Determines whether this object is a key in all of the provided dictionaries. If the <paramref name="dicts"/> is null or empty, <c>false</c> is always returned.
+        /// </summary>
+        /// <typeparam name="T">The type of the object as well as the key of the dictionary.</typeparam>
+        /// <typeparam name="TValue">The type of value of the dictionary.</typeparam>
+        /// <param name="obj">This object.</param>
+        /// <param name="dicts">The dictionaryies to check.</param>
+        /// <returns><c>true</c> if <paramref name="obj"/> is a key in all of the provided <paramref name="dicts"/>, <c>false</c> otherwise.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool InAll<T, TValue>(this T obj, params IDictionary<T, TValue>[] dicts)
+        {
+            if (dicts.IsNullOrEmpty()) return false;
+            foreach (var dict in dicts)
+            {
+                if (!obj.In(dict))
+                    return false;
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -285,6 +367,66 @@ namespace System
         public static bool In<T>(this T obj, params T[] array)
         {
             return array != null && Array.IndexOf(array, obj) != -1;
+        }
+
+
+
+        #endregion
+
+
+        #region NotIn
+
+        /// <summary>
+        /// Determines whether this object is in a sequence. If the sequence is null or empty, <c>false</c> is always returned.
+        /// </summary>
+        /// <typeparam name="T">The type of this object.</typeparam>
+        /// <param name="obj">This object.</param>
+        /// <param name="sequence">A sequence of objects.</param>
+        /// <returns><c>true</c> if this object is found in the specified sequence; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn<T>(this T obj, IEnumerable<T> sequence)
+        {
+            return sequence == null || !sequence.Contains(obj);
+        }
+
+        /// <summary>
+        /// Determines whether this object is a key in a dictionary. If the dictionary is null or empty, <c>false</c> is always returned.
+        /// </summary>
+        /// <typeparam name="T">The type of the object as well as the key of the dictionary.</typeparam>
+        /// <typeparam name="TValue">The type of value of the dictionary.</typeparam>
+        /// <param name="obj">This object.</param>
+        /// <param name="dict">The dictionary.</param>
+        /// <returns><c>true</c> if <paramref name="obj"/> is a key in <paramref name="dict"/>, <c>false</c> otherwise.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn<T, TValue>(this T obj, IDictionary<T, TValue> dict)
+        {
+            return dict == null || !dict.ContainsKey(obj);
+        }
+
+        /// <summary>
+        /// Determines whether this object is in an array/list. If the array/list is null or empty, this method always returns <c>false</c>.
+        /// </summary>
+        /// <typeparam name="T">The type of this object.</typeparam>
+        /// <param name="obj">This object.</param>
+        /// <param name="list">An array/list of objects.</param>
+        /// <returns><c>true</c> if this object is in the specified array/list; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn<T>(this T obj, IList<T> list)
+        {
+            return list == null || !list.Contains(obj);
+        }
+
+        /// <summary>
+        /// Determines whether this object is in an array of objects. NOTE that if the array is <c>null</c> or empty, this method always returns <c>false</c>.
+        /// </summary>
+        /// <typeparam name="T">The type of this object.</typeparam>
+        /// <param name="obj">This object.</param>
+        /// <param name="array">An array of objects.</param>
+        /// <returns><c>true</c> if this object is in the specified array; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn<T>(this T obj, params T[] array)
+        {
+            return array == null || Array.IndexOf(array, obj) == -1;
         }
 
 

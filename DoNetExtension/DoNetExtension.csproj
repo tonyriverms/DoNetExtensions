@@ -13,7 +13,7 @@
 The initial release (version 8) includes following extensions: 1) Consistent Containment Check; 2) Collection to Array Conversion; 3) Consistent Emptiness Check; 4) Convenient IndexOf; 5) Collection to Concatenated String; 6) Array Updating Operations; 7) Value Swap; 8) Convenient Bit Operations; 9) Conversion to Hexical String; 10) Char Extensions.</Description>
     <Copyright>Tony Chen</Copyright>
     <PackageLicenseUrl>MIT License</PackageLicenseUrl>
-    <PackageReleaseNotes>Initial release version 8 (adds basic extensions for chars and strings)</PackageReleaseNotes>
+    <PackageReleaseNotes>Initial release version 8 (adds basic extensions for chars and strings). Now some key extensions are consistent among collections and strings.</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/tonyriverms/DoNetExtensions</PackageProjectUrl>
     <RepositoryUrl>https://github.com/tonyriverms/DoNetExtensions</RepositoryUrl>
     <RepositoryType />
