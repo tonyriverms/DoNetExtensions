@@ -7,7 +7,7 @@ Nuget: https://www.nuget.org/packages/DoNetExtensions/. In nuget package manager
 
 Latest Update: [Value Swap](#ValueSwap), [Bit Operations](#BitOperations), [Conversion to Hexical String](#ConversiontoHexicalString), [Char Extensions](#CharExtensions)
 
-## Initial Release (version 8)
+## Initial Release (update 9)
 
 **Usage**: Currently all methods are under the same namespace as the classes they extend. Therefore just add reference to the extension library (enter "**Install-Package DoNetExtensions**" in the nuget package manager), import the standard namespaces like "System.Collections" as usual, and then benefit from the added methods. 
 
@@ -27,7 +27,7 @@ e. [IO Extensions](IOExtensions.md)
 
 All extensions:
 
-1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9) [Conversion to Hexical String](ConversiontoHexicalString); 10) [Char Extensions](#CharExtensions); 11) [SubArray Methods](#SubArray)
+1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9) [Conversion to Hexical String](ConversiontoHexicalString); 10) [Char Extensions](#CharExtensions); 11) [SubArray Methods](#SubArray); 12) [Sort Improvement](#SortImprovement)
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check for Collections and Strings -- The "In" Method
 
@@ -312,3 +312,44 @@ var subarr3 = arr.SubLast(3); // gets {3,4,5}, a subsarray consisting of the las
 
 **_SubLast_**: gets a subarray consisting of the ending elements of the current array.
 
+
+### <a name="SortImprovement"></a>12. Sort Improvement
+
+The methods makes the experience of frequence array sorting operations much more comfortable. The sorting is in-place. Use classic non-LINQ implementation for efficiency.
+
+```c#
+var keys = new []{2,3,2,1,2,5,7};
+keys.Sort(); // equivalent to Array.Sort(arr), returns {1,2,2,2,3,5,7}
+keys.SortDesc(); // sort descendingly, returns {7,5,3,2,2,2,1}
+
+keys = new []{2,3,2,1,2,5,7};
+var values = new []{'b','c','b','a','b','e','g'};
+keys.SortWithValues(values); // keys become "{1,2,2,2,3,5,7}" and values become "{'a','b','b','b','c','e','g'}"
+keys.SortDescWithValues(values); // keys become "{7,5,3,2,2,2,1}" and values become "{'g','e','c','b','b','b','a'}"
+```
+
+The extension method allows you specify a method to convert each array element to another comparable object for comparison. It has the same result as OrderBy().ToArray(), but the sorting is in-place and faster.
+
+```c#
+var keys = new []{"we","add","sorting","extensions"};
+
+// returns {"add","we","sorting","extensions"}, same result as keys.OrderBy(key=>key[1]).ToArray()
+keys.Sort(key=>key[1]);
+
+// returns {"extensions","sorting","we","add"}
+keys.SortDesc(key=>key[1]);
+
+//TODO currently does not support descending sort
+```
+
+We add an efficent method to find the k th element (or the top k elements) in the array, based on ascending order or descending order. The "top k" elements will be moved to the beginning of the array.
+
+```c#
+var keys = new[] {2,3,2,1,2,0,7,5,4,3};
+
+// returns 1, and "keys" become "{0,1,2,2,3,7,3,4,5,2}" with the smallest 2 elements moved to the beginning of the array
+keys.TopK(2);
+
+// returns 5, and "keys" become "{7,5,4,1,0,3,2,2,3,2}" with the largest 2 elements moved to the beginning of the array
+keys.TopKDesc(2);
+```
