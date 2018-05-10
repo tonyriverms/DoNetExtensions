@@ -157,18 +157,25 @@ The extension method allows you specify a method to convert each array element t
 
 ```c#
 var keys = new []{"we","add","sorting","extensions"};
-keys.Sort(key=>key[1]); // returns {"add","we","sorting","extensions"}, same result as keys.OrderBy(key=>key[1]).ToArray()
-keys.SortDesc(key=>key[1]); // returns {"extensions","sorting","we","add"}
+
+// returns {"add","we","sorting","extensions"}, same result as keys.OrderBy(key=>key[1]).ToArray()
+keys.Sort(key=>key[1]);
+
+// returns {"extensions","sorting","we","add"}
+keys.SortDesc(key=>key[1]);
 
 //TODO currently does not support descending sort
 ```
 
-We add an efficent method to find the k th element (or the top k elements) in the array.
+We add an efficent method to find the k th element (or the top k elements) in the array, based on ascending order or descending order. The "top k" elements will be moved to the beginning of the array.
 
 ```c#
 var keys = new[] {2,3,2,1,2,0,7,5,4,3};
-keys.TopK(2); // returns 1, and "keys" become "{0,1,2,2,3,7,3,4,5,2}" with the smallest 2 elements moved to the beginning of the array
-keys.TopKDesc(2); // returns 5, and "keys" become "{7,5,4,1,0,3,2,2,3,2}" with the largest 2 elements moved to the beginning of the array
-```
 
+// returns 1, and "keys" become "{0,1,2,2,3,7,3,4,5,2}" with the smallest 2 elements moved to the beginning of the array
+keys.TopK(2);
+
+// returns 5, and "keys" become "{7,5,4,1,0,3,2,2,3,2}" with the largest 2 elements moved to the beginning of the array
+keys.TopKDesc(2);
+```
 
