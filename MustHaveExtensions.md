@@ -8,6 +8,8 @@ The "must-haves" are those extensions that prevail our coding and projects. We h
 
 [7. Value Swap](#ValueSwap)
 
+[12. Sort Improvement](#Sort Improvement)
+
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check for Collections and Strings -- The "In" Method
 
 Instead of "_a.Contains(b)_", we provide an alternative "_b.In(a)_". If "_a_" is a collection, the the method checks if "_b_" is an element in "_a_"; if "_a_" is a dictionary, then the method checks if "_b_" is a key in "_a_". This "In" method is somewhat "python" style, **_shorter_** and **_more consistent_**; besides that, it returns _false_ for null reference.
@@ -135,3 +137,38 @@ Swapper.Swap(ref a, ref b); // due to compiler limitation, a static method has t
 ```
 
 **_Swap_**: Swaps the current value of struct types with another value. 
+
+### <a name="ValueSwap"></a>12. Sort Improvement
+
+The methods makes the experience of frequence array sorting operations much more comfortable. The sorting is in-place. Use classic non-LINQ implementation for efficiency.
+
+```c#
+var keys = new []{2,3,2,1,2,5,7};
+keys.Sort(); // equivalent to Array.Sort(arr), returns {1,2,2,2,3,5,7}
+keys.SortDesc(); // sort descendingly, returns {7,5,3,2,2,2,1}
+
+keys = new []{2,3,2,1,2,5,7};
+var values = new []{'b','c','b','a','b','e','g'};
+keys.SortWithValues(values); // keys become "{1,2,2,2,3,5,7}" and values become "{'a','b','b','b','c','e','g'}"
+keys.SortDescWithValues(values); // keys become "{7,5,3,2,2,2,1}" and values become "{'g','e','c','b','b','b','a'}"
+```
+
+The extension method allows you specify a method to convert each array element to another comparable object for comparison. It has the same result as OrderBy().ToArray(), but the sorting is in-place and faster.
+
+```c#
+var keys = new []{"we","add","sorting","extensions"};
+keys.Sort(key=>key[1]); // returns {"add","we","sorting","extensions"}, same result as keys.OrderBy(key=>key[1]).ToArray()
+keys.SortDesc(key=>key[1]); // returns {"extensions","sorting","we","add"}
+
+//TODO currently does not support descending sort
+```
+
+We add an efficent method to find the k th element (or the top k elements) in the array.
+
+```c#
+var keys = new[] {2,3,2,1,2,0,7,5,4,3};
+keys.TopK(2); // returns 1, and "keys" become "{0,1,2,2,3,7,3,4,5,2}" with the smallest 2 elements moved to the beginning of the array
+keys.TopKDesc(2); // returns 5, and "keys" become "{7,5,4,1,0,3,2,2,3,2}" with the largest 2 elements moved to the beginning of the array
+```
+
+
