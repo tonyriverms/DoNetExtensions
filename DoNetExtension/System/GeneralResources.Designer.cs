@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace System_Extension_Library.System {
+namespace DoNetExtension.System {
     using System;
     
     
@@ -19,7 +19,7 @@ namespace System_Extension_Library.System {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class GeneralResources {
@@ -39,7 +39,7 @@ namespace System_Extension_Library.System {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("System_Extension_Library.System.GeneralResources", typeof(GeneralResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DoNetExtension.System.GeneralResources", typeof(GeneralResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -120,6 +120,15 @@ namespace System_Extension_Library.System {
         internal static string ERR_IndexOutOfRange {
             get {
                 return ResourceManager.GetString("ERR_IndexOutOfRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The position of a bit is not valid..
+        /// </summary>
+        internal static string ERR_InvalidBitPosition {
+            get {
+                return ResourceManager.GetString("ERR_InvalidBitPosition", resourceCulture);
             }
         }
         

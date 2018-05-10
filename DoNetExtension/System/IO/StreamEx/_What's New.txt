@@ -1,0 +1,9 @@
+﻿Version 3.0 11/19/2012
+
+1. Buffered writing & reading that greatly enhances performance.
+2. More collection I/O methods and better experience.
+3. Full documentation.
+
+Version 3.1 06/30/2013
+1. Block reading/writing for forward-only streams.
+2. Easy block compression & encryption

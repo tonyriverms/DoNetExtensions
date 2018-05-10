@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System_Extension_Library.System;
+using DoNetExtension.System;
 
 namespace System
 {
@@ -23,7 +24,7 @@ namespace System
         /// <exception cref="System.ArgumentException">Occurs when the length of the specified array does not equal the valid value.</exception>
         internal static void ArrayLengthCheck<T>(Array array, int validLength, string nameForTheArrayToCheck = "array")
         {
-            if(array.Length != validLength)
+            if (array.Length != validLength)
                 throw new ArgumentException(GeneralResources.ERR_ArrayLengthMustBeEqualToASpecificValue.Scan(nameForTheArrayToCheck, validLength));
         }
 
@@ -57,7 +58,7 @@ namespace System
             {
                 if (startIndex != 0)
                     throw new ArgumentOutOfRangeException(ExceptionHelper.GetArgumentOutOfRangeMessage(argNameForStartIndex, 0, true, 0, true));
-                else if(length != 0)
+                else if (length != 0)
                     throw new ArgumentOutOfRangeException(ExceptionHelper.GetArgumentOutOfRangeMessage(argNameForLength, 0, true, 0, true));
                 else return 0;
             }

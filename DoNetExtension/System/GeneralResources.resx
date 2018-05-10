@@ -138,6 +138,9 @@
   <data name="ERR_IndexOutOfRange" xml:space="preserve">
     <value>Make sure the index is no smaller than {0} and no larger than {1}.</value>
   </data>
+  <data name="ERR_InvalidBitPosition" xml:space="preserve">
+    <value>The position of a bit is not valid.</value>
+  </data>
   <data name="ERR_InvalidLength" xml:space="preserve">
     <value>Make sure the specified length is a valid value.</value>
   </data>
