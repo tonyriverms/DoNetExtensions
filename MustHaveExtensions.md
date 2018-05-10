@@ -8,7 +8,7 @@ The "must-haves" are those extensions that prevail our coding and projects. We h
 
 [7. Value Swap](#ValueSwap)
 
-[12. Sort Improvement](#Sort Improvement)
+[12. Sort Improvement](#SortImprovement)
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check for Collections and Strings -- The "In" Method
 
@@ -138,7 +138,7 @@ Swapper.Swap(ref a, ref b); // due to compiler limitation, a static method has t
 
 **_Swap_**: Swaps the current value of struct types with another value. 
 
-### <a name="ValueSwap"></a>12. Sort Improvement
+### <a name="SortImprovement"></a>12. Sort Improvement
 
 The methods makes the experience of frequence array sorting operations much more comfortable. The sorting is in-place. Use classic non-LINQ implementation for efficiency.
 
