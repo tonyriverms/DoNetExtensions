@@ -8,6 +8,8 @@
 
 [6. Basic Array Operations](#BasicArrayOperations)
 
+[11. SubArray Methods](#SubArray)
+
 ### <a name="CollectiontoArrayConversion"></a> 2. Collection to Array Conversion
 
 ```c#
@@ -83,3 +85,17 @@ var merged = (new[] { arr, arr2, arr3, arr4, arr5, arr6, arr7}).Merge(); // merg
 **_Insert_**: Returns a new array with one or more elements inserted at the specified index.
 
 **_Merge_**: Merges a collection of arrays into a single array.
+
+### <a name="SubArray"></a>11. SubArray Methods
+```c#
+var arr = new[] {1,2,3,4,5};
+var subarr1 = arr.SubArray(1,3); // gets {2,3,4}, a subarray starting at position 1, of length 3
+var subarr2 = arr.SubFirst(3); // gets {1,2,3}, a subsarray consisting of the first 3 elements
+var subarr3 = arr.SubLast(3); // gets {3,4,5}, a subsarray consisting of the last 3 elements
+```
+
+**_SubArray_**: gets a subarray starting at a position of a specified length.
+
+**_SubFirst_**: gets a subarray consisting of the beginning elements of the current array.
+
+**_SubLast_**: gets a subarray consisting of the ending elements of the current array.

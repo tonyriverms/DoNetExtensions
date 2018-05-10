@@ -27,7 +27,7 @@ e. [IO Extensions](IOExtensions.md)
 
 All extensions:
 
-1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9) [Conversion to Hexical String](ConversiontoHexicalString); 10) [Char Extensions](#CharExtensions).
+1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9) [Conversion to Hexical String](ConversiontoHexicalString); 10) [Char Extensions](#CharExtensions); 11) [SubArray Methods](#SubArray)
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check for Collections and Strings -- The "In" Method
 
@@ -54,8 +54,8 @@ dict = null;
 We also provide "InAny" and "InAll".
 
 ```c#
-1.InAny(new []{1,2,3}, new[]{2,3,4}); // returns true
-1.InAll(new []{1,2,3}, new[]{2,3,4}); // returns false
+1.InAny(new []{1,2,3}, new []{2,3,4}); // returns true
+1.InAll(new []{1,2,3}, new []{2,3,4}); // returns false
 ```
 
 The same extension is added for string.
@@ -297,3 +297,18 @@ a.IsWhiteSpace(); // returns true
 a.IsASCIIUpper(); // returns false
 a.IsASCII(); // returns true
 ```
+
+### <a name="SubArray"></a>11. SubArray Methods
+```c#
+var arr = new[] {1,2,3,4,5};
+var subarr1 = arr.SubArray(1,3); // gets {2,3,4}, a subarray starting at position 1, of length 3
+var subarr2 = arr.SubFirst(3); // gets {1,2,3}, a subsarray consisting of the first 3 elements
+var subarr3 = arr.SubLast(3); // gets {3,4,5}, a subsarray consisting of the last 3 elements
+```
+
+**_SubArray_**: gets a subarray starting at a position of a specified length.
+
+**_SubFirst_**: gets a subarray consisting of the beginning elements of the current array.
+
+**_SubLast_**: gets a subarray consisting of the ending elements of the current array.
+
