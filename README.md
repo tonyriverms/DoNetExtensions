@@ -315,7 +315,7 @@ var subarr3 = arr.SubLast(3); // gets {3,4,5}, a subsarray consisting of the las
 
 ### <a name="SortImprovement"></a>12. Sort Improvement
 
-The methods makes the experience of frequence array sorting operations much more comfortable. The sorting is in-place. Use classic non-LINQ implementation for efficiency.
+The methods makes the experience of frequent array sorting operations much more comfortable. The sorting is in-place. Use classic non-LINQ implementation for efficiency.
 
 ```c#
 var keys = new []{2,3,2,1,2,5,7};
