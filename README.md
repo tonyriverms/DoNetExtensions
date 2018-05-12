@@ -439,8 +439,10 @@ var entries = new[] {("key1",(1,2)), ("key2",(2,3)), ("key5",(2,4)), ("key1",(3,
 var counter2 = new Dictionary<string, (int,int)>();
 var counter3 = new Dictionary<string, Pair<int>>();
 foreach (var entry in entries)
+{
    counter2.Stat(entry.Item1, entry.Item2); // increase the tuple values
    counter3.Stat(entry.Item1, entry.Item2); // increase the tuple values, using the added mutable tuple class Pair<int>
+}
 
 // Merges counts, returns { "key1":(8,10), "key2":(4,6), "key3":(4,4), "key4":(0,2), "key5":(10,12) }
 var merged = (new[] {counter2, counter3}).MergeStat();
