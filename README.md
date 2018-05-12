@@ -371,7 +371,7 @@ keys.TopKDesc(2);
 
 **_TopKDescWithValues_**: in-place moves the largest k elements of the key array to the beginning, and in-place adjust the order of the value array accordingly
 
-### <a name="MutableTuples"></a>12. Mutalbe Tuples for Data Processing: Pair, Triple
+### <a name="MutableTuples"></a>12. Mutable Tuples for Data Processing: Pair, Triple
 
 Simple class implementations for mutable tuples. Neither Tuple or ValueTuple in vallia .NET is intended for data processing in data science or machine learning, making C# very hard to use for the cutting-edge development. Although we no longer often code C# for that purpose, occasionally we still use it for data preprocessing, as it is faster than Python for big data. The immutability of C# tuples make it tedious for the job.
 
