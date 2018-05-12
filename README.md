@@ -340,7 +340,7 @@ keys.Sort(key=>key[1]);
 // returns {"extensions","sorting","we","add"}
 keys.SortDesc(key=>key[1]);
 
-//TODO currently does not support descending sort
+//TODO currently does not support specifying the conversion method while sorting with values
 ```
 
 We add an efficent method to find the k th element (or the top k elements) in the array, based on ascending order or descending order. The "top k" elements will be moved to the beginning of the array.
@@ -411,6 +411,10 @@ list2.Add(2,3);
 
 Dictionary is the essential class used for data pre-processing in data analytics, data science, or machine learning. The following extensions make it quick for this purpose.
 
+**_Stat_**: counting the number of occurrences of keys, able to specify count increment, supports various increment objects whose addition operator is defined.
+
+**_MergeStat_**: merges the countings of a sequence of dictionaries.
+
 ```c#
 // Suppose you want to count occurrences of the following keys.
 var keys = new[] {"key1", "key2", "key5", "key1", "key3", "key3", "key4", "key5", "key5"};
@@ -428,7 +432,8 @@ counter.Clear();
 foreach (var key in keys)
    counter.Stat(key, 2);
    
-// we
+// We can use a tuple for different counts.
+// After execution, the counters become { "key1":(4,5), "key2":(2,3), "key3":(2,2), "key4":(0,1), "key5":(5,6) }
 var entries = new[] {("key1",(1,2)), ("key2",(2,3)), ("key5",(2,4)), ("key1",(3,3)), ("key3",(1,0)), ("key3",(1,2)), ("key4",(0,1)),    
    ("key5",(2,1)), ("key5",(1,1))};
 var counter2 = new Dictionary<string, (int,int)>();
@@ -437,6 +442,8 @@ foreach (var entry in entries)
    counter2.Stat(entry.Item1, entry.Item2); // increase the tuple values
    counter3.Stat(entry.Item1, entry.Item2); // increase the tuple values, using the added mutable tuple class Pair<int>
 
+// Merges counts, returns { "key1":(8,10), "key2":(4,6), "key3":(4,4), "key4":(0,2), "key5":(10,12) }
+var merged = (new[] {counter2, counter3}).MergeStat();
 ```
 
 
