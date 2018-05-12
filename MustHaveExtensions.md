@@ -165,7 +165,7 @@ keys.Sort(key=>key[1]);
 // returns {"extensions","sorting","we","add"}
 keys.SortDesc(key=>key[1]);
 
-//TODO currently does not support descending sort
+//TODO currently does not support specifying the conversion method while sorting with values
 ```
 
 We add an efficent method to find the k th element (or the top k elements) in the array, based on ascending order or descending order. The "top k" elements will be moved to the beginning of the array.
