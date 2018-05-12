@@ -1,4 +1,4 @@
-# Must-Have Extensions
+# Essential Extensions
 
 The "must-haves" are those extensions that prevail our coding and projects. We hope these simple yet thoughtful "must-haves" would bring better consistency, readability and productivity to your code and project as well. This category currently includes:
 
