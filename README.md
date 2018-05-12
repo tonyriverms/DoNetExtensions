@@ -29,7 +29,7 @@ f. [IO Extensions](IOExtensions.md)
 
 All extensions:
 
-1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9) [Conversion to Hexical String](ConversiontoHexicalString); 10) [Char Extensions](#CharExtensions); 11) [SubArray Methods](#SubArray); 12) [Sort Enhancement](#SortEnhancement)
+1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9) [Conversion to Hexical String](ConversiontoHexicalString); 10) [Char Extensions](#CharExtensions); 11) [SubArray Methods](#SubArray); 12) [Sort Enhancement](#SortEnhancement); 13) [Mutable Tuples for Data Processing](#MutableTuplesforDataProcessing); 14) [Dictionary-Based Data Processing](#DictionaryBasedDataProcessing).
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check for Collections and Strings -- The "In" Method
 
@@ -371,7 +371,7 @@ keys.TopKDesc(2);
 
 **_TopKDescWithValues_**: in-place moves the largest k elements of the key array to the beginning, and in-place adjust the order of the value array accordingly
 
-### <a name="MutableTuples"></a>12. Mutable Tuples for Data Processing: Pair, Triple
+### <a name="MutableTuplesforDataProcessing"></a>13. Mutable Tuples for Data Processing: Pair, Triple
 
 Simple class implementations for mutable tuples. Neither Tuple or ValueTuple in vallia .NET is intended for data processing in data science or machine learning, making C# very hard to use for the cutting-edge development. Although we no longer often code C# for that purpose, occasionally we still use it for data preprocessing, as it is faster than Python for big data. The immutability of C# tuples make it tedious for the job.
 
@@ -407,7 +407,7 @@ list1.Add(2,3);
 list2.Add(2,3);
 ```
 
-### <a name="SortEnhancement"></a>13. Dictionary-Based Data Preprocessing
+### <a name="DictionaryBasedDataProcessing"></a>14. Dictionary-Based Data Preprocessing
 
 Dictionary is the essential class used for data pre-processing in data analytics, data science, or machine learning. The following extensions make it quick for this purpose.
 
@@ -436,16 +436,16 @@ foreach (var key in keys)
 // After execution, the counters become { "key1":(4,5), "key2":(2,3), "key3":(2,2), "key4":(0,1), "key5":(5,6) }
 var entries = new[] {("key1",(1,2)), ("key2",(2,3)), ("key5",(2,4)), ("key1",(3,3)), ("key3",(1,0)), ("key3",(1,2)), ("key4",(0,1)),    
    ("key5",(2,1)), ("key5",(1,1))};
-var counter2 = new Dictionary<string, (int,int)>();
+var counter2 = new Dictionary<string, Pair<int>>();
 var counter3 = new Dictionary<string, Pair<int>>();
+var counter4 = new Dictionary<string, (int,int)>(); // value tuple is also limitedly supported
 foreach (var entry in entries)
 {
-   counter2.Stat(entry.Item1, entry.Item2); // increase the tuple values
-   counter3.Stat(entry.Item1, entry.Item2); // increase the tuple values, using the added mutable tuple class Pair<int>
+   counter2.Stat(entry.Item1, entry.Item2); // increase the tuple values, using the added mutable tuple class Pair<int>
+   counter3.Stat(entry.Item1, (1,1)); // another counting that can be merged with counter2 later
+   counter4.Stat(entry.Item1, entry.Item2); // increase the tuple values
 }
 
-// Merges counts, returns { "key1":(8,10), "key2":(4,6), "key3":(4,4), "key4":(0,2), "key5":(10,12) }
+// Merges counts, returns { "key1":(6,7), "key2":(3,4), "key3":(4,4), "key4":(1,2), "key5":(8,9) }
 var merged = (new[] {counter2, counter3}).MergeStat();
 ```
-
-
