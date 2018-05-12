@@ -433,17 +433,17 @@ foreach (var key in keys)
    counter.Stat(key, 2);
    
 // We can use a tuple for different counts.
-// After execution, the counters become { "key1":(4,5), "key2":(2,3), "key3":(2,2), "key4":(0,1), "key5":(5,6) }
-var entries = new[] {("key1",(1,2)), ("key2",(2,3)), ("key5",(2,4)), ("key1",(3,3)), ("key3",(1,0)), ("key3",(1,2)), ("key4",(0,1)),    
-   ("key5",(2,1)), ("key5",(1,1))};
+// After execution, the counter2 becomes { "key1":(4,5), "key2":(2,3), "key3":(2,2), "key4":(0,1), "key5":(5,6) }, 
+// and coutner3 becomes { "key1":(2,2), "key2":(1,1), "key3":(2,2), "key4":(1,1), "key5":(3,3) }.
+var entries = new[] {("key1",(1,2)), ("key2",(2,3)), ("key5",(2,4)), 
+                     ("key1",(3,3)), ("key3",(1,0)), ("key3",(1,2)), 
+                     ("key4",(0,1)), ("key5",(2,1)), ("key5",(1,1))}; // every key is associated with a value tuple
 var counter2 = new Dictionary<string, Pair<int>>();
 var counter3 = new Dictionary<string, Pair<int>>();
-var counter4 = new Dictionary<string, (int,int)>(); // value tuple is also limitedly supported
 foreach (var entry in entries)
 {
    counter2.Stat(entry.Item1, entry.Item2); // increase the tuple values, using the added mutable tuple class Pair<int>
    counter3.Stat(entry.Item1, (1,1)); // another counting that can be merged with counter2 later
-   counter4.Stat(entry.Item1, entry.Item2); // increase the tuple values
 }
 
 // Merges counts, returns { "key1":(6,7), "key2":(3,4), "key3":(4,4), "key4":(1,2), "key5":(8,9) }
