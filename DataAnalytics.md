@@ -6,7 +6,7 @@ However, it is very unfortunate that even though C# now supports interactive scr
 
 13) [Mutable Tuples for Data Processing](#MutableTuplesforDataProcessing)
 
-14. [Dictionary-Based Data Processing](#DictionaryBasedDataProcessing)
+14. [Dictionary-Based Counting](#DictionaryBasedCounting)
 
 ### <a name="MutableTuplesforDataProcessing"></a>13. Mutable Tuples for Data Processing: Pair, Triple
 
@@ -42,7 +42,7 @@ list1.Add(2,3);
 list2.Add(2,3);
 ```
 
-### <a name="DictionaryBasedDataProcessing"></a>14. Dictionary-Based Data Preprocessing
+### <a name="DictionaryBasedCounting"></a>14. Dictionary-Based Counting
 
 Dictionary is the essential class used for data pre-processing in data analytics, data science, or machine learning. The following extensions make it quick for this purpose.
 
@@ -84,3 +84,4 @@ foreach (var entry in entries)
 // Merges counts, returns { "key1":(6,7), "key2":(3,4), "key3":(4,4), "key4":(1,2), "key5":(8,9) }
 var merged = (new[] {counter2, counter3}).MergeStat();
 ```
+
