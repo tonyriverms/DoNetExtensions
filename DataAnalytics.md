@@ -2,7 +2,7 @@
 
 The objective of these extensions is to make .NET good for quick data pre-processing for data science or machine learning. Although Python is now the primary language for DS or ML, it is slow for large-scale pre-processing if it is not backed by C library in the backend (e.g. billions of complicated data takes three days for Python to complete on our computer, but C# only needs 1 day). 
 
-However, it is very unfortunate that even though C# now supports interactive scripting, it still primarily focuses on software engineering. For example, its design of new ValueTuple is still under the philosophy that everything needs to be perfect for a large-scale teamwork, so the tuple  has to be immutable, otherwise things like its GetHashCode will be inconsistent now and then. The philosophy behind DS or ML is that it is a small teamwork and everyoen well knows everyone else in the team, so things like ValueTuple can be mutable even it brings inconsistency. Our **_objective is make it better for data pre-processing as best as we can_**. 
+However, it is very unfortunate that even though C# now supports interactive scripting, it still primarily focuses on software engineering. For example, its design of new ValueTuple is still under the philosophy that everything needs to be perfect for a large-scale teamwork, so the tuple  has to be immutable, otherwise things like its GetHashCode will be inconsistent now and then. The philosophy behind DS or ML is that it is a small teamwork and everyoen well knows everyone else in the team, so things like ValueTuple can be mutable even it brings inconsistency. Our **_objective is to make .NET better for data pre-processing as best as we can_**. 
 
 13) [Mutable Tuples for Data Processing](#MutableTuplesforDataProcessing)
 
