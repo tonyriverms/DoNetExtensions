@@ -69,7 +69,20 @@ The same extension is added for string.
 'c'.InAny("string to check", "another string"); // returns true
 ```
 
-**_In_**: returns _true_ if the element to check is contained in an array/list/collection/string, or a key of a dictionary.
+The same extension is added for Python style range checking. The lower bound is included in the range, while the upper bound is excluded.
+
+```c#
+// ranges (2,5) represents number 2,3,4
+1.In(2,5); // returns false
+2.In(2,5); // returns true, lower bound is included
+5.In(2,5); // returns false, upper bound is excluded
+
+// range (1,5,2) represents number 1,3, the numbers from 1 to 5 with step 2
+2 In(1,5,2); // returns false
+3.In(1,5,2); // returns true
+```
+
+**_In_**: returns _true_ if the element to check is contained in an array/list/collection/string/range, or a key of a dictionary.
 
 **_NotIn_**: negation of **_In_**.
 
