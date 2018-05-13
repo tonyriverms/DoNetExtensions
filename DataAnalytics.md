@@ -1,13 +1,16 @@
 # Data Analytics Extensions
 
+The objective of these extensions is to make .NET good for quick data pre-processing for data science or machine learning. Although Python is now the primary language for DS or ML, it is slow for large-scale pre-processing if it is not backed by C library in the backend (e.g. billions of complicated data takes three days for Python to complete on our computer, but C# only needs 1 day). 
+
+However, it is very unfortunate that even though C# now supports interactive scripting, it still primarily focuses on software engineering. For example, its design of new ValueTuple is still under the philosophy that everything needs to be perfect for a large-scale teamwork, so the tuple  has to be immutable, otherwise things like its GetHashCode will be inconsistent now and then. The philosophy behind DS or ML is that it is a small teamwork and everyoen well knows everyone else in the team, so things like ValueTuple can be mutable even it brings inconsistency. Our **_objective is make it better for data pre-processing as best as we can_**. 
+
 13) [Mutable Tuples for Data Processing](#MutableTuplesforDataProcessing)
+
 14. [Dictionary-Based Data Processing](#DictionaryBasedDataProcessing)
 
 ### <a name="MutableTuplesforDataProcessing"></a>13. Mutable Tuples for Data Processing: Pair, Triple
 
 Simple class implementations for mutable tuples. Neither Tuple or ValueTuple in vallia .NET is intended for data processing in data science or machine learning, making C# very hard to use for the cutting-edge development. Although we no longer often code C# for that purpose, occasionally we still use it for data preprocessing, as it is faster than Python for big data. The immutability of C# tuples make it tedious for the job.
-
-It is very unfortunate that even though C# now supports interactive scripting, it still primarily focuses on software engineering. Our **_objective is make it better for data pre-processing as best as we can_**. 
 
 The Pair and Triple supports implicit conversion to ValueTuple and Tuple objects. The Pair class in addition has implicit conversion to KeyValuePair class, so they can go in any place that supports build-in tuples. They support arithmetic addition and subtraction.
 
