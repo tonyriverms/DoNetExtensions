@@ -416,8 +416,8 @@ list1.Add(pair);
 list1.Add(vallinaPair); // implicit conversion happens
 list2.Add(pair); // implicit conversion happens
 list2.Add(vallinaPair);
-list1.Add(2,3);
-list2.Add(2,3);
+list1.Add(2,3); // a new Add overload that supports convenient syntax for Pair
+list2.Add(2,3); // a new Add overload that supports convenient syntax for ValueTuple
 ```
 
 ### <a name="DictionaryBasedCounting"></a>14. Dictionary-Based Counting
