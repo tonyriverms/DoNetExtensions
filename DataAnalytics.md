@@ -1,6 +1,43 @@
 # Data Analytics Extensions
 
+13) [Mutable Tuples for Data Processing](#MutableTuplesforDataProcessing)
 14. [Dictionary-Based Data Processing](#DictionaryBasedDataProcessing)
+
+### <a name="MutableTuplesforDataProcessing"></a>13. Mutable Tuples for Data Processing: Pair, Triple
+
+Simple class implementations for mutable tuples. Neither Tuple or ValueTuple in vallia .NET is intended for data processing in data science or machine learning, making C# very hard to use for the cutting-edge development. Although we no longer often code C# for that purpose, occasionally we still use it for data preprocessing, as it is faster than Python for big data. The immutability of C# tuples make it tedious for the job.
+
+It is very unfortunate that even though C# now supports interactive scripting, it still primarily focuses on software engineering. Our **_objective is make it better for data pre-processing as best as we can_**. 
+
+The Pair and Triple supports implicit conversion to ValueTuple and Tuple objects. The Pair class in addition has implicit conversion to KeyValuePair class, so they can go in any place that supports build-in tuples. They support arithmetic addition and subtraction.
+
+Both Pair and Triple are well-supported by various extension methods.
+```c#
+var dict1 = new Dictionary<string, Pair<int>>();
+var dict2 = new Dictionary<string, (int,int)>();
+var list1 = new List<Pair<int>>();
+var list2 = new List<(int,int)>();
+
+var pair = new Pair<int>(2,3);
+var vallinaPair = (2,3);
+
+dict1.Add("test1", pair);
+dict1.Add("test2", vallinaPair); // implicit conversion happens
+dict2.Add("test1", pair); // implicit conversion happens
+dict2.Add("test2", vallinaPair);
+
+dict1.Add("test3", 2, 3); // a new Add overload that supports convenient syntax for Pair
+dict2.Add("test3", 2, 3); // a new Add overload that supports convenient syntax for ValueTuple
+
+// The same support for List.
+
+list1.Add(pair);
+list1.Add(vallinaPair); // implicit conversion happens
+list2.Add(pair); // implicit conversion happens
+list2.Add(vallinaPair);
+list1.Add(2,3);
+list2.Add(2,3);
+```
 
 ### <a name="DictionaryBasedDataProcessing"></a>14. Dictionary-Based Data Preprocessing
 
