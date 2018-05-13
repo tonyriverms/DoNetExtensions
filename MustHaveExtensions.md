@@ -1,6 +1,6 @@
 # Essential Extensions
 
-The "must-haves" are those extensions that prevail our coding and projects. We hope these simple yet thoughtful "must-haves" would bring better consistency, readability and productivity to your code and project as well. This category currently includes:
+The "essentials" are those extensions that prevail our coding and projects. We hope these simple yet thoughtful "must-haves" would bring better consistency, readability and productivity to your code and project as well. This category currently includes:
 
 [1. Consistent Containment Check](#ConsistentContainmentCheck)
 
@@ -9,6 +9,8 @@ The "must-haves" are those extensions that prevail our coding and projects. We h
 [7. Value Swap](#ValueSwap)
 
 [12. Sort Enhancement](#SortEnhancement)
+
+[15. ForEach Shortcut](#ForEachShortcut)
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check for Collections and Strings -- The "In" Method
 
@@ -209,3 +211,21 @@ keys.TopKDesc(2);
 
 **_TopKDescWithValues_**: in-place moves the largest k elements of the key array to the beginning, and in-place adjust the order of the value array accordingly
 
+### <a name="ForEachShortcut"></a>15. ForEach Shortcut
+
+Now you can use following code to quickly specify iterations.
+
+```c#
+5.ForEach(i => Console.WriteLine(i)); // iteration index as input of the delegate, prints out 0,1,2,3,4
+(1,5).ForEach(i => Console.WriteLine(i)); // prints out 1,2,3,4
+(1,7,2).ForEach(i => Console.WriteLine(i)); // prints out 1,3,5
+
+var arr = new[] {"a","for","each","short", "cut"};
+arr.Foreach(item => Console.WriteLine(item.Length)); // prints out 1,3,4,5,3
+arr.Foreach((index,item) => Console.WriteLine($"the length of the {index}th string is {item.Length}")); // accepts iteration indexes
+arr.Foreach((index,item) => 
+{
+   Console.WriteLine($"the length of the {index}th string is {item.Length}")};
+   if (item.Length == 3) return false; // returns false to break the iteration
+   return true;
+); // 
