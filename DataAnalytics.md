@@ -4,6 +4,8 @@ The objective of these extensions is to make .NET good for quick data pre-proces
 
 However, it is very unfortunate that even though C# now supports interactive scripting, it still primarily focuses on software engineering. For example, its design of new ValueTuple is still under the philosophy that everything needs to be perfect for a large-scale teamwork, so the tuple  has to be immutable, otherwise things like its GetHashCode will be inconsistent now and then. The philosophy behind DS or ML is that it is a small teamwork and everyoen well knows everyone else in the team, so things like ValueTuple can be mutable even it brings inconsistency. Our **_objective is to make .NET better for data pre-processing as best as we can_**. 
 
+First see [Essential Extensions](MustHaveExtensions.md) that brings in some extensions for more Python-style coding, the "In" method and the "ForEach" shortcut.
+
 13) [Mutable Tuples for Data Processing](#MutableTuplesforDataProcessing)
 
 14. [Dictionary-Based Counting](#DictionaryBasedCounting)
