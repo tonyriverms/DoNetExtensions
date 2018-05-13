@@ -7,7 +7,7 @@ Nuget: https://www.nuget.org/packages/DoNetExtensions/. In nuget package manager
 
 Latest Update: [Value Swap](#ValueSwap), [Bit Operations](#BitOperations), [Conversion to Hexical String](#ConversiontoHexicalString), [Char Extensions](#CharExtensions)
 
-## Initial Release (update 9)
+## Initial Release (update 10)
 
 **Usage**: Currently all methods are under the same namespace as the classes they extend. Therefore just add reference to the extension library (enter "**Install-Package DoNetExtensions**" in the nuget package manager), import the standard namespaces like "System.Collections" as usual, and then benefit from the added methods. 
 
