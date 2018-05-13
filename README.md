@@ -29,7 +29,7 @@ f. [IO Extensions](IOExtensions.md)
 
 All extensions:
 
-1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9) [Conversion to Hexical String](ConversiontoHexicalString); 10) [Char Extensions](#CharExtensions); 11) [SubArray Methods](#SubArray); 12) [Sort Enhancement](#SortEnhancement); 13) [Mutable Tuples for Data Processing](#MutableTuplesforDataProcessing); 14) [Dictionary-Based Counting](#DictionaryBasedCounting).
+1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9) [Conversion to Hexical String](ConversiontoHexicalString); 10) [Char Extensions](#CharExtensions); 11) [SubArray Methods](#SubArray); 12) [Sort Enhancement](#SortEnhancement); 13) [Mutable Tuples for Data Processing](#MutableTuplesforDataProcessing); 14) [Dictionary-Based Counting](#DictionaryBasedCounting); 15) [ForEach Shortcut](#ForEachShortcut).
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check for Collections and Strings -- The "In" Method
 
@@ -462,3 +462,23 @@ foreach (var entry in entries)
 // Merges counts, returns { "key1":(6,7), "key2":(3,4), "key3":(4,4), "key4":(1,2), "key5":(8,9) }
 var merged = (new[] {counter2, counter3}).MergeStat();
 ```
+### <a name="ForEachShortcut"></a>15. ForEach Shortcut
+
+Now you can use following code to quickly specify iterations.
+
+```c#
+5.ForEach(i => Console.WriteLine(i)); // iteration index as input of the delegate, prints out 0,1,2,3,4
+(1,5).ForEach(i => Console.WriteLine(i)); // prints out 1,2,3,4
+(1,7,2).ForEach(i => Console.WriteLine(i)); // prints out 1,3,5
+
+var arr = new[] {"a","for","each","short", "cut"};
+arr.Foreach(item => Console.WriteLine(item.Length)); // prints out 1,3,4,5,3
+arr.Foreach((index,item) => Console.WriteLine($"the length of the {index}th string is {item.Length}")); // accepts iteration indexes
+arr.Foreach((index,item) => 
+{
+   Console.WriteLine($"the length of the {index}th string is {item.Length}")};
+   if (item.Length == 3) return false; // returns false to break the iteration
+   return true;
+); // accepts iteration indexes
+```
+
