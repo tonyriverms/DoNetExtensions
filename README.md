@@ -29,7 +29,7 @@ f. [IO Extensions](IOExtensions.md)
 
 All extensions:
 
-1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9) [Conversion to Hexical String](ConversiontoHexicalString); 10) [Char Extensions](#CharExtensions); 11) [SubArray Methods](#SubArray); 12) [Sort Enhancement](#SortEnhancement); 13) [Mutable Tuples for Data Processing](#MutableTuplesforDataProcessing); 14) [Dictionary-Based Data Processing](#DictionaryBasedDataProcessing).
+1) [Consistent Containment Check](#ConsistentContainmentCheck); 2) [Collection to Array Conversion](#CollectiontoArrayConversion); 3) [Consistent Emptiness Check](#ConsistentEmptinessCheck); 4) [Convenient IndexOf](#ConvenientIndexOf); 5) [Collection to Concatenated String](#CollectiontoConcatenatedString); 6) [Basic Array Operations](#BasicArrayOperations); 7) [Value Swap](#ValueSwap); 8) [Bit Operations](#BitOperations); 9) [Conversion to Hexical String](ConversiontoHexicalString); 10) [Char Extensions](#CharExtensions); 11) [SubArray Methods](#SubArray); 12) [Sort Enhancement](#SortEnhancement); 13) [Mutable Tuples for Data Processing](#MutableTuplesforDataProcessing); 14) [Dictionary-Based Counting](#DictionaryBasedDataCounting).
 
 ### <a name="ConsistentContainmentCheck"></a> 1. Consistent Containment Check for Collections and Strings -- The "In" Method
 
@@ -420,7 +420,7 @@ list1.Add(2,3);
 list2.Add(2,3);
 ```
 
-### <a name="DictionaryBasedDataProcessing"></a>14. Dictionary-Based Data Preprocessing
+### <a name="DictionaryBasedCounting"></a>14. Dictionary-Based Counting
 
 Dictionary is the essential class used for data pre-processing in data analytics, data science, or machine learning. The following extensions make it quick for this purpose.
 
