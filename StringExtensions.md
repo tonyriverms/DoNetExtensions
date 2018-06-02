@@ -1,5 +1,11 @@
 # Char & String Extensions
 
+[10. Char Extensions](#CharExtensions)
+
+[16. String IndexOf Extensions](#IndexOfExtensions)
+
+[17. Multiple Keyword Search](#MultipleStringSearch)
+
 ### <a name="CharExtensions"></a>10. Char Extensions
 
 Some static methods of Char class is now available as extension methods. Some useful ones include **_IsWhiteSpace_**, **_IsLetter_**, **_IsNumber_**, **_IsDigit_**, **_IsLetterOrDigit_**, **_IsUpper_**, **_IsLower_**, **_IsPunctuation_**, **_IsCurrencySymbol_**, **_GetNumericValue_**, **_ToLower_**, **_ToUpper_**, etc.
@@ -52,7 +58,7 @@ str.IndexOfAny(new[] {'d','g','z'}, out int hitIndex); // function returns 4 ('d
 
 ### <a name="MultipleStringSearch"></a>17. Multiple Keyword Search
 
-Adds a ``MultipleStringSearch`` class that provides methods for efficient multiple keywords search.
+Adds a ``MultipleStringSearch`` class that provides methods for efficient multiple keywords search. The method could be 3 times faster than naive use of IndexOf for 10 keywords.
 
 ```c#
 var msearcher = new MultipleStringSearch(keywords: new[] {"key1", "key2", "key3", "key4", ...}) // you can pass in as many keywords as you like.
