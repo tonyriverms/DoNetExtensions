@@ -512,7 +512,7 @@ Adds a ``MultipleStringSearch`` class that provides methods for efficient multip
 
 ```c#
 var msearcher = new MultipleStringSearch(keywords: new[] {"key1", "key2", "key3", "key4", ...}) // you can pass in as many keywords as you like.
-var str = ... // any string to search for the keywords
+var str = ...; // any string to search for the keywords
 
 var allResults = msearcher.FindAll(str, startIndex:0); // returns an array of StringSearchResult objects
 var firstOccurrence = msearch.FindFirst(str, startIndex:0); // returns one StringSearchResult object representing the first occurrence of any of the keyword.
