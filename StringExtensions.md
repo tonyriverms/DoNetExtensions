@@ -50,14 +50,12 @@ str.IndexOfAny(new[] {'d','g','z'}, out int hitIndex); // function returns 4 ('d
 
 **_IndexOfAny(strings, startIndex, count) : StringSearchResult_**: Reports the index of the first occurrence of any strings in a specified char array. A ``StringSearchResult`` object is returned containing all needed information.
 
-### <a name="MultipleStringSearch"></a>17. Multiple String Search
+### <a name="MultipleStringSearch"></a>17. Multiple Keyword Search
 
 Adds a ``MultipleStringSearch`` class that provides methods for efficient multiple keywords search.
 
 ```c#
-var msearcher = new 
-
-(keywords: new[] {"key1", "key2", "key3", "key4", ...}) // you can pass in as many keywords as you like.
+var msearcher = new MultipleStringSearch(keywords: new[] {"key1", "key2", "key3", "key4", ...}) // you can pass in as many keywords as you like.
 var str = ... // any string to search for the keywords
 
 var allResults = msearcher.FindAll(str, startIndex:0); // returns an array of StringSearchResult objects
