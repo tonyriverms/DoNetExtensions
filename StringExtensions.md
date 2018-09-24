@@ -59,9 +59,9 @@ str.IndexOfAny(new[] {'d','g','z'}, out int hitIndex); // function returns 4 ('d
 **_IndexOfAny(strings, startIndex, count) : StringSearchResult_**: Reports the index of the first occurrence of any strings in a specified char array. A ``StringSearchResult`` object is returned containing all needed information.
 
 
-**_IndexOfFirstNonSpaceCharacter(startIndex) : StringSearchResult_**: Gets the index of the first non-white-space Unicode character in the string at and after the search starting position.
+**_IndexOfFirstNonSpaceCharacter(startIndex) : int**: Gets the index of the first non-white-space Unicode character in the string at and after the search starting position. A similar method **FirstNonSpaceCharacter(startIndex)** returns the non-white-space character instead of the index.
 
-**_IndexOfLastNonSpaceCharacter(startIndex) : StringSearchResult_**: Gets the index of the last non-white-space Unicode character in the string at and before the search starting position.
+**_IndexOfLastNonSpaceCharacter(startIndex) : int**: Gets the index of the last non-white-space Unicode character in the string at and before the search starting position. A similar method **LastNonSpaceCharacter(startIndex)** returns the non-white-space character instead of the index.
 
 ### <a name="MultipleStringSearch"></a>17. Multiple Keyword Search
 
