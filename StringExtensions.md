@@ -6,7 +6,7 @@
 
 [17. Multiple Keyword Search](#MultipleStringSearch)
 
-[18. String Split Enumerators](#String Split Enumerators)
+[18. Enhanced Trim](#EnhancedTrim)
 
 ### <a name="CharExtensions"></a>10. Char Extensions
 
@@ -75,3 +75,20 @@ var allResults = msearcher.FindAll(str, startIndex:0); // returns an array of St
 var firstOccurrence = msearch.FindFirst(str, startIndex:0); // returns one StringSearchResult object representing the first occurrence of any of the keyword.
 var containsAny = msearch.ContainsAny(str, startIndex:0); // checks if str contains any of the keyword
 ```
+
+### <a name="EnhancedTrim"></a>18. Enhanced Trim
+
+Trims characters or substrings at the beginning or end of a string instance.
+
+**_TrimStart(predicate)_**: Removes all leading occurrences of characters that satisfy the specified predicate. Returns the original instance if no characters are removed. Other similar functions include **_TrimEnd(predicate)_** and **_Trim(predicate)_**. Note .NET has build-in methods **_TrimStart(chars)_**, **_TrimEnd(chars)_** and **_Trim(chars)_** that remove leading or tailing characters in a specified char array.
+
+**_TrimStart(strings)_**: Removes all leading occurrences of specified strings. Other similar functions include **_TrimEnd(strings)_** and **_Trim(strings)_**. NOTE only the first matched leading and tailing occurrences will be removed. 
+
+```c#
+var str = "123123abc4569";
+Console.WriteLine(str.TrimStart(c => c.IsDigit()));  // prints abc4569
+Console.WriteLine(str.Trim(c => c.IsDigit()));  // prints abc
+Console.WriteLine(str.Trim("123", "4569");  // prints 123abc, only the first occurrence of "123" is trimmed
+```
+
+
