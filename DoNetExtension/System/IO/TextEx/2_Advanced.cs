@@ -171,7 +171,7 @@ namespace System.IO
                     {
                         var reader = readers[i];
                         var line = reader.ReadLine();
-                        outputs[i].First.WriteLine(line);
+                        outputs[i].Item1.WriteLine(line);
                     }
                 }
                 else
@@ -180,7 +180,7 @@ namespace System.IO
                     {
                         var reader = readers[i];
                         var line = reader.ReadLine();
-                        outputs[i].Second.WriteLine(line);
+                        outputs[i].Item2.WriteLine(line);
                     }
                 }
             }

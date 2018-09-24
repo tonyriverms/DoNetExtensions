@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public class StringReaderStatus
     {
@@ -20,7 +20,7 @@ namespace System
     public partial class StringReader
     {
         static StringReader _emtpyReader;
-        public static StringReader EmptyReader 
+        public static StringReader EmptyReader
         {
             get
             {
@@ -62,22 +62,123 @@ namespace System
             return false;
         }
 
-        /// <summary>
-        /// Advances the reader and reads all spaces from the reader's current position until a non-space character is encountered.
-        /// </summary>
-        /// <returns>The white-spaces read from the underlying string.</returns>
-        public string ReadSpaces()
+        public bool RemainingLineEmpty()
         {
-            return ReadString(c => { return c.IsWhiteSpace(); });
+            for (var i = CurrentPosition; i < EndPosition; ++i)
+            {
+                var c = UnderlyingString[i];
+                if (c.In(Environment.NewLine))
+                {
+                    CurrentPosition = i;
+                    return true;
+                }
+                else if (!c.IsWhiteSpace()) return false;
+            }
+
+            CurrentPosition = EndPosition;
+            return true;
+        }
+
+        public bool RemainingLineAndNextLineEmpty()
+        {
+            var state = 0;
+            var endstate = Environment.NewLine.Length + 1;
+            for (var i = CurrentPosition; i < EndPosition; ++i)
+            {
+                var c = UnderlyingString[i];
+                if (c.In(Environment.NewLine))
+                {
+                    state += 1;
+                    if (state == endstate)
+                    {
+                        CurrentPosition = i;
+                        return true;
+                    }
+                }
+                else if (!c.IsWhiteSpace()) return false;
+            }
+
+            CurrentPosition = EndPosition;
+            return true;
+        }
+
+        /// <summary>
+        /// Advances the reader and reads all spaces from the reader's current position until a non-whitespace character is encountered.
+        /// </summary>
+        /// <returns>The whitespace characters read from the underlying string.</returns>
+        public string ReadWhitespaces()
+        {
+            var sb = new StringBuilder();
+            for (; CurrentPosition < EndPosition; ++CurrentPosition)
+            {
+                var c = UnderlyingString[CurrentPosition];
+                if (c.IsWhiteSpace()) sb.Append(c);
+                else break;
+            }
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Advances the reader and reads all spaces from the reader's current position until a non-whitespace character or a character in <see cref="Environment.NewLine"/> is encountered.
+        /// </summary>
+        /// <returns>The whitespace characters read from the underlying string.</returns>
+        public string ReadInlineWhitespaces()
+        {
+            var sb = new StringBuilder();
+            for (; CurrentPosition < EndPosition; ++CurrentPosition)
+            {
+                var c = UnderlyingString[CurrentPosition];
+                if (c.NotIn(Environment.NewLine) && c.IsWhiteSpace()) sb.Append(c);
+                else break;
+            }
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Advances the reader and reads all spaces from the reader's current position until a non-whitespace character or a character in <see cref="Environment.NewLine" /> is encountered.
+        /// </summary>
+        /// <param name="linebreak">returns a <see cref="bool"/> indicating if the white spaces are followed by a new-line character.</param>
+        /// <returns>
+        /// The whitespace characters read from the underlying string.
+        /// </returns>
+        public string ReadInlineWhitespaces(out bool linebreak)
+        {
+            var sb = new StringBuilder();
+            for (; CurrentPosition < EndPosition; ++CurrentPosition)
+            {
+                var c = UnderlyingString[CurrentPosition];
+                if (c.In(Environment.NewLine))
+                {
+                    linebreak = true;
+                    return sb.ToString();
+                }
+
+                if (c.IsWhiteSpace()) sb.Append(c);
+                else
+                {
+                    linebreak = false;
+                    return sb.ToString();
+                }
+            }
+
+            linebreak = false;
+            return sb.ToString();
         }
 
         /// <summary>
         /// Advances the reader and reads all non-space characters from the reader's current position until a white-space character is encountered.
         /// </summary>
         /// <returns>The non-space characters read from the underlying string.</returns>
-        public string ReadNonSpaces()
+        public string ReadNonWhitespaces()
         {
-            return ReadString(c => { return !c.IsWhiteSpace(); });
+            var sb = new StringBuilder();
+            for (; CurrentPosition < EndPosition; ++CurrentPosition)
+            {
+                var c = UnderlyingString[CurrentPosition];
+                if (c.IsNotWhiteSpace()) sb.Append(c);
+                else break;
+            }
+            return sb.ToString();
         }
 
         /// <summary>
@@ -133,9 +234,9 @@ namespace System
         public bool Equals(string value)
         {
             var length = EndPosition - CurrentPosition;
-            if(length != value.Length) return false;
+            if (length != value.Length) return false;
             return string.Compare(UnderlyingString, CurrentPosition, value, 0, length, ComparisonType) == 0;
         }
-        
+
     }
 }

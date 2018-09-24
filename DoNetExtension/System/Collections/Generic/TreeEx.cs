@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System_Extension_Library.System.Collections.Generic;
+using DoNetExtension.System.Collections.Generic;
 using System.IO;
 
 namespace System.Collections.Generic
@@ -67,8 +67,8 @@ namespace System.Collections.Generic
                     return false;
 
                 var pre = _stack.Peek();
-                var preNode = pre.First;
-                var preIdx = pre.Second;
+                var preNode = pre.Item1;
+                var preIdx = pre.Item2;
                 while (preIdx)
                 {
                     _stack.Pop();
@@ -76,15 +76,15 @@ namespace System.Collections.Generic
                     if (_stack.Count == 0)
                         return false;
                     pre = _stack.Peek();
-                    preNode = pre.First;
-                    preIdx = pre.Second;
+                    preNode = pre.Item1;
+                    preIdx = pre.Item2;
                 }
                 _curr = preNode;
                 _right = true;
             }
             else if (_right)
             {
-                _stack.Peek().Second = true;
+                _stack.Peek().Item2 = true;
 
                 _curr = _curr.RightChild;
 
@@ -161,8 +161,8 @@ namespace System.Collections.Generic
                     return false;
 
                 var pre = _stack.Peek();
-                var preNodes = pre.First.Children;
-                var preIdx = pre.Second;
+                var preNodes = pre.Item1.Children;
+                var preIdx = pre.Item2;
                 while (preIdx == preNodes.Count)
                 {
                     _stack.Pop();
@@ -171,10 +171,10 @@ namespace System.Collections.Generic
                         return false;
 
                     pre = _stack.Peek();
-                    preNodes = pre.First.Children;
-                    preIdx = pre.Second;
+                    preNodes = pre.Item1.Children;
+                    preIdx = pre.Item2;
                 }
-                _curr = preNodes[pre.Second++];
+                _curr = preNodes[pre.Item2++];
             }
             return true;
         }
@@ -242,9 +242,9 @@ namespace System.Collections.Generic
                     return false;
 
                 var pre = _stack.Peek();
-                var preNode = pre.First;
+                var preNode = pre.Item1;
                 var preNodes = preNode.Children;
-                var preIdx = pre.Second;
+                var preIdx = pre.Item2;
                 if (preIdx == preNodes.Count)
                 {
                     _pop = true;
@@ -254,7 +254,7 @@ namespace System.Collections.Generic
                 else
                 {
                     _pop = false;
-                    _curr = preNodes[pre.Second++];
+                    _curr = preNodes[pre.Item2++];
                     if (_curr != null)
                     {
                         var currNodes = _curr.Children;
@@ -702,7 +702,7 @@ namespace System.Collections.Generic
             while (q.Count > 0)
             {
                 var t = q.Dequeue();
-                var node = t.First;
+                var node = t.Item1;
 
                 tag = (byte)stream.ReadByte();
                 bool isNull = tag.GetBit(0);
@@ -713,7 +713,7 @@ namespace System.Collections.Generic
                     if (node.Parent == null)
                         return null;
                     else
-                        node.Parent.Children[t.Second] = null;
+                        node.Parent.Children[t.Item2] = null;
                 }
                 else
                 {
@@ -738,7 +738,7 @@ namespace System.Collections.Generic
             while (q.Count > 0)
             {
                 var t = q.Dequeue();
-                var node = t.First.Parent;
+                var node = t.Item1.Parent;
                 bool isNull = stream.ReadBit();
                 bool isValueNull = stream.ReadBit();
 
@@ -747,7 +747,7 @@ namespace System.Collections.Generic
                     if (node.Parent == null)
                         return null;
                     else
-                        node.Parent.Children[t.Second] = null;
+                        node.Parent.Children[t.Item2] = null;
                 }
                 else
                 {

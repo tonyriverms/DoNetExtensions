@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace System_Extension_Library.System.Collections.Generic {
+namespace DoNetExtension.System.Collections.Generic {
     using System;
     
     
@@ -19,7 +19,7 @@ namespace System_Extension_Library.System.Collections.Generic {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class GenericResources {
@@ -39,7 +39,7 @@ namespace System_Extension_Library.System.Collections.Generic {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("System_Extension_Library.System.Collections.Generic.GenericResources", typeof(GenericResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DoNetExtension.System.Collections.Generic.GenericResources", typeof(GenericResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -120,6 +120,15 @@ namespace System_Extension_Library.System.Collections.Generic {
         internal static string ERR_DictionaryOnStream_HashStreamMustBeEmpty {
             get {
                 return ResourceManager.GetString("ERR_DictionaryOnStream_HashStreamMustBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to pop element because the heap is empty..
+        /// </summary>
+        internal static string ERR_Heap_EmptyHeap {
+            get {
+                return ResourceManager.GetString("ERR_Heap_EmptyHeap", resourceCulture);
             }
         }
         

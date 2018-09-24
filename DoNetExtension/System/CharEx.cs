@@ -166,6 +166,17 @@ namespace System
         }
 
         /// <summary>
+        /// <c>true</c> if this instance of Unicode character is not categorized as white space; otherwise, <c>false</c>.
+        /// </summary>
+        /// <param name="c">An instance of <see cref="System.Char"/></param>
+        /// <returns><c>true</c> if this instance of Unicode character is not a white space; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsNotWhiteSpace(this char c)
+        {
+            return !char.IsWhiteSpace(c);
+        }
+
+        /// <summary>
         /// Indicates whether this instance of Unicode character is categorized as a decimal digit. This is a dummy method of <see cref="char.IsDigit(char)"/> for convenience.
         /// </summary>
         /// <param name="c">An instance of <see cref="System.Char"/></param>
@@ -186,7 +197,7 @@ namespace System
         }
 
         /// <summary>
-        /// Inidcates whether this instance of Unicode character is categoriazed as an ASCII letter.
+        /// Indicates whether this instance of Unicode character is categoriazed as an ASCII letter.
         /// </summary>
         /// <param name="c">An instance of <see cref="System.Char"/></param>
         /// <returns><c>true</c> if this instance of Unicode character is an ASCII letter; otherwise, <c>false</c>.</returns>

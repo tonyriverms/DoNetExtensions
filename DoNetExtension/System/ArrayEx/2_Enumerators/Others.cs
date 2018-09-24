@@ -9,6 +9,7 @@ namespace System
 {
     public static partial class ArrayEx
     {
+
         /// <summary>
         /// Returns an generic enumerator for the array.
         /// </summary>

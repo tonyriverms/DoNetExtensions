@@ -15,15 +15,15 @@ namespace System.IO
         /// Writes the current object state to a <see cref="System.IO.Stream" />.
         /// </summary>
         /// <param name="stream">The stream.</param>
-        /// <param name="arg">Provides the external argument.</param>
-        void WriteToStream(Stream stream, object arg);
+        /// <param name="args">Provides additional arguments.</param>
+        void WriteToStream(Stream stream, params object[] args);
 
         /// <summary>
         /// Loads object state from a <see cref="System.IO.Stream" />.
         /// </summary>
         /// <param name="stream">The stream.</param>
-        /// <param name="arg">Provides the external argument.</param>
-        void LoadFromStream(Stream stream, object arg);
+        /// <param name="args">Provides additional arguments.</param>
+        void LoadFromStream(Stream stream, params object[] args);
     }
 
     /// <summary>

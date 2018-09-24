@@ -84,7 +84,7 @@ namespace System.IO
         /// <param name="stream">This stream to write.</param>
         /// <param name="value">The System.Char value.</param>
         /// <param name="buffer">A byte array used to temporarily store the <paramref name="value"/>.</param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)] 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public unsafe static void WriteChar(this Stream stream, Char value, byte[] buffer)
         {
             WriteInt16(stream, (short)value, buffer);
@@ -245,7 +245,7 @@ namespace System.IO
             var i = stream.Read(buffer, 0, sizeof(Single));
             if (i != sizeof(Single)) throw new InvalidDataException(IOResources.ERR_StreamExtension_DataNotEnough);
             return BitConverter.ToSingle(buffer, 0);
-        } 
+        }
 
         #endregion
 

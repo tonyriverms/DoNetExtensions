@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System_Extension_Library.System.Collections.Generic;
+using DoNetExtension.System.Collections.Generic;
 
 namespace System.Collections.Generic
 {
@@ -41,9 +41,9 @@ namespace System.Collections.Generic
         }
     }
 
-    public interface IDTree<TKey, TValue> : 
-        ITree<KeyValuePair<TKey, TValue>>, 
-        IDictionary<IList<TKey>, TValue>, 
+    public interface IDTree<TKey, TValue> :
+        ITree<KeyValuePair<TKey, TValue>>,
+        IDictionary<IList<TKey>, TValue>,
         IEnumerable<DTree<TKey, TValue>>,
         IEnumerable<IList<TKey>>
     {
@@ -95,7 +95,7 @@ namespace System.Collections.Generic
                 {
                     if (_parent == null || _parent.RemoveChild(this))
                     {
-                        if(value != null) value._children.Add(_key, value);
+                        if (value != null) value._children.Add(_key, value);
                         _parent = value;
                     }
                     else throw new InvalidOperationException();
@@ -290,7 +290,7 @@ namespace System.Collections.Generic
         #endregion
 
         #region Path
-        
+
         /// <summary>
         /// Determines whether the specified path exists in this tree.
         /// </summary>

@@ -123,6 +123,9 @@
   <data name="ERR_ArrayLengthMustBeEqualToASpecificValue" xml:space="preserve">
     <value>The length of array "{0}" must be equal to {1}.</value>
   </data>
+  <data name="ERR_ConvertShortcuts_ParsingError" xml:space="preserve">
+    <value>Error occurs when parsing "{0}" as a {1}. Please make sure the value to parse is in a correct format.</value>
+  </data>
   <data name="ERR_EmptyArray" xml:space="preserve">
     <value>Array "{0}" is empty.</value>
   </data>

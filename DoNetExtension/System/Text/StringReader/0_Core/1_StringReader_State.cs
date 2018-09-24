@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     /// <summary>
     /// Provides rich methods to extract information from a string instance, with a state property and related methods to facilitate construction of an automaton.
@@ -38,7 +38,7 @@ namespace System
         /// <param name="endState">Provides the end state.</param>
         /// <param name="s">The string instance to read.</param>
         /// <param name="startIndex">Specifies the initial position of the reader.</param>
-        public StringReader(TState initialState, TState endState, string s, int startIndex = 0): base(s, startIndex)
+        public StringReader(TState initialState, TState endState, string s, int startIndex = 0) : base(s, startIndex)
         {
             InitialState = initialState;
             EndState = endState;

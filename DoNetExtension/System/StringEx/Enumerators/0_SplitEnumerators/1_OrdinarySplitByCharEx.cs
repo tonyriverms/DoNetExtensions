@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace System
 {
@@ -321,8 +317,7 @@ namespace System
         }
 
         /// <summary>
-        /// Gets an object that can iterate through information about substrings in this string instance (or a part of the current string instance according to <paramref name="startIndex" />)
-        /// that are delimited by Unicode characters satisfying the specified predicate.
+        /// Gets an object that can iterate through information about substrings in this string instance that are delimited by Unicode characters satisfying the specified predicate.
         /// </summary>
         /// <param name="str">This string instance.</param>
         /// <param name="predicate">A function used to test each Unicode character of the current string. If a character passes this predicate, it returns a non-negative integer as the separator's index; otherwise, this function must return -1. Any character satisfying this predicate will be used as the separator.</param>
@@ -383,7 +378,6 @@ namespace System
         /// </summary>
         /// <param name="str">This string instance.</param>
         /// <param name="separators">A non-empty array of Unicode characters that delimit the substrings in the current string instance.</param>
-        /// <param name="startIndex">The zero-based position indicating where the search for separators starts.</param>
         /// <param name="removeEmptyEntries"><c>true</c> if the returned enumerator should ignore empty substrings; otherwise <c>false</c>.</param>
         /// <param name="trim">Indicates whether the returned substrings are trimmed.
         /// <para>NOTE that if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will not be returned;

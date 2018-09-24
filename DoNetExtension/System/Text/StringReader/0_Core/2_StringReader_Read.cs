@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -20,6 +20,20 @@ namespace System
         public void Advance()
         {
             if (!EOF) ++CurrentPosition;
+        }
+
+
+        /// <summary>
+        /// Adds an integer <paramref name="advance"/> to the reader's current position.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public void Advance(int advance)
+        {
+            var endPos = CurrentPosition + advance;
+            if (endPos > EndPosition) endPos = EndPosition;
+            else if (endPos < 0) endPos = 0;
+
+            CurrentPosition = endPos;
         }
 
         /// <summary>
@@ -51,19 +65,35 @@ namespace System
         #region Read Char without ComparisonType
 
         /// <summary>
-        /// Reads the character at the reader's current position and advances the reader's position to the next character.
+        /// If the current reading scope is non-empty (<see cref="EOF"/> is <c>false</c>), returns the character at the reader's current position and advances the reader's position to the next character; otherwise returns <c>'\0'</c>.
         /// </summary>
         /// <returns>The character at the reader's current position if the reader's current reading scope is not empty; '\0' if the reader has reached the end of the reading scope.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public char Read()
         {
-            if (!EOF)
+            if (EOF) return '\0';
+            var readChar = First;
+            ++CurrentPosition;
+            return readChar;
+
+        }
+
+        /// <summary>
+        /// If the current reading scope is non-empty (<see cref="EOF"/> is <c>false</c>), reads the character at the reader's current position to <paramref name="c"/>, advances the reader's position to the next character and retruns <c>true</c>; otherwise, returns <c>false</c> and <paramref name="c"/> is set '\0'.
+        /// </summary>
+        /// <param name="c">The character at the reader's current position if the reader's current reading scope is not empty; '\0' if the reader has reached the end of the reading scope.</param>
+        /// <returns><c>true</c> if the reader's current reading scope is not empty; <c>false</c> otherwise.</returns>
+        public bool Read(out char c)
+        {
+            if (EOF)
             {
-                var readChar = First;
-                ++CurrentPosition;
-                return readChar;
+                c = '\0';
+                return false;
             }
-            else return '\0';
+            c = First;
+            ++CurrentPosition;
+
+            return true;
         }
 
         /// <summary>
@@ -132,18 +162,99 @@ namespace System
 
 
         /// <summary>
-        /// Reads the whitespace character (defined by <see cref="Char.IsWhiteSpace(char)"/>) at the reader's current position (<see cref="First"/>) and advances the reader's position to the next character. If <see cref="First"/> is not a whitespace, the reader remains where it was.
+        /// Tries reading the whitespace character (defined by <see cref="Char.IsWhiteSpace(char)"/>) at the reader's current position (<see cref="First"/>) and advances the reader's position to the next character. If <see cref="First"/> is not a whitespace, the reader remains where it was.
         /// </summary>
         /// <returns><c>true</c> if the character at the reader's current position is a white space; otherwise, <c>false</c>.</returns>
         public bool ReadWhiteSpace()
         {
-            if (!EOF && !First.IsWhiteSpace())
+            if (!EOF && First.IsWhiteSpace())
             {
                 ++CurrentPosition;
                 return true;
             }
             else return false;
         }
+
+
+        /// <summary>
+        /// Tries reading the whitespace character (defined by <see cref="Char.IsWhiteSpace(char)" />) at the reader's current position (<see cref="First" />), returns the whitespace character, and advances the reader's position to the next character. If <see cref="First" /> is not a whitespace, the reader remains where it was.
+        /// </summary>
+        /// <param name="whitespace">Returns the whitespace character if there is one at the beginning of the reading scope.</param>
+        /// <returns>
+        ///   <c>true</c> if the character at the reader's current position is a white space; otherwise, <c>false</c>.
+        /// </returns>
+        public bool ReadWhiteSpace(out char whitespace)
+        {
+            if (!EOF && First.IsWhiteSpace())
+            {
+                whitespace = First;
+                ++CurrentPosition;
+                return true;
+            }
+
+            whitespace = '\0';
+            return false;
+        }
+
+        /// <summary>
+        /// Tries reading a number of whitespace characters (defined by <see cref="Char.IsWhiteSpace(char)" />) at the beginning of the current reading scope; if successful, the reader advances; otherwise the reader keeps its current position and returns <c>false</c>
+        /// </summary>
+        /// <param name="len">The number of white spaces expected to be at the beginning of the reading scope.</param>
+        /// <param name="breaksOnNewLine">if set to <c>true</c>, then breaks the white space reading on a new line character.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified number of white spaces exist at the beginning of the current reading scope; otherwise, false.
+        /// </returns>
+        public bool ReadWhiteSpace(int len, bool breaksOnNewLine = true)
+        {
+            var spaces = new char[len];
+            var currPosBackup = CurrentPosition;
+            for (var i = 0; i < len; ++i)
+            {
+                if (EOF || (breaksOnNewLine && First.In(Environment.NewLine)) || First.IsNotWhiteSpace())
+                {
+                    CurrentPosition = currPosBackup;
+                    return false;
+                }
+
+                spaces[i] = First;
+                ++CurrentPosition;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Tries reading a number of whitespace characters (defined by <see cref="Char.IsWhiteSpace(char)" />) at the beginning of the current reading scope; if successful, the reader advances and returns the whiite spaces; otherwise the reader keeps its current position and returns <c>false</c>.
+        /// </summary>
+        /// <param name="len">The number of white spaces expected to read.</param>
+        /// <param name="whitespace">Returns a string consisting of the white spaces.</param>
+        /// <param name="breaksOnNewLine">if set to <c>true</c>, then breaks the white space reading on a new line character.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified number of white spaces exist at the beginning of the current reading scope; otherwise, false.
+        /// </returns>
+        public bool ReadWhiteSpace(int len, out string whitespace, bool breaksOnNewLine = true)
+        {
+            var spaces = new char[len];
+            var currPosBackup = CurrentPosition;
+            for (var i = 0; i < len; ++i)
+            {
+                if (EOF || (breaksOnNewLine && First.In(Environment.NewLine)) || First.IsNotWhiteSpace())
+                {
+                    CurrentPosition = currPosBackup;
+                    whitespace = null;
+                    return false;
+                }
+
+                spaces[i] = First;
+                ++CurrentPosition;
+            }
+
+            whitespace = new string(spaces);
+            return true;
+        }
+
+
+
 
         #endregion
 
@@ -168,17 +279,17 @@ namespace System
         }
 
         /// <summary>
-        /// Advances the reader and reads until a character specified by <paramref name="keyChr" /> is encountered.
+        /// Advances the reader and reads until a character specified by <paramref name="keychar" /> is encountered.
         /// The <see cref="CurrentPosition"/> after executing this method depends on the <paramref name="options" />.
         /// </summary>
-        /// <param name="keyChr">The reader stops when this character is encountered.</param>
-        /// <param name="doubleKeycharEscape">if set to <c>true</c>, an occurrence of double <paramref name="keyChr"/> will be an escape of the <paramref name="keyChr"/>. For example, if the <paramref name="keyChr"/> is single quote <c>'</c>, then the double <c>'</c> in <c>'ab''cd'</c> is an escape of <c>'</c> if this parameter is set <c>true</c>.</param>
+        /// <param name="keychar">The reader stops when this character is encountered.</param>
+        /// <param name="doubleKeycharEscape">if set to <c>true</c>, an occurrence of double <paramref name="keychar"/> will be an escape of the <paramref name="keychar"/>. For example, if the <paramref name="keychar"/> is single quote <c>'</c>, then the double <c>'</c> in <c>'ab''cd'</c> is an escape of <c>'</c> if this parameter is set <c>true</c>.</param>
         /// <param name="options">Specifies the reading options.</param>
-        /// <returns>If <see cref="ReadOptions.ReadToEnd"/> is specified in <paramref name="options" />, then a substring starting from the current position of the reading scope to the position of the first occurrence of <paramref name="keyChr" /> within the search scope when the keychar is found, or a substring starting from the current position of the reading scope to the end of the search scope if such character is not found. If <see cref="ReadOptions.ReadToEnd"/> is not specified, then <c>null</c> is returned if <paramref name="keyChr"/> is not found.
-        /// <para>If <see cref="ReadOptions.StopAfterKey"/> is specified, then the reader stops at the position after the encountered <paramref name="keyChr" />; otherwise the reader stops at the position of the encountered <paramref name="keyChr" />.</para>
-        /// <para>The <paramref name="keyChr" /> is not included in the returned substring if <see cref="ReadOptions.DiscardKey"/> is specified.</para>
+        /// <returns>If <see cref="ReadOptions.ReadToEnd"/> is specified in <paramref name="options" />, then a substring starting from the current position of the reading scope to the position of the first occurrence of <paramref name="keychar" /> within the search scope when the keychar is found, or a substring starting from the current position of the reading scope to the end of the search scope if such character is not found. If <see cref="ReadOptions.ReadToEnd"/> is not specified, then <c>null</c> is returned if <paramref name="keychar"/> is not found.
+        /// <para>If <see cref="ReadOptions.StopAfterKey"/> is specified, then the reader stops at the position after the encountered <paramref name="keychar" />; otherwise the reader stops at the position of the encountered <paramref name="keychar" />.</para>
+        /// <para>The <paramref name="keychar" /> is not included in the returned substring if <see cref="ReadOptions.DiscardKey"/> is specified.</para>
         /// <para>The white spaces at the beginning of the substring will be trimmed if <see cref="ReadOptions.TrimStart"/> is specified, and the white spaces at the end of the substring will be trimmed if <see cref="ReadOptions.TrimEnd"/> is specified. <see cref="String.Empty" /> will be returned if the length of the substring after trim is 0.</para></returns>
-        public string ReadTo(char keyChr, bool doubleKeycharEscape = true, ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey)
+        public string ReadTo(char keychar, bool doubleKeycharEscape, ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey)
         {
             if (options.HasFlag(ReadOptions.TrimStart)) TrimStart();
 
@@ -191,14 +302,14 @@ namespace System
                     if (options.HasFlag(ReadOptions.ReadToEnd))
                     {
                         if (options.HasFlag(ReadOptions.TrimEnd)) TrimEnd();
-                        return _innerSubstringForDoubleEscape(keyChr, escapeCount, start, EndPosition);
+                        return _innerSubstringForDoubleEscape(keychar, escapeCount, start, EndPosition);
                     }
                     else return null;
                 }
-                if (UnderlyingString[CurrentPosition] == keyChr)
+                if (UnderlyingString[CurrentPosition] == keychar)
                 {
                     ++CurrentPosition;
-                    if (!doubleKeycharEscape || EOF || UnderlyingString[CurrentPosition] != keyChr)
+                    if (!doubleKeycharEscape || EOF || UnderlyingString[CurrentPosition] != keychar)
                     {
                         var length = CurrentPosition - start;
                         if (options.HasFlag(ReadOptions.DiscardKey))
@@ -216,7 +327,7 @@ namespace System
                         }
                         if (!options.HasFlag(ReadOptions.StopAfterKey)) --CurrentPosition;
                         if (length == 0) return string.Empty;
-                        else return _innerSubstringForDoubleEscape(keyChr, escapeCount, start, length);
+                        else return _innerSubstringForDoubleEscape(keychar, escapeCount, start, length);
                     }
                     else
                     {
@@ -446,14 +557,13 @@ namespace System
         }
 
         /// <summary>
-        /// Determines whether one of the substrings specified by <paramref name="keyStrs" /> is at the reader's current position without considering <see cref="ComparisonType" /> (equivalent to <see cref="StringComparison.Ordinal" />).
-        /// <para>If so, the reader advances to the end of this substring and returns the index of the hit substring; otherwise, the reader remains where it was.</para>
+        /// Determines whether one of the substrings specified by <paramref name="keyStrs" /> is at the reader's current position without considering <see cref="ComparisonType" /> (equivalent to <see cref="StringComparison.Ordinal" />). If so, the reader advances to the end of this substring and returns the index of the hit substring; otherwise, the reader remains where it was and returns <c>-1</c>.
         /// </summary>
         /// <param name="keyStrs">The target substrings.</param>
         /// <param name="index">Substring in <paramref name="keyStrs"/> starting at and after this index are matched against the beginning of the reader's current reading scope.</param>
         /// <param name="ignoreWhiteSpaces">If set to <c>true</c>, the white spaces at the beginning of the reader's current reading scope will be ignored.</param>
-        /// <returns><c>true</c> if one of <paramref name="keyStrs" /> is at the reader's current position (with white spaces ignored if <paramref name="ignoreWhiteSpaces" /> is set <c>true</c>) and the reader has advanced to the end of this substring;
-        /// otherwise, <c>false</c>.</returns>
+        /// <returns>The index of matched key substring if one of <paramref name="keyStrs" /> is at the reader's current position (with white spaces ignored if <paramref name="ignoreWhiteSpaces" /> is set <c>true</c>) and the reader has advanced to the end of this substring;
+        /// otherwise, <c>-1</c>.</returns>
         public int Read(string[] keyStrs, int index = 0, bool ignoreWhiteSpaces = true)
         {
             var i = ignoreWhiteSpaces ? _ignoreSpacesAtTheBeginning() : CurrentPosition;

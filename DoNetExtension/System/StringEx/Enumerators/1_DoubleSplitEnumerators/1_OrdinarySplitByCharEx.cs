@@ -44,7 +44,7 @@ namespace System
                         if (!ignore)
                             yield return new StringDoubleSplitResult()
                             {
-                                SecondarySplits = new StringSplitResult(outputStr, '\0', -1).CreateSingleton(),
+                                SecondarySplits = new StringSplitResult(outputStr, '\0', -1).Singleton(),
                                 Separator = i == endIndex ? '\0' : str[i],
                                 SeparatorIndex = separatorIndex
                             };
@@ -58,7 +58,7 @@ namespace System
                         for (int j = 0; j < posCount; ++j)
                         {
                             var posPair = posList[j];
-                            var pos = posPair.First;
+                            var pos = posPair.Item1;
 
                             if (trim)
                             {
@@ -72,7 +72,7 @@ namespace System
                             }
 
                             if (!ignore)
-                                output.Add(new StringSplitResult(outputStr, str[pos], posPair.Second));
+                                output.Add(new StringSplitResult(outputStr, str[pos], posPair.Item2));
                             startIndex = pos + 1;
                         }
 

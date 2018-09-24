@@ -7,6 +7,26 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DoNetExtension", "DoNetExte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackageTest", "PackageTest\PackageTest.csproj", "{CC915BCE-57F7-4D37-A7FE-B5E8A259587A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenderDataExtensionBuilder", "DataExtensionBuilder\GenderDataExtensionBuilder.csproj", "{BBC32C3C-F513-4144-B549-4D9A73CB2ACC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadWriteObjectTest", "ReadWriteObjectTest\ReadWriteObjectTest.csproj", "{7F46791A-EA29-4EF4-8CED-B444F0948300}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "genderstat", "genderstat\genderstat.csproj", "{0FABDB9C-2F8C-4EE0-A822-13A674340A5D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RstLivePreview", "RstLivePreview\RstLivePreview.csproj", "{386D9498-E00F-4CBE-A452-F5EE6FA756E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataEx", "DataEx\DataEx.csproj", "{0BD3867A-1907-4275-B5C2-D81C72DCE7D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TermNetworkBuilder", "TermNetworkBuilder\TermNetworkBuilder.csproj", "{A1FCCFBE-03A3-44FB-91C0-07317A76B5B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Extension.Neo4j", "..\..\..\..\..\Visual Studio 2012\Projects\System.Extension.Data\System.Extension.Neo4j.csproj", "{DED8B657-1FAA-4FE0-B383-CC0CE284CF27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neo4jTest", "..\..\..\..\..\Visual Studio 2012\Projects\Neo4jTest\Neo4jTest.csproj", "{79445566-4CA1-4FCB-AB38-443FBF6F0430}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neo4jTestNew", "Neo4jTestNew\Neo4jTestNew.csproj", "{035F1701-9BA7-4C2E-9313-B984713C5926}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TermEx", "..\..\..\..\Visual Studio 2017\Projects\TermEx\TermEx.csproj", "{CFF92B28-980B-4732-9478-15A89435198A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,11 +41,81 @@ Global
 		{CC915BCE-57F7-4D37-A7FE-B5E8A259587A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC915BCE-57F7-4D37-A7FE-B5E8A259587A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC915BCE-57F7-4D37-A7FE-B5E8A259587A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBC32C3C-F513-4144-B549-4D9A73CB2ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBC32C3C-F513-4144-B549-4D9A73CB2ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBC32C3C-F513-4144-B549-4D9A73CB2ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBC32C3C-F513-4144-B549-4D9A73CB2ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F46791A-EA29-4EF4-8CED-B444F0948300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F46791A-EA29-4EF4-8CED-B444F0948300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F46791A-EA29-4EF4-8CED-B444F0948300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F46791A-EA29-4EF4-8CED-B444F0948300}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FABDB9C-2F8C-4EE0-A822-13A674340A5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FABDB9C-2F8C-4EE0-A822-13A674340A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FABDB9C-2F8C-4EE0-A822-13A674340A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FABDB9C-2F8C-4EE0-A822-13A674340A5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{386D9498-E00F-4CBE-A452-F5EE6FA756E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{386D9498-E00F-4CBE-A452-F5EE6FA756E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{386D9498-E00F-4CBE-A452-F5EE6FA756E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{386D9498-E00F-4CBE-A452-F5EE6FA756E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BD3867A-1907-4275-B5C2-D81C72DCE7D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BD3867A-1907-4275-B5C2-D81C72DCE7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BD3867A-1907-4275-B5C2-D81C72DCE7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BD3867A-1907-4275-B5C2-D81C72DCE7D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1FCCFBE-03A3-44FB-91C0-07317A76B5B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FCCFBE-03A3-44FB-91C0-07317A76B5B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FCCFBE-03A3-44FB-91C0-07317A76B5B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FCCFBE-03A3-44FB-91C0-07317A76B5B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DED8B657-1FAA-4FE0-B383-CC0CE284CF27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DED8B657-1FAA-4FE0-B383-CC0CE284CF27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DED8B657-1FAA-4FE0-B383-CC0CE284CF27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DED8B657-1FAA-4FE0-B383-CC0CE284CF27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79445566-4CA1-4FCB-AB38-443FBF6F0430}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79445566-4CA1-4FCB-AB38-443FBF6F0430}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79445566-4CA1-4FCB-AB38-443FBF6F0430}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79445566-4CA1-4FCB-AB38-443FBF6F0430}.Release|Any CPU.Build.0 = Release|Any CPU
+		{035F1701-9BA7-4C2E-9313-B984713C5926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{035F1701-9BA7-4C2E-9313-B984713C5926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{035F1701-9BA7-4C2E-9313-B984713C5926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{035F1701-9BA7-4C2E-9313-B984713C5926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFF92B28-980B-4732-9478-15A89435198A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFF92B28-980B-4732-9478-15A89435198A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFF92B28-980B-4732-9478-15A89435198A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFF92B28-980B-4732-9478-15A89435198A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B0747579-11BA-4776-8D0F-C883DDEC7BF8}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal

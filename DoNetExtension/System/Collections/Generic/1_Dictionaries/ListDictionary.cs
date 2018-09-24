@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System_Extension_Library.System.Collections.Generic;
+using DoNetExtension.System.Collections.Generic;
 
 namespace System.Collections.Generic
 {
@@ -161,7 +161,7 @@ namespace System.Collections.Generic
                 {
                     if (key == null)
                     {
-                        node.Value = new KeyValuePair<TKey,TValue>(key, value);
+                        node.Value = new KeyValuePair<TKey, TValue>(key, value);
                         return true;
                     }
                     else node = node.Next;
@@ -312,10 +312,7 @@ namespace System.Collections.Generic
         /// <summary>
         /// Gets the number of key/value pairs contained in this <see cref="ListDictionary{TKey, TValue}"/>.
         /// </summary>
-        public int Count
-        {
-            get { return _list.Count; }
-        }
+        public int Count => _list.Count;
 
         /// <summary>
         /// Gets an enumerator that iterates through this <see cref="ListDictionary{TKey, TValue}"/>.

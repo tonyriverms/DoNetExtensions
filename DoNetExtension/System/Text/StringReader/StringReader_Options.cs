@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -39,7 +39,11 @@ namespace System
             /// <summary>
             /// The read will advance and read to the end of the reading scope if the keychar or keyword is not found.
             /// </summary>
-            ReadToEnd = 16
+            ReadToEnd = 16,
+            /// <summary>
+            /// The search stays within a line and stops when an <see cref="Environment.NewLine"/> is encountered.
+            /// </summary>
+            InLine = 32
         }
 
     }

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
         #region Predicate, Without Quotes
-        
+
         /// <summary>
         /// Advances the reader and reads until a character satisfying <paramref name="predicate"/> is encountered.
         /// The reader's position after executing this method depends on the <paramref name="options"/>.

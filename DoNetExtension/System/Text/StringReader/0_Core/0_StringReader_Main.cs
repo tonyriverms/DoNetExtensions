@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -53,7 +53,7 @@ namespace System
         /// <value>
         ///   <c>true</c> if the reader's current reading scope is empty; otherwise, <c>false</c>.
         /// </value>
-        public bool EOF { get { return CurrentPosition == EndPosition; } }
+        public bool EOF => CurrentPosition == EndPosition;
 
         /// <summary>
         /// Gets a value indicating whether the current reading scope is empty or contains only whitespace characters.
@@ -77,33 +77,36 @@ namespace System
         /// Gets the length of the current reading scope defined by <see cref="CurrentPosition"/> and <see cref="EndPosition"/>.
         /// </summary>
         /// <value>The length of the reading scope defined by <see cref="CurrentPosition"/> and <see cref="EndPosition"/>.</value>
-        public int Length
-        {
-            get { return EndPosition - CurrentPosition; }
-        }
+        public int Length => EndPosition - CurrentPosition;
 
         /// <summary>
         /// Gets the first character of the reading scope.
         /// </summary>
         /// <value>The first character of the reading scope.</value>
-        public char First
-        {
-            get { return UnderlyingString[CurrentPosition]; }
-        }
+        public char First => UnderlyingString[CurrentPosition];
 
-        public char Previous
-        {
-            get { return UnderlyingString[CurrentPosition - 1]; }
-        }
+
+        /// <summary>
+        /// Gets the character immediately before the reader's current position. Requires <see cref="CurrentPosition"/> not to equal zero.
+        /// </summary>
+        /// <value>
+        /// The character immediately before the reader's current position.
+        /// </value>
+        public char Previous => UnderlyingString[CurrentPosition - 1];
+
+        /// <summary>
+        /// Gets the character immediately after the reader's current position.
+        /// </summary>
+        /// <value>
+        /// The character immediately after the reader's current position.
+        /// </value>
+        public char Next => UnderlyingString[CurrentPosition + 1];
 
         /// <summary>
         /// Gets the last character of the reading scope.
         /// </summary>
         /// <value>The last character of the reading scope.</value>
-        public char Last
-        {
-            get { return UnderlyingString[EndPosition - 1]; }
-        }
+        public char Last => UnderlyingString[EndPosition - 1];
 
         /// <summary>
         /// Gets the <see cref="System.Char"/> of the underlying string instance using an index relative to the reader's current position.
@@ -138,8 +141,8 @@ namespace System
         public string SubstringBeforeCurrentPosition(int prevPos)
         {
             if (prevPos < CurrentPosition) return InnerSubstringBeforeCurrentPosition(prevPos);
-            else if (prevPos == CurrentPosition) return null;
-            else throw new ArgumentException(nameof(prevPos));
+            if (prevPos == CurrentPosition) return null;
+            throw new ArgumentException(nameof(prevPos));
         }
 
         /// <summary>
@@ -149,8 +152,7 @@ namespace System
         /// <returns>A substring starting from the specified <paramref name="prevPos" /> to the character previous to the <see cref="CurrentPosition" />. Note the first character of the current reading scope is not contained in the returned substring. <c>null</c> is returned if <paramref name="prevPos" /> equals <see cref="CurrentPosition" />.</returns>
         internal string InnerSubstringBeforeCurrentPosition(int prevPos)
         {
-            if (CurrentPosition == prevPos) return null;
-            return UnderlyingString.Substring(prevPos, CurrentPosition - prevPos);
+            return CurrentPosition == prevPos ? null : UnderlyingString.Substring(prevPos, CurrentPosition - prevPos);
         }
 
         /// <summary>
@@ -175,13 +177,11 @@ namespace System
         /// </summary>
         public void TrimStart()
         {
-            if (!EOF)
+            if (EOF) return;
+            while (UnderlyingString[CurrentPosition].IsWhiteSpace())
             {
-                while (UnderlyingString[CurrentPosition].IsWhiteSpace())
-                {
-                    ++CurrentPosition;
-                    if (EOF) return;
-                }
+                ++CurrentPosition;
+                if (EOF) return;
             }
         }
 
@@ -190,13 +190,11 @@ namespace System
         /// </summary>
         public void TrimEnd()
         {
-            if (!EOF)
+            if (EOF) return;
+            while (UnderlyingString[EndPosition - 1].IsWhiteSpace())
             {
-                while (UnderlyingString[EndPosition - 1].IsWhiteSpace())
-                {
-                    --EndPosition;
-                    if (EOF) return;
-                }
+                --EndPosition;
+                if (EOF) return;
             }
         }
 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,6 +34,41 @@ namespace System
             return -1;
         }
 
+
+        /// <summary>
+        /// Gets the index of the first inline occurrence of <paramref name="value"/>.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <param name="value">The value to search for.</param>
+        /// <param name="startIndex">Indicating the position where the search starts. Supports negative index.</param>
+        /// <param name="count">The number of character positions to examine.</param>
+        /// <param name="comparisonType">One of the enumeration values that specifies the rules for the search.</param>
+        /// <returns>The inline index of the first inline occurrence of <paramref name="value"/>.</returns>
+        public static int InlineIndexOf(this string str, string value, int startIndex, int count, StringComparison comparisonType)
+        {
+            if (startIndex < 0) startIndex += str.Length;
+            var newlineIndex = str.IndexOf(Environment.NewLine, startIndex, count, comparisonType);
+            if (newlineIndex == -1) return str.IndexOf(value, startIndex, count, comparisonType);
+            else return str.IndexOf(value, startIndex, newlineIndex - startIndex, comparisonType);
+        }
+
+        /// <summary>
+        /// Gets the index of the first inline occurrence of <paramref name="value"/>.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <param name="value">A Unicode character to search for.</param>
+        /// <param name="startIndex">Indicating the position where the search starts. Supports negative index.</param>
+        /// <param name="count">The number of character positions to examine.</param>
+        /// <returns>The inline index of the first inline occurrence of <paramref name="value"/>.</returns>
+        public static int InlineIndexOf(this string str, char value, int startIndex, int count)
+        {
+            if (startIndex < 0) startIndex += str.Length;
+            var newlineIndex = str.IndexOf(Environment.NewLine, startIndex, count, StringComparison.Ordinal);
+            if (newlineIndex == -1) return str.IndexOf(value, startIndex, count);
+            else return str.IndexOf(value, startIndex, newlineIndex - startIndex);
+        }
+
+
         /// <summary>
         /// Reports the index of the first character satisfying the specified predicate. 
         /// The search starts at a specified character position toward the end of this string instance.
@@ -42,7 +79,13 @@ namespace System
         /// <returns>The zero-based index position of the first character in this instance satisfying the specified predicate.</returns>
         public static int IndexOf(this string str, Func<char, bool> predicate, int startIndex = 0)
         {
-            ExceptionHelper.ArgumentRangeRequired("startIndex", startIndex, 0, true, str.Length - 1, true);
+            if (startIndex < 0)
+            {
+                startIndex += str.Length;
+                ExceptionHelper.ArgumentRangeRequired("startIndex", startIndex, -1, true, -str.Length, true);
+            }
+            else
+                ExceptionHelper.ArgumentRangeRequired("startIndex", startIndex, 0, true, str.Length - 1, true);
             return _innerIndexOf(str, predicate, startIndex, str.Length);
         }
 
@@ -116,17 +159,17 @@ namespace System
         /// <param name="count">The number of character positions to examine.</param>
         /// <param name="comparisonType">One of the enumeration values that specifies the rules for the search.</param>
         /// <returns>
-        /// A <see cref="StringSearchResult"/> object that stores the search result; null if the search fails.
+        /// A <see cref="StringSearchResult"/> object that stores the search result; <c>null</c> if the search fails.
         /// </returns>
         public static StringSearchResult IndexOfAny(this string str, IList<string> anyOf, int startIndex, int count, StringComparison comparisonType = StringComparison.Ordinal)
         {
-            int pos;
-            int minPos = int.MaxValue;
+            var minPos = int.MaxValue;
             string hitValue = null;
             var idx = 0;
             for (int i = 0, j = anyOf.Count; i < j; ++i)
             {
                 var val = anyOf[i];
+                int pos;
                 if ((pos = str.IndexOf(val, startIndex, count, comparisonType)) != -1)
                 {
                     if (minPos > pos)
@@ -137,8 +180,7 @@ namespace System
                     }
                 }
             }
-            if (hitValue == null) return null;
-            else return new StringSearchResult() { Value = hitValue, Position = minPos, HitIndex = idx };
+            return hitValue == null ? null : new StringSearchResult() { Value = hitValue, Position = minPos, HitIndex = idx };
         }
 
         /// <summary>
@@ -155,29 +197,5 @@ namespace System
         {
             return IndexOfAny(str, anyOf, startIndex, str.Length - startIndex, comparisonType);
         }
-
-
-        //public static int IndexOfAny(this string[] arr, string[] values, StringComparison comparisonType)
-        //{
-        //    var arrLen = arr.Length;
-        //    for (int i = 0; i < arrLen; ++i)
-        //    {
-        //        var valueToCompare = arr[i];
-        //        if (valueToCompare.In(values, comparisonType)) return i;
-        //    }
-        //    return -1;
-        //}
-
-        //public static int IndexOfAny(this string[] arr, string[] values, int startIndex, int length, StringComparison comparisonType)
-        //{
-        //    var arrLen = arr.Length;
-        //    var endIndex = ExceptionHelper.ForwardCheckStartIndexAndLength(startIndex, length, arrLen);
-        //    for (int i = startIndex; i < endIndex; ++i)
-        //    {
-        //        var valueToCompare = arr[i];
-        //        if (valueToCompare.In(values, comparisonType)) return i;
-        //    }
-        //    return -1;
-        //}
     }
 }

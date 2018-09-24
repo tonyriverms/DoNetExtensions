@@ -13,6 +13,11 @@ namespace System
     {
         #region Common
 
+        public static string[] Split(this string str, char separator, StringSplitOptions options)
+        {
+            return str.Split(new[] { separator }, options);
+        }
+
         /// <summary>
         /// Returns a string array that contains the substrings in this string (or a part of this string according to <paramref name="startIndex"/> and <paramref name="length"/>) that are delimited by characters satisfying the specified predicate.
         /// Additional options, such as string trimming, or separator keep, are available.
@@ -341,7 +346,14 @@ namespace System
         public static string[] SplitWithQuotes(this string str, Func<char, bool> predicate, int startIndex, int length,
             char leftQuote = '{', char rightQuote = '}', bool removeEmptyEntries = true, bool keepQuotes = true, bool keepSeparator = false)
         {
-            return GetSplitEnumeratorWithQuotes(str, predicate, startIndex, length, leftQuote, rightQuote, removeEmptyEntries, keepQuotes, keepSeparator).ToArray();
+            return GetSplitEnumeratorWithQuotes(str, predicate,
+                startIndex: startIndex,
+                length: length,
+                leftQuote: leftQuote,
+                rightQuote: rightQuote,
+                removeEmptyEntries: removeEmptyEntries,
+                keepQuotes: keepQuotes,
+                keepSeparator: keepSeparator).ToArray();
         }
 
         /// <summary>
@@ -367,7 +379,14 @@ namespace System
         public static string[] SplitWithQuotes(this string str, Func<char, bool> predicate, int startIndex = 0,
             char leftQuote = '{', char rightQuote = '}', bool removeEmptyEntries = true, bool keepQuotes = true, bool keepSeparator = false)
         {
-            return SplitWithQuotes(str, predicate, startIndex, str.Length - startIndex, leftQuote, rightQuote, removeEmptyEntries, keepQuotes, keepSeparator);
+            return SplitWithQuotes(str, predicate,
+                startIndex: startIndex,
+                length: str.Length - startIndex,
+                leftQuote: leftQuote,
+                rightQuote: rightQuote,
+                removeEmptyEntries: removeEmptyEntries,
+                keepQuotes: keepQuotes,
+                keepSeparator: keepSeparator);
         }
 
         /// <summary>
@@ -554,7 +573,7 @@ namespace System
                 else sb.Append(c);
             }
 
-            if (splitList.Count == 0) return (new StringSplitResult(str, '\0', -1)).CreateSingleton();
+            if (splitList.Count == 0) return (new StringSplitResult(str, '\0', -1)).Singleton();
             else
             {
                 if (!removeEmptyEntries || sb.Length != 0) splitList.Add(new StringSplitResult(sb.ToString(), '\0', -1));

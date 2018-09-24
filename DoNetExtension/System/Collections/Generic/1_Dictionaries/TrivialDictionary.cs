@@ -29,7 +29,7 @@ namespace System.Collections.Generic
 
         public IEnumerable<TKey> Keys
         {
-            get { return _key.CreateSingleton(); }
+            get { return _key.Singleton(); }
         }
 
         public bool TryGetValue(TKey key, out TValue value)
@@ -48,7 +48,7 @@ namespace System.Collections.Generic
 
         public IEnumerable<TValue> Values
         {
-            get { return _value.CreateSingleton(); }
+            get { return _value.Singleton(); }
         }
 
         public int Count
@@ -78,7 +78,7 @@ namespace System.Collections.Generic
 
         ICollection<TKey> IDictionary<TKey, TValue>.Keys
         {
-            get { return _key.CreateSingleton(); }
+            get { return _key.Singleton(); }
         }
 
         public bool Remove(TKey key)
@@ -88,7 +88,7 @@ namespace System.Collections.Generic
 
         ICollection<TValue> IDictionary<TKey, TValue>.Values
         {
-            get { return _value.CreateSingleton(); }
+            get { return _value.Singleton(); }
         }
 
         public TValue this[TKey key]

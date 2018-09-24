@@ -4,27 +4,28 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>DoNetExtensions</PackageId>
-    <Version>0.0.8</Version>
+    <Version>0.1.0</Version>
     <Authors>tony</Authors>
-    <Company>Drexel University</Company>
+    <Company>Drexel University, Philadelphia, U.S.</Company>
     <Product>,Net Extensions</Product>
     <Description>The project aims to provide hundreds of fully-documented, tested, and useful extension methods to existing standard .NET classes. We have been coding with .NET for more than ten years, and we notice many standard classes (like array, list, dictionary, etc.) lack rich methods to facilitate their use and quick development. Although each piece extension method in this library is not much, we believe as a whole they bring great convenience and help enhance producitivity for other .NET programmers.
 
-The initial release (version 8) includes following extensions: 1) Consistent Containment Check; 2) Collection to Array Conversion; 3) Consistent Emptiness Check; 4) Convenient IndexOf; 5) Collection to Concatenated String; 6) Array Updating Operations; 7) Value Swap; 8) Convenient Bit Operations; 9) Conversion to Hexical String; 10) Char Extensions.</Description>
+Update 10 includes following extensions: 1) Consistent Containment Check; 2) Collection to Array Conversion; 3) Consistent Emptiness Check; 4) Convenient IndexOf; 5) Collection to Concatenated String; 6) Array Updating Operations; 7) Value Swap; 8) Convenient Bit Operations; 9) Conversion to Hexical String; 10) Char Extensions; 11) SubArray Methods; 12) Sort Improvement; 13) Mutable Tuples for Data Processing; 14) Dictionary-Based Counting; 15) ForEach Shortcut.</Description>
     <Copyright>Tony Chen</Copyright>
     <PackageLicenseUrl>MIT License</PackageLicenseUrl>
-    <PackageReleaseNotes>Initial release version 8 (adds basic extensions for chars and strings). Now some key extensions are consistent among collections and strings.</PackageReleaseNotes>
+    <PackageReleaseNotes>Intial Release Update 10: added mutable Pair/Triple support, Dictionary-Based Counting, and ForEach Shortcut</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/tonyriverms/DoNetExtensions</PackageProjectUrl>
     <RepositoryUrl>https://github.com/tonyriverms/DoNetExtensions</RepositoryUrl>
     <RepositoryType />
-    <AssemblyVersion>0.0.8.0</AssemblyVersion>
-    <FileVersion>0.0.8.0</FileVersion>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <FileVersion>0.1.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Optimize>false</Optimize>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DocumentationFile>bin\Debug\netstandard2.0\DoNetExtension.xml</DocumentationFile>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -34,11 +35,20 @@ The initial release (version 8) includes following extensions: 1) Consistent Con
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="docfx.console" Version="2.39.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
     <PackageReference Include="System.Dynamic.Runtime" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="System\Collections\Generic\GenericResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GenericResources.resx</DependentUpon>
+    </Compile>
     <Compile Update="System\GeneralResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -49,9 +59,18 @@ The initial release (version 8) includes following extensions: 1) Consistent Con
       <AutoGen>True</AutoGen>
       <DependentUpon>IOResources.resx</DependentUpon>
     </Compile>
+    <Compile Update="System\Text\RegexResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>RegexResources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="System\Collections\Generic\GenericResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GenericResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="System\GeneralResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>GeneralResources.Designer.cs</LastGenOutput>
@@ -60,6 +79,14 @@ The initial release (version 8) includes following extensions: 1) Consistent Con
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>IOResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="System\Text\RegexResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>RegexResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="System\StringEx\Algorithms\" />
   </ItemGroup>
 
 </Project>

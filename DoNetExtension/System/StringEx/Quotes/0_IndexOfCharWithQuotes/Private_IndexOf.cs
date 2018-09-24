@@ -10,6 +10,39 @@ namespace System
 {
     public static partial class StringEx
     {
+        static void _searchRightQuote(string str, ref int i, int endIndex, char leftQuote, char rightQuote, char quoteEscape)
+        {
+            var sameQuote = leftQuote == rightQuote;
+            if (sameQuote)
+            {
+                i = _innerIndexOfWithEscape(str, leftQuote, i + 1, endIndex, quoteEscape);
+                if (i == -1) throw new FormatException(StringExResources.ERR_Quotes_QuoteMismatch);
+            }
+            else
+            {
+                var stackNum = 1;
+                var inEscape = false;
+                while (true)
+                {
+                    ++i;
+                    if (i == endIndex) throw new FormatException(StringExResources.ERR_Quotes_QuoteMismatch);
+                    var c = str[i];
+                    if (c == quoteEscape) inEscape = !inEscape;
+                    else if (c == leftQuote)
+                    {
+                        if (inEscape) inEscape = false;
+                        else ++stackNum;
+                    }
+                    else if (c == rightQuote)
+                    {
+                        if (inEscape) inEscape = false;
+                        else if (--stackNum == 0) break;
+                    }
+                    else inEscape = false;
+                }
+            }
+        }
+
         static void _searchRightQuote(string str, ref int i, int endIndex, char leftQuote, char rightQuote)
         {
             var sameQuote = leftQuote == rightQuote;
@@ -27,11 +60,7 @@ namespace System
                     if (i == endIndex) throw new FormatException(StringExResources.ERR_Quotes_QuoteMismatch);
                     var c = str[i];
                     if (c == leftQuote) ++stackNum;
-                    else if (c == rightQuote)
-                    {
-                        --stackNum;
-                        if (stackNum == 0) break;
-                    }
+                    else if (c == rightQuote && --stackNum == 0) break;
                 }
             }
         }
@@ -153,9 +182,26 @@ namespace System
 
         #region One-Layer Qutoes / Single Key Char
 
+        internal static int _innerIndexOfWithQuotes(string str, char keychar, int startIndex, int endIndex, char leftQuote, char rightQuote, char quoteEscape)
+        {
+            var inEscape = false;
+            while (startIndex < endIndex)
+            {
+                char c = str[startIndex];
+                if (c == quoteEscape) inEscape = !inEscape;
+                else if (c == leftQuote)
+                    if (inEscape) inEscape = false;
+                    else _searchRightQuote(str, ref startIndex, endIndex, leftQuote, rightQuote, quoteEscape);
+                else if (c == keychar) return startIndex;
+                else inEscape = false;
+                ++startIndex;
+            }
+
+            return -1;
+        }
+
         internal static int _innerIndexOfWithQuotes(string str, char keychar, int startIndex, int endIndex, char leftQuote, char rightQuote)
         {
-            var sameQuote = leftQuote == rightQuote;
             while (startIndex < endIndex)
             {
                 char c = str[startIndex];

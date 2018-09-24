@@ -11,7 +11,7 @@ namespace System
         /// <summary>
         /// Sorts the elements in the one-dimensional <see cref="System.Array"/> using the <see cref="System.IComparable{T}"/> interface implementation of each element of the <see cref="System.Array"/>.
         /// <para>
-        /// NOTE that this method does not create a new array but stores the sorted elements in the original array.
+        /// Note this method does not create a new array but stores the sorted elements in the original array.
         /// The returned array is the same instance as the passed-in argument <paramref name="array"/>.
         /// </para>
         /// </summary>
@@ -27,7 +27,7 @@ namespace System
         /// <summary>
         /// Sorts the elements in the one-dimensional <see cref="System.Array"/> in the descending order using the <see cref="System.IComparable{T}"/> interface implementation of each element of the <see cref="System.Array"/>.
         /// <para>
-        /// NOTE that this method does not create a new array but stores the sorted elements in the original array.
+        /// Note this method does not create a new array but stores the sorted elements in the original array.
         /// The returned array is the same instance as the passed-in argument <paramref name="array"/>.
         /// </para>
         /// </summary>
@@ -130,7 +130,7 @@ namespace System
         /// <summary>
         /// Sorts the elements in the one-dimensional <see cref="System.Array" /> using the specified <see cref="System.Comparison{T}"/>.
         /// <para>
-        /// NOTE that this method does not create a new array but stores the sorted elements in the original array.
+        /// Note this method does not create a new array but stores the sorted elements in the original array.
         /// The returned array is the same instance as the passed-in argument <paramref name="array" />.
         /// </para>
         /// </summary>
@@ -147,9 +147,9 @@ namespace System
         }
 
         /// <summary>
-        /// Sorts the elements in the one-dimensional <see cref="System.Array" />. A method is used to convert each element to a comparable object before comparison.
+        /// Sorts the elements in the one-dimensional <see cref="System.Array" />. A method can be specified to convert each element to a comparable object before comparison.
         /// <para>
-        /// NOTE that this method does not create a new array but stores the sorted elements in the original array.
+        /// NOTE this method does not create a new array but stores the sorted elements in the original array.
         /// The returned array is the same instance as the passed-in argument <paramref name="array" />.
         /// </para>
         /// </summary>
@@ -161,15 +161,49 @@ namespace System
         /// </returns>
         public static T[] Sort<T>(this T[] array, Func<T, IComparable> toComparable)
         {
-            Array.Sort<T>(array, new Comparison<T>(
-                (t1, t2) =>
-                {
-                    var v1 = toComparable(t1);
-                    var v2 = toComparable(t2);
-                    return v1.CompareTo(v2);
-                }
-                ));
+            Array.Sort<T>(array, (t1, t2) =>
+            {
+                var v1 = toComparable(t1);
+                var v2 = toComparable(t2);
+                return v1.CompareTo(v2);
+            });
             return array;
+        }
+
+        /// <summary>
+        /// Sorts the elements in the one-dimensional <see cref="System.Array" /> descendingly. A method can be specified to convert each element to a comparable object before comparison.
+        /// <para>
+        /// NOTE this method does not create a new array but stores the sorted elements in the original array.
+        /// The returned array is the same instance as the passed-in argument <paramref name="array" />.
+        /// </para>
+        /// </summary>
+        /// <typeparam name="T">The type of the elements of the array.</typeparam>
+        /// <param name="array">The one-dimensional, zero-base <see cref="System.Array"/> to sort.</param>
+        /// <param name="toComparable">A method converting elements of the <see cref="System.Array" /> to comparable values.</param>
+        /// <returns>
+        /// The same instance as the passed-in argument <paramref name="array" /> with elements sorted.
+        /// </returns>
+        public static T[] SortDesc<T>(this T[] array, Func<T, IComparable> toComparable)
+        {
+            Array.Sort<T>(array, (t1, t2) =>
+            {
+                var v1 = toComparable(t1);
+                var v2 = toComparable(t2);
+                return -v1.CompareTo(v2);
+            });
+            return array;
+        }
+
+        /// <summary>
+        /// Selects the <paramref name="k"/>th element in the current array, based on ascending order. After execution of this method, the current array will be reordered, and its first <paramref name="k"/> elements are smaller or equal to the selected <paramref name="k"/>th element.
+        /// </summary>
+        /// <typeparam name="T">The type of the elements of the current array.</typeparam>
+        /// <param name="array">The one-dimensional, zero-base <see cref="System.Array"/> to sort.</param>
+        /// <param name="k">The <paramref name="k"/>th element in the current array based on ascending order will be returned.</param>
+        /// <returns>The <paramref name="k"/>th element in the current array based on ascending order.</returns>
+        public static T TopK<T>(this T[] array, int k) where T : IComparable
+        {
+            return TopK(array, 0, array.Length, k);
         }
 
         /// <summary>
@@ -179,63 +213,79 @@ namespace System
         /// <param name="array">The one-dimensional, zero-base <see cref="System.Array"/> to sort.</param>
         /// <param name="start">The starting index of the selection range.</param>
         /// <param name="length">The number of elements in the selection range.</param>
-        /// <param name="k">The <paramref name="k"/>th element in the selection range (specified by <paramref name="start"/> and <paramref name="length"/>) of the current array will be returned.</param>
-        /// <returns>The <paramref name="k"/>th element in the selection range specified by <paramref name="start"/> and <paramref name="length"/>.</returns>
-        public static T QuickSelect<T>(this T[] array, int start, int length, int k) where T : IComparable
+        /// <param name="k">The <paramref name="k"/>th element in the selection range (specified by <paramref name="start"/> and <paramref name="length"/>) of the current array base on ascending order will be returned.</param>
+        /// <returns>The <paramref name="k"/>th element in the selection range specified by <paramref name="start"/> and <paramref name="length"/> based on ascending order.</returns>
+        public static T TopK<T>(this T[] array, int start, int length, int k) where T : IComparable
         {
-            if (array.IsNullOrEmpty()) return default(T);
-
-            if (length == 1 && k == 1)
-                return array[start];
-
-            int m = (length + 4) / 5;
-            var mid = new T[m];
-
-            for (int i = 0; i < m; i++)
+            while (true)
             {
-                int t = start + i * 5;
-                var r = length + start - t;
-                if (r > 4)
-                {
-                    array.Sort(t, 5);
-                    mid[i] = array[t + 2];
-                }
-                else
-                {
-                    array.Sort(t, r);
-                    mid[i] = array[t + (r - 1) / 2];
-                }
-            }
+                if (array.IsNullOrEmpty()) return default;
 
-            var pivot = QuickSelect(mid, 0, m, (m + 1) / 2);
+                if (length == 1 && k == 1) return array[start];
 
-            for (int i = 0; i < length; i++)
-            {
-                if (array[start + i].CompareTo(pivot) == 0)
+                var m = (length + 4) / 5;
+                var mid = new T[m];
+
+                for (var i = 0; i < m; i++)
                 {
+                    var t = start + i * 5;
+                    var r = length + start - t;
+                    if (r > 4)
+                    {
+                        array.Sort(t, 5);
+                        mid[i] = array[t + 2];
+                    }
+                    else
+                    {
+                        array.Sort(t, r);
+                        mid[i] = array[t + (r - 1) / 2];
+                    }
+                }
+
+                var pivot = TopK(mid, 0, m, (m + 1) / 2);
+
+                for (var i = 0; i < length; i++)
+                {
+                    if (array[start + i].CompareTo(pivot) != 0) continue;
                     array.Swap(start + i, start + length - 1);
                     break;
                 }
-            }
 
-            int pos = 0;
-            for (int i = 0; i < length - 1; i++)
-            {
-                if (array[start + i].CompareTo(pivot) < 0)
+                var pos = 0;
+                for (var i = 0; i < length - 1; i++)
                 {
-                    if (i != pos)
-                        array.Swap(start + i, start + pos);
+                    if (array[start + i].CompareTo(pivot) >= 0) continue;
+                    if (i != pos) array.Swap(start + i, start + pos);
                     pos++;
                 }
-            }
-            array.Swap(start + pos, start + length - 1);
 
-            if (pos == k - 1)
-                return pivot;
-            else if (pos > k - 1)
-                return QuickSelect(array, start, pos, k);
-            else
-                return QuickSelect(array, start + pos + 1, length - pos - 1, k - pos - 1);
+                array.Swap(start + pos, start + length - 1);
+
+                if (pos == k - 1)
+                    return pivot;
+                if (pos > k - 1)
+                {
+                    length = pos;
+                }
+                else
+                {
+                    start = start + pos + 1;
+                    length = length - pos - 1;
+                    k = k - pos - 1;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Selects the <paramref name="k"/>th element in the current array, based on descending order. After execution of this method, the current array will be reordered, and its first <paramref name="k"/> elements are smaller or equal to the selected <paramref name="k"/>th element.
+        /// </summary>
+        /// <typeparam name="T">The type of the elements of the current array.</typeparam>
+        /// <param name="array">The one-dimensional, zero-base <see cref="System.Array"/> to sort.</param>
+        /// <param name="k">The <paramref name="k"/>th element in the current array based on descending order will be returned.</param>
+        /// <returns>The <paramref name="k"/>th element in the current array based on descending order.</returns>
+        public static T TopKDesc<T>(this T[] array, int k) where T : IComparable
+        {
+            return TopKDesc(array, 0, array.Length, k);
         }
 
         /// <summary>
@@ -245,63 +295,67 @@ namespace System
         /// <param name="array">The one-dimensional, zero-base <see cref="System.Array"/> to sort.</param>
         /// <param name="start">The starting index of the selection range.</param>
         /// <param name="length">The number of elements in the selection range.</param>
-        /// <param name="k">The <paramref name="k"/>th element in the selection range (specified by <paramref name="start"/> and <paramref name="length"/>) of the current array will be returned.</param>
-        /// <returns>The <paramref name="k"/>th element in the selection range specified by <paramref name="start"/> and <paramref name="length"/>.</returns>
-        public static T QuickSelectDesc<T>(this T[] array, int start, int length, int k) where T : IComparable
+        /// <param name="k">The <paramref name="k"/>th element in the selection range (specified by <paramref name="start"/> and <paramref name="length"/>) of the current array based on descending order will be returned.</param>
+        /// <returns>The <paramref name="k"/>th element in the selection range specified by <paramref name="start"/> and <paramref name="length"/> based on descending order.</returns>
+        public static T TopKDesc<T>(this T[] array, int start, int length, int k) where T : IComparable
         {
-            if (array.IsNullOrEmpty()) return default(T);
-
-            if (length == 1 && k == 1)
-                return array[start];
-
-            int m = (length + 4) / 5;
-            var mid = new T[m];
-
-            for (int i = 0; i < m; i++)
+            while (true)
             {
-                int t = start + i * 5;
-                var r = length + start - t;
-                if (r > 4)
-                {
-                    array.SortDesc(t, 5);
-                    mid[i] = array[t + 2];
-                }
-                else
-                {
-                    array.SortDesc(t, r);
-                    mid[i] = array[t + (r - 1) / 2];
-                }
-            }
+                if (array.IsNullOrEmpty()) return default(T);
 
-            var pivot = QuickSelectDesc(mid, 0, m, (m + 1) / 2);
+                if (length == 1 && k == 1) return array[start];
 
-            for (int i = 0; i < length; i++)
-            {
-                if (array[start + i].CompareTo(pivot) == 0)
+                var m = (length + 4) / 5;
+                var mid = new T[m];
+
+                for (var i = 0; i < m; i++)
                 {
+                    var t = start + i * 5;
+                    var r = length + start - t;
+                    if (r > 4)
+                    {
+                        array.SortDesc(t, 5);
+                        mid[i] = array[t + 2];
+                    }
+                    else
+                    {
+                        array.SortDesc(t, r);
+                        mid[i] = array[t + (r - 1) / 2];
+                    }
+                }
+
+                var pivot = TopKDesc(mid, 0, m, (m + 1) / 2);
+
+                for (int i = 0; i < length; i++)
+                {
+                    if (array[start + i].CompareTo(pivot) != 0) continue;
                     array.Swap(start + i, start + length - 1);
                     break;
                 }
-            }
 
-            int pos = 0;
-            for (int i = 0; i < length - 1; i++)
-            {
-                if (array[start + i].CompareTo(pivot) > 0)
+                var pos = 0;
+                for (var i = 0; i < length - 1; i++)
                 {
-                    if (i != pos)
-                        array.Swap(start + i, start + pos);
+                    if (array[start + i].CompareTo(pivot) <= 0) continue;
+                    if (i != pos) array.Swap(start + i, start + pos);
                     pos++;
                 }
-            }
-            array.Swap(start + pos, start + length - 1);
 
-            if (pos == k - 1)
-                return pivot;
-            else if (pos > k - 1)
-                return QuickSelectDesc(array, start, pos, k);
-            else
-                return QuickSelectDesc(array, start + pos + 1, length - pos - 1, k - pos - 1);
+                array.Swap(start + pos, start + length - 1);
+
+                if (pos == k - 1)
+                    return pivot;
+                if (pos > k - 1)
+                {
+                    length = pos;
+                }
+                else
+                {
+                    start = start + pos + 1;
+                    length = length - pos - 1;
+                    k = k - pos - 1;
+                }
+            }
         }
 
         /// <summary>
@@ -315,67 +369,74 @@ namespace System
         /// <param name="length">The number of elements in the selection range.</param>
         /// <param name="k">The <paramref name="k" />th element in the selection range (specified by <paramref name="start" /> and <paramref name="length" />) of the current array will be returned.</param>
         /// <returns>The <paramref name="k" />th element in the selection range specified by <paramref name="start" /> and <paramref name="length" />.</returns>
-        public static TKey QuickSelectWithValues<TKey, TValue>(this TKey[] array, TValue[] values, int start, int length, int k) where TKey : IComparable
+        public static TKey TopKWithValues<TKey, TValue>(this TKey[] array, TValue[] values, int start, int length, int k) where TKey : IComparable
         {
-            if (array.IsNullOrEmpty()) return default(TKey);
-
-            if (length == 1 && k == 1)
-                return array[start];
-
-            int m = (length + 4) / 5;
-            var mid = new TKey[m];
-
-            for (int i = 0; i < m; i++)
+            while (true)
             {
-                int t = start + i * 5;
-                var r = length + start - t;
-                if (r > 4)
-                {
-                    array.SortWithValues(values, t, 5);
-                    mid[i] = array[t + 2];
-                }
-                else
-                {
-                    array.SortWithValues(values, t, r);
-                    mid[i] = array[t + (r - 1) / 2];
-                }
-            }
+                if (array.IsNullOrEmpty()) return default(TKey);
 
-            var pivot = QuickSelect(mid, 0, m, (m + 1) / 2);
+                if (length == 1 && k == 1) return array[start];
 
-            for (int i = 0; i < length; i++)
-            {
-                if (array[start + i].CompareTo(pivot) == 0)
+                var m = (length + 4) / 5;
+                var mid = new TKey[m];
+
+                for (var i = 0; i < m; i++)
                 {
-                    array.Swap(start + i, start + length - 1);
-                    values.Swap(start + i, start + length - 1);
-                    break;
+                    var t = start + i * 5;
+                    var r = length + start - t;
+                    if (r > 4)
+                    {
+                        array.SortWithValues(values, t, 5);
+                        mid[i] = array[t + 2];
+                    }
+                    else
+                    {
+                        array.SortWithValues(values, t, r);
+                        mid[i] = array[t + (r - 1) / 2];
+                    }
                 }
-            }
 
-            int pos = 0;
-            for (int i = 0; i < length - 1; i++)
-            {
-                if (array[start + i].CompareTo(pivot) < 0)
+                var pivot = TopK(mid, 0, m, (m + 1) / 2);
+
+                for (var i = 0; i < length; i++)
                 {
+                    if (array[start + i].CompareTo(pivot) == 0)
+                    {
+                        array.Swap(start + i, start + length - 1);
+                        values.Swap(start + i, start + length - 1);
+                        break;
+                    }
+                }
+
+                var pos = 0;
+                for (var i = 0; i < length - 1; i++)
+                {
+                    if (array[start + i].CompareTo(pivot) >= 0) continue;
                     if (i != pos)
                     {
                         array.Swap(start + i, start + pos);
                         values.Swap(start + i, start + pos);
                     }
+
                     pos++;
                 }
+
+                array.Swap(start + pos, start + length - 1);
+                values.Swap(start + pos, start + length - 1);
+
+                if (pos == k - 1)
+                    return pivot;
+                else if (pos > k - 1)
+                {
+                    length = pos;
+                }
+                else
+                {
+                    start = start + pos + 1;
+                    length = length - pos - 1;
+                    k = k - pos - 1;
+                }
             }
-
-            array.Swap(start + pos, start + length - 1);
-            values.Swap(start + pos, start + length - 1);
-
-            if (pos == k - 1)
-                return pivot;
-            else if (pos > k - 1)
-                return QuickSelectWithValues(array, values, start, pos, k);
-            else
-                return QuickSelectWithValues(array, values, start + pos + 1, length - pos - 1, k - pos - 1);
         }
 
         /// <summary>
@@ -389,66 +450,71 @@ namespace System
         /// <param name="length">The number of elements in the selection range.</param>
         /// <param name="k">The <paramref name="k" />th element in the selection range (specified by <paramref name="start" /> and <paramref name="length" />) of the current array will be returned.</param>
         /// <returns>The <paramref name="k" />th element in the selection range specified by <paramref name="start" /> and <paramref name="length" />.</returns>
-        public static TKey QuickSelectDescWithValues<TKey, TValue>(this TKey[] array, TValue[] values, int start, int length, int k) where TKey : IComparable
+        public static TKey TopKDescWithValues<TKey, TValue>(this TKey[] array, TValue[] values, int start, int length, int k) where TKey : IComparable
         {
-            if (array.IsNullOrEmpty()) return default(TKey);
-            if (length == 1 && k == 1)
-                return array[start];
-
-            int m = (length + 4) / 5;
-            var mid = new TKey[m];
-
-            for (int i = 0; i < m; i++)
+            while (true)
             {
-                int t = start + i * 5;
-                var r = length + start - t;
-                if (r > 4)
-                {
-                    array.SortDescWithValues(values, t, 5);
-                    mid[i] = array[t + 2];
-                }
-                else
-                {
-                    array.SortDescWithValues(values, t, r);
-                    mid[i] = array[t + (r - 1) / 2];
-                }
-            }
+                if (array.IsNullOrEmpty()) return default(TKey);
+                if (length == 1 && k == 1) return array[start];
 
-            var pivot = QuickSelectDesc(mid, 0, m, (m + 1) / 2);
+                var m = (length + 4) / 5;
+                var mid = new TKey[m];
 
-            for (int i = 0; i < length; i++)
-            {
-                if (array[start + i].CompareTo(pivot) == 0)
+                for (var i = 0; i < m; i++)
                 {
+                    var t = start + i * 5;
+                    var r = length + start - t;
+                    if (r > 4)
+                    {
+                        array.SortDescWithValues(values, t, 5);
+                        mid[i] = array[t + 2];
+                    }
+                    else
+                    {
+                        array.SortDescWithValues(values, t, r);
+                        mid[i] = array[t + (r - 1) / 2];
+                    }
+                }
+
+                var pivot = TopKDesc(mid, 0, m, (m + 1) / 2);
+
+                for (var i = 0; i < length; i++)
+                {
+                    if (array[start + i].CompareTo(pivot) != 0) continue;
                     array.Swap(start + i, start + length - 1);
                     values.Swap(start + i, start + length - 1);
                     break;
                 }
-            }
 
-            int pos = 0;
-            for (int i = 0; i < length - 1; i++)
-            {
-                if (array[start + i].CompareTo(pivot) > 0)
+                var pos = 0;
+                for (var i = 0; i < length - 1; i++)
                 {
+                    if (array[start + i].CompareTo(pivot) <= 0) continue;
                     if (i != pos)
                     {
                         array.Swap(start + i, start + pos);
                         values.Swap(start + i, start + pos);
                     }
+
                     pos++;
                 }
+
+                array.Swap(start + pos, start + length - 1);
+                values.Swap(start + pos, start + length - 1);
+
+                if (pos == k - 1)
+                    return pivot;
+                if (pos > k - 1)
+                {
+                    length = pos;
+                }
+                else
+                {
+                    start = start + pos + 1;
+                    length = length - pos - 1;
+                    k = k - pos - 1;
+                }
             }
-
-            array.Swap(start + pos, start + length - 1);
-            values.Swap(start + pos, start + length - 1);
-
-            if (pos == k - 1)
-                return pivot;
-            else if (pos > k - 1)
-                return QuickSelectDescWithValues(array, values, start, pos, k);
-            else
-                return QuickSelectDescWithValues(array, values, start + pos + 1, length - pos - 1, k - pos - 1);
         }
 
         /// <summary>
@@ -460,11 +526,11 @@ namespace System
         /// <returns>The minimum value.</returns>
         public static T Min<T>(this IEnumerable<T> source, Comparison<T> comparison)
         {
-            var ie = source.GetEnumerator();
-            T minItem = default(T);
-
-            if (ie.MoveNext())
+            using (var ie = source.GetEnumerator())
             {
+                var minItem = default(T);
+
+                if (!ie.MoveNext()) return minItem;
                 minItem = ie.Current;
                 while (ie.MoveNext())
                 {
@@ -472,9 +538,9 @@ namespace System
                     if (comparison(item, minItem) < 0)
                         minItem = item;
                 }
-            }
 
-            return minItem;
+                return minItem;
+            }
         }
 
         /// <summary>
@@ -486,11 +552,11 @@ namespace System
         /// <returns>The maximum value.</returns>
         public static T Max<T>(this IEnumerable<T> source, Comparison<T> comparison)
         {
-            var ie = source.GetEnumerator();
-            T maxItem = default(T);
-
-            if (ie.MoveNext())
+            using (var ie = source.GetEnumerator())
             {
+                var maxItem = default(T);
+
+                if (!ie.MoveNext()) return maxItem;
                 maxItem = ie.Current;
                 while (ie.MoveNext())
                 {
@@ -498,9 +564,9 @@ namespace System
                     if (comparison(item, maxItem) > 0)
                         maxItem = item;
                 }
-            }
 
-            return maxItem;
+                return maxItem;
+            }
         }
 
         /// <summary>
@@ -513,8 +579,8 @@ namespace System
         public static T Min<T>(this T[] array, Comparison<T> comparison)
         {
             var len = ExceptionHelper.NonEmptyArrayRequired(array, "array");
-            T minItem = array[0];
-            for (int i = 1; i < len; ++i )
+            var minItem = array[0];
+            for (var i = 1; i < len; ++i)
             {
                 var item = array[i];
                 if (comparison(item, minItem) < 0) minItem = item;
@@ -532,8 +598,8 @@ namespace System
         public static T Max<T>(this T[] array, Comparison<T> comparison)
         {
             var len = ExceptionHelper.NonEmptyArrayRequired(array, "array");
-            T minItem = array[0];
-            for (int i = 1; i < len; ++i)
+            var minItem = array[0];
+            for (var i = 1; i < len; ++i)
             {
                 var item = array[i];
                 if (comparison(item, minItem) > 0) minItem = item;
@@ -550,27 +616,24 @@ namespace System
         /// <returns>An element in the sequence with the minimum comparable value.</returns>
         public static T SelectMin<T>(this IEnumerable<T> source, Func<T, IComparable> toComparable)
         {
-            T minItem = default(T);
-            IComparable maxVal;
-            var ie = source.GetEnumerator();
-            if (ie.MoveNext())
+            var minItem = default(T);
+            using (var ie = source.GetEnumerator())
             {
+                if (!ie.MoveNext()) return minItem;
                 minItem = ie.Current;
-                maxVal = toComparable(minItem);
+                var maxVal = toComparable(minItem);
 
                 while (ie.MoveNext())
                 {
                     var item = ie.Current;
                     var val = toComparable(item);
-                    if (val.CompareTo(maxVal) < 0)
-                    {
-                        minItem = item;
-                        maxVal = val;
-                    }
+                    if (val.CompareTo(maxVal) >= 0) continue;
+                    minItem = item;
+                    maxVal = val;
                 }
-            }
 
-            return minItem;
+                return minItem;
+            }
         }
 
         /// <summary>
@@ -582,27 +645,25 @@ namespace System
         /// <returns>An element in the sequence with the maximum comparable value.</returns>
         public static T SelectMax<T>(this IEnumerable<T> source, Func<T, IComparable> toComparable)
         {
-            T maxItem = default(T);
-            IComparable maxVal;
-            var ie = source.GetEnumerator();
-            if (ie.MoveNext())
+            var maxItem = default(T);
+            using (var ie = source.GetEnumerator())
+
             {
+                if (!ie.MoveNext()) return maxItem;
                 maxItem = ie.Current;
-                maxVal = toComparable(maxItem);
+                var maxVal = toComparable(maxItem);
 
                 while (ie.MoveNext())
                 {
                     var item = ie.Current;
                     var val = toComparable(item);
-                    if (val.CompareTo(maxVal) > 0)
-                    {
-                        maxItem = item;
-                        maxVal = val;
-                    }
+                    if (val.CompareTo(maxVal) <= 0) continue;
+                    maxItem = item;
+                    maxVal = val;
                 }
-            }
 
-            return maxItem;
+                return maxItem;
+            }
         }
     }
 }

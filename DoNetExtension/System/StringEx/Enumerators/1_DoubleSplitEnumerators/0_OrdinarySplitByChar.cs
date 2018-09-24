@@ -23,9 +23,9 @@ namespace System
                         if (trim)
                         {
                             var trimmedStr = str.SubstringWithTrim(startIndex, i - startIndex);
-                            if (!removeEmptyEntries || !trimmedStr.Equals(string.Empty)) yield return trimmedStr.CreateSingleton(); 
+                            if (!removeEmptyEntries || !trimmedStr.Equals(string.Empty)) yield return trimmedStr.Singleton(); 
                         }
-                        else if(!removeEmptyEntries || i != startIndex) yield return str.Substring(startIndex, i - startIndex).CreateSingleton();
+                        else if(!removeEmptyEntries || i != startIndex) yield return str.Substring(startIndex, i - startIndex).Singleton();
                         startIndex = i + 1;
                     }
                     else

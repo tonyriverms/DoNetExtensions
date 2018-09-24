@@ -10,12 +10,19 @@ namespace System
 {
     public static partial class StringEx
     {
+        public static string ToStringThenClear(this StringBuilder builder)
+        {
+            var str = builder.ToString();
+            builder.Clear();
+            return str;
+        }
+
         /// <summary>
         /// Converts the value of this instance to a <see cref="System.String"/> with white spaces at both ends removed.
         /// </summary>
         /// <param name="builder">The current <see cref="System.Text.StringBuilder"/> object.</param>
         /// <returns>A string whose value is the same as this instance except for white spaces at both ends are removed.</returns>
-        public unsafe static string ToStringWithTrim(this StringBuilder builder)
+        public static string ToStringWithTrim(this StringBuilder builder)
         {
             var endIndex = builder.Length;
             if (endIndex == 0) return string.Empty;

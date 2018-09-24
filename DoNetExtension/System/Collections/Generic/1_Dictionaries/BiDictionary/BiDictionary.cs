@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System_Extension_Library.System.Collections.Generic;
+using DoNetExtension.System.Collections.Generic;
 
 namespace System.Collections.Generic
 {
@@ -162,7 +162,7 @@ namespace System.Collections.Generic
         public void Add(TKey key, TValue value)
         {
             _dict1.Add(key, value);
-            if(!_selfSync) _dict2.Add(value, key);
+            if (!_selfSync) _dict2.Add(value, key);
         }
 
         /// <summary>

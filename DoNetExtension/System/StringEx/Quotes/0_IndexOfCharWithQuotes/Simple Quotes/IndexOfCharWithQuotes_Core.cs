@@ -72,7 +72,7 @@ namespace System
         }
 
         /// <summary>
-        /// Reports the zero-based index of the first occurrence of the specified escapable Unicode character outside quotes in this string.
+        /// Reports the zero-based index of the first occurrence of the specified Unicode character outside quotes in this string.
         /// </summary>
         /// <param name="str">This string instance.</param>
         /// <param name="value">The Unicode character to seek.</param>
@@ -87,6 +87,25 @@ namespace System
         {
             var endIndex = ExceptionHelper.ForwardCheckStartIndexAndLength(startIndex, length, str.Length);
             return _innerIndexOfWithQuotes(str, value, startIndex, endIndex, leftQuote, rightQuote);
+        }
+
+        /// <summary>
+        /// Reports the zero-based index of the first occurrence of the specified Unicode character outside quotes in this string.
+        /// </summary>
+        /// <param name="str">This string instance.</param>
+        /// <param name="value">The Unicode character to seek.</param>
+        /// <param name="startIndex">The search starting position.</param>
+        /// <param name="length">A positive value indicating the number of characters to search starting from the position specified by <paramref name="startIndex" />.</param>
+        /// <param name="leftQuote">Specifies the Unicode character as the left quote.</param>
+        /// <param name="rightQuote">Specifies the Unicode character as the right quote.</param>
+        /// <param name="quoteEscape">A character for escaping both the <paramref name="leftQuote"/> and <paramref name="rightQuote"/>.</param>
+        /// <returns>
+        /// The zero-based index position of the first occurrence of <paramref name="value" /> if it is found outside quotes, or -1 if it is not.
+        /// </returns>
+        public static int IndexOfWithQuotes(this string str, char value, int startIndex, int length, char leftQuote = '{', char rightQuote = '}', char quoteEscape = '\\')
+        {
+            var endIndex = ExceptionHelper.ForwardCheckStartIndexAndLength(startIndex, length, str.Length);
+            return _innerIndexOfWithQuotes(str, value, startIndex, endIndex, leftQuote, rightQuote, quoteEscape);
         }
 
         /// <summary>

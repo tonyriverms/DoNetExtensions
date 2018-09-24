@@ -1110,7 +1110,7 @@ namespace System
 
             var arr = new int[length];
 
-            if (random == null) random = new Random();
+            if (random == null) random = new Random(DateTime.Now.Millisecond);
 
             while (length != 0)
                 arr[--length] = random.Next(min, max);

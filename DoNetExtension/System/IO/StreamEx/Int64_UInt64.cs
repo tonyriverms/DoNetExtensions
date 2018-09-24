@@ -310,7 +310,7 @@ namespace System.IO
         /// <param name="stream">The stream to write to.</param>
         /// <param name="value">The System.UInt64 value.</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static void WriteInt56(this Stream stream, Int64 value)
+        public static unsafe void WriteInt56(this Stream stream, Int64 value)
         {
             WriteInt56(stream, value, new byte[sizeof(Int64)]);
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -103,7 +103,7 @@ namespace System
         /// <returns>
         /// A new string reader that encapsulates a substring read from the underlying string instance of the current reader.
         /// </returns>
-        public StringReader ReadToAsReader(string keyword, char leftQuote, char rightQuote, ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey |ReadOptions.ReadToEnd)
+        public StringReader ReadToAsReader(string keyword, char leftQuote, char rightQuote, ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey | ReadOptions.ReadToEnd)
         {
             var idx = UnderlyingString.IndexOfWithQuotes(keyword, CurrentPosition, EndPosition - CurrentPosition, leftQuote, rightQuote, ComparisonType);
             return _innerReadToAsReader(idx, keyword.Length, options);
@@ -228,7 +228,7 @@ namespace System
         /// </returns>
         public StringReader ReadBeforeWithTrimAsReader(string keyword, char[] leftQuotes, char[] rightQuotes, bool readToEndIfKeywordNotFound = true)
         {
-            var options = readToEndIfKeywordNotFound ? 
+            var options = readToEndIfKeywordNotFound ?
                 ReadOptions.TrimStart | ReadOptions.TrimEnd | ReadOptions.ReadToEnd :
                 ReadOptions.TrimStart | ReadOptions.TrimEnd;
             return ReadToAsReader(keyword, leftQuotes, rightQuotes, options);
@@ -760,7 +760,7 @@ namespace System
         /// </returns>
         public StringReader ReadBeforeWithTrimAsReader(string[] keywords, bool readToEndIfKeywordNotFound = true)
         {
-            var options = readToEndIfKeywordNotFound ? 
+            var options = readToEndIfKeywordNotFound ?
                 ReadOptions.TrimStart | ReadOptions.TrimEnd | ReadOptions.ReadToEnd :
                 ReadOptions.TrimStart | ReadOptions.TrimEnd;
             return ReadToAsReader(keywords, options);

@@ -63,8 +63,9 @@ namespace System
         /// </summary>
         /// <param name="str">This string instance.</param>
         /// <returns>The original string instance with the initial character converted to its uppercase equivalent.</returns>
-        public unsafe static string InitUpperOnSelf(this string str)
+        public static unsafe string InitUpperOnSelf(this string str)
         {
+            if (str.IsNullOrEmpty()) return str;
             if (str[0].IsUpper()) return str;
 
             fixed (char* ptr = str)
@@ -86,7 +87,7 @@ namespace System
             {
                 for (int i = 0, j = str.Length; i < j; ++i)
                 {
-                    if(nonWhiteSpaceToUpper)
+                    if (nonWhiteSpaceToUpper)
                     {
                         if (!ptr[i].IsWhiteSpace())
                         {
@@ -187,7 +188,7 @@ namespace System
         /// <returns>The reversed original string instance.</returns>
         public unsafe static string ReverseOnSelf(this string str)
         {
-            fixed(char* ptr = str)
+            fixed (char* ptr = str)
             {
                 var strlen = str.Length;
                 var halflen = (int)(strlen-- / 2);
@@ -208,7 +209,7 @@ namespace System
         {
             var strLen = str.Length;
             var output = new char[strLen];
-            
+
             for (int i = 0; i < strLen; ++i)
                 output[i] = predicate(str[i]) ? replacement : str[i];
 

@@ -8,7 +8,7 @@ namespace System
 {
     /// <summary>
     /// Provides methods (Aho-Corasick algorithm) to search occurrences of multiple keywords. These methods are most efficient when there are many short keywords distinguishable by the beginning few characters.
-    /// <para>NOTE that this class does not support case-insensitive or culture-sensitive search. To perform case-insensitive search, you may first lower-case both the keywords and the target text.</para>
+    /// <para>NOTE this class does not support case-insensitive or culture-sensitive search. To perform case-insensitive search, you may first lower-case both the keywords and the target text.</para>
     /// </summary>
     public class MultipleStringSearch
     {
@@ -18,7 +18,7 @@ namespace System
             internal InnerNode _parent;
             internal InnerNode _failure;
             internal InnerNode[] _transitionsArr;
-            internal HybridDictionary<char, InnerNode> _transitionDict;
+            private HybridDictionary<char, InnerNode> _transitionDict;
             internal HybridDictionary<string, int> _results;
 
             /// <summary>
@@ -28,7 +28,7 @@ namespace System
             /// <param name="c">Character</param>
             internal InnerNode(InnerNode parent, char c)
             {
-                _char = c; 
+                _char = c;
                 _parent = parent;
                 _results = new HybridDictionary<string, int>();
                 _transitionsArr = new InnerNode[] { };
@@ -53,7 +53,7 @@ namespace System
             internal void AddTransition(InnerNode node)
             {
                 _transitionDict.Add(node._char, node);
-                InnerNode[] ar = new InnerNode[_transitionDict.Values.Count];
+                var ar = new InnerNode[_transitionDict.Values.Count];
                 _transitionDict.Values.CopyTo(ar, 0);
                 _transitionsArr = ar;
             }
@@ -161,19 +161,21 @@ namespace System
         /// Searches the specified text and returns all occurrences of any keyword.
         /// </summary>
         /// <param name="text">The text to search.</param>
-        /// <returns>An array of <see cref="StringSearchResult"/> objects that store the search result; null if the search fails.</returns>
-        public StringSearchResult[] FindAll(string text)
+        /// <param name="startIndex">The search starting position.</param>
+        /// <returns>
+        /// An array of <see cref="StringSearchResult" /> objects that store the search result; null if the search fails.
+        /// </returns>
+        public StringSearchResult[] FindAll(string text, int startIndex = 0)
         {
             var rlt = new List<StringSearchResult>();
             InnerNode ptr = _root;
-            int index = 0;
 
-            while (index < text.Length)
+            while (startIndex < text.Length)
             {
                 InnerNode trans = null;
                 while (trans == null)
                 {
-                    trans = ptr.GetTransition(text[index]);
+                    trans = ptr.GetTransition(text[startIndex]);
                     if (ptr == _root) break;
                     if (trans == null) ptr = ptr._failure;
                 }
@@ -182,13 +184,13 @@ namespace System
                 foreach (var found in ptr._results)
                 {
                     rlt.Add(new StringSearchResult()
-                        {
-                            Position = index - found.Key.Length + 1,
-                            Value = found.Key,
-                            HitIndex = found.Value
-                        });
+                    {
+                        Position = startIndex - found.Key.Length + 1,
+                        Value = found.Key,
+                        HitIndex = found.Value
+                    });
                 }
-                ++index;
+                ++startIndex;
             }
 
             if (rlt.Count == 0) return null;
@@ -200,18 +202,20 @@ namespace System
         /// Searches the specified text and returns the first occurrence of any keyword.
         /// </summary>
         /// <param name="text">The text to search.</param>
-        /// <returns>A <see cref="StringSearchResult"/> object that stores the search result; null if the search fails.</returns>
-        public StringSearchResult FindFirst(string text)
+        /// <param name="startIndex">The search starting position.</param>
+        /// <returns>
+        /// A <see cref="StringSearchResult" /> object that stores the search result; null if the search fails.
+        /// </returns>
+        public StringSearchResult FindFirst(string text, int startIndex = 0)
         {
-            InnerNode ptr = _root;
-            int index = 0;
+            var ptr = _root;
 
-            while (index < text.Length)
+            while (startIndex < text.Length)
             {
                 InnerNode trans = null;
                 while (trans == null)
                 {
-                    trans = ptr.GetTransition(text[index]);
+                    trans = ptr.GetTransition(text[startIndex]);
                     if (ptr == _root) break;
                     if (trans == null) ptr = ptr._failure;
                 }
@@ -221,12 +225,12 @@ namespace System
                 {
                     return new StringSearchResult()
                     {
-                        Position = index - found.Key.Length + 1,
+                        Position = startIndex - found.Key.Length + 1,
                         Value = found.Key,
                         HitIndex = found.Value
                     };
                 }
-                ++index;
+                ++startIndex;
             }
             return null;
         }
@@ -236,25 +240,27 @@ namespace System
         /// Searches the specified text and determines if it contains any occurrence of any keyword.
         /// </summary>
         /// <param name="text">The text to search.</param>
-        /// <returns><c>true</c> if the text searched contains any occurrence of any keyword; otherwise, <c>false</c>.</returns>
-        public bool ContainsAny(string text)
+        /// <param name="startIndex">The search starting position.</param>
+        /// <returns>
+        ///   <c>true</c> if the text searched contains any occurrence of any keyword; otherwise, <c>false</c>.
+        /// </returns>
+        public bool ContainsAny(string text, int startIndex = 0)
         {
             InnerNode ptr = _root;
-            int index = 0;
 
-            while (index < text.Length)
+            while (startIndex < text.Length)
             {
                 InnerNode trans = null;
                 while (trans == null)
                 {
-                    trans = ptr.GetTransition(text[index]);
+                    trans = ptr.GetTransition(text[startIndex]);
                     if (ptr == _root) break;
                     if (trans == null) ptr = ptr._failure;
                 }
                 if (trans != null) ptr = trans;
 
                 if (ptr._results.Count > 0) return true;
-                ++index;
+                ++startIndex;
             }
             return false;
         }

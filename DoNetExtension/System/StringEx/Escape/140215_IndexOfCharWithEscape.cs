@@ -23,6 +23,21 @@ namespace System
             return -1;
         }
 
+        static int _innerIndexOfWithEscape(string str, char keychar, int startIndex, int endIndex, char escapeChar)
+        {
+            var i = startIndex;
+            while (i < endIndex)
+            {
+                var c = str[i];
+
+                if (c == escapeChar) i += 2;
+                else if (c == keychar) return i;
+                else ++i;
+            }
+
+            return -1;
+        }
+
         /// <summary>
         /// Reports the zero-based index of the first occurrence of any escapable Unicode character satisfying the specified predicate.
         /// </summary>

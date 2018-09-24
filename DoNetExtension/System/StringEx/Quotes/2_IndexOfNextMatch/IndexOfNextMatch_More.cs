@@ -49,7 +49,7 @@ namespace System
         {
             var strLen = str.Length;
             ExceptionHelper.ArgumentRangeRequired<int>("startIndex", startIndex, 0, true, strLen - 1, true);
-            _searchRightQuote(str, ref startIndex, strLen, leftChar, rightChar, leftQuote.CreateSingleton(), rightQuote.CreateSingleton());
+            _searchRightQuote(str, ref startIndex, strLen, leftChar, rightChar, leftQuote.Singleton(), rightQuote.Singleton());
             return startIndex;
         }
 
@@ -100,7 +100,7 @@ namespace System
         {
             var strLen = str.Length;
             ExceptionHelper.ArgumentRangeRequired<int>("startIndex", startIndex, 0, true, strLen - 1, true);
-            _searchRightQuote(str, ref startIndex, strLen, leftChar, rightChar, escape.CreateSingleton());
+            _searchRightQuote(str, ref startIndex, strLen, leftChar, rightChar, escape.Singleton());
             return startIndex;
         }
 

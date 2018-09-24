@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -44,6 +44,50 @@ namespace System
         public string ReadLine(ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey | ReadOptions.TrimStart | ReadOptions.TrimEnd)
         {
             return ReadTo(Environment.NewLine, options);
+        }
+
+        public enum TrimMode
+        {
+            TrimAll,
+            KeepIndent,
+            NoTrim
+        }
+
+        /// <summary>
+        /// Reads an indented block from the underlying string. An indented block consists of several lines where each line starts with some white space. The number of whitespace characters is at least <paramref name="indentLevel"/>.
+        /// </summary>
+        /// <param name="indentLevel">The indent level indicating the number of spaces ahead of the text in each line of this indented block.</param>
+        /// <param name="trimStart"><see cref="TrimMode.NoTrim"/> if the white spaces at the start of every line of the block should be be trimmed; <see cref="TrimMode.KeepIndent"/> if a number of whitespaces is preserved while others are trimmed where the number is <paramref name="indentLevel"/>; <see cref="TrimMode.TrimAll"/> if all white spaces are trimmed.</param>
+        /// <param name="trimEnd"><c>true</c> if all white spaces at the end of every line of the block are trimmed.</param>
+        /// <returns></returns>
+        public string ReadIndentedBlock(int indentLevel = 1, TrimMode trimStart = TrimMode.NoTrim, bool trimEnd = false)
+        {
+            var sb = new StringBuilder();
+            if (indentLevel == 1)
+            {
+                while (First.NotIn(Environment.NewLine) && First.IsWhiteSpace())
+                {
+                    if (trimStart != TrimMode.TrimAll) sb.Append(Read());
+                    var option = ReadOptions.StopAfterKey;
+                    if (trimStart != TrimMode.NoTrim) option |= ReadOptions.TrimStart;
+                    if (trimEnd) option |= ReadOptions.TrimEnd;
+                    sb.Append(ReadLine(option));
+                }
+            }
+            else
+            {
+                while (ReadWhiteSpace(indentLevel, out string whitespace))
+                {
+                    if (trimStart != TrimMode.TrimAll) sb.Append(whitespace);
+                    var option = ReadOptions.StopAfterKey;
+                    if (trimStart != TrimMode.NoTrim) option |= ReadOptions.TrimStart;
+                    if (trimEnd) option |= ReadOptions.TrimEnd;
+                    sb.Append(ReadLine(option));
+                }
+
+            }
+
+            return sb.ToString();
         }
 
         #endregion

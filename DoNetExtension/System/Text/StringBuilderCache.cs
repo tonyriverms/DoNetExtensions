@@ -30,8 +30,8 @@ namespace System.Text
         {
             if (capacity <= MaxCacheSize)
             {
-                StringBuilder cachedInstance = _cachedInstanceA;
-                if ((cachedInstance != null) && (capacity <= cachedInstance.Capacity))
+                var cachedInstance = _cachedInstanceA;
+                if (cachedInstance != null && capacity <= cachedInstance.Capacity)
                 {
                     _cachedInstanceA = null;
                     cachedInstance.Clear();
@@ -68,7 +68,7 @@ namespace System.Text
         /// <returns>The string built by the <see cref="StringBuilder"/>.</returns>
         public static string GetStringAndRelease(StringBuilder toRelease)
         {
-            string str = toRelease.ToString();
+            var str = toRelease.ToString();
             Release(toRelease);
             return str;
         }

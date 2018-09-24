@@ -259,3 +259,10 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/DataEx
+/DataExtensionBuilder
+/genderstat
+/Neo4jTestNew
+/TermNetworkBuilder
+/RstLivePreview
+/ReadWriteObjectTest

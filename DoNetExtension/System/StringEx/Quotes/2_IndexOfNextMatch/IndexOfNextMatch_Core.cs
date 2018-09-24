@@ -47,7 +47,7 @@ namespace System
         public static int IndexOfNextMatch(this string str, char leftChar, char rightChar, char leftQuote, char rightQuote, int startIndex, int length)
         {
             var endIndex = ExceptionHelper.ForwardCheckStartIndexAndLength(startIndex, length, str.Length);
-            _searchRightQuote(str, ref startIndex, endIndex, leftChar, rightChar, leftQuote.CreateSingleton(), rightQuote.CreateSingleton());
+            _searchRightQuote(str, ref startIndex, endIndex, leftChar, rightChar, leftQuote.Singleton(), rightQuote.Singleton());
             return startIndex;
         }
 
@@ -96,7 +96,7 @@ namespace System
         public static int IndexOfNextMatch(this string str, char leftChar, char rightChar, char escape, int startIndex, int length)
         {
             var endIndex = ExceptionHelper.ForwardCheckStartIndexAndLength(startIndex, length, str.Length);
-            _searchRightQuote(str, ref startIndex, endIndex, leftChar, rightChar, escape.CreateSingleton());
+            _searchRightQuote(str, ref startIndex, endIndex, leftChar, rightChar, escape.Singleton());
             return startIndex;
         }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -72,7 +72,7 @@ namespace System
         /// </returns>
         public StringReader ReadBeforeAsReader(char keychar, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ?  ReadOptions.ReadToEnd : ReadOptions.Default;
+            var options = readToEndIfKeycharNotFound ? ReadOptions.ReadToEnd : ReadOptions.Default;
             return ReadToAsReader(keychar, options);
         }
 
@@ -99,25 +99,25 @@ namespace System
         #region Single Keychar, Single Pair of Quotes
 
         /// <summary>
-        /// Advances the reader and reads until a character specified by <paramref name="indicator" /> is encountered outside quotes.
+        /// Advances the reader and reads until a character specified by <paramref name="keychar" /> is encountered outside quotes.
         /// The reader's position after executing this method depends on the <paramref name="options" />.
         /// </summary>
-        /// <param name="indicator">The reader stops when this character is encountered outside quotes.</param>
+        /// <param name="keychar">The reader stops when this character is encountered outside quotes.</param>
         /// <param name="leftQuote">The left quote. The reader will not stop when the <paramref name="keychar" /> is encountered inside a pair of quotes.</param>
         /// <param name="rightQuote">The right quote. The reader will not stop when the <paramref name="keychar" /> is encountered inside a pair of quotes.</param>
         /// <param name="options">Specifies the reading options.</param>
         /// <returns>
         /// A new string reader that encapsulates a substring read from the underlying string instance of the current reader.
         /// </returns>
-        public StringReader ReadToAsReader(char indicator, char leftQuote, char rightQuote, ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey | ReadOptions.ReadToEnd)
+        public StringReader ReadToAsReader(char keychar, char leftQuote, char rightQuote, ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey | ReadOptions.ReadToEnd)
         {
-            var idx = StringEx._innerIndexOfWithQuotes(UnderlyingString, indicator, CurrentPosition, EndPosition, leftQuote, rightQuote);
+            var idx = StringEx._innerIndexOfWithQuotes(UnderlyingString, keychar, CurrentPosition, EndPosition, leftQuote, rightQuote);
             return _innerReadToAsReader(idx, 1, options);
         }
 
         /// <summary>
         /// Advances the reader and reads until a character specified by <paramref name="keychar" /> is encountered outside quotes.
-        /// The current reader stops at the position of the <paramref name="keyChar" /> and the white-spaces at both ends of the returned new reader will be trimmed.
+        /// The current reader stops at the position of the <paramref name="keychar" /> and the white-spaces at both ends of the returned new reader will be trimmed.
         /// </summary>
         /// <param name="keychar">The reader stops when this character is encountered outside quotes.</param>
         /// <param name="leftQuote">The left quote. The reader will not stop when an <paramref name="keychar" /> is encountered inside a pair of quotes.</param>
@@ -167,7 +167,7 @@ namespace System
         /// </returns>
         public StringReader ReadBeforeAsReader(char keychar, char leftQuote, char rightQuote, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ?  ReadOptions.ReadToEnd : ReadOptions.Default;
+            var options = readToEndIfKeycharNotFound ? ReadOptions.ReadToEnd : ReadOptions.Default;
             return ReadToAsReader(keychar, leftQuote, rightQuote, options);
         }
 
@@ -400,7 +400,7 @@ namespace System
         /// </returns>
         public StringReader ReadBeforeAsReader(char keychar, char primaryLeftQuote, char primaryRightQuote, char secondaryLeftQuote, char secondaryRightQuote, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ?  ReadOptions.ReadToEnd : ReadOptions.Default;
+            var options = readToEndIfKeycharNotFound ? ReadOptions.ReadToEnd : ReadOptions.Default;
             return ReadToAsReader(keychar, primaryLeftQuote, primaryRightQuote, secondaryLeftQuote, secondaryRightQuote, options);
         }
 
@@ -507,7 +507,7 @@ namespace System
         /// </returns>
         public StringReader ReadBeforeAsReader(char keychar, char primaryLeftQuote, char primaryRightQuote, char[] secondaryLeftQuotes, char[] secondaryRightQuotes, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ?  ReadOptions.ReadToEnd : ReadOptions.Default;
+            var options = readToEndIfKeycharNotFound ? ReadOptions.ReadToEnd : ReadOptions.Default;
             return ReadToAsReader(keychar, primaryLeftQuote, primaryRightQuote, secondaryLeftQuotes, secondaryRightQuotes, options);
         }
 
@@ -614,7 +614,7 @@ namespace System
         /// </returns>
         public StringReader ReadBeforeAsReader(char keychar, char[] primaryLeftQuotes, char[] primaryRightQuotes, char secondaryLeftQuote, char secondaryRightQuote, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ?  ReadOptions.ReadToEnd : ReadOptions.Default;
+            var options = readToEndIfKeycharNotFound ? ReadOptions.ReadToEnd : ReadOptions.Default;
             return ReadToAsReader(keychar, primaryLeftQuotes, primaryRightQuotes, secondaryLeftQuote, secondaryRightQuote, options);
         }
 
@@ -721,7 +721,7 @@ namespace System
         /// </returns>
         public StringReader ReadBeforeAsReader(char keychar, char[] primaryLeftQuotes, char[] primaryRightQuotes, char[] secondaryLeftQuotes, char[] secondaryRightQuotes, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ?  ReadOptions.ReadToEnd : ReadOptions.Default;
+            var options = readToEndIfKeycharNotFound ? ReadOptions.ReadToEnd : ReadOptions.Default;
             return ReadToAsReader(keychar, primaryLeftQuotes, primaryRightQuotes, secondaryLeftQuotes, secondaryRightQuotes, options);
         }
 
@@ -1139,7 +1139,7 @@ namespace System
         /// </returns>
         public StringReader ReadBeforeAsReader(char[] keychars, char primaryLeftQuote, char primaryRightQuote, char secondaryLeftQuote, char secondaryRightQuote, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ?  ReadOptions.ReadToEnd : ReadOptions.Default;
+            var options = readToEndIfKeycharNotFound ? ReadOptions.ReadToEnd : ReadOptions.Default;
             return ReadToAsReader(keychars, primaryLeftQuote, primaryRightQuote, secondaryLeftQuote, secondaryRightQuote, options);
         }
 
@@ -1246,7 +1246,7 @@ namespace System
         /// </returns>
         public StringReader ReadBeforeAsReader(char[] keychars, char primaryLeftQuote, char primaryRightQuote, char[] secondaryLeftQuotes, char[] secondaryRightQuotes, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ?  ReadOptions.ReadToEnd : ReadOptions.Default;
+            var options = readToEndIfKeycharNotFound ? ReadOptions.ReadToEnd : ReadOptions.Default;
             return ReadToAsReader(keychars, primaryLeftQuote, primaryRightQuote, secondaryLeftQuotes, secondaryRightQuotes, options);
         }
 
@@ -1353,7 +1353,7 @@ namespace System
         /// </returns>
         public StringReader ReadBeforeAsReader(char[] keychars, char[] primaryLeftQuotes, char[] primaryRightQuotes, char secondaryLeftQuote, char secondaryRightQuote, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ?  ReadOptions.ReadToEnd : ReadOptions.Default;
+            var options = readToEndIfKeycharNotFound ? ReadOptions.ReadToEnd : ReadOptions.Default;
             return ReadToAsReader(keychars, primaryLeftQuotes, primaryRightQuotes, secondaryLeftQuote, secondaryRightQuote, options);
         }
 
@@ -1460,7 +1460,7 @@ namespace System
         /// </returns>
         public StringReader ReadBeforeAsReader(char[] keychars, char[] primaryLeftQuotes, char[] primaryRightQuotes, char[] secondaryLeftQuotes, char[] secondaryRightQuotes, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ?  ReadOptions.ReadToEnd : ReadOptions.Default;
+            var options = readToEndIfKeycharNotFound ? ReadOptions.ReadToEnd : ReadOptions.Default;
             return ReadToAsReader(keychars, primaryLeftQuotes, primaryRightQuotes, secondaryLeftQuotes, secondaryRightQuotes, options);
         }
 

@@ -30,7 +30,7 @@ namespace System.IO
         /// <param name="value">The System.Int32 value.</param>
         /// <param name="buffer">A byte array used to temporarily store the <paramref name="value"/>.</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static void WriteInt32(this Stream stream, Int32 value, byte[] buffer)
+        public static unsafe void WriteInt32(this Stream stream, Int32 value, byte[] buffer)
         {
             fixed (byte* numRef = buffer)
             {

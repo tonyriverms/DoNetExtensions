@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace System
 {
@@ -19,7 +17,6 @@ namespace System
             bool _keepSeparator;
             int _prevPosition;
             int _i;
-            string _curr;
 
             internal _innerSplitEnumerator01(string str, Func<char, bool> predicate, int startIndex, int endIndex, bool removeEmptyEntries, bool trim, bool keepSeparator)
             {
@@ -32,22 +29,16 @@ namespace System
                 _keepSeparator = keepSeparator;
             }
 
-            public string Current
-            {
-                get { return _curr; }
-            }
+            public string Current { get; private set; }
 
             public void Dispose()
             {
                 _str = null;
-                _curr = null;
+                Current = null;
                 _predicate = null;
             }
 
-            object Collections.IEnumerator.Current
-            {
-                get { return _curr; }
-            }
+            object Collections.IEnumerator.Current => Current;
 
             public unsafe bool MoveNext()
             {
@@ -68,7 +59,7 @@ namespace System
                                 _prevPosition = _i;
                                 if (!_removeEmptyEntries)
                                 {
-                                    _curr = !_keepSeparator ? string.Empty : c.ToString();
+                                    Current = !_keepSeparator ? string.Empty : c.ToString();
                                     return true;
                                 }
                             }
@@ -80,13 +71,13 @@ namespace System
                                     _prevPosition = _i;
                                     if (!_removeEmptyEntries || !trimmedStr.Equals(string.Empty))
                                     {
-                                        _curr = !_keepSeparator ? trimmedStr : trimmedStr + c;
+                                        Current = !_keepSeparator ? trimmedStr : trimmedStr + c;
                                         return true;
                                     }
                                 }
                                 else
                                 {
-                                    _curr = _str.Substring(_prevPosition, !_keepSeparator ? len : len + 1);
+                                    Current = _str.Substring(_prevPosition, !_keepSeparator ? len : len + 1);
                                     _prevPosition = _i;
                                     return true;
                                 }
@@ -101,7 +92,7 @@ namespace System
                     {
                         if (!_removeEmptyEntries)
                         {
-                            _curr = string.Empty;
+                            Current = string.Empty;
                             _i = -1;
                             return true;
                         }
@@ -118,7 +109,7 @@ namespace System
                             var trimmedStr = _str.SubstringWithTrim(_prevPosition, _i - _prevPosition);
                             if (!_removeEmptyEntries || !trimmedStr.Equals(string.Empty))
                             {
-                                _curr = trimmedStr;
+                                Current = trimmedStr;
                                 _i = -1;
                                 return true;
                             }
@@ -130,7 +121,7 @@ namespace System
                         }
                         else
                         {
-                            _curr = _str.Substring(_prevPosition, _i - _prevPosition);
+                            Current = _str.Substring(_prevPosition, _i - _prevPosition);
                             _i = -1;
                             return true;
                         }
@@ -155,7 +146,6 @@ namespace System
             bool _keepSeparator;
             int _prevPosition;
             int _i;
-            string _curr;
 
             internal _innerSplitEnumerator02(string str, char separator, int startIndex, int endIndex, bool removeEmptyEntries, bool trim, bool keepSeparator)
             {
@@ -168,21 +158,15 @@ namespace System
                 _keepSeparator = keepSeparator;
             }
 
-            public string Current
-            {
-                get { return _curr; }
-            }
+            public string Current { get; private set; }
 
             public void Dispose()
             {
                 _str = null;
-                _curr = null;
+                Current = null;
             }
 
-            object Collections.IEnumerator.Current
-            {
-                get { return _curr; }
-            }
+            object Collections.IEnumerator.Current => Current;
 
             public bool MoveNext()
             {
@@ -201,7 +185,7 @@ namespace System
                             _prevPosition = _i;
                             if (!_removeEmptyEntries)
                             {
-                                _curr = !_keepSeparator ? string.Empty : c.ToString();
+                                Current = !_keepSeparator ? string.Empty : c.ToString();
                                 return true;
                             }
                         }
@@ -213,13 +197,13 @@ namespace System
                                 _prevPosition = _i;
                                 if (!_removeEmptyEntries || !trimmedStr.Equals(string.Empty))
                                 {
-                                    _curr = !_keepSeparator ? trimmedStr : trimmedStr + c;
+                                    Current = !_keepSeparator ? trimmedStr : trimmedStr + c;
                                     return true;
                                 }
                             }
                             else
                             {
-                                _curr = _str.Substring(_prevPosition, !_keepSeparator ? len : len + 1);
+                                Current = _str.Substring(_prevPosition, !_keepSeparator ? len : len + 1);
                                 _prevPosition = _i;
                                 return true;
                             }
@@ -234,7 +218,7 @@ namespace System
                 {
                     if (!_removeEmptyEntries)
                     {
-                        _curr = string.Empty;
+                        Current = string.Empty;
                         _i = -1;
                         return true;
                     }
@@ -251,7 +235,7 @@ namespace System
                         var trimmedStr = _str.SubstringWithTrim(_prevPosition, _i - _prevPosition);
                         if (!_removeEmptyEntries || !trimmedStr.Equals(string.Empty))
                         {
-                            _curr = trimmedStr;
+                            Current = trimmedStr;
                             _i = -1;
                             return true;
                         }
@@ -263,7 +247,7 @@ namespace System
                     }
                     else
                     {
-                        _curr = _str.Substring(_prevPosition, _i - _prevPosition);
+                        Current = _str.Substring(_prevPosition, _i - _prevPosition);
                         _i = -1;
                         return true;
                     }
@@ -287,7 +271,6 @@ namespace System
             bool _keepSeparator;
             int _prevPosition;
             int _i;
-            string _curr;
 
             internal _innerSplitEnumerator03(string str, char[] separators, int startIndex, int endIndex, bool removeEmptyEntries, bool trim, bool keepSeparator)
             {
@@ -300,21 +283,15 @@ namespace System
                 _keepSeparator = keepSeparator;
             }
 
-            public string Current
-            {
-                get { return _curr; }
-            }
+            public string Current { get; private set; }
 
             public void Dispose()
             {
                 _str = null;
-                _curr = null;
+                Current = null;
             }
 
-            object Collections.IEnumerator.Current
-            {
-                get { return _curr; }
-            }
+            object Collections.IEnumerator.Current => Current;
 
             public bool MoveNext()
             {
@@ -333,7 +310,7 @@ namespace System
                             _prevPosition = _i;
                             if (!_removeEmptyEntries)
                             {
-                                _curr = !_keepSeparator ? string.Empty : c.ToString();
+                                Current = !_keepSeparator ? string.Empty : c.ToString();
                                 return true;
                             }
                         }
@@ -345,13 +322,13 @@ namespace System
                                 _prevPosition = _i;
                                 if (!_removeEmptyEntries || !trimmedStr.Equals(string.Empty))
                                 {
-                                    _curr = !_keepSeparator ? trimmedStr : trimmedStr + c;
+                                    Current = !_keepSeparator ? trimmedStr : trimmedStr + c;
                                     return true;
                                 }
                             }
                             else
                             {
-                                _curr = _str.Substring(_prevPosition, !_keepSeparator ? len : len + 1);
+                                Current = _str.Substring(_prevPosition, !_keepSeparator ? len : len + 1);
                                 _prevPosition = _i;
                                 return true;
                             }
@@ -366,7 +343,7 @@ namespace System
                 {
                     if (!_removeEmptyEntries)
                     {
-                        _curr = string.Empty;
+                        Current = string.Empty;
                         _i = -1;
                         return true;
                     }
@@ -383,7 +360,7 @@ namespace System
                         var trimmedStr = _str.SubstringWithTrim(_prevPosition, _i - _prevPosition);
                         if (!_removeEmptyEntries || !trimmedStr.Equals(string.Empty))
                         {
-                            _curr = trimmedStr;
+                            Current = trimmedStr;
                             _i = -1;
                             return true;
                         }
@@ -395,7 +372,7 @@ namespace System
                     }
                     else
                     {
-                        _curr = _str.Substring(_prevPosition, _i - _prevPosition);
+                        Current = _str.Substring(_prevPosition, _i - _prevPosition);
                         _i = -1;
                         return true;
                     }
@@ -446,7 +423,7 @@ namespace System
         /// <param name="length">A positive value indicating the number of characters to search starting from the position specified by <paramref name="startIndex" />.</param>
         /// <param name="removeEmptyEntries"><c>true</c> if the returned enumerator should ignore empty substrings; otherwise <c>false</c>.</param>
         /// <param name="trim">Indicates whether the returned substrings are trimmed.
-        /// <para>NOTE that if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
+        /// <para>NOTE if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
         /// for example, in this case "ab,   ,cd" split by comma ',' is "ab" and "cd".</para></param>
         /// <param name="keepSeparator"><c>true</c> if the separator should be included in each substring returned by the enumerator; otherwise, <c>false</c>.</param>
         /// <returns>An object that can iterate through substrings in the current string instance (or a part of the current string instance)
@@ -465,7 +442,7 @@ namespace System
         /// <param name="startIndex">The zero-based position indicating where the search for separators starts.</param>
         /// <param name="removeEmptyEntries"><c>true</c> if the returned enumerator should ignore empty substrings; otherwise <c>false</c>.</param>
         /// <param name="trim">Indicates whether the returned substrings are trimmed.
-        /// <para>NOTE that if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
+        /// <para>NOTE if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
         /// for example, in this case "ab,   ,cd" split by comma ',' is "ab" and "cd".</para></param>
         /// <param name="keepSeparator"><c>true</c> if the separator should be included in each substring returned by the enumerator; otherwise, <c>false</c>.</param>
         /// <returns>An object that can iterate through substrings in the current string instance that are delimited by Unicode characters satisfying the specified predicate.</returns>
@@ -476,13 +453,13 @@ namespace System
         }
 
         /// <summary>
-        /// Gets an object that can iterate through substrings in this string instance (or a part of this string according to <paramref name="startIndex" />) that are delimited by Unicode characters satisfying the specified predicate.
+        /// Gets an object that can iterate through substrings in this string instance that are delimited by Unicode characters satisfying the specified predicate.
         /// </summary>
         /// <param name="str">This string instance.</param>
         /// <param name="predicate">A function to test each Unicode character of the current string. Any character that passes this test will be used as a separator.</param>
         /// <param name="removeEmptyEntries"><c>true</c> if the returned enumerator should ignore empty substrings; otherwise <c>false</c>.</param>
         /// <param name="trim">Indicates whether the returned substrings are trimmed.
-        /// <para>NOTE that if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
+        /// <para>NOTE if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
         /// for example, in this case "ab,   ,cd" split by comma ',' is "ab" and "cd".</para></param>
         /// <param name="keepSeparator"><c>true</c> if the separator should be included in each substring returned by the enumerator; otherwise, <c>false</c>.</param>
         /// <returns>An object that can iterate through substrings in the current string instance that are delimited by Unicode characters satisfying the specified predicate.</returns>
@@ -500,7 +477,7 @@ namespace System
         /// <param name="length">A positive value indicating the number of characters to search starting from the position specified by <paramref name="startIndex" />.</param>
         /// <param name="removeEmptyEntries"><c>true</c> if the returned enumerator should ignore empty substrings; otherwise <c>false</c>.</param>
         /// <param name="trim">Indicates whether the returned substrings are trimmed.
-        /// <para>NOTE that if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
+        /// <para>NOTE if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
         /// for example, in this case "ab,   ,cd" split by comma ',' is "ab" and "cd".</para></param>
         /// <param name="keepSeparator"><c>true</c> if the separator should be included in each substring returned by the enumerator; otherwise, <c>false</c>.</param>
         /// <returns>
@@ -521,7 +498,7 @@ namespace System
         /// <param name="startIndex">The zero-based position indicating where the search for separators starts.</param>
         /// <param name="removeEmptyEntries"><c>true</c> if the returned enumerator should ignore empty substrings; otherwise <c>false</c>.</param>
         /// <param name="trim">Indicates whether the returned substrings are trimmed.
-        /// <para>NOTE that if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
+        /// <para>NOTE if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
         /// for example, in this case "ab,   ,cd" split by comma ',' is "ab" and "cd".</para></param>
         /// <param name="keepSeparator"><c>true</c> if the separator should be included in each substring returned by the enumerator; otherwise, <c>false</c>.</param>
         /// <returns>
@@ -541,7 +518,7 @@ namespace System
         /// <param name="separator">A Unicode character that delimits the substrings in the current string instance.</param>
         /// <param name="removeEmptyEntries"><c>true</c> if the returned enumerator should ignore empty substrings; otherwise <c>false</c>.</param>
         /// <param name="trim">Indicates whether the returned substrings are trimmed.
-        /// <para>NOTE that if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
+        /// <para>NOTE if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
         /// for example, in this case "ab,   ,cd" split by comma ',' is "ab" and "cd".</para></param>
         /// <param name="keepSeparator"><c>true</c> if the separator should be included in each substring returned by the enumerator; otherwise, <c>false</c>.</param>
         /// <returns>
@@ -562,7 +539,7 @@ namespace System
         /// <param name="length">A positive value indicating the number of characters to search starting from the position specified by <paramref name="startIndex" />.</param>
         /// <param name="removeEmptyEntries"><c>true</c> if the returned enumerator should ignore empty substrings; otherwise <c>false</c>.</param>
         /// <param name="trim">Indicates whether the returned substrings are trimmed.
-        /// <para>NOTE that if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
+        /// <para>NOTE if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
         /// for example, in this case "ab,   ,cd" split by comma ',' is "ab" and "cd".</para></param>
         /// <param name="keepSeparator"><c>true</c> if the separator should be included in each substring returned by the enumerator; otherwise, <c>false</c>.</param>
         /// <returns>
@@ -576,14 +553,14 @@ namespace System
         }
 
         /// <summary>
-        /// Gets an object that can iterate through substrings in this string (or a part of this string according to <paramref name="startIndex"/>) that are delimited by specified Unicode characters.
+        /// Gets an object that can iterate through substrings in this string (or a part of this string according to <paramref name="startIndex" />) that are delimited by specified Unicode characters.
         /// </summary>
         /// <param name="str">This string instance.</param>
         /// <param name="separators">A non-empty array of Unicode characters that delimit the substrings in the current string instance.</param>
         /// <param name="startIndex">The zero-based position indicating where the search for separators starts.</param>
         /// <param name="removeEmptyEntries"><c>true</c> if the returned enumerator should ignore empty substrings; otherwise <c>false</c>.</param>
         /// <param name="trim">Indicates whether the returned substrings are trimmed.
-        /// <para>NOTE that if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
+        /// <para>NOTE if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
         /// for example, in this case "ab,   ,cd" split by comma ',' is "ab" and "cd".</para></param>
         /// <param name="keepSeparator"><c>true</c> if the separator should be included in each substring returned by the enumerator; otherwise, <c>false</c>.</param>
         /// <returns>
@@ -597,13 +574,13 @@ namespace System
         }
 
         /// <summary>
-        /// Gets an object that can iterate through substrings in this string (or a part of this string according to <paramref name="startIndex"/>) that are delimited by specified Unicode characters.
+        /// Gets an object that can iterate through substrings in this string that are delimited by specified Unicode characters.
         /// </summary>
         /// <param name="str">This string instance.</param>
         /// <param name="separators">A non-empty array of Unicode characters that delimit the substrings in the current string instance.</param>
         /// <param name="removeEmptyEntries"><c>true</c> if the returned enumerator should ignore empty substrings; otherwise <c>false</c>.</param>
         /// <param name="trim">Indicates whether the returned substrings are trimmed.
-        /// <para>NOTE that if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
+        /// <para>NOTE if <paramref name="removeEmptyEntries" /> is set <c>true</c>, then a substring containing only white spaces will be ignored by the returned enumerator;
         /// for example, in this case "ab,   ,cd" split by comma ',' is "ab" and "cd".</para></param>
         /// <param name="keepSeparator"><c>true</c> if the separator should be included in each substring returned by the enumerator; otherwise, <c>false</c>.</param>
         /// <returns>

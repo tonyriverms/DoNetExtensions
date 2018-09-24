@@ -11,13 +11,13 @@ namespace System.Collections.Generic
     /// <typeparam name="TKey">The type of keys in this dictionary.</typeparam>
     /// <typeparam name="TValue">The type of values in this dictionary.</typeparam>
     /// <remarks>
-    /// <para>This class inherits from the <see cref="ListDictionary&lt;TKey,LinkedList&lt;TValue&gt;&gt;"/> class and you may directly operate on the underlying linked list. However, NOTE that the <c>this</c> indexer is modified to return a <typeparamref name="TValue"/> array instead of a linked list.</para>
+    /// <para>This class inherits from the <see cref="ListDictionary{TKey, TValue}"/> class and you may directly operate on the underlying linked list. However, NOTE that the <c>this</c> indexer is modified to return a <typeparamref name="TValue"/> array instead of a linked list.</para>
     /// <para>This class also implements the <see cref="IMDictionary&lt;TKey,TValue&gt;"/> interface, but it is highly not recommended to operate on the underlying linked list through this interface.</para>
     /// </remarks>
     public class MListDictionary<TKey, TValue> : ListDictionary<TKey, LinkedList<TValue>>, IMDictionary<TKey, TValue>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MListDictionary&lt;TValue&gt;" /> class.
+        /// Initializes a new instance of the <see cref="MListDictionary{TKey, TValue}" /> class.
         /// </summary>
         public MListDictionary() : base() { }
 

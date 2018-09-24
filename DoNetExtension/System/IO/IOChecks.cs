@@ -10,6 +10,7 @@ namespace System.IO
     /// </summary>
     public enum IOChecks : long
     {
+        BinarySavable = 1,
         /// <summary>
         /// Indicating the data to check is a string.
         /// </summary>
@@ -41,6 +42,7 @@ namespace System.IO
         /// <summary>
         /// Indicating the data to check is a datetime list.
         /// </summary>
-        DateTimeList = 31
+        DateTimeList = 31,
+
     }
 }

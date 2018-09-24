@@ -235,6 +235,29 @@ namespace System
         #region In
 
         /// <summary>
+        /// Determines whether this string is a substring of another string instance.
+        /// </summary>
+        /// <param name="str">The current string.</param>
+        /// <param name="target">Checks if this string contains the current string as a substring.</param>
+        /// <returns>
+        ///   <c>true</c> if <paramref name="target"/> contains the current string as a substring; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this string str, string target)
+        {
+            return target.Contains(str);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool InAny(this string str, string[] targets, StringComparison comparison = StringComparison.Ordinal)
+        {
+            var count = targets.Length;
+            for (var i = 0; i < count; ++i)
+                if (targets[i] != null && targets[i].Contains(str, comparison)) return true;
+            return false;
+        }
+
+        /// <summary>
         /// Determines whether this object is in a sequence. If the sequence is null or empty, <c>false</c> is always returned.
         /// </summary>
         /// <typeparam name="T">The type of this object.</typeparam>
@@ -369,6 +392,348 @@ namespace System
             return array != null && Array.IndexOf(array, obj) != -1;
         }
 
+        /// <summary>
+        /// Determines whether this comparable object is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 2 is in the range from 1 to 3, but 3 is not in the range from 1 to 3.</para>
+        /// </summary>
+        /// <typeparam name="T">A type that implements <see cref="System.IComparable{T}"/> interface.</typeparam>
+        /// <param name="obj">This comparable object.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this comparable object is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In<T>(this T obj, T lowerBound, T upperBound) where T : IComparable<T>
+        {
+            return obj.CompareTo(lowerBound) >= 0 && obj.CompareTo(upperBound) < 0;
+        }
+
+        /// <summary>
+        /// Determines whether this byte is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 2 is in the range from 1 to 3, but 3 is not in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This byte.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this byte is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this byte val, byte lowerBound, byte upperBound)
+        {
+            return val >= lowerBound && val < upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this byte is in a range with steps. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 3 is in the range from 1 to 5 with step 2, but 5 is not in this range with step.</para></summary>
+        /// <param name="val">This byte.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step size of the range.</param>
+        /// <returns>
+        ///   <c>true</c> if this byte is inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this byte val, byte lowerBound, byte upperBound, byte step)
+        {
+            return val >= lowerBound && val < upperBound && (val - lowerBound) % step == 0;
+        }
+
+        /// <summary>
+        /// Determines whether this signed byte is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 2 is in the range from 1 to 3, but 3 is not in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This signed byte.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this signed byte is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this sbyte val, sbyte lowerBound, sbyte upperBound)
+        {
+            return val >= lowerBound && val < upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this signed byte is in a range with steps. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 3 is in the range from 1 to 5 with step 2, but 5 is not in this range with step.</para></summary>
+        /// <param name="val">This signed byte.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step size of the range.</param>
+        /// <returns>
+        ///   <c>true</c> if this signed byte is inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this sbyte val, sbyte lowerBound, sbyte upperBound, sbyte step)
+        {
+            return val >= lowerBound && val < upperBound && (val - lowerBound) % step == 0;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 2 is in the range from 1 to 3, but 3 is not in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this integer is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this short val, short lowerBound, short upperBound)
+        {
+            return val >= lowerBound && val < upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is in a range with steps. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 3 is in the range from 1 to 5 with step 2, but 5 is not in this range with step.</para></summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step size of the range.</param>
+        /// <returns>
+        ///   <c>true</c> if this integer is inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this short val, short lowerBound, short upperBound, short step)
+        {
+            return val >= lowerBound && val < upperBound && (val - lowerBound) % step == 0;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 2 is in the range from 1 to 3, but 3 is not in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this integer is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this ushort val, short lowerBound, ushort upperBound)
+        {
+            return val >= lowerBound && val < upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is in a range with steps. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 3 is in the range from 1 to 5 with step 2, but 5 is not in this range with step.</para></summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step size of the range.</param>
+        /// <returns>
+        ///   <c>true</c> if this integer is inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this ushort val, ushort lowerBound, ushort upperBound, ushort step)
+        {
+            return val >= lowerBound && val < upperBound && (val - lowerBound) % step == 0;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 2 is in the range from 1 to 3, but 3 is not in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this integer is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this int val, int lowerBound, int upperBound)
+        {
+            return val >= lowerBound && val < upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is in a range with steps. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 3 is in the range from 1 to 5 with step 2, but 5 is not in this range with step.</para></summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step size of the range.</param>
+        /// <returns>
+        ///   <c>true</c> if this integer is inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this int val, int lowerBound, int upperBound, int step)
+        {
+            return val >= lowerBound && val < upperBound && (val - lowerBound) % step == 0;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 2 is in the range from 1 to 3, but 3 is not in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this integer is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this uint val, uint lowerBound, uint upperBound)
+        {
+            return val >= lowerBound && val < upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is in a range with steps. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 3 is in the range from 1 to 5 with step 2, but 5 is not in this range with step.</para></summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step size of the range.</param>
+        /// <returns>
+        ///   <c>true</c> if this integer is inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this uint val, uint lowerBound, uint upperBound, uint step)
+        {
+            return val >= lowerBound && val < upperBound && (val - lowerBound) % step == 0;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 2 is in the range from 1 to 3, but 3 is not in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this integer is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this long val, long lowerBound, long upperBound)
+        {
+            return val >= lowerBound & val < upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is in a range with steps. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 3 is in the range from 1 to 5 with step 2, but 5 is not in this range with step.</para></summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step size of the range.</param>
+        /// <returns>
+        ///   <c>true</c> if this integer is inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this long val, long lowerBound, long upperBound, long step)
+        {
+            return val >= lowerBound && val < upperBound && (val - lowerBound) % step == 0;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 2 is in the range from 1 to 3, but 3 is not in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this integer is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this ulong val, ulong lowerBound, ulong upperBound)
+        {
+            return val >= lowerBound && val < upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is in a range with steps. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 3 is in the range from 1 to 5 with step 2, but 5 is not in this range with step.</para></summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step size of the range.</param>
+        /// <returns>
+        ///   <c>true</c> if this integer is inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this ulong val, ulong lowerBound, ulong upperBound, ulong step)
+        {
+            return val >= lowerBound && val < upperBound && (val - lowerBound) % step == 0;
+        }
+
+        /// <summary>
+        /// Determines whether this floating number is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 1.5 is in the range from 1.0 to 3.0, but 3.0 is not in the range from 1.0 to 3.0.</para>
+        /// </summary>
+        /// <param name="val">This floating number.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this floating number is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this double val, double lowerBound, double upperBound)
+        {
+            return val >= lowerBound && val < upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this floating number is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 1.5 is in the range from 1.0 to 3.0, but 3.0 is not in the range from 1.0 to 3.0.</para>
+        /// </summary>
+        /// <param name="val">This floating number.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this floating number is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this float val, float lowerBound, float upperBound)
+        {
+            return val >= lowerBound && val < upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this <see cref="Decimal"/> is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either 1 or 1.5 is in the range from 1.0 to 3.0, but 3.0 is not in the range from 1.0 to 3.0.</para>
+        /// </summary>
+        /// <param name="val">This <see cref="Decimal"/> number.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this <see cref="Decimal"/> number is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this decimal val, decimal lowerBound, decimal upperBound)
+        {
+            return val >= lowerBound && val < upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this <see cref="DateTime"/> is in a range. The lowerbound is included; the upperbound is excluded.
+        /// <para>For example, either "12:00, March 21, 2018" or "14:00, March 21, 2018" is in the range from "12:00, March 21, 2018" to "23:00, March 21, 2018", but "23:00, March 21, 2018" is not in this range.</para>
+        /// </summary>
+        /// <param name="val">This <see cref="DateTime"/>.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this provided <see cref="DateTime"/> is inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool In(this DateTime val, DateTime lowerBound, DateTime upperBound)
+        {
+            return val >= lowerBound && val < upperBound;
+        }
+
+        #endregion
+
+        #region Between
+
+        /// <summary>
+        /// Determines whether this comparable object is inclusively between two bounds.
+        /// <para>For example, both 1,2 is inclusively between 1 and 3.</para>
+        /// </summary>
+        /// <typeparam name="T">A type that conforms to System.IComparable{T} interface.</typeparam>
+        /// <param name="obj">This comparable object.</param>
+        /// <param name="lowerBound">The lower bound to compare.</param>
+        /// <param name="upperBound">The upper bound to compare.</param>
+        /// <returns>true if this comparable object is inclusively between the given bounds; otherwise, false.</returns>
+        public static bool InclusiveBetween<T>(this T obj, T lowerBound, T upperBound) where T : IComparable<T>
+        {
+            return obj.CompareTo(lowerBound) >= 0 && obj.CompareTo(upperBound) <= 0;
+        }
+
+        /// <summary>
+        /// Determines whether this comparable object is between two bounds.
+        /// <para>For example, both 2 is between 1 and 3, but 1 is not between 1 and 3.</para>
+        /// </summary>
+        /// <typeparam name="T">A type that conforms to System.IComparable{T} interface.</typeparam>
+        /// <param name="obj">This comparable object.</param>
+        /// <param name="lowerBound">The lower bound to compare.</param>
+        /// <param name="upperBound">The upper bound to compare.</param>
+        /// <returns>true if this comparable object is between the given bounds; otherwise, false.</returns>
+        public static bool Between<T>(this T obj, T lowerBound, T upperBound) where T : IComparable<T>
+        {
+            return obj.CompareTo(lowerBound) > 0 && obj.CompareTo(upperBound) < 0;
+        }
 
 
         #endregion
@@ -429,7 +794,322 @@ namespace System
             return array == null || Array.IndexOf(array, obj) == -1;
         }
 
+        /// <summary>
+        /// Determines whether this comparable object is NOT in a range. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, either 0 or 3 is NOT in the range from 1 to 3, but 1 is in the range from 1 to 3.</para>
+        /// </summary>
+        /// <typeparam name="T">A type that implements <see cref="System.IComparable{T}"/> interface.</typeparam>
+        /// <param name="obj">This comparable object.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this comparable object is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn<T>(this T obj, T lowerBound, T upperBound) where T : IComparable<T>
+        {
+            return obj.CompareTo(lowerBound) < 0 || obj.CompareTo(upperBound) >= 0;
+        }
 
+        /// <summary>
+        /// Determines whether this byte is NOT in a range. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, either 0 or 3 is NOT in the range from 1 to 3, but 1 is in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This byte.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this byte is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this byte val, byte lowerBound, byte upperBound)
+        {
+            return val < lowerBound || val > upperBound;
+        }
+
+
+        /// <summary>
+        /// Determines whether this byte is NOT in a range with some step. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, range from 1 to 5 with step 2 represents two numbers 1,3. Therefore only 1 or 3 is in this range while others are not.</para></summary>
+        /// <param name="val">This byte.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step of this range.</param>
+        /// <returns>
+        ///   <c>true</c> if this byte is NOT inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this byte val, byte lowerBound, byte upperBound, byte step)
+        {
+            return val < lowerBound || val > upperBound || (val - lowerBound) % step != 0;
+        }
+
+
+
+        /// <summary>
+        /// Determines whether this signed byte is NOT in a range. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, either 0 or 3 is NOT in the range from 1 to 3, but 1 is in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This signed byte.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this signed byte is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this sbyte val, sbyte lowerBound, sbyte upperBound)
+        {
+            return val < lowerBound || val > upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this signed byte is NOT in a range with some step. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, range from 1 to 5 with step 2 represents two numbers 1,3. Therefore only 1 or 3 is in this range while others are not.</para></summary>
+        /// <param name="val">This signed byte.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step of this range.</param>
+        /// <returns>
+        ///   <c>true</c> if this signed byte is NOT inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this sbyte val, sbyte lowerBound, sbyte upperBound, sbyte step)
+        {
+            return val < lowerBound || val > upperBound || (val - lowerBound) % step != 0;
+        }
+
+
+        /// <summary>
+        /// Determines whether this integer is NOT in a range. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, either 0 or 3 is NOT in the range from 1 to 3, but 1 is in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this integer is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this short val, short lowerBound, short upperBound)
+        {
+            return val < lowerBound || val > upperBound;
+        }
+
+
+        /// <summary>
+        /// Determines whether this integer is NOT in a range with some step. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, range from 1 to 5 with step 2 represents two numbers 1,3. Therefore only 1 or 3 is in this range while others are not.</para></summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step of this range.</param>
+        /// <returns>
+        ///   <c>true</c> if this integer is NOT inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this short val, short lowerBound, short upperBound, short step)
+        {
+            return val < lowerBound || val > upperBound || (val - lowerBound) % step != 0;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is NOT in a range. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, either 0 or 3 is NOT in the range from 1 to 3, but 1 is in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this integer is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this ushort val, ushort lowerBound, ushort upperBound)
+        {
+            return val < lowerBound || val > upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is NOT in a range with some step. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, range from 1 to 5 with step 2 represents two numbers 1,3. Therefore only 1 or 3 is in this range while others are not.</para></summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step of this range.</param>
+        /// <returns>
+        ///   <c>true</c> if this integer is NOT inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this ushort val, ushort lowerBound, ushort upperBound, ushort step)
+        {
+            return val < lowerBound || val > upperBound || (val - lowerBound) % step != 0;
+        }
+
+
+        /// <summary>
+        /// Determines whether this integer is NOT in a range. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, either 0 or 3 is NOT in the range from 1 to 3, but 1 is in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this integer is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this int val, int lowerBound, int upperBound)
+        {
+            return val < lowerBound || val > upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is NOT in a range with some step. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, range from 1 to 5 with step 2 represents two numbers 1,3. Therefore only 1 or 3 is in this range while others are not.</para></summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step of this range.</param>
+        /// <returns>
+        ///   <c>true</c> if this integer is NOT inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this int val, int lowerBound, int upperBound, int step)
+        {
+            return val < lowerBound || val > upperBound || (val - lowerBound) % step != 0;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is NOT in a range. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, either 0 or 3 is NOT in the range from 1 to 3, but 1 is in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this integer is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this uint val, uint lowerBound, uint upperBound)
+        {
+            return val < lowerBound || val > upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is NOT in a range with some step. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, range from 1 to 5 with step 2 represents two numbers 1,3. Therefore only 1 or 3 is in this range while others are not.</para></summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step of this range.</param>
+        /// <returns>
+        ///   <c>true</c> if this integer is NOT inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this uint val, uint lowerBound, uint upperBound, uint step)
+        {
+            return val < lowerBound || val > upperBound || (val - lowerBound) % step != 0;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is NOT in a range. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, either 0 or 3 is NOT in the range from 1 to 3, but 1 is in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this integer is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this long val, long lowerBound, long upperBound)
+        {
+            return val < lowerBound || val > upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is NOT in a range with some step. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, range from 1 to 5 with step 2 represents two numbers 1,3. Therefore only 1 or 3 is in this range while others are not.</para></summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step of this range.</param>
+        /// <returns>
+        ///   <c>true</c> if this integer is NOT inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this long val, long lowerBound, long upperBound, long step)
+        {
+            return val < lowerBound || val > upperBound || (val - lowerBound) % step != 0;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is NOT in a range. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, either 0 or 3 is NOT in the range from 1 to 3, but 1 is in the range from 1 to 3.</para>
+        /// </summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this integer is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this ulong val, ulong lowerBound, ulong upperBound)
+        {
+            return val < lowerBound || val > upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this integer is NOT in a range with some step. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, range from 1 to 5 with step 2 represents two numbers 1,3. Therefore only 1 or 3 is in this range while others are not.</para></summary>
+        /// <param name="val">This integer.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <param name="step">The step of this range.</param>
+        /// <returns>
+        ///   <c>true</c> if this integer is NOT inside the range specified by <paramref name="lowerBound" /> and <paramref name="upperBound" /> with step <paramref name="step"/>; otherwise, <c>false</c>.
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this ulong val, ulong lowerBound, ulong upperBound, ulong step)
+        {
+            return val < lowerBound || val > upperBound || (val - lowerBound) % step != 0;
+        }
+
+        /// <summary>
+        /// Determines whether this floating number is NOT in a range. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, either 0.0 or 3.0 is NOT in the range from 1.0 to 3.0, but 1.0 is in this range.</para>
+        /// </summary>
+        /// <param name="val">This floating number.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this floating number is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this double val, double lowerBound, double upperBound)
+        {
+            return val < lowerBound || val > upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this floating number is NOT in a range. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, either 0.0 or 3.0 is NOT in the range from 1.0 to 3.0, but 1.0 is in this range.</para>
+        /// </summary>
+        /// <param name="val">This floating number.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this floating number is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this double val, float lowerBound, float upperBound)
+        {
+            return val < lowerBound || val > upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this decimal number is NOT in a range. The lowerbound for the range is included for the range; the upperbound is excluded.
+        /// <para>For example, either 0.0 or 3.0 is NOT in the range from 1.0 to 3.0, but 1.0 is in this range.</para>
+        /// </summary>
+        /// <param name="val">This decimal number.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this decimal number is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this decimal val, decimal lowerBound, decimal upperBound)
+        {
+            return val < lowerBound || val > upperBound;
+        }
+
+        /// <summary>
+        /// Determines whether this <see cref="DateTime"/> is NOT in a range. The lowerbound is included for the range; the upperbound is excluded.
+        /// <para>For example, either "23:00, March 21, 2018" or "16:00, March 20, 2018" is NOT in the range from "12:00, March 21, 2018" to "23:00, March 21, 2018", but "12:00, March 21, 2018" is in this range.</para>
+        /// </summary>
+        /// <param name="val">This <see cref="DateTime"/>.</param>
+        /// <param name="lowerBound">The inclusive lower bound for the range.</param>
+        /// <param name="upperBound">The exclusive upper bound for the range.</param>
+        /// <returns><c>true</c> if this provided <see cref="DateTime"/> is NOT inside the range specified by <paramref name="lowerBound"/> and <paramref name="upperBound"/>; otherwise, <c>false</c>.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool NotIn(this DateTime val, DateTime lowerBound, DateTime upperBound)
+        {
+            return val < lowerBound || val > upperBound;
+        }
 
         #endregion
 
@@ -893,37 +1573,7 @@ namespace System
 
         #endregion
 
-        #region Between
 
-        /// <summary>
-        /// Determines whether this comparable object is inclusively between two bounds.
-        /// <para>For example, both 1,2 is inclusively between 1 and 3.</para>
-        /// </summary>
-        /// <typeparam name="T">A type that conforms to System.IComparable{T} interface.</typeparam>
-        /// <param name="obj">This comparable object.</param>
-        /// <param name="lowerBound">The lower bound to compare.</param>
-        /// <param name="upperBound">The upper bound to compare.</param>
-        /// <returns>true if this comparable object is inclusively between the given bounds; otherwise, false.</returns>
-        public static bool InclusiveBetween<T>(this T obj, T lowerBound, T upperBound) where T : IComparable<T>
-        {
-            return obj.CompareTo(lowerBound) >= 0 && obj.CompareTo(upperBound) <= 0;
-        }
-
-        /// <summary>
-        /// Determines whether this comparable object is between two bounds.
-        /// <para>For example, both 2 is between 1 and 3, but 1 is not between 1 and 3.</para>
-        /// </summary>
-        /// <typeparam name="T">A type that conforms to System.IComparable{T} interface.</typeparam>
-        /// <param name="obj">This comparable object.</param>
-        /// <param name="lowerBound">The lower bound to compare.</param>
-        /// <param name="upperBound">The upper bound to compare.</param>
-        /// <returns>true if this comparable object is between the given bounds; otherwise, false.</returns>
-        public static bool Between<T>(this T obj, T lowerBount, T upperBount) where T : IComparable<T>
-        {
-            return obj.CompareTo(lowerBount) > 0 && obj.CompareTo(upperBount) < 0;
-        }
-
-        #endregion
 
         #region Misc
 

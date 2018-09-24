@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System_Extension_Library.System.Collections.Generic;
+using DoNetExtension.System.Collections.Generic;
 
 namespace System.Collections.Generic
 {
@@ -126,7 +126,7 @@ namespace System.Collections.Generic
         public bool TryGetValue(TKey key, out TValue value)
         {
             var i = IndexOf(key);
-            if(i == -1)
+            if (i == -1)
             {
                 value = default(TValue);
                 return false;

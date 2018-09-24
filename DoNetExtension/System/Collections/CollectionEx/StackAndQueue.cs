@@ -29,10 +29,7 @@ namespace System
         /// <param name="queue">This pair stack.</param>
         /// <param name="value1">The first value of the pair to push.</param>
         /// <param name="value2">The second value of the pair to push.</param>
-        public static void Push<T1, T2>(this Stack<Pair<T1, T2>> stack, T1 value1, T2 value2)
-        {
-            stack.Push(new Pair<T1, T2>(value1, value2));
-        }
+        public static void Push<T1, T2>(this Stack<Pair<T1, T2>> stack, T1 value1, T2 value2) => stack.Push(new Pair<T1, T2>(value1, value2));
 
         /// <summary>
         /// Adds a key/value pair to the end of this key/value pair queue.
@@ -55,9 +52,9 @@ namespace System
         /// <param name="stack">This key/value pair stack.</param>
         /// <param name="key">The key to insert.</param>
         /// <param name="value">The value to insert.</param>
-        public static void Push<TKey, TValue>(this Stack<KeyValuePair<TKey, TValue>> stack, TKey value1, TValue value2)
+        public static void Push<TKey, TValue>(this Stack<KeyValuePair<TKey, TValue>> stack, TKey key, TValue value)
         {
-            stack.Push(new KeyValuePair<TKey, TValue>(value1, value2));
+            stack.Push(new KeyValuePair<TKey, TValue>(key, value));
         }
 
         /// <summary>
@@ -68,11 +65,9 @@ namespace System
         /// <param name="items">The array of objects to add to the <see cref="Collections.Generic.Queue{T}"/>.</param>
         public static void Enqueue<T>(this Queue<T> queue, params T[] items)
         {
-            if (items != null)
-            {
-                for (int i = 0; i < items.Length; i++)
-                    queue.Enqueue(items[i]);
-            }
+            if (items == null) return;
+            for (int i = 0; i < items.Length; i++)
+                queue.Enqueue(items[i]);
         }
 
         /// <summary>
@@ -85,7 +80,7 @@ namespace System
         {
             if (items != null)
             {
-                foreach(var item in items)
+                foreach (var item in items)
                     queue.Enqueue(item);
             }
         }
@@ -109,15 +104,13 @@ namespace System
         /// Inserts objects at the top of the <see cref="System.Collections.Generic.Stack{T}"/>.
         /// </summary>
         /// <typeparam name="T">The type of elements in the stack.</typeparam>
-        /// <param name="queue">This stack.</param>
+        /// <param name="stack">This stack.</param>
         /// <param name="items">The objects to push onto the <see cref="System.Collections.Generic.Stack{T}"/>.</param>
-        public static void Push<T>(this Stack<T> stack, params T[] values)
+        public static void Push<T>(this Stack<T> stack, params T[] items)
         {
-            if (values != null)
-            {
-                for (int i = 0; i < values.Length; ++i)
-                    stack.Push(values[i]);
-            }
+            if (items == null) return;
+            for (var i = 0; i < items.Length; ++i)
+                stack.Push(items[i]);
         }
 
         /// <summary>
@@ -130,7 +123,7 @@ namespace System
         public static T[] Pop<T>(this Stack<T> stack, int count)
         {
             var output = new T[count];
-            for (int i = 0; i < count; ++i)
+            for (var i = 0; i < count; ++i)
                 output[i] = stack.Pop();
             return output;
         }

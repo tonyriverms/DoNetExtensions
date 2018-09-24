@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Runtime.InteropServices;
+﻿using DoNetExtension.System;
+using System.Collections.Generic;
 using System.IO;
-using System.Runtime.ConstrainedExecution;
-using System_Extension_Library.System;
-using System.Diagnostics.Contracts;
+using System.Linq;
 using System.Runtime.CompilerServices;
-using DoNetExtension.System;
+using System.Runtime.InteropServices;
+using System.Text;
 
 namespace System
 {
@@ -115,30 +112,6 @@ namespace System
         }
 
         /// <summary>
-        /// Returns <c>null</c> if the current string is null or empty; otherwise, returns the current instance.
-        /// </summary>
-        /// <param name="str">This string instance.</param>
-        /// <returns><c>null</c> if the current string is null or empty; otherwise, the current instance.</returns>
-        public static string Empty(this string str)
-        {
-            if (str == null) return null;
-            else if (str.Length == 0) return null;
-            else return str;
-        }
-
-        /// <summary>
-        /// Returns <c>null</c> if the current string is null, empty or contains only white spaces defined by <see cref="char.IsWhiteSpace(char)"/>; otherwise, returns the current instance.
-        /// </summary>
-        /// <param name="str">This string instance.</param>
-        /// <returns><c>null</c> if the current string is null or empty or contains only white spaces defined by <see cref="char.IsWhiteSpace(char)"/>; otherwise, the current instance.</returns>
-        public static string Blank(this string str)
-        {
-            if (str.IsNullOrEmptyOrBlank()) return null;
-            else return str;
-        }
-
-        //TEST: Not Needed
-        /// <summary>
         /// Creates a new string instance with the same value as the current one.
         /// <para>This a dummy of <c>string.Copy</c> method for convenience.</para>
         /// </summary>
@@ -146,10 +119,9 @@ namespace System
         /// <returns>The new string instance.</returns>
         public static string Copy(this string str)
         {
-            return String.Copy(str);
+            return string.Copy(str);
         }
 
-        //TEST: Not Needed
         /// <summary>
         /// Determines whether this string instance and another specified string instance have the same value with case and trim options.
         /// </summary>
@@ -163,11 +135,10 @@ namespace System
         /// <returns><c>true</c> if the two compared string instances have the same value under the specified options; otherwise, <c>false</c>.</returns>
         public static bool Equals(this string str, string value, bool ignoreCase, bool trimSource = false, bool trimValue = false)
         {
-            if (trimSource && str != null) str = str.Trim();
-            if (trimValue && value != null) value = value.Trim();
+            if (trimSource) str = str?.Trim();
+            if (trimValue) value = value?.Trim();
 
-            if (ignoreCase) return str.Equals(value, StringComparison.InvariantCultureIgnoreCase);
-            else return str.Equals(value);
+            return ignoreCase ? str.Equals(value, StringComparison.InvariantCultureIgnoreCase) : str.Equals(value);
         }
 
         #endregion
@@ -265,14 +236,20 @@ namespace System
 
         #region Remove
 
-        public static string CleanWhitespaces(this string str, bool mergeLines = true)
+        /// <summary>
+        /// Removes extra white spaces from the current string; for example, if there is a substring of three white spaces, only the first white space is preserved in the returned string.
+        /// </summary>
+        /// <param name="str">The string.</param>
+        /// <param name="mergeLines">if set to <c>true</c>, '\r' and '\n' and other new-line symbols defined in <see cref="Environment.NewLine"/> are removed.</param>
+        /// <returns>A string with extra white spaces removed.</returns>
+        public static string RemoveExtraWhiteSpaces(this string str, bool mergeLines = true)
         {
             var sb = StringBuilderCache.Acquire(str.Length);
             var prevWhitespace = false;
             for (int i = 0, j = str.Length; i < j; ++i)
             {
                 var c = str[i];
-                if (c == '\r' || c == '\n')
+                if (c == '\r' || c == '\n' || c.In(Environment.NewLine))
                 {
                     if (!mergeLines)
                     {
@@ -295,7 +272,7 @@ namespace System
                 }
             }
 
-            return sb.ToString();
+            return StringBuilderCache.GetStringAndRelease(sb);
         }
 
         public static string Remove(this string str, Func<char, bool> predicate)
@@ -308,6 +285,30 @@ namespace System
                 else sb.Append(c);
             }
             return sb.ToString();
+        }
+
+
+        /// <summary>
+        /// Returns a copy of this string instance with the last character removed.
+        /// </summary>
+        /// <param name="str">This string instance.</param>
+        /// <returns>A copy of this string instance with the last character removed.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static string RemoveLast(this string str)
+        {
+            return str.Substring(0, str.Length - 1);
+        }
+
+
+        /// <summary>
+        /// Returns a copy of this string instance with the first character removed.
+        /// </summary>
+        /// <param name="str">This string instance.</param>
+        /// <returns>A copy of this string instance with the first character removed.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static string RemoveFirst(this string str)
+        {
+            return str.Substring(1);
         }
 
         /// <summary>
@@ -326,8 +327,8 @@ namespace System
             for (start = 0; start < length; ++start)
             {
                 if (ignoreWhitespace && str[start].IsWhiteSpace()) continue;
-                else if (str[start] == leftChr) break;
-                else return str;
+                if (str[start] == leftChr) break;
+                return str;
             }
 
             if (start == length) return str;
@@ -336,8 +337,8 @@ namespace System
             for (end = length - 1; end >= start; --end)
             {
                 if (ignoreWhitespace && str[end].IsWhiteSpace()) continue;
-                else if (str[end] == rightChr) break;
-                else return str;
+                if (str[end] == rightChr) break;
+                return str;
             }
 
             if (start == end) return string.Empty;
@@ -429,7 +430,7 @@ namespace System
         public unsafe static string Remove(this string str, Func<char, bool> predicate, bool saveMemory = false)
         {
             var strlen = str.Length;
-            if (!saveMemory) str = String.Copy(str);
+            if (!saveMemory) str = string.Copy(str);
             int j = 0;
             var write = false;
             fixed (char* ptr = str)
@@ -2376,6 +2377,19 @@ namespace System
         }
 
         /// <summary>
+        /// Converts an array of strings to an array of equivalent 64-bit integers.
+        /// </summary>
+        /// <param name="strs">The strings to convert.</param>
+        /// <returns>An array of 64-bit integers.</returns>
+        public static Int64[] ToInt64Array(this string[] strs)
+        {
+            var arr = new Int64[strs.Length];
+            for (int i = 0; i < strs.Length; ++i)
+                arr[i] = Convert.ToInt64(strs[i]);
+            return arr;
+        }
+
+        /// <summary>
         /// Tries to convert the string representation of numbers delimited by <pararef name="separator" /> to equivalent 64-bit integer array.
         /// For example, input "100, 200, -300" with comma ',' as the separator will return a 32-bit integer array { 100, 200, -300 }.
         /// </summary>
@@ -2407,6 +2421,19 @@ namespace System
             var arr = new Int32[eles.Length];
             for (int i = 0; i < eles.Length; ++i)
                 arr[i] = Convert.ToInt32(eles[i]);
+            return arr;
+        }
+
+        /// <summary>
+        /// Converts an array of strings to an array of equivalent 32-bit integers.
+        /// </summary>
+        /// <param name="strs">The strings to convert.</param>
+        /// <returns>An array of 32-bit integers.</returns>
+        public static Int32[] ToInt32Array(this string[] strs)
+        {
+            var arr = new Int32[strs.Length];
+            for (int i = 0; i < strs.Length; ++i)
+                arr[i] = Convert.ToInt32(strs[i]);
             return arr;
         }
 
@@ -3243,6 +3270,34 @@ namespace System
             }
 
             return output;
+        }
+
+        public static bool TryGetInteger(this string str, out int integer, int startIndex = 0)
+        {
+            integer = int.MinValue;
+            var bgPos = -1;
+            var strLen = str.Length;
+            for (int i = startIndex; i < strLen; ++i)
+            {
+                var c = str[i];
+                if (c.IsDigit())
+                {
+                    if (bgPos == -1) bgPos = i;
+                    if (integer == int.MinValue) integer = 0;
+                    var nv = c.GetNumericValue();
+                    var fnv = Math.Floor(nv);
+                    if (fnv == nv)
+                        integer = integer * 10 + ((int)fnv);
+                }
+                else if (integer != int.MinValue)
+                {
+                    if (bgPos != 0 && str[bgPos - 1] == '-') integer = -integer;
+                    return true;
+                }
+            }
+
+            integer = 0;
+            return false;
         }
 
         #endregion

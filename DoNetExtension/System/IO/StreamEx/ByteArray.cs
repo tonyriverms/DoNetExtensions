@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Compression;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -74,7 +75,7 @@ namespace System.IO
             var bufferSize = buffer.Length;
             int tmp;
             long byteCount = 0;
-            while((tmp = streamToRead.Read(buffer)) != 0)
+            while ((tmp = streamToRead.Read(buffer)) != 0)
             {
                 byteCount += tmp;
                 stream.Write(buffer, tmp);
@@ -246,6 +247,46 @@ namespace System.IO
             if (len == 0) return null;
             else if (len < 0) throw new InvalidDataException(IOResources.ERR_StreamExtension_DataIrrecognizable);
             return stream.ReadBytes(len);
+        }
+
+
+        /// <summary>
+        /// Writes a byte array to this stream with compression provided by <see cref="GZipStream"/>. You may write an empty array or a <c>null</c> reference.
+        /// </summary>
+        /// <param name="stream">The stream to write.</param>
+        /// <param name="array">The byte array to write.</param>
+        /// <param name="validityCheck">Indicates whether to write a check code before the byte array. This check code will help detect corrupted data.</param>
+        /// <returns>The number of bytes actually written to the stream.</returns>
+        public static int WriteCompressedByteArray(this Stream stream, byte[] array, bool validityCheck = false)
+        {
+            using (var ms = new MemoryStream())
+            {
+                using (var gs = new GZipStream(ms, CompressionLevel.Optimal))
+                {
+                    gs.WriteByteArray(array, validityCheck);
+                    gs.Flush(); //! must flush
+                }
+
+                return stream.WriteByteArray(ms.ToArray()); //! ! You have to write the bytes after closing the gzip stream
+            }
+        }
+
+        /// <summary>
+        /// Reads a compressed byte array from this stream.
+        /// </summary>
+        /// <param name="stream">The stream to read from.</param>
+        /// <param name="validityCheck">Set this parameter <c>true</c> if there is a check code before the array to detect data corruption; otherwise, set this <c>false</c>.</param>
+        /// <returns>
+        /// The byte array read from the stream.
+        /// </returns>
+        /// <exception cref="System.IO.InvalidDataException">Raises if data in the stream is corrupted.</exception>
+        public static byte[] ReadCompressedByteArray(this Stream stream, bool validityCheck = false)
+        {
+            var data = stream.ReadByteArray();
+            if (data.IsNullOrEmpty()) return null;
+            using (var ms = new MemoryStream(data))
+            using (var cms = new GZipStream(ms, CompressionMode.Decompress))
+                return cms.ReadByteArray(validityCheck);
         }
 
         /// <summary>

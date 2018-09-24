@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -120,7 +120,7 @@ namespace System
                 if (split == null)
                 {
                     split = trim ? ReadToEndWithTrim() : ReadToEnd();
-                    if (!removeEmptyEntries || !split.Equals(string.Empty, StringComparison.Ordinal)) yield return new StringSplitResult(split, '\0', -1); 
+                    if (!removeEmptyEntries || !split.Equals(string.Empty, StringComparison.Ordinal)) yield return new StringSplitResult(split, '\0', -1);
                     yield break;
                 }
                 else
@@ -156,7 +156,7 @@ namespace System
                 if (split == null)
                 {
                     split = trim ? ReadToEndWithTrimAsReader() : ReadToEndAsReader();
-                    if (!removeEmptyEntries || !split.EOF) yield return new StringReaderSplitResult(split, '\0', -1); 
+                    if (!removeEmptyEntries || !split.EOF) yield return new StringReaderSplitResult(split, '\0', -1);
                     yield break;
                 }
                 else
@@ -164,7 +164,7 @@ namespace System
                     if (!removeEmptyEntries || !split.EOF) yield return new StringReaderSplitResult(split, separators[hitIndex], hitIndex);
                     if (EOF)
                     {
-                        if (!removeEmptyEntries) yield return new StringReaderSplitResult(EmptyReader, '\0', -1); 
+                        if (!removeEmptyEntries) yield return new StringReaderSplitResult(EmptyReader, '\0', -1);
                         yield break;
                     }
                 }

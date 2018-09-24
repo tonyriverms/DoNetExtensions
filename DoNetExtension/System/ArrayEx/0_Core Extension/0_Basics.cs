@@ -22,8 +22,7 @@ namespace System
         /// <returns><c>null</c> if the current list is empty or <c>null</c>; otherwise, a new array containing the elements of the current list.</returns>
         public static T[] ToArrayOrNull<T>(this List<T> list)
         {
-            if (list.IsNullOrEmpty()) return null;
-            else return list.ToArray();
+            return list.IsNullOrEmpty() ? null : list.ToArray();
         }
 
         /// <summary>
@@ -34,8 +33,7 @@ namespace System
         /// <returns><c>null</c> if the current list is empty or <c>null</c>; otherwise, a new array containing the elements of the current list.</returns>
         public static T[] ToArrayOrNull<T>(this IList<T> list)
         {
-            if (list.IsNullOrEmpty()) return null;
-            else return list.ToArray();
+            return list.IsNullOrEmpty() ? null : list.ToArray();
         }
 
         /// <summary>

@@ -314,7 +314,7 @@ namespace System.IO
             Encoding encoder = null,
             ByteCompressionMethods compressionMethod = ByteCompressionMethods.None,
             bool metaCompression = false,
-            bool validityCheck = true)
+            bool validityCheck = false)
         {
             if (startIndex + length > str.Length)
                 throw new ArgumentException();
@@ -394,7 +394,7 @@ namespace System.IO
             Encoding encoder = null,
             ByteCompressionMethods compressionMethod = ByteCompressionMethods.None,
             bool headCompression = false,
-            bool validityCheck = true)
+            bool validityCheck = false)
         {
             if (validityCheck)
                 stream.WriteCheckCode((Int64)17);
@@ -468,7 +468,7 @@ namespace System.IO
         /// <param name="validityCheck">Indicates whether to read 
         /// a countersign before the string and perform data-validity check.</param>
         /// <returns>A string read from the stream.</returns>
-        public static string ReadString(this Stream stream, bool validityCheck = true)
+        public static string ReadString(this Stream stream, bool validityCheck = false)
         {
             if (!validityCheck || stream.Check((Int64)17))
             {

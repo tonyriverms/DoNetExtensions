@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -151,7 +151,7 @@ namespace System
         public string ReadBeforeWithTrim(Func<char, bool> predicate, char leftQuote, char rightQuote, bool readToEndIfKeycharNotFound = true)
         {
             var options = ReadOptions.Default | ReadOptions.TrimStart | ReadOptions.TrimEnd;
-            if(readToEndIfKeycharNotFound) options |= ReadOptions.ReadToEnd;
+            if (readToEndIfKeycharNotFound) options |= ReadOptions.ReadToEnd;
             return ReadTo(predicate, leftQuote, rightQuote, options);
         }
 
@@ -246,7 +246,7 @@ namespace System
         /// <para>The position of this reader after executing this method depends on if <c>ReadOptions.StopAfterKey"</c> is specified. If <c>ReadOptions.StopAfterKey"</c> is specified, then the character satisfying the <paramref name="predicate" /> is included in the returned substring if <c>ReadOptions.DiscardKey</c> is also selected.</para>
         /// <para>NOTE that the white spaces at the beginning of the substring will be trimmed if <c>ReadeOptions.TrimStart</c> is specified, and the white spaces at the end of the substring will be trimmed if <c>ReadeOptions.TrimEnd</c> is specified. Also NOTE that <see cref="String.Empty"/> will be returned if the length of the substring after trim is 0.</para>
         /// </returns>
-        public string ReadTo(Func<char, bool> predicate, char[] leftQuotes, char[] rightQuotes, 
+        public string ReadTo(Func<char, bool> predicate, char[] leftQuotes, char[] rightQuotes,
             ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey | ReadOptions.ReadToEnd)
         {
             var idx = UnderlyingString.IndexOfWithQuotes(predicate, CurrentPosition, EndPosition - CurrentPosition, leftQuotes, rightQuotes);

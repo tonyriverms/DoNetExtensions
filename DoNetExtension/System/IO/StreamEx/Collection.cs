@@ -18,7 +18,7 @@ namespace System.IO
         /// <summary>
         /// Creates a new record.
         /// </summary>
-        New, 
+        New,
         /// <summary>
         /// Overrides the existing record.
         /// </summary>
@@ -28,7 +28,7 @@ namespace System.IO
     /// <summary>
     /// Provides methods of IO operation for lists and collections.
     /// </summary>
-    public static class StreamExtensionForCollection
+    public static partial class StreamEx
     {
         static int _byteArrayOccupancy(this Stream stream, byte[] array, bool validityCheck = true)
         {
@@ -37,8 +37,8 @@ namespace System.IO
                 array.Length + sizeof(Int32);
         }
 
-        static void _writeEnumeratorToEnd<T>(Stream stream, 
-            IEnumerator enumerator, ObjectToBytesConverter<T> converter, 
+        static void _writeEnumeratorToEnd<T>(Stream stream,
+            IEnumerator enumerator, ObjectToBytesConverter<T> converter,
             bool validityCheck)
         {
             var lengthPos = stream.Position;
@@ -67,13 +67,12 @@ namespace System.IO
         /// <summary>
         /// Writes a set of objects, each of them fetched from an enumerator, to this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="enumerator">An enumerator used to get each object.</param>
         /// <param name="mode">Indicates whether to override existing list or create a new list in the stream.</param>
         /// <param name="converter">A delegate used to convert each item in the list to a byte array.</param>
         /// <param name="validityCheck">Indicates whether to write a validity-check countersign before the list in the stream.</param>
-        public static void WriteObjects<T>(this Stream stream,
-            IEnumerator enumerator, WritingMode mode,
+        public static void WriteObjects<T>(this Stream stream, IEnumerator enumerator, WritingMode mode,
             ObjectToBytesConverter<T> converter, bool validityCheck = true)
         {
             if (mode == WritingMode.New)
@@ -180,7 +179,7 @@ namespace System.IO
         /// <summary>
         /// Reads objects from this stream and stores them in a list.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list used to store the objects.</param>
         /// <param name="converter">A delegate used to convert the read bytes to the desired object.</param>
         /// <param name="validityCheck">Indicates whether to read a countersign from the stream and perform the validity check.</param>
@@ -224,12 +223,16 @@ namespace System.IO
             else throw new InvalidDataException(IOResources.ERR_StreamExtension_DataIrrecognizable);
         }
 
+
+        #region Read/Write List
+
         delegate void _writeItem<T>(Stream stream, T value);
         delegate T _readItem<T>(Stream stream);
 
-        static void _innerWriteList<T>(_writeItem<T> write, Stream stream,
-            IList<T> list, WritingMode mode, bool validityCheck = true)
+        static void _innerWriteList<T>(_writeItem<T> write, Stream stream, IList<T> list, WritingMode mode = WritingMode.New, bool validityCheck = true)
         {
+            //TODO need to deal with objects of variable binary length
+
             if (mode == WritingMode.New)
             {
                 if (validityCheck)
@@ -237,68 +240,67 @@ namespace System.IO
 
                 if (list == null || list.Count == 0)
                 {
-                    stream.WriteInt32(0);
-                    stream.WriteInt32(0);
-                    stream.WriteInt64(0);
+                    stream.WriteInt32(0); // current block length (total number of available slots for the objects to write)
+                    stream.WriteInt32(0); // current block occupancy (actual number of objects in the current block)
+                    stream.WriteInt64(0); // next block position
                     return;
                 }
 
                 stream.WriteInt32(list.Count);
                 stream.WriteInt32(list.Count);
                 stream.WriteInt64(0);
-                for (int i = 0; i < list.Count; i++)
+                for (var i = 0; i < list.Count; i++)
                     write(stream, list[i]);
             }
             else if (mode == WritingMode.Override)
             {
                 if (!validityCheck || stream.Check((Int64)29))
                 {
-                    int i = 0;
-                    var wcount = list.Count;
+                    var i = 0;
+                    var totalItemCountToWrite = list.Count;
                     while (true)
                     {
                         var count = stream.ReadInt32();
-                        long next;
                         if (list.Count == 0)
                         {
                             stream.SkipInt32();
-                            stream.WriteInt32(0);
+                            stream.WriteInt32(0); // writes occupancy as zero
                             return;
                         }
 
-                        var usedPos = stream.Position;
+                        var occupancyCountPtrPos = stream.Position;
                         stream.SkipInt32();
 
                         var nextPtrPos = stream.Position;
-                        next = stream.ReadInt64();
+                        var nextBlockPosition = stream.ReadInt64();
 
                         var oi = i;
-                        for (; count > 0 && i < wcount; count--, i++)
+                        for (; count > 0 && i < totalItemCountToWrite; count--, i++)
                             write(stream, list[i]);
 
                         var currPos = stream.Position;
-                        stream.SeekTo(usedPos);
+                        stream.SeekTo(occupancyCountPtrPos);
                         stream.WriteInt32(i - oi);
                         stream.SeekTo(currPos);
 
-                        if (i < wcount)
+                        if (i < totalItemCountToWrite)
                         {
-                            if (next == 0)
+                            if (nextBlockPosition == 0)
                             {
-                                stream.SeekTo(nextPtrPos);
+                                stream.SeekTo(nextPtrPos); // writes the position of the new block
                                 stream.WriteInt64(stream.Length);
                                 stream.SeekToEnd();
 
-                                stream.WriteInt32(wcount - i);
-                                stream.WriteInt32(wcount - i);
+                                stream.WriteInt32(totalItemCountToWrite - i);
+                                stream.WriteInt32(totalItemCountToWrite - i);
 
                                 stream.WriteInt64(0);
-                                for (; i < wcount; i++)
+                                for (; i < totalItemCountToWrite; i++)
                                     write(stream, list[i]);
                                 break;
                             }
                             else
-                                stream.SeekTo(next);
+                                stream.SeekTo(nextBlockPosition);
                         }
                         else
                             break;
@@ -389,10 +391,26 @@ namespace System.IO
             return s.ReadDouble();
         }
 
-        static void _innerReadList<T>(_readItem<T> read, Stream stream, 
-            IList<T> list, bool validityCheck = true)
+        static void _writeISavable(Stream s, IBinarySavable obj)
         {
-            var pos = stream.Position;
+            obj.WriteToStream(s, null);
+        }
+
+        static void _writeISavable<T>(Stream s, T obj) where T: IBinarySavable
+        {
+            obj.WriteToStream(s, null);
+        }
+
+        static T _readISavable<T>(Stream s) where T : IBinarySavable, new()
+        {
+            var output = new T();
+            output.LoadFromStream(s, null);
+            return output;
+        }
+
+        static void _innerReadList<T>(_readItem<T> read, Stream stream, IList<T> list, bool validityCheck = true)
+        {
+            //var pos = stream.Position;
 
             if (!validityCheck || stream.Check((Int64)29))
             {
@@ -402,7 +420,7 @@ namespace System.IO
                     var len = stream.ReadInt32();
                     if (len < 0)
                     {
-                        stream.SeekTo(pos);
+                        //stream.SeekTo(pos);
                         throw new InvalidDataException(IOResources.ERR_StreamExtension_DataIrrecognizable);
                     }
 
@@ -410,7 +428,7 @@ namespace System.IO
                     var occupancy = stream.ReadInt32();
                     if (occupancy < 0)
                     {
-                        stream.SeekTo(pos);
+                        //stream.SeekTo(pos);
                         throw new InvalidDataException(IOResources.ERR_StreamExtension_DataIrrecognizable);
                     }
 
@@ -418,7 +436,7 @@ namespace System.IO
                     var next = stream.ReadInt64();
                     if (next < 0)
                     {
-                        stream.SeekTo(pos);
+                        //stream.SeekTo(pos);
                         throw new InvalidDataException(IOResources.ERR_StreamExtension_DataIrrecognizable);
                     }
 
@@ -435,12 +453,11 @@ namespace System.IO
         /// <summary>
         /// Writes a list of 32-bit integers to this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list of 32-bit integers.</param>
         /// <param name="mode">Indicates whether to override existing list or create a new list in the stream.</param>
         /// <param name="validityCheck">Indicates whether to write a validity-check countersign before the list in the stream.</param>
-        public static void WriteList(this Stream stream,
-            IList<Int32> list, WritingMode mode, bool validityCheck = true)
+        public static void WriteList(this Stream stream, IList<Int32> list, WritingMode mode = WritingMode.New, bool validityCheck = true)
         {
             _innerWriteList<Int32>(_writeInt32, stream, list, mode, validityCheck);
         }
@@ -448,11 +465,10 @@ namespace System.IO
         /// <summary>
         /// Reads a list of 32-bit integers from this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list used to store the integers.</param>
         /// <param name="validityCheck">Indicates whether to read a countersign from the stream and perform the validity check.</param>
-        public static void ReadList(this Stream stream,
-            IList<Int32> list, bool validityCheck = true)
+        public static void ReadList(this Stream stream, IList<Int32> list, bool validityCheck = true)
         {
             _innerReadList<Int32>(_readInt32, stream, list, validityCheck);
         }
@@ -460,12 +476,12 @@ namespace System.IO
         /// <summary>
         /// Writes a list of 64-bit integers to this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list of 64-bit integers.</param>
         /// <param name="mode">Indicates whether to override existing list or create a new list in the stream.</param>
         /// <param name="validityCheck">Indicates whether to write a validity-check countersign before the list in the stream.</param>
         public static void WriteList(this Stream stream,
-            IList<Int64> list, WritingMode mode, bool validityCheck = true)
+            IList<Int64> list, WritingMode mode = WritingMode.New, bool validityCheck = true)
         {
             _innerWriteList<Int64>(_writeInt64, stream, list, mode, validityCheck);
         }
@@ -473,7 +489,7 @@ namespace System.IO
         /// <summary>
         /// Reads a list of 64-bit integers from this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list used to store the integers.</param>
         /// <param name="validityCheck">Indicates whether to read a countersign from the stream and perform the validity check.</param>
         public static void ReadList(this Stream stream,
@@ -485,12 +501,12 @@ namespace System.IO
         /// <summary>
         /// Writes a list of 16-bit integers to this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list of 16-bit integers.</param>
         /// <param name="mode">Indicates whether to override existing list or create a new list in the stream.</param>
         /// <param name="validityCheck">Indicates whether to write a validity-check countersign before the list in the stream.</param>
         public static void WriteList(this Stream stream,
-            IList<Int16> list, WritingMode mode, bool validityCheck = true)
+            IList<Int16> list, WritingMode mode = WritingMode.New, bool validityCheck = true)
         {
             _innerWriteList<Int16>(_writeInt16, stream, list, mode, validityCheck);
         }
@@ -498,7 +514,7 @@ namespace System.IO
         /// <summary>
         /// Reads a list of 16-bit integers from this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list used to store the integers.</param>
         /// <param name="validityCheck">Indicates whether to read a countersign from the stream and perform the validity check.</param>
         public static void ReadList(this Stream stream,
@@ -510,12 +526,12 @@ namespace System.IO
         /// <summary>
         /// Writes a list of 64-bit unsigned integers to this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list of 64-bit unsigned integers.</param>
         /// <param name="mode">Indicates whether to override existing list or create a new list in the stream.</param>
         /// <param name="validityCheck">Indicates whether to write a validity-check countersign before the list in the stream.</param>
         public static void WriteList(this Stream stream,
-            IList<UInt64> list, WritingMode mode, bool validityCheck = true)
+            IList<UInt64> list, WritingMode mode = WritingMode.New, bool validityCheck = true)
         {
             _innerWriteList<UInt64>(_writeUInt64, stream, list, mode, validityCheck);
         }
@@ -523,7 +539,7 @@ namespace System.IO
         /// <summary>
         /// Reads a list of 64-bit unsigned integers from this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list used to store the integers.</param>
         /// <param name="validityCheck">Indicates whether to read a countersign from the stream and perform the validity check.</param>
         public static void ReadList(this Stream stream,
@@ -535,12 +551,12 @@ namespace System.IO
         /// <summary>
         /// Writes a list of 32-bit unsigned integers to this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list of 32-bit unsigned integers.</param>
         /// <param name="mode">Indicates whether to override existing list or create a new list in the stream.</param>
         /// <param name="validityCheck">Indicates whether to write a validity-check countersign before the list in the stream.</param>
         public static void WriteList(this Stream stream,
-            IList<UInt32> list, WritingMode mode, bool validityCheck = true)
+            IList<UInt32> list, WritingMode mode = WritingMode.New, bool validityCheck = true)
         {
             _innerWriteList<UInt32>(_writeUInt32, stream, list, mode, validityCheck);
         }
@@ -548,7 +564,7 @@ namespace System.IO
         /// <summary>
         /// Reads a list of 32-bit unsigned integers from this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list used to store the integers.</param>
         /// <param name="validityCheck">Indicates whether to read a countersign from the stream and perform the validity check.</param>
         public static void ReadList(this Stream stream,
@@ -560,12 +576,12 @@ namespace System.IO
         /// <summary>
         /// Writes a list of 16-bit unsigned integers to this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list of 16-bit unsigned integers.</param>
         /// <param name="mode">Indicates whether to override existing list or create a new list in the stream.</param>
         /// <param name="validityCheck">Indicates whether to write a validity-check countersign before the list in the stream.</param>
         public static void WriteList(this Stream stream,
-            IList<UInt16> list, WritingMode mode, bool validityCheck = true)
+            IList<UInt16> list, WritingMode mode = WritingMode.New, bool validityCheck = true)
         {
             _innerWriteList<UInt16>(_writeUInt16, stream, list, mode, validityCheck);
         }
@@ -573,7 +589,7 @@ namespace System.IO
         /// <summary>
         /// Reads a list of 16-bit unsigned integers from this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list used to store the integers.</param>
         /// <param name="validityCheck">Indicates whether to read a countersign from the stream and perform the validity check.</param>
         public static void ReadList(this Stream stream,
@@ -585,12 +601,12 @@ namespace System.IO
         /// <summary>
         /// Writes a list of single-precision numbers to this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list of single-precision numbers.</param>
         /// <param name="mode">Indicates whether to override existing list or create a new list in the stream.</param>
         /// <param name="validityCheck">Indicates whether to write a validity-check countersign before the list in the stream.</param>
         public static void WriteList(this Stream stream,
-            IList<Single> list, WritingMode mode, bool validityCheck = true)
+            IList<Single> list, WritingMode mode = WritingMode.New, bool validityCheck = true)
         {
             _innerWriteList<Single>(_writeSingle, stream, list, mode, validityCheck);
         }
@@ -598,7 +614,7 @@ namespace System.IO
         /// <summary>
         /// Reads a list of single-precision numbers from this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list used to store the integers.</param>
         /// <param name="validityCheck">Indicates whether to read a countersign from the stream and perform the validity check.</param>
         public static void ReadList(this Stream stream,
@@ -610,12 +626,12 @@ namespace System.IO
         /// <summary>
         /// Writes a list of double-precision number to this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list of double-precision numbers.</param>
         /// <param name="mode">Indicates whether to override existing list or create a new list in the stream.</param>
         /// <param name="validityCheck">Indicates whether to write a validity-check countersign before the list in the stream.</param>
         public static void WriteList(this Stream stream,
-            IList<Double> list, WritingMode mode, bool validityCheck = true)
+            IList<Double> list, WritingMode mode = WritingMode.New, bool validityCheck = true)
         {
             _innerWriteList<Double>(_writeDouble, stream, list, mode, validityCheck);
         }
@@ -623,7 +639,7 @@ namespace System.IO
         /// <summary>
         /// Reads a list of double-precision numbers from this stream.
         /// </summary>
-        /// <param name="stream">A System.IO.Stream.</param>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
         /// <param name="list">A list used to store the integers.</param>
         /// <param name="validityCheck">Indicates whether to read a countersign from the stream and perform the validity check.</param>
         public static void ReadList(this Stream stream,
@@ -631,5 +647,45 @@ namespace System.IO
         {
             _innerReadList<Double>(_readDouble, stream, list, validityCheck);
         }
+
+
+        /// <summary>
+        /// Writes a list of double-precision number to this stream.
+        /// </summary>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
+        /// <param name="list">A list of double-precision numbers.</param>
+        /// <param name="mode">Indicates whether to override existing list or create a new list in the stream. DO NOT use <see cref="WritingMode.Override"/> if the binary length <see cref="IBinarySavable"/> object is variable.</param>
+        /// <param name="validityCheck">Indicates whether to write a validity-check countersign before the list in the stream.</param>
+        public static void WriteList<T>(this Stream stream,
+            IList<T> list, WritingMode mode = WritingMode.New, bool validityCheck = true) where T : IBinarySavable
+        {
+            _innerWriteList(_writeISavable, stream, list, WritingMode.New, validityCheck);
+        }
+
+        /// <summary>
+        /// Reads a list of <see cref="IBinarySavable"/> objects from this stream.
+        /// </summary>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
+        /// <param name="list">A list used to store the integers.</param>
+        /// <param name="validityCheck">Indicates whether to read a countersign from the stream and perform the validity check.</param>
+        public static void ReadList<T>(this Stream stream, IList<T> list, bool validityCheck = true) where T : IBinarySavable, new()
+        {
+            _innerReadList(_readISavable<T>, stream, list, validityCheck);
+        }
+
+        /// <summary>
+        /// Reads a list of double-precision numbers from this stream.
+        /// </summary>
+        /// <param name="stream">A <see cref="System.IO.Stream"/>.</param>
+        /// <param name="validityCheck">Indicates whether to read a countersign from the stream and perform the validity check.</param>
+        public static T[] ReadList<T>(this Stream stream, bool validityCheck = true) where T : IBinarySavable, new()
+        {
+            var list = new List<T>();
+            _innerReadList(_readISavable<T>, stream, list, validityCheck);
+            return list.ToArray();
+        }
+
+        #endregion
+
     }
 }

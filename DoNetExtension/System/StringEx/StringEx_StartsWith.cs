@@ -87,7 +87,7 @@ namespace System
             if (targetStartIndex < 0)
                 throw new ArgumentOutOfRangeException(ExceptionHelper.GetNonNegativeArgumentRequiredMessage("targetStartIndex"));
 
-            var realTargetLen = target == null ? 0 : target.Length;
+            var realTargetLen = target?.Length ?? 0;
 
             var targetEndIndex = targetStartIndex + targetLength;
             if (targetEndIndex > realTargetLen)
@@ -147,7 +147,7 @@ namespace System
                 throw new ArgumentOutOfRangeException(ExceptionHelper.GetArgumentOutOfRangeMessage("startIndex", 0, true, sourceLen, false));
 
             sourceLen -= startIndex;
-            var targetLen = value == null ? 0 : value.Length;
+            var targetLen = value?.Length ?? 0;
             return sourceLen >= targetLen && string.Compare(source, startIndex, value, 0, targetLen, comparisonType) == 0;
         }
 

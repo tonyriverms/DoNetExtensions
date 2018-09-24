@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -21,7 +21,8 @@ namespace System
         /// </returns>
         public string ReadTo(string indicator, ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey)
         {
-            var idx = UnderlyingString.IndexOf(indicator, CurrentPosition, EndPosition - CurrentPosition, ComparisonType);
+            var idx = options.HasFlag(ReadOptions.InLine) ? UnderlyingString.InlineIndexOf(indicator, CurrentPosition, EndPosition - CurrentPosition, ComparisonType) :
+            UnderlyingString.IndexOf(indicator, CurrentPosition, EndPosition - CurrentPosition, ComparisonType);
             return _innerReadTo(idx, indicator.Length, options);
         }
 
@@ -172,7 +173,7 @@ namespace System
         public string ReadTo(string indicator, char leftQuote, char rightQuote,
             ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey)
         {
-            var idx = UnderlyingString.IndexOfWithQuotes(indicator, CurrentPosition, EndPosition - CurrentPosition, leftQuote, rightQuote, ComparisonType);;
+            var idx = UnderlyingString.IndexOfWithQuotes(indicator, CurrentPosition, EndPosition - CurrentPosition, leftQuote, rightQuote, ComparisonType); ;
             return _innerReadTo(idx, indicator.Length, options);
         }
 
@@ -265,10 +266,10 @@ namespace System
         /// <returns>
         /// A substring read from the underlying string instance.
         /// </returns>
-        public string ReadTo(string indicator, char[] leftQuotes, char[] rightQuotes, 
+        public string ReadTo(string indicator, char[] leftQuotes, char[] rightQuotes,
             ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey)
         {
-            var idx = UnderlyingString.IndexOfWithQuotes(indicator, CurrentPosition, EndPosition - CurrentPosition, leftQuotes, rightQuotes, ComparisonType);;
+            var idx = UnderlyingString.IndexOfWithQuotes(indicator, CurrentPosition, EndPosition - CurrentPosition, leftQuotes, rightQuotes, ComparisonType); ;
             return _innerReadTo(idx, indicator.Length, options);
         }
 
@@ -381,7 +382,7 @@ namespace System
         /// </returns>
         public string ReadTo(string[] indicators, char leftQuote, char rightQuote, ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey)
         {
-            var idx = UnderlyingString.IndexOfAnyWithQuotes(indicators, CurrentPosition, EndPosition - CurrentPosition, leftQuote, rightQuote, ComparisonType);;
+            var idx = UnderlyingString.IndexOfAnyWithQuotes(indicators, CurrentPosition, EndPosition - CurrentPosition, leftQuote, rightQuote, ComparisonType); ;
             return _innerReadTo(idx.Position, idx.Value.Length, options);
         }
 
@@ -476,7 +477,7 @@ namespace System
         /// </returns>
         public string ReadTo(string[] indicators, char[] leftQuotes, char[] rightQuotes, ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey)
         {
-            var idx = UnderlyingString.IndexOfAnyWithQuotes(indicators, CurrentPosition, EndPosition - CurrentPosition, leftQuotes, rightQuotes, ComparisonType);;
+            var idx = UnderlyingString.IndexOfAnyWithQuotes(indicators, CurrentPosition, EndPosition - CurrentPosition, leftQuotes, rightQuotes, ComparisonType); ;
             return _innerReadTo(idx.Position, idx.Value.Length, options);
         }
 

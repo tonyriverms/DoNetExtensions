@@ -60,10 +60,7 @@ namespace System.Collections.Generic
         /// <summary>
         /// Gets a collection containing the keys in this dictionary.
         /// </summary>
-        public ICollection<TKey> Keys
-        {
-            get { return _curr.Keys; }
-        }
+        public ICollection<TKey> Keys => _curr.Keys;
 
         /// <summary>
         /// Removes the value with the specified key from this dictionary.
@@ -125,10 +122,7 @@ namespace System.Collections.Generic
         /// <summary>
         /// Gets a collection containing the values in this dictionary.
         /// </summary>
-        public ICollection<TValue> Values
-        {
-            get { return _curr.Values; }
-        }
+        public ICollection<TValue> Values => _curr.Values;
 
         /// <summary>
         /// Gets or sets the value associated with the specified key.
@@ -138,14 +132,8 @@ namespace System.Collections.Generic
         /// and a set operation creates a new value with the specified key.</returns>
         public TValue this[TKey key]
         {
-            get
-            {
-                return _curr[key];
-            }
-            set
-            {
-                _curr[key] = value;
-            }
+            get => _curr[key];
+            set => _curr[key] = value;
         }
 
         /// <summary>
@@ -195,10 +183,7 @@ namespace System.Collections.Generic
         /// <summary>
         /// Gets the number of key/value pairs contained in this dictionary.
         /// </summary>
-        public int Count
-        {
-            get { return _curr.Count; }
-        }
+        public int Count => _curr.Count;
 
         /// <summary>
         /// Returns an enumerator that iterates through the <see cref="HybridDictionary{TKey, TValue}"/>.

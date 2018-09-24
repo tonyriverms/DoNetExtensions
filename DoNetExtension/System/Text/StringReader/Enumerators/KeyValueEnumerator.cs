@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -30,16 +30,16 @@ namespace System
                 Trim();
                 if (!EOF)
                 {
-                    RemoveMatchedEnds(leftQuote, rightQuote);
                     Trim();
                     while (!EOF)
                     {
                         var itemReader = ReadAfterWithTrimAsReader(pairDelimiter, leftQuote, rightQuote, true, true);
-                        var key = itemReader.ReadAfterWithTrim(keyDelimiter, true, false);
+                        var key = itemReader.ReadAfterWithTrimAsReader(keyDelimiter, leftQuote, rightQuote, true, false);
                         if (key == null) yield return new KeyValuePair<string, string>(itemReader.ReadToEnd(), null);
                         else
                         {
-                            itemReader.RemoveMatchedEnds('[', ']');
+                            key.RemoveMatchedEnds(leftQuote, rightQuote);
+                            itemReader.RemoveMatchedEnds(leftQuote, rightQuote);
                             yield return new KeyValuePair<string, string>(key, trimValue ? itemReader.ReadToEndWithTrim() : itemReader.ReadToEnd());
                         }
                     }
@@ -62,24 +62,23 @@ namespace System
         /// To parse the current reading scope as key/value pairs, the reading scope must follow the syntax <c>(&lt;key&gt; &lt;key/value delimiter&gt; [&lt;left escaping quote&gt;]&lt;value&gt; &lt;pair delimiter&gt;[&lt;right escaping quote&gt;]) (...n)</c>.
         /// <para>If the <paramref name="pairDelimiter" /> is ';' (default value) and the escape is disabled, this string must follow the syntax <c>(&lt;key&gt; = &lt;value&gt;;) (...n)</c>, which is exactly the same as a standard database connection string.</para>
         /// </remarks>
-        public IEnumerator<KeyValuePair<string, StringReader>> GetKeyValuePairReaderEnumerator(char keyDelimiter = '=',
-            char pairDelimiter = ';', char leftQuote = '[', char rightQuote = ']', bool trimValue = true)
+        public IEnumerator<KeyValuePair<string, StringReader>> GetKeyValuePairReaderEnumerator(char keyDelimiter = '=', char pairDelimiter = ';', char leftQuote = '[', char rightQuote = ']', bool trimValue = true)
         {
             if (!EOF)
             {
                 Trim();
                 if (!EOF)
                 {
-                    RemoveMatchedEnds(leftQuote, rightQuote);
                     Trim();
                     while (!EOF)
                     {
                         var itemReader = ReadAfterWithTrimAsReader(pairDelimiter, leftQuote, rightQuote, true, true);
-                        var key = itemReader.ReadAfterWithTrim(keyDelimiter, true, false);
-                        if (key == null) yield return new KeyValuePair<string, StringReader>(itemReader.ReadToEnd(), null);
+                        var key = itemReader.ReadAfterWithTrimAsReader(keyDelimiter, leftQuote, rightQuote, true, false);
+                        if (key == null) yield return new KeyValuePair<string, StringReader>(itemReader.ToString(), null);
                         else
                         {
-                            itemReader.RemoveMatchedEnds('[', ']');
+                            key.RemoveMatchedEnds(leftQuote, rightQuote);
+                            itemReader.RemoveMatchedEnds(leftQuote, rightQuote);
                             if (trimValue) itemReader.Trim();
                             yield return new KeyValuePair<string, StringReader>(key, itemReader);
                         }

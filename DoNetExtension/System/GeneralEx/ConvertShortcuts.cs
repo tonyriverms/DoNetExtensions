@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System_Extension_Library.System.GeneralEx;
+using DoNetExtension.System;
 
 namespace System
 {
@@ -34,7 +34,7 @@ namespace System
             }
             catch (FormatException formatEx)
             {
-                throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Char"), formatEx);
+                throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Char"), formatEx);
             }
         }
 
@@ -71,7 +71,7 @@ namespace System
                 case "OFF":
                     return false;
                 default:
-                    throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Boolean"));
+                    throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Boolean"));
             }
         }
 
@@ -141,7 +141,7 @@ namespace System
             }
             catch (FormatException formatEx)
             {
-                throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.DateTime"), formatEx);
+                throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.DateTime"), formatEx);
             }
         }
 
@@ -172,7 +172,7 @@ namespace System
             }
             catch (FormatException formatEx)
             {
-                throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.SByte"), formatEx);
+                throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.SByte"), formatEx);
             }
         }
 
@@ -203,7 +203,7 @@ namespace System
             }
             catch (FormatException formatEx)
             {
-                throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Byte"), formatEx);
+                throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Byte"), formatEx);
             }
         }
 
@@ -234,7 +234,7 @@ namespace System
             }
             catch (FormatException formatEx)
             {
-                throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Int16"), formatEx);
+                throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Int16"), formatEx);
             }
         }
 
@@ -265,7 +265,7 @@ namespace System
             }
             catch (FormatException formatEx)
             {
-                throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.UInt16"), formatEx);
+                throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.UInt16"), formatEx);
             }
         }
 
@@ -306,7 +306,7 @@ namespace System
             }
             catch (FormatException formatEx)
             {
-                throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Int32"), formatEx);
+                throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Int32"), formatEx);
             }
         }
 
@@ -337,7 +337,7 @@ namespace System
             }
             catch (FormatException formatEx)
             {
-                throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.UInt32"), formatEx);
+                throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.UInt32"), formatEx);
             }
         }
 
@@ -368,7 +368,7 @@ namespace System
             }
             catch (FormatException formatEx)
             {
-                throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Int64"), formatEx);
+                throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Int64"), formatEx);
             }
         }
 
@@ -399,7 +399,7 @@ namespace System
             }
             catch (FormatException formatEx)
             {
-                throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.UInt64"), formatEx);
+                throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.UInt64"), formatEx);
             }
         }
 
@@ -430,7 +430,7 @@ namespace System
             }
             catch (FormatException formatEx)
             {
-                throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Double"), formatEx);
+                throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Double"), formatEx);
             }
         }
 
@@ -461,7 +461,7 @@ namespace System
             }
             catch (FormatException formatEx)
             {
-                throw new FormatException(GeneralExResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Single"), formatEx);
+                throw new FormatException(GeneralResources.ERR_ConvertShortcuts_ParsingError.Scan(str, "System.Single"), formatEx);
             }
         }
 

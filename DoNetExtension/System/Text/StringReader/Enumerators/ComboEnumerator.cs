@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -42,8 +42,8 @@ namespace System
                 }
                 else
                 {
-                    if (!int.TryParse(depthPair.First, out depths[i, 0])) return null;
-                    if (!int.TryParse(depthPair.Second, out depths[i, 1])) return null;
+                    if (!int.TryParse(depthPair.Item1, out depths[i, 0])) return null;
+                    if (!int.TryParse(depthPair.Item2, out depths[i, 1])) return null;
                 }
             }
 
@@ -75,7 +75,7 @@ namespace System
                 return _comboModeParse(exp);
             }).ToArray();
         }
-        
+
         static byte _comboModeParse(string exp)
         {
             if (exp.Equals("static", StringComparison.InvariantCultureIgnoreCase)) return (byte)1;
@@ -162,7 +162,7 @@ namespace System
                                 if (parts.MoveNext())
                                 {
                                     var exp = parts.Current.ReadToEndWithTrim();
-                                    modes = _comboModeParse(exp).CreateSingleton();
+                                    modes = _comboModeParse(exp).Singleton();
                                 }
 
                                 depths = new int[1, 2] { { 1, predicateIndex } };
@@ -204,7 +204,7 @@ namespace System
                             for (int i = 0; i < keywordCount; ++i)
                                 convertedKeywords[i] = randomizedKeywords[i] = converter(keywords[i]);
                         }
-                    
+
                         if (depths == null) depths = new int[1, 2] { { 1, keywordCount } };
                         var dlen = depths.GetLength(0);
                         for (int i = 0; i < dlen; ++i)

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
-using System_Extension_Library.System;
 using System_Extension_Library.System.StringEx;
 
 namespace System
@@ -25,7 +21,6 @@ namespace System
             bool _sameQuote;
 
             int _i;
-            string _curr;
             StringBuilder sb;
 
             internal _innerSplitWithQuotesEnumerator01(string str, Func<char, bool> predicate, int startIndex, int endIndex,
@@ -45,21 +40,18 @@ namespace System
                 sb = new StringBuilder();
             }
 
-            public string Current
-            {
-                get { return _curr; }
-            }
+            public string Current { get; private set; }
 
             public void Dispose()
             {
                 _str = null;
-                _curr = null;
+                Current = null;
                 _predicate = null;
             }
 
             object Collections.IEnumerator.Current
             {
-                get { return _curr; }
+                get { return Current; }
             }
 
             public bool MoveNext()
@@ -110,7 +102,7 @@ namespace System
                             sb.Clear();
                             if (!_removeEmptyEntries || trimmedStr.Length != 0)
                             {
-                                _curr = _keepSeparator ? trimmedStr + c : trimmedStr;
+                                Current = _keepSeparator ? trimmedStr + c : trimmedStr;
                                 ++_i;
                                 return true;
                             }
@@ -121,7 +113,7 @@ namespace System
                             if (!_removeEmptyEntries || sb.Length != 0)
                             {
                                 if (_keepSeparator) sb.Append(c);
-                                _curr = sb.ToString();
+                                Current = sb.ToString();
                                 sb.Clear();
                                 ++_i;
                                 return true;
@@ -144,7 +136,7 @@ namespace System
                     sb.Clear();
                     if (!_removeEmptyEntries || trimmedStr.Length != 0)
                     {
-                        _curr = _keepSeparator ? trimmedStr + c : trimmedStr;
+                        Current = _keepSeparator ? trimmedStr + c : trimmedStr;
                         _i = -1;
                         return true;
                     }
@@ -158,7 +150,7 @@ namespace System
                 {
                     if (!_removeEmptyEntries || sb.Length != 0)
                     {
-                        _curr = sb.ToString();
+                        Current = sb.ToString();
                         sb.Clear();
                         _i = -1;
                         return true;
@@ -174,7 +166,7 @@ namespace System
 
             public void Reset()
             {
-                _curr = null;
+                Current = null;
                 _i = _startIndex;
             }
         }
@@ -194,7 +186,6 @@ namespace System
             bool _sameQuote;
 
             int _i;
-            string _curr;
             StringBuilder sb;
 
             internal _innerSplitWithQuotesEnumerator02(string str, char separator, int startIndex, int endIndex,
@@ -214,20 +205,17 @@ namespace System
                 sb = new StringBuilder();
             }
 
-            public string Current
-            {
-                get { return _curr; }
-            }
+            public string Current { get; private set; }
 
             public void Dispose()
             {
                 _str = null;
-                _curr = null;
+                Current = null;
             }
 
             object Collections.IEnumerator.Current
             {
-                get { return _curr; }
+                get { return Current; }
             }
 
             public bool MoveNext()
@@ -278,7 +266,7 @@ namespace System
                             sb.Clear();
                             if (!_removeEmptyEntries || trimmedStr.Length != 0)
                             {
-                                _curr = _keepSeparator ? trimmedStr + c : trimmedStr;
+                                Current = _keepSeparator ? trimmedStr + c : trimmedStr;
                                 ++_i;
                                 return true;
                             }
@@ -289,7 +277,7 @@ namespace System
                             if (!_removeEmptyEntries || sb.Length != 0)
                             {
                                 if (_keepSeparator) sb.Append(c);
-                                _curr = sb.ToString();
+                                Current = sb.ToString();
                                 sb.Clear();
                                 ++_i;
                                 return true;
@@ -312,7 +300,7 @@ namespace System
                     sb.Clear();
                     if (!_removeEmptyEntries || trimmedStr.Length != 0)
                     {
-                        _curr = _keepSeparator ? trimmedStr + c : trimmedStr;
+                        Current = _keepSeparator ? trimmedStr + c : trimmedStr;
                         _i = -1;
                         return true;
                     }
@@ -326,7 +314,7 @@ namespace System
                 {
                     if (!_removeEmptyEntries || sb.Length != 0)
                     {
-                        _curr = sb.ToString();
+                        Current = sb.ToString();
                         sb.Clear();
                         _i = -1;
                         return true;
@@ -342,7 +330,7 @@ namespace System
 
             public void Reset()
             {
-                _curr = null;
+                Current = null;
                 _i = _startIndex;
             }
         }
@@ -699,7 +687,6 @@ namespace System
             bool _keepQuotes;
 
             int _i;
-            string _curr;
             StringBuilder sb;
 
             internal _innerSplitWithQuotesEnumerator05(string str, char separator, int startIndex, int endIndex,
@@ -718,21 +705,15 @@ namespace System
                 sb = new StringBuilder();
             }
 
-            public string Current
-            {
-                get { return _curr; }
-            }
+            public string Current { get; private set; }
 
             public void Dispose()
             {
                 _str = null;
-                _curr = null;
+                Current = null;
             }
 
-            object Collections.IEnumerator.Current
-            {
-                get { return _curr; }
-            }
+            object Collections.IEnumerator.Current => Current;
 
             public bool MoveNext()
             {
@@ -784,7 +765,7 @@ namespace System
                             sb.Clear();
                             if (!_removeEmptyEntries || trimmedStr.Length != 0)
                             {
-                                _curr = _keepSeparator ? trimmedStr + c : trimmedStr;
+                                Current = _keepSeparator ? trimmedStr + c : trimmedStr;
                                 ++_i;
                                 return true;
                             }
@@ -795,7 +776,7 @@ namespace System
                             if (!_removeEmptyEntries || sb.Length != 0)
                             {
                                 if (_keepSeparator) sb.Append(c);
-                                _curr = sb.ToString();
+                                Current = sb.ToString();
                                 sb.Clear();
                                 ++_i;
                                 return true;
@@ -818,7 +799,7 @@ namespace System
                     sb.Clear();
                     if (!_removeEmptyEntries || trimmedStr.Length != 0)
                     {
-                        _curr = _keepSeparator ? trimmedStr + c : trimmedStr;
+                        Current = _keepSeparator ? trimmedStr + c : trimmedStr;
                         _i = -1;
                         return true;
                     }
@@ -832,7 +813,7 @@ namespace System
                 {
                     if (!_removeEmptyEntries || sb.Length != 0)
                     {
-                        _curr = sb.ToString();
+                        Current = sb.ToString();
                         sb.Clear();
                         _i = -1;
                         return true;
@@ -848,7 +829,7 @@ namespace System
 
             public void Reset()
             {
-                _curr = null;
+                Current = null;
                 _i = _startIndex;
             }
         }
@@ -1043,7 +1024,7 @@ namespace System
         /// </returns>
         /// <exception cref="System.FormatException">Occurs when there is a quote mismatch in the string instance.</exception>
         public static IEnumerator<string> GetSplitEnumeratorWithQuotes(this string str, Func<char, bool> predicate, int startIndex, int length,
-            char leftQuote = '{', char rightQuote = '}', bool removeEmptyEntries = false, bool trim =false, bool keepQuotes = true, bool keepSeparator = false)
+            char leftQuote = '{', char rightQuote = '}', bool removeEmptyEntries = false, bool trim = false, bool keepQuotes = true, bool keepSeparator = false)
         {
             var endIndex = ExceptionHelper.ForwardCheckStartIndexAndLength(startIndex, length, str.Length);
             return new _innerSplitWithQuotesEnumerator01(str, predicate, startIndex, endIndex, leftQuote, rightQuote, removeEmptyEntries, trim, keepQuotes, keepSeparator);

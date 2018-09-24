@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.CompilerServices;
 
 namespace System
 {
     public static partial class StringEx
     {
+        #region Emptiness
+
         /// <summary>
         /// Returns <c>true</c> if current string instance is null or empty. This is a dummy of <see cref="string.IsNullOrEmpty"/> method for convenience.
         /// </summary>
@@ -111,5 +108,28 @@ namespace System
             return str != null && str.IsNotEmptyOrBlank();
         }
 
+        /// <summary>
+        /// Returns <c>null</c> if the current string is null or empty; otherwise, returns the current instance.
+        /// </summary>
+        /// <param name="str">This string instance.</param>
+        /// <returns><c>null</c> if the current string is null or empty; otherwise, the current instance.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static string NullIfEmpty(this string str)
+        {
+            return string.IsNullOrEmpty(str) ? null : str;
+        }
+
+        /// <summary>
+        /// Returns <c>null</c> if the current string is null, empty or contains only white spaces defined by <see cref="char.IsWhiteSpace(char)"/>; otherwise, returns the current instance.
+        /// </summary>
+        /// <param name="str">This string instance.</param>
+        /// <returns><c>null</c> if the current string is null or empty or contains only white spaces defined by <see cref="char.IsWhiteSpace(char)"/>; otherwise, the current instance.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static string NullIfBlank(this string str)
+        {
+            return str.IsNullOrEmptyOrBlank() ? null : str;
+        }
+
+        #endregion
     }
 }

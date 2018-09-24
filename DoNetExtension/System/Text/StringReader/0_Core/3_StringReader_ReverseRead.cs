@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -60,7 +60,7 @@ namespace System
         /// </returns>
         public bool ReverseReadChar(char target, bool ignoreWhiteSpaces = true)
         {
-            if(ignoreWhiteSpaces) TrimEnd();
+            if (ignoreWhiteSpaces) TrimEnd();
             if (EOF) return false;
 
             if (UnderlyingString[EndPosition - 1].ToString().Equals(target.ToString(), ComparisonType))

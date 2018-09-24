@@ -138,6 +138,9 @@
   <data name="ERR_DictionaryOnStream_HashStreamMustBeEmpty" xml:space="preserve">
     <value>The stream for hasing must be empty.</value>
   </data>
+  <data name="ERR_Heap_EmptyHeap" xml:space="preserve">
+    <value>Unable to pop element because the heap is empty.</value>
+  </data>
   <data name="ERR_ReadOnlyArrayDictionary_ReadOnly" xml:space="preserve">
     <value>A ReadOnlyArrayDictionary is read-only. Key-value pairs cannot be added, updated or removed.</value>
   </data>

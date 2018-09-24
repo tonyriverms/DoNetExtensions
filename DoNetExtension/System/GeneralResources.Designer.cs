@@ -79,6 +79,15 @@ namespace DoNetExtension.System {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error occurs when parsing &quot;{0}&quot; as a {1}. Please make sure the value to parse is in a correct format..
+        /// </summary>
+        internal static string ERR_ConvertShortcuts_ParsingError {
+            get {
+                return ResourceManager.GetString("ERR_ConvertShortcuts_ParsingError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Array &quot;{0}&quot; is empty..
         /// </summary>
         internal static string ERR_EmptyArray {

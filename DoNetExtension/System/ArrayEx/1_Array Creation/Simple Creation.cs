@@ -16,7 +16,7 @@ namespace System
         /// <param name="obj">This object.</param>
         /// <returns>A new  one-dimensional <see cref="System.Array"/> instance containing this object as its only element.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T[] CreateSingleton<T>(this T obj)
+        public static T[] Singleton<T>(this T obj)
         {
             return new T[] { obj };
         }

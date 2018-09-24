@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO.Compression;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -30,6 +31,76 @@ namespace System.IO
 
     public static partial class StreamEx
     {
+
+        #region For IBinarySavable
+
+        public static void WriteBinarySavable(this Stream stream, IBinarySavable obj, params object[] args)
+        {
+            if (obj == null)
+                stream.WriteByte(0);
+            else
+            {
+                stream.WriteByte((byte)IOChecks.BinarySavable);
+                obj.WriteToStream(stream, args);
+            }
+        }
+
+        public static void WriteBinarySavableArray<T>(this Stream stream, T[] array, params object[] args) where T : IBinarySavable
+        {
+            if (array == null)
+                stream.WriteInt32(0);
+            else
+            {
+                var arrLeng = array.Length;
+                stream.WriteInt32(arrLeng);
+                for (var i = 0; i < arrLeng; ++i)
+                    stream.WriteBinarySavable(array[i], args);
+            }
+        }
+
+        public static T ReadBinarySavable<T>(this Stream stream, params object[] args) where T : IBinarySavable, new()
+        {
+            var nullCode = stream.ReadByte();
+            if (nullCode == 0) return default(T);
+            if (nullCode != (byte)IOChecks.BinarySavable) throw new InvalidDataException(IOResources.ERR_StreamExtension_DataIrrecognizable);
+
+            var obj = new T();
+            obj.LoadFromStream(stream, args);
+            return obj;
+        }
+
+        public static T[] ReadBinarySavableArray<T>(this Stream stream, params object[] args) where T : IBinarySavable, new()
+        {
+            var arrLen = stream.ReadInt32();
+            if (arrLen == 0) return null;
+
+            var arr = new T[arrLen];
+            for (var i = 0; i < arrLen; ++i)
+                arr[i] = stream.ReadBinarySavable<T>(args);
+
+            return arr;
+        }
+
+
+        /// <summary>
+        /// Converts the <see cref="IBinarySavable" /> object to a byte array by calling its <see cref="IBinarySavable.WriteToStream(Stream, object)" /> method on a <see cref="MemoryStream" />.
+        /// </summary>
+        /// <param name="obj">This <see cref="IBinarySavable" /> object.</param>
+        /// <param name="arg">Provides the argument which is passed to the <see cref="IBinarySavable.WriteToStream(Stream, object)" /> method.</param>
+        /// <returns>
+        /// A byte array converted from the <see cref="IBinarySavable" /> object.
+        /// </returns>
+        public static byte[] ToBytes(this IBinarySavable obj, object arg = null)
+        {
+            using (var ms = new MemoryStream())
+            {
+                ms.WriteBinarySavable(obj, arg);
+                return ms.ToArray();
+            }
+        }
+
+        #endregion
+
         #region Basic
 
         /// <summary>
@@ -310,90 +381,95 @@ namespace System.IO
             return stream.WriteByteArray(converter(obj), validityCheck);
         }
 
-        enum _commonObjectTypeMapping : byte
+        enum CommonTypeStreamCode : byte
         {
-            _string = 0,
-            _int32 = 1,
-            _int64 = 2,
-            _uint32 = 3,
-            _uint64 = 4,
-            _byte = 5,
-            _int16 = 6,
-            _uint16 = 7,
-            _datetime = 8,
-            _sbyte = 9,
-            _single = 10,
-            _double = 11,
-            _byteArray = 12,
-            _intlist = 13,
-            _intarr = 14,
+            String = 0,
+            Int32 = 1,
+            Int64 = 2,
+            UInt32 = 3,
+            UInt64 = 4,
+            Byte = 5,
+            Int16 = 6,
+            UInt16 = 7,
+            DateTime = 8,
+            SByte = 9,
+            Single = 10,
+            Double = 11,
+            ByteArray = 12,
+            Int32List = 13,
+            Int32Array = 14,
             _glist = 15,
             _nglist = 16
         }
 
 
+        /// <summary>
+        /// Writes an arbitrary object 
+        /// </summary>
+        /// <param name="stream">The stream.</param>
+        /// <param name="obj">The object.</param>
         public static void WriteObject(this Stream stream, object obj)
         {
             switch (obj)
             {
                 case string str:
-                    stream.WriteByte((byte)_commonObjectTypeMapping._string);
+                    stream.WriteByte((byte)CommonTypeStreamCode.String);
                     stream.WriteString(str);
                     break;
-                case Int32 i32:
-                    stream.WriteByte((byte)_commonObjectTypeMapping._int32);
+                case int i32:
+                    stream.WriteByte((byte)CommonTypeStreamCode.Int32);
                     stream.WriteInt32(i32);
                     break;
-                case Int64 i64:
-                    stream.WriteByte((byte)_commonObjectTypeMapping._int64);
+                case long i64:
+                    stream.WriteByte((byte)CommonTypeStreamCode.Int64);
                     stream.WriteInt64(i64);
                     break;
-                case Double d:
-                    stream.WriteByte((Byte)_commonObjectTypeMapping._double);
+                case double d:
+                    stream.WriteByte((byte)CommonTypeStreamCode.Double);
                     stream.WriteDouble(d);
                     break;
-                case Single s:
-                    stream.WriteByte((Byte)_commonObjectTypeMapping._single);
+                case float s:
+                    stream.WriteByte((byte)CommonTypeStreamCode.Single);
                     stream.WriteSingle(s);
                     break;
                 case DateTime t:
-                    stream.WriteByte((Byte)_commonObjectTypeMapping._datetime);
+                    stream.WriteByte((byte)CommonTypeStreamCode.DateTime);
                     stream.WriteDateTime(t);
                     break;
-                case UInt32 ui32:
-                    stream.WriteByte((byte)_commonObjectTypeMapping._uint32);
+                case uint ui32:
+                    stream.WriteByte((byte)CommonTypeStreamCode.UInt32);
                     stream.WriteUInt32(ui32);
                     break;
-                case UInt64 ui64:
-                    stream.WriteByte((byte)_commonObjectTypeMapping._uint64);
+                case ulong ui64:
+                    stream.WriteByte((byte)CommonTypeStreamCode.UInt64);
                     stream.WriteUInt64(ui64);
                     break;
                 case Byte b:
-                    stream.WriteByte((byte)_commonObjectTypeMapping._byte);
+                    stream.WriteByte((byte)CommonTypeStreamCode.Byte);
                     stream.WriteByte(b);
                     break;
-                case Int16 i16:
-                    stream.WriteByte((Byte)_commonObjectTypeMapping._int16);
+                case short i16:
+                    stream.WriteByte((byte)CommonTypeStreamCode.Int16);
                     stream.WriteInt16(i16);
                     break;
-                case UInt16 ui16:
-                    stream.WriteByte((Byte)_commonObjectTypeMapping._uint16);
+                case ushort ui16:
+                    stream.WriteByte((byte)CommonTypeStreamCode.UInt16);
                     stream.WriteUInt16(ui16);
                     break;
-                case SByte sb:
-                    stream.WriteByte((Byte)_commonObjectTypeMapping._sbyte);
+                case sbyte sb:
+                    stream.WriteByte((byte)CommonTypeStreamCode.SByte);
                     stream.WriteSByte(sb);
                     break;
-                case Int32[] i32arr:
-                    stream.WriteByte((Byte)_commonObjectTypeMapping._intarr);
-                    stream.WriteInt32Array(i32arr, false);
+                case int[] i32Arr:
+                    stream.WriteByte((byte)CommonTypeStreamCode.Int32Array);
+                    stream.WriteInt32Array(i32Arr, false);
                     break;
-                case List<int> i32list:
-                    stream.WriteByte((Byte)_commonObjectTypeMapping._intlist);
-                    stream.WriteInt32Array(((List<int>)obj).ToArray(), false);
+                case List<int> i32List:
+                    stream.WriteByte((byte)CommonTypeStreamCode.Int32List);
+                    stream.WriteInt32Array(i32List.ToArray(), false);
                     break;
-                case Byte[] bytearr:
-                    stream.WriteByte((Byte)_commonObjectTypeMapping._byteArray);
+                case byte[] bytearr:
+                    stream.WriteByte((byte)CommonTypeStreamCode.ByteArray);
                     stream.WriteByteArray(bytearr, false);
                     break;
                 case IList glist:
@@ -403,35 +479,55 @@ namespace System.IO
                         {
                             //? if the type is consistent through the list
 
-                            stream.WriteByte((Byte)_commonObjectTypeMapping._glist);
-                            stream.WriteString(type.FullName, false); // writes list full name
+                            stream.WriteByte((byte)CommonTypeStreamCode._glist);
+                            stream.WriteString(type.FullName); // writes list full name
                             var gtype = type.GetGenericArguments()[0];
-                            stream.WriteString(gtype.FullName, false); // writes object type full name
                             var objCount = glist.Count;
                             stream.WriteInt32(objCount); // writes object count
 
-                            var fields = gtype.GetFields(Reflection.BindingFlags.Instance | Reflection.BindingFlags.Public | Reflection.BindingFlags.NonPublic);
-                            var fieldCount = (UInt16)fields.Length;
+                            var fields = gtype.GetFields(BindingFlags.Instance |
+                                                         BindingFlags.Public |
+                                                         BindingFlags.NonPublic |
+                                                         BindingFlags.GetField |
+                                                         BindingFlags.SetField);
+                            var fieldCount = (ushort)fields.Length;
                             stream.WriteUInt16(fieldCount); // writes field count
 
+
+                            var properties = gtype.GetProperties(
+                                BindingFlags.Instance | BindingFlags.Public |
+                                BindingFlags.NonPublic | BindingFlags.GetField |
+                                BindingFlags.SetField);
+
+                            var propertyCount = (ushort)properties.Length;
+                            stream.WriteUInt16(propertyCount); // writes property count
+
+
+                            for (var i = 0; i < fieldCount; ++i)
+                                stream.WriteString(fields[i].Name);
+
+                            for (var i = 0; i < propertyCount; ++i)
+                                stream.WriteString(properties[i].Name);
+
                             // writes list to stream
-                            for (int j = 0; j < objCount; ++j)
+                            for (var j = 0; j < objCount; ++j)
                             {
-                                for (int i = 0; i < fieldCount; ++i)
-                                {
-                                    var field = fields[i];
-                                    stream.WriteObject(field.GetValue(glist[j]));
-                                }
+                                var listObj = glist[j];
+                                for (var i = 0; i < fieldCount; ++i)
+                                    stream.WriteObject(fields[i].GetValue(listObj));
+
+                                for (var i = 0; i < propertyCount; ++i)
+                                    stream.WriteObject(properties[i].GetValue(listObj));
                             }
                         }
                         else
                         {
-                            stream.WriteByte((Byte)_commonObjectTypeMapping._nglist);
-                            stream.WriteString(type.FullName, false);
+                            stream.WriteByte((byte)CommonTypeStreamCode._nglist);
+                            stream.WriteString(type.FullName);
 
                             var count = glist.Count;
                             stream.WriteInt32(count);
-                            for (int i = 0; i < count; ++i)
+                            for (var i = 0; i < count; ++i)
                                 stream.WriteObject(glist[i]);
                         }
                         break;
@@ -439,76 +535,116 @@ namespace System.IO
                 default:
                     {
                         var type = obj.GetType();
-                        stream.WriteString(type.FullName, false);
-                        var fields = obj.GetType().GetFields(Reflection.BindingFlags.Instance | Reflection.BindingFlags.Public | Reflection.BindingFlags.NonPublic);
-                        var fieldCount = (UInt16)fields.Length;
+                        stream.WriteString(type.FullName);
+                        var fields = type.GetFields(BindingFlags.Instance |
+                                                     BindingFlags.Public |
+                                                     BindingFlags.NonPublic |
+                                                     BindingFlags.GetField |
+                                                     BindingFlags.SetField);
+                        var fieldCount = (ushort)fields.Length;
+
+                        var properties = type.GetProperties(
+                            BindingFlags.Instance | BindingFlags.Public |
+                            BindingFlags.NonPublic | BindingFlags.GetField |
+                            BindingFlags.SetField);
+
+                        var propertyCount = (ushort)properties.Length;
+                        stream.WriteUInt16(propertyCount); // writes property count
+
                         stream.WriteUInt16(fieldCount);
-                        for (int i = 0; i < fieldCount; ++i)
-                        {
-                            var field = fields[i];
-                            stream.WriteObject(field.GetValue(obj));
-                        }
+                        stream.WriteUInt16(propertyCount);
+                        for (var i = 0; i < fieldCount; ++i)
+                            stream.WriteObject(fields[i].GetValue(obj));
+                        for (var i = 0; i < propertyCount; ++i)
+                            stream.WriteObject(properties[i].GetValue(obj));
                         break;
                     }
             }
         }
 
+        static object _innerReadObject(Stream stream, Type type, FieldInfo[] fields, PropertyInfo[] properties)
+        {
+            var obj = Activator.CreateInstance(type);
+            foreach (var field in fields)
+                field.SetValue(obj, stream.ReadObject());
+            foreach (var property in properties)
+                property.SetValue(obj, stream.ReadObject());
+            return obj;
+        }
+
+
         public static object ReadObject(this Stream stream)
         {
-            var type = (_commonObjectTypeMapping)stream.ReadByte();
+            var type = (CommonTypeStreamCode)stream.ReadByte();
             switch (type)
             {
-                case _commonObjectTypeMapping._string:
+                case CommonTypeStreamCode.String:
                     return stream.ReadString();
-                case _commonObjectTypeMapping._int32:
+                case CommonTypeStreamCode.Int32:
                     return stream.ReadInt32();
-                case _commonObjectTypeMapping._int64:
+                case CommonTypeStreamCode.Int64:
                     return stream.ReadInt64();
-                case _commonObjectTypeMapping._uint32:
+                case CommonTypeStreamCode.UInt32:
                     return stream.ReadUInt32();
-                case _commonObjectTypeMapping._uint64:
+                case CommonTypeStreamCode.UInt64:
                     return stream.ReadUInt64();
-                case _commonObjectTypeMapping._byte:
-                    {
-                        var read = stream.ReadByte();
-                        if (read < Byte.MinValue || read > byte.MaxValue) throw new IOException();
-                        else return (Byte)read;
-                    }
-                case _commonObjectTypeMapping._datetime:
+                case CommonTypeStreamCode.Byte:
+                    return stream.ReadByte();
+                case CommonTypeStreamCode.DateTime:
                     return stream.ReadDateTime();
-                case _commonObjectTypeMapping._int16:
+                case CommonTypeStreamCode.Int16:
                     return stream.ReadInt16();
-                case _commonObjectTypeMapping._uint16:
+                case CommonTypeStreamCode.UInt16:
                     return stream.ReadUInt16();
-                case _commonObjectTypeMapping._single:
+                case CommonTypeStreamCode.Single:
                     return stream.ReadSingle();
-                case _commonObjectTypeMapping._double:
+                case CommonTypeStreamCode.Double:
                     return stream.ReadDouble();
-                case _commonObjectTypeMapping._sbyte:
+                case CommonTypeStreamCode.SByte:
                     return stream.ReadSByte();
-                case _commonObjectTypeMapping._byteArray:
+                case CommonTypeStreamCode.ByteArray:
                     return stream.ReadByteArray();
-                case _commonObjectTypeMapping._intarr:
+                case CommonTypeStreamCode.Int32Array:
                     return stream.ReadInt32Array(false);
-                case _commonObjectTypeMapping._intlist:
+                case CommonTypeStreamCode.Int32List:
                     return new List<int>(stream.ReadInt32Array(false));
-                case _commonObjectTypeMapping._glist:
+                case CommonTypeStreamCode._glist:
                     {
-                        var glistname = stream.ReadString(false);
-                        var glist = (IList)System.Reflection.Assembly.GetExecutingAssembly().CreateInstance(glistname);
+                        var glistType = Type.GetType(stream.ReadString());
+                        var glist = (IList)Activator.CreateInstance(glistType);
+
                         var count = stream.ReadInt32();
-                        for (int i = 0; i < count; ++i)
-                            glist.Add(stream.ReadObject());
-                        return null;
-                        break;
+                        var fieldCount = stream.ReadUInt16();
+                        var propertyCount = stream.ReadUInt16();
+                        var objType = glistType.GetGenericArguments()[0];
+                        var fields = new FieldInfo[fieldCount];
+                        var properties = new PropertyInfo[propertyCount];
+                        for (var i = 0; i < fieldCount; ++i)
+                            fields[i] = objType.GetField(stream.ReadString());
+                        for (var i = 0; i < propertyCount; ++i)
+                            properties[i] = objType.GetProperty(stream.ReadString());
+
+                        for (var i = 0; i < count; ++i)
+                            glist.Add(_innerReadObject(stream, objType, fields, properties));
+
+                        return glist;
                     }
                 default:
                     {
-                        return null;
-                        break;
+                        var objName = stream.ReadString();
+                        var fieldCount = stream.ReadUInt16();
+                        var objType = Assembly.GetExecutingAssembly().GetType(objName);
+                        var obj = Activator.CreateInstance(objType);
+                        for (var i = 0; i < fieldCount; ++i)
+                            objType.GetField(stream.ReadString()).SetValue(obj, stream.ReadObject());
+
+
+                        return obj;
                     }
             }
         }
+
+
 
         /// <summary>
         /// Reads an object from this stream.

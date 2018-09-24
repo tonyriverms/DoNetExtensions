@@ -18,7 +18,7 @@ namespace System
         /// <returns>The zero-based index position of the last character in this instance satisfying the specified predicate.</returns>
         public static int LastIndexOf(this string str, Func<char, bool> predicate, int startIndex)
         {
-            for (int i = startIndex; i >= 0; --i)
+            for (var i = startIndex; i >= 0; --i)
             {
                 if (predicate(str[i]))
                     return i;
@@ -44,7 +44,7 @@ namespace System
             var endIndex = startIndex - count;
             if (endIndex < 0) throw new ArgumentOutOfRangeException(ExceptionHelper.GetArgumentOutOfRangeMessage("count", 0, true, startIndex, true));
 
-            for (int i = startIndex; i >= endIndex; --i)
+            for (var i = startIndex; i >= endIndex; --i)
             {
                 if (predicate(str[i]))
                     return i;
@@ -61,18 +61,18 @@ namespace System
         /// <param name="count">The number of character positions to examine.</param>
         /// <param name="comparisonType">One of the enumeration values that specifies the rules for the search.</param>
         /// <returns>
-        /// A <see cref="System.IndexOfAnyResult"/> object that stores the search result; null if none of the <paramref name="anyOf"/> is found in the current string.
+        /// A <see cref="StringSearchResult"/> object that stores the search result; null if none of the <paramref name="anyOf"/> is found in the current string.
         /// </returns>
         public static StringSearchResult LastIndexOfAny(this string str, IList<string> anyOf, int startIndex, int count, StringComparison comparisonType = StringComparison.Ordinal)
         {
-            int pos;
-            int hitPosition = -1;
+            var hitPosition = -1;
             var idx = 0;
             string hitValue = null;
 
             for (int i = 0, j = anyOf.Count; i < j; ++i)
             {
                 var val = anyOf[i];
+                int pos;
                 if ((pos = str.LastIndexOf(val, startIndex, count, comparisonType)) != -1)
                 {
                     if (hitPosition < pos)
@@ -95,7 +95,7 @@ namespace System
         /// <param name="startIndex">Indicating the position where the search starts. The search proceeds from startIndex toward the beginning of this instance.</param>
         /// <param name="comparisonType">One of the enumeration values that specifies the rules for the search.</param>
         /// <returns>
-        /// A <see cref="System.IndexOfAnyResult"/> object that stores the search result; null if none of the <paramref name="anyOf"/> is found in the current string.
+        /// A <see cref="StringSearchResult"/> object that stores the search result; null if none of the <paramref name="anyOf"/> is found in the current string.
         /// </returns>
         public static StringSearchResult LastIndexOfAny(this string str, IList<string> anyOf, int startIndex, StringComparison comparisonType = StringComparison.Ordinal)
         {

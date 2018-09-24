@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.IO;
-using System.Reflection;
 
 namespace System.Collections.Generic
 {
@@ -67,6 +64,17 @@ namespace System.Collections.Generic
             foreach (var item in source)
             {
                 if (item.Equals(targetValue))
+                    ++count;
+            }
+            return count;
+        }
+
+        public static int Count<T>(this IEnumerable<T> source, Func<T, bool> predicate)
+        {
+            var count = 0;
+            foreach (var item in source)
+            {
+                if (predicate(item))
                     ++count;
             }
             return count;
@@ -214,6 +222,20 @@ namespace System.Collections.Generic
             return -1;
         }
 
+        public static bool SequenceEqual<T>(this IList<T> src, IList<T> target)
+        {
+            var len1 = src.Count;
+            if (len1 != target.Count) return false;
+
+            for (int i = 0; i < len1; ++i)
+            {
+                if (!src[i].Equals(target[i]))
+                    return false;
+            }
+
+            return true;
+        }
+
         public static bool SequenceEqual<T>(this IList<T> src, IList<T> target, Func<T, T, bool> comparer)
         {
             var len1 = src.Count;
@@ -221,18 +243,22 @@ namespace System.Collections.Generic
 
             for (int i = 0; i < len1; ++i)
             {
-                if (comparer == null ? !src[i].Equals(target[i]) : !comparer(src[i], target[i]))
+                if (!comparer?.Invoke(src[i], target[i]) ?? !src[i].Equals(target[i]))
                     return false;
             }
 
             return true;
         }
 
+        /// <summary>
+        /// Copies the objects in the current sequence to a new linked list.
+        /// </summary>
+        /// <typeparam name="T">The type of objects in the sequence.</typeparam>
+        /// <param name="enumerable">The current sequence.</param>
+        /// <returns>A new <see cref="LinkedList{T}"/> of objects copied from the current sequence.</returns>
         public static LinkedList<T> ToLinkedList<T>(this IEnumerable<T> enumerable)
         {
-            var lkList = enumerable as LinkedList<T>;
-            if (lkList != null) return lkList;
-            lkList = new LinkedList<T>();
+            var lkList = new LinkedList<T>();
             foreach (var item in enumerable) lkList.AddLast(item);
             return lkList;
         }
@@ -438,8 +464,7 @@ namespace System.Collections.Generic
         public static TValue TryGetValueOrNew<TKey, TValue>
             (this IDictionary<TKey, TValue> dictionary, TKey key, out bool isNew) where TValue : new()
         {
-            TValue value;
-            if (!(isNew = !dictionary.TryGetValue(key, out value)))
+            if (!(isNew = !dictionary.TryGetValue(key, out var value)))
                 return value;
             else
             {
@@ -731,6 +756,15 @@ namespace System.Collections.Generic
         public static void RemoveLast<T>(this IList<T> list)
         {
             list.RemoveAt(list.Count - 1);
+        }
+
+
+        public static T PopLast<T>(this IList<T> list)
+        {
+            var idx = list.Count - 1;
+            var item = list[idx];
+            list.RemoveAt(idx);
+            return item;
         }
 
         /// <summary>

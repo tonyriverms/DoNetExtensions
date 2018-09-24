@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace System
+namespace System.Text
 {
     public partial class StringReader
     {
@@ -26,7 +26,7 @@ namespace System
         /// </returns>
         public string ReadTo(char keychar, ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey | ReadOptions.ReadToEnd)
         {
-            var idx = UnderlyingString.IndexOf(keychar, CurrentPosition, EndPosition - CurrentPosition);
+            var idx = options.HasFlag(ReadOptions.InLine) ? UnderlyingString.InlineIndexOf(keychar, CurrentPosition, EndPosition - CurrentPosition) : UnderlyingString.IndexOf(keychar, CurrentPosition, EndPosition - CurrentPosition);
             return _innerReadTo(idx, 1, options);
         }
 
@@ -43,8 +43,8 @@ namespace System
         /// </returns>
         public string ReadBeforeWithTrim(char keychar, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ? 
-                 ReadOptions.TrimStart | ReadOptions.TrimEnd | ReadOptions.ReadToEnd : 
+            var options = readToEndIfKeycharNotFound ?
+                 ReadOptions.TrimStart | ReadOptions.TrimEnd | ReadOptions.ReadToEnd :
                  ReadOptions.TrimStart | ReadOptions.TrimEnd;
 
             return ReadTo(keychar, options);
@@ -83,7 +83,7 @@ namespace System
         /// </returns>
         public string ReadBefore(char keychar, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ?  ReadOptions.ReadToEnd : ReadOptions.Default;
+            var options = readToEndIfKeycharNotFound ? ReadOptions.ReadToEnd : ReadOptions.Default;
             return ReadTo(keychar, options);
         }
 
@@ -122,13 +122,33 @@ namespace System
         /// <returns>
         /// If <c>ReadeOptions.ReadToEnd</c> is specified in <paramref name="options"/>, then a substring starting from the current position of the reading scope to the position of the first occurrence of the <paramref name="keychar" /> within the search scope when such character is found outside quotes, or a substring starting from the current position of the reading scope to the end of the search scope if such character is not found outside quotes.
         /// <para>If <c>ReadeOptions.ReadToEnd</c> is not specified, then a substring starting from the current position of the reading scope to the position of the first occurrence of the <paramref name="keychar" /> within the search scope when such character is found outside quotes, or <c>null</c> if such character is not found outside quotes.</para>
-        /// <para>The position of this reader after executing this method depends on if <c>ReadOptions.StopAfterKey</c> is specified. If <c>ReadOptions.StopAfterKey</c> is specified, then the character satisfying the <paramref name="predicate" /> is included in the returned substring if <c>ReadOptions.DiscardKey</c> is also selected.</para>
-        /// <para>NOTE that the white spaces at the beginning of the substring will be trimmed if <c>ReadeOptions.TrimStart</c> is specified, and the white spaces at the end of the substring will be trimmed if <c>ReadeOptions.TrimEnd</c> is specified. Also NOTE that <see cref="String.Empty"/> will be returned if the length of the substring after trim is 0.</para>
+        /// <para>The position of this reader after executing this method depends on if <see cref="ReadOptions.StopAfterKey"/> is specified. If <see cref="ReadOptions.StopAfterKey"/> is specified, then the <paramref name="keychar"/> is included in the returned substring if <see cref="ReadOptions.DiscardKey"/> is also selected.</para>
+        /// <para>NOTE the white spaces at the beginning of the substring will be trimmed if <c>ReadeOptions.TrimStart</c> is specified, and the white spaces at the end of the substring will be trimmed if <c>ReadeOptions.TrimEnd</c> is specified. Also NOTE <see cref="String.Empty"/> will be returned if the length of the substring after trim is 0.</para>
         /// </returns>
         public string ReadTo(char keychar, char leftQuote, char rightQuote,
             ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey | ReadOptions.ReadToEnd)
         {
             var idx = UnderlyingString.IndexOfWithQuotes(keychar, CurrentPosition, EndPosition - CurrentPosition, leftQuote, rightQuote);
+            return _innerReadTo(idx, 1, options);
+        }
+
+        /// <summary>
+        /// Advances the reader and reads until a character specified by <paramref name="keychar" /> is encountered outside quotes.
+        /// The reader's position after executing this method depends on the <paramref name="options" />.
+        /// </summary>
+        /// <param name="keychar">The reader stops when this character is encountered.</param>
+        /// <param name="leftQuote">The left quote. The reader will not stop when an <paramref name="keychar" /> is encountered inside a pair of quotes.</param>
+        /// <param name="rightQuote">The right quote. The reader will not stop when an <paramref name="keychar" /> is encountered inside a pair of quotes.</param>
+        /// <param name="quoteEscape">A character for escaping the quotes in the string. Note the escaped quotes will not be solved in the returned string of this method.</param>
+        /// <param name="options">Specifies the reading options.</param>
+        /// <returns>
+        /// If <c>ReadeOptions.ReadToEnd</c> is specified in <paramref name="options" />, then a substring starting from the current position of the reading scope to the position of the first occurrence of the <paramref name="keychar" /> within the search scope when such character is found outside quotes, or a substring starting from the current position of the reading scope to the end of the search scope if such character is not found outside quotes.
+        /// <para>If <c>ReadeOptions.ReadToEnd</c> is not specified, then a substring starting from the current position of the reading scope to the position of the first occurrence of the <paramref name="keychar" /> within the search scope when such character is found outside quotes, or <c>null</c> if such character is not found outside quotes.</para><para>The position of this reader after executing this method depends on if <see cref="ReadOptions.StopAfterKey" /> is specified. If <see cref="ReadOptions.StopAfterKey" /> is specified, then the <paramref name="keychar" /> is included in the returned substring if <see cref="ReadOptions.DiscardKey" /> is also selected.</para><para>NOTE the white spaces at the beginning of the substring will be trimmed if <c>ReadeOptions.TrimStart</c> is specified, and the white spaces at the end of the substring will be trimmed if <c>ReadeOptions.TrimEnd</c> is specified. Also NOTE <see cref="String.Empty" /> will be returned if the length of the substring after trim is 0.</para>
+        /// </returns>
+        public string ReadTo(char keychar, char leftQuote, char rightQuote, char quoteEscape,
+            ReadOptions options = ReadOptions.StopAfterKey | ReadOptions.DiscardKey | ReadOptions.ReadToEnd)
+        {
+            var idx = UnderlyingString.IndexOfWithQuotes(keychar, CurrentPosition, EndPosition - CurrentPosition, leftQuote, rightQuote, quoteEscape);
             return _innerReadTo(idx, 1, options);
         }
 
@@ -191,7 +211,7 @@ namespace System
         /// </returns>
         public string ReadBefore(char keychar, char leftQuote, char rightQuote, bool readToEndIfKeycharNotFound = true)
         {
-            var options = readToEndIfKeycharNotFound ?  ReadOptions.ReadToEnd : ReadOptions.Default;
+            var options = readToEndIfKeycharNotFound ? ReadOptions.ReadToEnd : ReadOptions.Default;
             return ReadTo(keychar, leftQuote, rightQuote, options);
         }
 
