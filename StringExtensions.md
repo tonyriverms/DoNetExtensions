@@ -6,6 +6,8 @@
 
 [17. Multiple Keyword Search](#MultipleStringSearch)
 
+[18. String Split Enumerators](#String Split Enumerators)
+
 ### <a name="CharExtensions"></a>10. Char Extensions
 
 Some static methods of Char class is now available as extension methods. Some useful ones include **_IsWhiteSpace_**, **_IsLetter_**, **_IsNumber_**, **_IsDigit_**, **_IsLetterOrDigit_**, **_IsUpper_**, **_IsLower_**, **_IsPunctuation_**, **_IsCurrencySymbol_**, **_GetNumericValue_**, **_ToLower_**, **_ToUpper_**, etc.
@@ -55,6 +57,11 @@ str.IndexOfAny(new[] {'d','g','z'}, out int hitIndex); // function returns 4 ('d
 ```
 
 **_IndexOfAny(strings, startIndex, count) : StringSearchResult_**: Reports the index of the first occurrence of any strings in a specified char array. A ``StringSearchResult`` object is returned containing all needed information.
+
+
+**_IndexOfFirstNonSpaceCharacter(startIndex) : StringSearchResult_**: Gets the index of the first non-white-space Unicode character in the string at and after the search starting position.
+
+**_IndexOfLastNonSpaceCharacter(startIndex) : StringSearchResult_**: Gets the index of the last non-white-space Unicode character in the string at and before the search starting position.
 
 ### <a name="MultipleStringSearch"></a>17. Multiple Keyword Search
 
