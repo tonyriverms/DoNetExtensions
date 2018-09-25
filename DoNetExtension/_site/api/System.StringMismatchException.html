@@ -1,0 +1,470 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class StringMismatchException
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class StringMismatchException
+   ">
+    <meta name="generator" content="docfx 2.39.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="System.StringMismatchException">
+  
+  
+  <h1 id="System_StringMismatchException" data-uid="System.StringMismatchException" class="text-break">Class StringMismatchException
+  </h1>
+  <div class="markdown level0 summary"><p>The exception that is thrown when a string mismatch is found in a string. A similar exception is <a class="xref" href="System.CharacterMismatchException.html">CharacterMismatchException</a> that handles character mismatch.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.Exception</span></div>
+    <div class="level2"><span class="xref">System.SystemException</span></div>
+    <div class="level3"><span class="xref">System.FormatException</span></div>
+    <div class="level4"><span class="xref">StringMismatchException</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Runtime.Serialization.ISerializable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Exception.GetBaseException()</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.Data</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.HelpLink</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.HResult</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.InnerException</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.Message</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.Source</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.StackTrace</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.TargetSite</span>
+    </div>
+    <div>
+      <span class="xref">System.Exception.SerializeObjectState</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.html">System</a></h6>
+  <h6><strong>Assembly</strong>: DoNetExtension.dll</h6>
+  <h5 id="System_StringMismatchException_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class StringMismatchException : FormatException, ISerializable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_StringMismatchException__ctor_System_Int32_System_String_System_String_System_Exception_.md&amp;value=---%0Auid%3A%20System.StringMismatchException.%23ctor(System.Int32%2CSystem.String%2CSystem.String%2CSystem.Exception)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/MismatchException.cs/#L91">View Source</a>
+  </span>
+  <a id="System_StringMismatchException__ctor_" data-uid="System.StringMismatchException.#ctor*"></a>
+  <h4 id="System_StringMismatchException__ctor_System_Int32_System_String_System_String_System_Exception_" data-uid="System.StringMismatchException.#ctor(System.Int32,System.String,System.String,System.Exception)">StringMismatchException(Int32, String, String, Exception)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.StringMismatchException.html">StringMismatchException</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StringMismatchException(int matchTargetPosition, string matchTarget, string missingMatch, Exception innerException)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">matchTargetPosition</span></td>
+        <td><p>The position of the target substring that is mismatched.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">matchTarget</span></td>
+        <td><p>The target substring that should be matched.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">missingMatch</span></td>
+        <td><p>The missing match.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><span class="parametername">innerException</span></td>
+        <td><p>The exception that is the cause of the current exception. If the <code data-dev-comment-type="paramref" class="paramref">innerException</code> parameter is not a <code>null</code> reference, the current exception is raised in a catch block that handles the inner exception.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_StringMismatchException__ctor_System_String_System_Int32_System_String_System_String_System_Exception_.md&amp;value=---%0Auid%3A%20System.StringMismatchException.%23ctor(System.String%2CSystem.Int32%2CSystem.String%2CSystem.String%2CSystem.Exception)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/MismatchException.cs/#L102">View Source</a>
+  </span>
+  <a id="System_StringMismatchException__ctor_" data-uid="System.StringMismatchException.#ctor*"></a>
+  <h4 id="System_StringMismatchException__ctor_System_String_System_Int32_System_String_System_String_System_Exception_" data-uid="System.StringMismatchException.#ctor(System.String,System.Int32,System.String,System.String,System.Exception)">StringMismatchException(String, Int32, String, String, Exception)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.StringMismatchException.html">StringMismatchException</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StringMismatchException(string message, int matchTargetPosition, string matchTarget, string missingMatch, Exception innerException)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td><p>The message string that explains the mismatch error.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">matchTargetPosition</span></td>
+        <td><p>The position of the target substring that is mismatched.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">matchTarget</span></td>
+        <td><p>The target substring that should be matched.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">missingMatch</span></td>
+        <td><p>The missing match.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Exception</span></td>
+        <td><span class="parametername">innerException</span></td>
+        <td><p>The exception that is the cause of the current exception. If the <code data-dev-comment-type="paramref" class="paramref">innerException</code> parameter is not a <code>null</code> reference, the current exception is raised in a catch block that handles the inner exception.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_StringMismatchException_MatchTarget.md&amp;value=---%0Auid%3A%20System.StringMismatchException.MatchTarget%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/MismatchException.cs/#L76">View Source</a>
+  </span>
+  <a id="System_StringMismatchException_MatchTarget_" data-uid="System.StringMismatchException.MatchTarget*"></a>
+  <h4 id="System_StringMismatchException_MatchTarget" data-uid="System.StringMismatchException.MatchTarget">MatchTarget</h4>
+  <div class="markdown level1 summary"><p>Gets the substring that is mismatched.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MatchTarget { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The mismatched target substring.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_StringMismatchException_MatchTargetPosition.md&amp;value=---%0Auid%3A%20System.StringMismatchException.MatchTargetPosition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/MismatchException.cs/#L70">View Source</a>
+  </span>
+  <a id="System_StringMismatchException_MatchTargetPosition_" data-uid="System.StringMismatchException.MatchTargetPosition*"></a>
+  <h4 id="System_StringMismatchException_MatchTargetPosition" data-uid="System.StringMismatchException.MatchTargetPosition">MatchTargetPosition</h4>
+  <div class="markdown level1 summary"><p>Gets the position of the substring that is mismatched.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MatchTargetPosition { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The position of the mismatched target.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_StringMismatchException_MissingMatch.md&amp;value=---%0Auid%3A%20System.StringMismatchException.MissingMatch%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/MismatchException.cs/#L82">View Source</a>
+  </span>
+  <a id="System_StringMismatchException_MissingMatch_" data-uid="System.StringMismatchException.MissingMatch*"></a>
+  <h4 id="System_StringMismatchException_MissingMatch" data-uid="System.StringMismatchException.MissingMatch">MissingMatch</h4>
+  <div class="markdown level1 summary"><p>Gets the missing string that should have matched <a class="xref" href="System.StringMismatchException.html#System_StringMismatchException_MatchTarget">MatchTarget</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string MissingMatch { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>The missing match.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Runtime.Serialization.ISerializable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Singleton__1___0_">ArrayEx.Singleton&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_CreateArray__1___0_System_Int32_">ArrayEx.CreateArray&lt;T&gt;(T, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_System_Boolean_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.In&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAny&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAll&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.In&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAny&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAll&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IList___0__">GeneralEx.In&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0___0___">GeneralEx.In&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.NotIn&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.NotIn&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IList___0__">GeneralEx.NotIn&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0___0___">GeneralEx.NotIn&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNull_System_Object_">GeneralEx.IsNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNotNull_System_Object_">GeneralEx.IsNotNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32__1___0_">GeneralEx.ToInt32&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32OrNull__1___0_">GeneralEx.ToInt32OrNull&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_StringMismatchException.md&amp;value=---%0Auid%3A%20System.StringMismatchException%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/MismatchException.cs/#L64" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

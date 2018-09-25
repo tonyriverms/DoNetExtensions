@@ -1,0 +1,810 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ExceptionHelper
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ExceptionHelper
+   ">
+    <meta name="generator" content="docfx 2.39.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="System.ExceptionHelper">
+  
+  
+  <h1 id="System_ExceptionHelper" data-uid="System.ExceptionHelper" class="text-break">Class ExceptionHelper
+  </h1>
+  <div class="markdown level0 summary"><p>Provides frequently used exceptions and messages.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ExceptionHelper</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.html">System</a></h6>
+  <h6><strong>Assembly</strong>: DoNetExtension.dll</h6>
+  <h5 id="System_ExceptionHelper_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class ExceptionHelper</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_ExceptionHelper_ArgumentRangeRequired__1_System_String___0___0_System_Boolean___0_System_Boolean_.md&amp;value=---%0Auid%3A%20System.ExceptionHelper.ArgumentRangeRequired%60%601(System.String%2C%60%600%2C%60%600%2CSystem.Boolean%2C%60%600%2CSystem.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/ExceptionHelper.cs/#L116">View Source</a>
+  </span>
+  <a id="System_ExceptionHelper_ArgumentRangeRequired_" data-uid="System.ExceptionHelper.ArgumentRangeRequired*"></a>
+  <h4 id="System_ExceptionHelper_ArgumentRangeRequired__1_System_String___0___0_System_Boolean___0_System_Boolean_" data-uid="System.ExceptionHelper.ArgumentRangeRequired``1(System.String,``0,``0,System.Boolean,``0,System.Boolean)">ArgumentRangeRequired&lt;T&gt;(String, T, T, Boolean, T, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Throws a <span class="xref">System.ArgumentOutOfRangeException</span> when the provided argument is out of range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ArgumentRangeRequired&lt;T&gt;(string argumentName, T argumentValue, T lowerBound, bool lowerBoundInclusive, T higherBound, bool higherBoundInclusive)
+    where T : IComparable</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">argumentName</span></td>
+        <td><p>The name of the argument. This name will be displayed in the exception message.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">argumentValue</span></td>
+        <td><p>The value of the argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">lowerBound</span></td>
+        <td><p>The lower bound of the valid range.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">lowerBoundInclusive</span></td>
+        <td><p><code>true</code> to indicate the lower bound is inclusive; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">higherBound</span></td>
+        <td><p>The higher bound of the valid range.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">higherBoundInclusive</span></td>
+        <td><p><code>true</code> to indicate the higher bound is inclusive; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the argument.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_ExceptionHelper_EqualArrayLengthRequired__2___0_____1___System_String_System_String_.md&amp;value=---%0Auid%3A%20System.ExceptionHelper.EqualArrayLengthRequired%60%602(%60%600%5B%5D%2C%60%601%5B%5D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/ExceptionHelper.cs/#L247">View Source</a>
+  </span>
+  <a id="System_ExceptionHelper_EqualArrayLengthRequired_" data-uid="System.ExceptionHelper.EqualArrayLengthRequired*"></a>
+  <h4 id="System_ExceptionHelper_EqualArrayLengthRequired__2___0_____1___System_String_System_String_" data-uid="System.ExceptionHelper.EqualArrayLengthRequired``2(``0[],``1[],System.String,System.String)">EqualArrayLengthRequired&lt;TArray1, TArray2&gt;(TArray1[], TArray2[], String, String)</h4>
+  <div class="markdown level1 summary"><p>Throws an <span class="xref">System.ArgumentException</span> when the lengths of <code data-dev-comment-type="paramref" class="paramref">array1</code> and <code data-dev-comment-type="paramref" class="paramref">array2</code> are not equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int EqualArrayLengthRequired&lt;TArray1, TArray2&gt;(TArray1[] array1, TArray2[] array2, string array1Name, string array2Name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TArray1[]</td>
+        <td><span class="parametername">array1</span></td>
+        <td><p>The first array, whose length must be equal to <code data-dev-comment-type="paramref" class="paramref">array2</code>. This argument cannot be <code>null</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td>TArray2[]</td>
+        <td><span class="parametername">array2</span></td>
+        <td><p>The second array, whose length must be equal to <code data-dev-comment-type="paramref" class="paramref">array1</code>. This argument cannot be <code>null</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">array1Name</span></td>
+        <td><p>The name for <code data-dev-comment-type="paramref" class="paramref">array1</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">array2Name</span></td>
+        <td><p>The name for <code data-dev-comment-type="paramref" class="paramref">array2</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The length of <code data-dev-comment-type="paramref" class="paramref">array1</code> and <code data-dev-comment-type="paramref" class="paramref">array2</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TArray1</span></td>
+        <td><p>The type of element in <code data-dev-comment-type="paramref" class="paramref">array1</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TArray2</span></td>
+        <td><p>The type of element in <code data-dev-comment-type="paramref" class="paramref">array2</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>Occurs when the lengths of <code data-dev-comment-type="paramref" class="paramref">array1</code> and <code data-dev-comment-type="paramref" class="paramref">array2</code> are not equal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_ExceptionHelper_EqualArrayLengthRequiredOrBothNull__2___0_____1___System_String_System_String_.md&amp;value=---%0Auid%3A%20System.ExceptionHelper.EqualArrayLengthRequiredOrBothNull%60%602(%60%600%5B%5D%2C%60%601%5B%5D%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/ExceptionHelper.cs/#L266">View Source</a>
+  </span>
+  <a id="System_ExceptionHelper_EqualArrayLengthRequiredOrBothNull_" data-uid="System.ExceptionHelper.EqualArrayLengthRequiredOrBothNull*"></a>
+  <h4 id="System_ExceptionHelper_EqualArrayLengthRequiredOrBothNull__2___0_____1___System_String_System_String_" data-uid="System.ExceptionHelper.EqualArrayLengthRequiredOrBothNull``2(``0[],``1[],System.String,System.String)">EqualArrayLengthRequiredOrBothNull&lt;TArray1, TArray2&gt;(TArray1[], TArray2[], String, String)</h4>
+  <div class="markdown level1 summary"><p>Throws an <span class="xref">System.ArgumentException</span> when the lengths of <code data-dev-comment-type="paramref" class="paramref">array1</code> and <code data-dev-comment-type="paramref" class="paramref">array2</code> are not equal; or only one of <code data-dev-comment-type="paramref" class="paramref">array1</code> and <code data-dev-comment-type="paramref" class="paramref">array2</code> is <code>null</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int EqualArrayLengthRequiredOrBothNull&lt;TArray1, TArray2&gt;(TArray1[] array1, TArray2[] array2, string array1Name, string array2Name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TArray1[]</td>
+        <td><span class="parametername">array1</span></td>
+        <td><p>The first array, whose length must be equal to <code data-dev-comment-type="paramref" class="paramref">array2</code>. This argument can be <code>null</code>, in which case <code data-dev-comment-type="paramref" class="paramref">array2</code> should also be <code>null</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td>TArray2[]</td>
+        <td><span class="parametername">array2</span></td>
+        <td><p>The second array, whose length must be equal to <code data-dev-comment-type="paramref" class="paramref">array1</code>. This argument can be <code>null</code>, in which case <code data-dev-comment-type="paramref" class="paramref">array1</code> should also be <code>null</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">array1Name</span></td>
+        <td><p>The name for <code data-dev-comment-type="paramref" class="paramref">array1</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">array2Name</span></td>
+        <td><p>The name for <code data-dev-comment-type="paramref" class="paramref">array2</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The length of <code data-dev-comment-type="paramref" class="paramref">array1</code> and <code data-dev-comment-type="paramref" class="paramref">array2</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TArray1</span></td>
+        <td><p>The type of element in <code data-dev-comment-type="paramref" class="paramref">array1</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TArray2</span></td>
+        <td><p>The type of element in <code data-dev-comment-type="paramref" class="paramref">array2</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>Occurs when the lengths of <code data-dev-comment-type="paramref" class="paramref">array1</code> and <code data-dev-comment-type="paramref" class="paramref">array2</code> are not equal; or only one of <code data-dev-comment-type="paramref" class="paramref">array1</code> and <code data-dev-comment-type="paramref" class="paramref">array2</code> is <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_ExceptionHelper_MinMaxArgumentCheck_System_Object_System_Object_System_String_System_String_.md&amp;value=---%0Auid%3A%20System.ExceptionHelper.MinMaxArgumentCheck(System.Object%2CSystem.Object%2CSystem.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/ExceptionHelper.cs/#L39">View Source</a>
+  </span>
+  <a id="System_ExceptionHelper_MinMaxArgumentCheck_" data-uid="System.ExceptionHelper.MinMaxArgumentCheck*"></a>
+  <h4 id="System_ExceptionHelper_MinMaxArgumentCheck_System_Object_System_Object_System_String_System_String_" data-uid="System.ExceptionHelper.MinMaxArgumentCheck(System.Object,System.Object,System.String,System.String)">MinMaxArgumentCheck(Object, Object, String, String)</h4>
+  <div class="markdown level1 summary"><p>Checks if <code data-dev-comment-type="paramref" class="paramref">min</code> is smaller or equal to <code data-dev-comment-type="paramref" class="paramref">max</code>. If not, an <span class="xref">System.ArgumentOutOfRangeException</span> will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void MinMaxArgumentCheck(dynamic min, dynamic max, string argNameForMin = &quot;minValue&quot;, string argNameForMax = &quot;maxValue&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">min</span></td>
+        <td><p>The &quot;min&quot; argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">max</span></td>
+        <td><p>The &quot;max&quot; argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">argNameForMin</span></td>
+        <td><p>The name for the &quot;min&quot; argument.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">argNameForMax</span></td>
+        <td><p>The name for the &quot;max argument&quot;.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentOutOfRangeException</span></td>
+        <td><p>Occurs when <code data-dev-comment-type="paramref" class="paramref">min</code> is greater than <code data-dev-comment-type="paramref" class="paramref">max</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_ExceptionHelper_NonEmptyArrayRequired__1___0___System_String_.md&amp;value=---%0Auid%3A%20System.ExceptionHelper.NonEmptyArrayRequired%60%601(%60%600%5B%5D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/ExceptionHelper.cs/#L194">View Source</a>
+  </span>
+  <a id="System_ExceptionHelper_NonEmptyArrayRequired_" data-uid="System.ExceptionHelper.NonEmptyArrayRequired*"></a>
+  <h4 id="System_ExceptionHelper_NonEmptyArrayRequired__1___0___System_String_" data-uid="System.ExceptionHelper.NonEmptyArrayRequired``1(``0[],System.String)">NonEmptyArrayRequired&lt;T&gt;(T[], String)</h4>
+  <div class="markdown level1 summary"><p>Throws a <span class="xref">System.ArgumentNullException</span> when the provided <code data-dev-comment-type="paramref" class="paramref">array</code> is <code>null</code>, or throws a <span class="xref">System.ArgumentException</span> when the provided <code data-dev-comment-type="paramref" class="paramref">array</code> is <code>empty</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int NonEmptyArrayRequired&lt;T&gt;(T[] array, string arrayName = &quot;array&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>The array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">arrayName</span></td>
+        <td><p>Provides the name of the array that will be shown in the exception message.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of elements contained in <code data-dev-comment-type="paramref" class="paramref">array</code>. This return is for your convenience.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the element in the array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Occurs when <code data-dev-comment-type="paramref" class="paramref">array</code> is <code>null</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>Occurs when <code data-dev-comment-type="paramref" class="paramref">array</code> is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_ExceptionHelper_NonEmptyCollectionRequired__1_System_Collections_Generic_IEnumerable___0__System_String_.md&amp;value=---%0Auid%3A%20System.ExceptionHelper.NonEmptyCollectionRequired%60%601(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/ExceptionHelper.cs/#L228">View Source</a>
+  </span>
+  <a id="System_ExceptionHelper_NonEmptyCollectionRequired_" data-uid="System.ExceptionHelper.NonEmptyCollectionRequired*"></a>
+  <h4 id="System_ExceptionHelper_NonEmptyCollectionRequired__1_System_Collections_Generic_IEnumerable___0__System_String_" data-uid="System.ExceptionHelper.NonEmptyCollectionRequired``1(System.Collections.Generic.IEnumerable{``0},System.String)">NonEmptyCollectionRequired&lt;T&gt;(IEnumerable&lt;T&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Throws a <span class="xref">System.ArgumentNullException</span> when the provided <code data-dev-comment-type="paramref" class="paramref">collection</code> is <code>null</code>, or throws a <span class="xref">System.ArgumentException</span> when the provided <code data-dev-comment-type="paramref" class="paramref">collection</code> is <code>empty</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int NonEmptyCollectionRequired&lt;T&gt;(IEnumerable&lt;T&gt; collection, string collectionName = &quot;collection&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">collection</span></td>
+        <td><p>The collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">collectionName</span></td>
+        <td><p>Name of the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of elements contained in <code data-dev-comment-type="paramref" class="paramref">collection</code>. This return is for your convenience.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the element in the collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Occurs when <code data-dev-comment-type="paramref" class="paramref">collection</code> is <code>null</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>Occurs when <code data-dev-comment-type="paramref" class="paramref">collection</code> is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_ExceptionHelper_NonEmptyListRequired__1_System_Collections_Generic_IList___0__System_String_.md&amp;value=---%0Auid%3A%20System.ExceptionHelper.NonEmptyListRequired%60%601(System.Collections.Generic.IList%7B%60%600%7D%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/ExceptionHelper.cs/#L211">View Source</a>
+  </span>
+  <a id="System_ExceptionHelper_NonEmptyListRequired_" data-uid="System.ExceptionHelper.NonEmptyListRequired*"></a>
+  <h4 id="System_ExceptionHelper_NonEmptyListRequired__1_System_Collections_Generic_IList___0__System_String_" data-uid="System.ExceptionHelper.NonEmptyListRequired``1(System.Collections.Generic.IList{``0},System.String)">NonEmptyListRequired&lt;T&gt;(IList&lt;T&gt;, String)</h4>
+  <div class="markdown level1 summary"><p>Throws a <span class="xref">System.ArgumentNullException</span> when the provided <code data-dev-comment-type="paramref" class="paramref">list</code> is <code>null</code>, or throws a <span class="xref">System.ArgumentException</span> when the provided <code data-dev-comment-type="paramref" class="paramref">list</code> is <code>empty</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int NonEmptyListRequired&lt;T&gt;(IList&lt;T&gt; list, string listName = &quot;list&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;T&gt;</td>
+        <td><span class="parametername">list</span></td>
+        <td><p>The list.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">listName</span></td>
+        <td><p>Provides the name of the list that will be shown in the exception message.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of elements contained in <code data-dev-comment-type="paramref" class="paramref">list</code>. This return is for your convenience.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the element in the list.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentNullException</span></td>
+        <td><p>Occurs when <code data-dev-comment-type="paramref" class="paramref">list</code> is <code>null</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td><p>Occurs when <code data-dev-comment-type="paramref" class="paramref">list</code> is empty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_ExceptionHelper.md&amp;value=---%0Auid%3A%20System.ExceptionHelper%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/ExceptionHelper/ExceptionHelper.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

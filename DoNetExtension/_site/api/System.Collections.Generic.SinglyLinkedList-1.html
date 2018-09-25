@@ -1,0 +1,1417 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SinglyLinkedList&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SinglyLinkedList&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.39.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="System.Collections.Generic.SinglyLinkedList`1">
+  
+  
+  <h1 id="System_Collections_Generic_SinglyLinkedList_1" data-uid="System.Collections.Generic.SinglyLinkedList`1" class="text-break">Class SinglyLinkedList&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a singly-linked list.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">SinglyLinkedList&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.Generic.ICollection</span>&lt;T&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</div>
+    <div><span class="xref">System.Collections.ICollection</span></div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.Collections.Generic.html">System.Collections.Generic</a></h6>
+  <h6><strong>Assembly</strong>: DoNetExtension.dll</h6>
+  <h5 id="System_Collections_Generic_SinglyLinkedList_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SinglyLinkedList&lt;T&gt; : ICollection&lt;T&gt;, IEnumerable&lt;T&gt;, ICollection, IEnumerable</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Specifies the element type of the linked list.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="System_Collections_Generic_SinglyLinkedList_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>SinglyLinkedList{T} is a general-purpose singly-linked list. It supports enumerators and implements the <span class="xref">System.Collections.ICollection</span> interface, consistent with other collection classes in the .NET Framework. In comparison with <span class="xref">System.Collections.Generic.LinkedList&lt;T&gt;</span>, which is doubly-linked, this class saves some memory and has slightly higher performance. Each node of this singly-linked list is represented by a <a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode&lt;T&gt;</a>, which only points forward to the next node and DOES NOT provide a reference to its attached list like <span class="xref">System.Collections.Generic.LinkedListNode&lt;T&gt;</span>. In other words, each node only has two properties - <code>Value</code> and <code>Next</code>.</p>
+<p>Because each node of a <a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode&lt;T&gt;</a> does not refer to the attached list, the list does not perform attachment validation when a node is added or removed from the list. In this case, any usage of this singly-linked list must ensure the attachment.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1__ctor.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L74">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1__ctor_" data-uid="System.Collections.Generic.SinglyLinkedList`1.#ctor*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1__ctor" data-uid="System.Collections.Generic.SinglyLinkedList`1.#ctor">SinglyLinkedList()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SinglyLinkedList()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1__ctor_System_Collections_Generic_IEnumerable__0__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.%23ctor(System.Collections.Generic.IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L80">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1__ctor_" data-uid="System.Collections.Generic.SinglyLinkedList`1.#ctor*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1__ctor_System_Collections_Generic_IEnumerable__0__" data-uid="System.Collections.Generic.SinglyLinkedList`1.#ctor(System.Collections.Generic.IEnumerable{`0})">SinglyLinkedList(IEnumerable&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a> class that contains elements copied from the specified <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> and has sufficient capacity to accommodate the number of elements copied.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SinglyLinkedList(IEnumerable&lt;T&gt; enumerable)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">enumerable</span></td>
+        <td><p>The <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span> whose elements are copied to the new <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_Count.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L418">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_Count_" data-uid="System.Collections.Generic.SinglyLinkedList`1.Count*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_Count" data-uid="System.Collections.Generic.SinglyLinkedList`1.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the number of elements contained in the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The number of nodes actually contained in the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_First.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.First%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L102">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_First_" data-uid="System.Collections.Generic.SinglyLinkedList`1.First*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_First" data-uid="System.Collections.Generic.SinglyLinkedList`1.First">First</h4>
+  <div class="markdown level1 summary"><p>Gets the first node of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SinglyLinkedListNode&lt;T&gt; First { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode</a>&lt;T&gt;</td>
+        <td><p>The first node of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_Last.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.Last%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L108">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_Last_" data-uid="System.Collections.Generic.SinglyLinkedList`1.Last*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_Last" data-uid="System.Collections.Generic.SinglyLinkedList`1.Last">Last</h4>
+  <div class="markdown level1 summary"><p>Gets the last node of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SinglyLinkedListNode&lt;T&gt; Last { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode</a>&lt;T&gt;</td>
+        <td><p>The last node of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_AddAfter_System_Collections_Generic_SinglyLinkedListNode__0___0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.AddAfter(System.Collections.Generic.SinglyLinkedListNode%7B%600%7D%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L321">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_AddAfter_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddAfter*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_AddAfter_System_Collections_Generic_SinglyLinkedListNode__0___0_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddAfter(System.Collections.Generic.SinglyLinkedListNode{`0},`0)">AddAfter(SinglyLinkedListNode&lt;T&gt;, T)</h4>
+  <div class="markdown level1 summary"><p>Adds a new node containing the specified value after the specified existing node in the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddAfter(SinglyLinkedListNode&lt;T&gt; node, T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode</a>&lt;T&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td><p>The <a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode&lt;T&gt;</a> after which to insert another <a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode&lt;T&gt;</a> containing value.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to add to the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_AddAfter_System_Collections_Generic_SinglyLinkedListNode__0__System_Collections_Generic_SinglyLinkedListNode__0__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.AddAfter(System.Collections.Generic.SinglyLinkedListNode%7B%600%7D%2CSystem.Collections.Generic.SinglyLinkedListNode%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L341">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_AddAfter_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddAfter*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_AddAfter_System_Collections_Generic_SinglyLinkedListNode__0__System_Collections_Generic_SinglyLinkedListNode__0__" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddAfter(System.Collections.Generic.SinglyLinkedListNode{`0},System.Collections.Generic.SinglyLinkedListNode{`0})">AddAfter(SinglyLinkedListNode&lt;T&gt;, SinglyLinkedListNode&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the specified <code data-dev-comment-type="paramref" class="paramref">nodeToAdd</code> after the specified existing node in the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddAfter(SinglyLinkedListNode&lt;T&gt; node, SinglyLinkedListNode&lt;T&gt; nodeToAdd)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode</a>&lt;T&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td><p>The <a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode&lt;T&gt;</a> after which to insert <code data-dev-comment-type="paramref" class="paramref">nodeToAdd</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode</a>&lt;T&gt;</td>
+        <td><span class="parametername">nodeToAdd</span></td>
+        <td><p>Another <a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode&lt;T&gt;</a> to add after the <code data-dev-comment-type="paramref" class="paramref">node</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_AddFirst__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.AddFirst(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L117">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_AddFirst_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddFirst*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_AddFirst__0_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddFirst(`0)">AddFirst(T)</h4>
+  <div class="markdown level1 summary"><p>Adds a new node containing the specified value at the start of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddFirst(T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to add at the start of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="System_Collections_Generic_SinglyLinkedList_1_AddFirst__0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a> accepts <code>null</code> as a valid Value for reference types and allows duplicate values. If the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a> is empty, the new node becomes the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html#System_Collections_Generic_SinglyLinkedList_1_First">First</a> and the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html#System_Collections_Generic_SinglyLinkedList_1_Last">Last</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_AddFirst__0___.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.AddFirst(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L183">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_AddFirst_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddFirst*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_AddFirst__0___" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddFirst(`0[])">AddFirst(T[])</h4>
+  <div class="markdown level1 summary"><p>Adds an array of values at the beginning of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddFirst(T[] values)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to add at the beginning of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_AddFirst_System_Collections_Generic_IEnumerable__0__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.AddFirst(System.Collections.Generic.IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L155">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_AddFirst_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddFirst*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_AddFirst_System_Collections_Generic_IEnumerable__0__" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddFirst(System.Collections.Generic.IEnumerable{`0})">AddFirst(IEnumerable&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a sequence of values at the beginning of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddFirst(IEnumerable&lt;T&gt; values)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to add at the beginning of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_AddFirst_System_Collections_Generic_SinglyLinkedListNode__0__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.AddFirst(System.Collections.Generic.SinglyLinkedListNode%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L135">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_AddFirst_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddFirst*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_AddFirst_System_Collections_Generic_SinglyLinkedListNode__0__" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddFirst(System.Collections.Generic.SinglyLinkedListNode{`0})">AddFirst(SinglyLinkedListNode&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the specified node at the start of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddFirst(SinglyLinkedListNode&lt;T&gt; node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode</a>&lt;T&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td><p>The <a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode&lt;T&gt;</a> to add at the start of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_AddLast__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.AddLast(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L211">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_AddLast_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddLast*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_AddLast__0_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddLast(`0)">AddLast(T)</h4>
+  <div class="markdown level1 summary"><p>Adds the specified value at the end of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddLast(T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to add at the end of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="System_Collections_Generic_SinglyLinkedList_1_AddLast__0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p><a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a> accepts <code>null</code> as a valid Value for reference types and allows duplicate values. If the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a> is empty, the new node becomes the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html#System_Collections_Generic_SinglyLinkedList_1_First">First</a> and the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html#System_Collections_Generic_SinglyLinkedList_1_Last">Last</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_AddLast__0___.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.AddLast(%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L266">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_AddLast_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddLast*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_AddLast__0___" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddLast(`0[])">AddLast(T[])</h4>
+  <div class="markdown level1 summary"><p>Adds an array of values at the end of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddLast(T[] values)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to add at the end of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_AddLast_System_Collections_Generic_IEnumerable__0__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.AddLast(System.Collections.Generic.IEnumerable%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L231">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_AddLast_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddLast*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_AddLast_System_Collections_Generic_IEnumerable__0__" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddLast(System.Collections.Generic.IEnumerable{`0})">AddLast(IEnumerable&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a sequence of values at the end of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddLast(IEnumerable&lt;T&gt; values)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The values to add at the end of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_AddLast_System_Collections_Generic_SinglyLinkedListNode__0__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.AddLast(System.Collections.Generic.SinglyLinkedListNode%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L299">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_AddLast_" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddLast*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_AddLast_System_Collections_Generic_SinglyLinkedListNode__0__" data-uid="System.Collections.Generic.SinglyLinkedList`1.AddLast(System.Collections.Generic.SinglyLinkedListNode{`0})">AddLast(SinglyLinkedListNode&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds the specified node at the end of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddLast(SinglyLinkedListNode&lt;T&gt; node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode</a>&lt;T&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td><p>The <a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode&lt;T&gt;</a> to add at the end of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_Clear.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L359">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_Clear_" data-uid="System.Collections.Generic.SinglyLinkedList`1.Clear*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_Clear" data-uid="System.Collections.Generic.SinglyLinkedList`1.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Removes all nodes from the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_Contains__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L370">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_Contains_" data-uid="System.Collections.Generic.SinglyLinkedList`1.Contains*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_Contains__0_" data-uid="System.Collections.Generic.SinglyLinkedList`1.Contains(`0)">Contains(T)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a> contains a specific value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Contains(T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to locate in the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if <code data-dev-comment-type="paramref" class="paramref">value</code> is found in the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_CopyTo__0___System_Int32_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.CopyTo(%600%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L403">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_CopyTo_" data-uid="System.Collections.Generic.SinglyLinkedList`1.CopyTo*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_CopyTo__0___System_Int32_" data-uid="System.Collections.Generic.SinglyLinkedList`1.CopyTo(`0[],System.Int32)">CopyTo(T[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Copies the entire <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a> to a compatible one-dimensional <span class="xref">System.Array</span>, starting at the specified index of the target array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyTo(T[] array, int arrayIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>The one-dimensional Array that is the destination of the elements copied from <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>. The Array must have zero-based indexing.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">arrayIndex</span></td>
+        <td><p>The zero-based index in array at which copying begins.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_Find__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.Find(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L387">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_Find_" data-uid="System.Collections.Generic.SinglyLinkedList`1.Find*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_Find__0_" data-uid="System.Collections.Generic.SinglyLinkedList`1.Find(`0)">Find(T)</h4>
+  <div class="markdown level1 summary"><p>Finds the first node that contains the specified value. The <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a> is searched forward starting at First and ending at Last.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SinglyLinkedListNode&lt;T&gt; Find(T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to locate in the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode</a>&lt;T&gt;</td>
+        <td><p>The first <a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode&lt;T&gt;</a> that contains the specified value, if found; otherwise, <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="System_Collections_Generic_SinglyLinkedList_1_Find__0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method performs a linear search; therefore, this method is an O(<code>n</code>) operation, where <code>n</code> is <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html#System_Collections_Generic_SinglyLinkedList_1_Count">Count</a>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_GetEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L516">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_GetEnumerator_" data-uid="System.Collections.Generic.SinglyLinkedList`1.GetEnumerator*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_GetEnumerator" data-uid="System.Collections.Generic.SinglyLinkedList`1.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;T&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;T&gt;</td>
+        <td><p>A <span class="xref">System.Collections.Generic.IEnumerator&lt;T&gt;</span> that can be used to iterate through the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="System_Collections_Generic_SinglyLinkedList_1_GetEnumerator_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>At first the enumerator is positioned before the first node. At this position, <code>Current</code> is undefined. When you first call the <code>MoveNext</code> method, the enumerator move to the first node. After that, the enumerator moves to the next node each time <code>MoveNext</code> is called, until the last node is reached. When the last node is reached after <code>MoveNext</code> is called, the next call of <code>MoveNext</code> will return <code>false</code>.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_Remove__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L425">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_Remove_" data-uid="System.Collections.Generic.SinglyLinkedList`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_Remove__0_" data-uid="System.Collections.Generic.SinglyLinkedList`1.Remove(`0)">Remove(T)</h4>
+  <div class="markdown level1 summary"><p>Removes the first occurrence of a specific <code data-dev-comment-type="paramref" class="paramref">value</code> from the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to remove from the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">value</code> was successfully removed from the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_Remove_System_Collections_Generic_SinglyLinkedListNode__0__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.Remove(System.Collections.Generic.SinglyLinkedListNode%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L462">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_Remove_" data-uid="System.Collections.Generic.SinglyLinkedList`1.Remove*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_Remove_System_Collections_Generic_SinglyLinkedListNode__0__" data-uid="System.Collections.Generic.SinglyLinkedList`1.Remove(System.Collections.Generic.SinglyLinkedListNode{`0})">Remove(SinglyLinkedListNode&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the specified node from the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(SinglyLinkedListNode&lt;T&gt; node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.SinglyLinkedListNode-1.html">SinglyLinkedListNode</a>&lt;T&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td><p>The node to remove from the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if <code data-dev-comment-type="paramref" class="paramref">node</code> was successfully removed from the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_RemoveFirst.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.RemoveFirst%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L497">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_RemoveFirst_" data-uid="System.Collections.Generic.SinglyLinkedList`1.RemoveFirst*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_RemoveFirst" data-uid="System.Collections.Generic.SinglyLinkedList`1.RemoveFirst">RemoveFirst()</h4>
+  <div class="markdown level1 summary"><p>Removes the node at the start of the <a class="xref" href="System.Collections.Generic.SinglyLinkedList-1.html">SinglyLinkedList&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveFirst()</code></pre>
+  </div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_System_Collections_Generic_ICollection_T__Add__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.System%23Collections%23Generic%23ICollection%7BT%7D%23Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L570">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_Generic_ICollection_T__Add_" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#Generic#ICollection{T}#Add*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_Generic_ICollection_T__Add__0_" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#Generic#ICollection{T}#Add(`0)">ICollection&lt;T&gt;.Add(T)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection&lt;T&gt;.Add(T item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_System_Collections_Generic_ICollection_T__IsReadOnly.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.System%23Collections%23Generic%23ICollection%7BT%7D%23IsReadOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L565">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_Generic_ICollection_T__IsReadOnly_" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#Generic#ICollection{T}#IsReadOnly*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_Generic_ICollection_T__IsReadOnly" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#Generic#ICollection{T}#IsReadOnly">ICollection&lt;T&gt;.IsReadOnly</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;T&gt;.IsReadOnly { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_System_Collections_ICollection_CopyTo_System_Array_System_Int32_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.System%23Collections%23ICollection%23CopyTo(System.Array%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L531">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_ICollection_CopyTo_" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#ICollection#CopyTo*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_ICollection_CopyTo_System_Array_System_Int32_" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">ICollection.CopyTo(Array, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection.CopyTo(Array array, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Array</span></td>
+        <td><span class="parametername">array</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_System_Collections_ICollection_Count.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.System%23Collections%23ICollection%23Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L541">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_ICollection_Count_" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#ICollection#Count*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_ICollection_Count" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#ICollection#Count">ICollection.Count</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int ICollection.Count { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_System_Collections_ICollection_IsSynchronized.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.System%23Collections%23ICollection%23IsSynchronized%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L546">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_ICollection_IsSynchronized_" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#ICollection#IsSynchronized*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_ICollection_IsSynchronized" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#ICollection#IsSynchronized">ICollection.IsSynchronized</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection.IsSynchronized { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_System_Collections_ICollection_SyncRoot.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.System%23Collections%23ICollection%23SyncRoot%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L552">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_ICollection_SyncRoot_" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#ICollection#SyncRoot*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_ICollection_SyncRoot" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#ICollection#SyncRoot">ICollection.SyncRoot</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object ICollection.SyncRoot { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1_System_Collections_IEnumerable_GetEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601.System%23Collections%23IEnumerable%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L521">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_IEnumerable_GetEnumerator_" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#IEnumerable#GetEnumerator*"></a>
+  <h4 id="System_Collections_Generic_SinglyLinkedList_1_System_Collections_IEnumerable_GetEnumerator" data-uid="System.Collections.Generic.SinglyLinkedList`1.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Collections.Generic.ICollection&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.ICollection</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArrayOrNull__1_System_Collections_Generic_IEnumerable___0__">ArrayEx.ToArrayOrNull&lt;T&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArrayOrNull__1_System_Collections_Generic_IEnumerable___0__System_Int32_">ArrayEx.ToArrayOrNull&lt;T&gt;(IEnumerable&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_IsEmpty__1_System_Collections_Generic_ICollection___0__">ArrayEx.IsEmpty&lt;T&gt;(ICollection&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_IsNotEmpty__1_System_Collections_Generic_ICollection___0__">ArrayEx.IsNotEmpty&lt;T&gt;(ICollection&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_IsNullOrEmpty__1_System_Collections_Generic_ICollection___0__">ArrayEx.IsNullOrEmpty&lt;T&gt;(ICollection&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_IsNotNullOrEmpty__1_System_Collections_Generic_ICollection___0__">ArrayEx.IsNotNullOrEmpty&lt;T&gt;(ICollection&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Remove__1_System_Collections_Generic_IEnumerable___0____0_">ArrayEx.Remove&lt;T&gt;(IEnumerable&lt;T&gt;, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Remove__1_System_Collections_Generic_IEnumerable___0__System_Collections_Generic_IEnumerable___0__">ArrayEx.Remove&lt;T&gt;(IEnumerable&lt;T&gt;, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToConcatString_System_Collections_IEnumerable_System_String_">ArrayEx.ToConcatString(IEnumerable, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToConcatString_System_Collections_IEnumerable_System_Char_">ArrayEx.ToConcatString(IEnumerable, Char)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action___0__">ArrayEx.ForEach&lt;T&gt;(IEnumerable&lt;T&gt;, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Action_System_Int32___0__">ArrayEx.ForEach&lt;T&gt;(IEnumerable&lt;T&gt;, Action&lt;Int32, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">ArrayEx.ForEach&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ForEach__1_System_Collections_Generic_IEnumerable___0__System_Func_System_Int32___0_System_Boolean__">ArrayEx.ForEach&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;Int32, T, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Min__1_System_Collections_Generic_IEnumerable___0__System_Comparison___0__">ArrayEx.Min&lt;T&gt;(IEnumerable&lt;T&gt;, Comparison&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Max__1_System_Collections_Generic_IEnumerable___0__System_Comparison___0__">ArrayEx.Max&lt;T&gt;(IEnumerable&lt;T&gt;, Comparison&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_SelectMin__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_IComparable__">ArrayEx.SelectMin&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, IComparable&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_SelectMax__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_IComparable__">ArrayEx.SelectMax&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, IComparable&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Singleton__1___0_">ArrayEx.Singleton&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_CreateArray__1___0_System_Int32_">ArrayEx.CreateArray&lt;T&gt;(T, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetCachedEnumerator__1_System_Collections_Generic_IEnumerable___0__">ArrayEx.GetCachedEnumerator&lt;T&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetCachedEnumerator__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">ArrayEx.GetCachedEnumerator&lt;T1, T2&gt;(IEnumerable&lt;T1&gt;, Func&lt;T1, T2&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetCachedEnumerator__1_System_Collections_IEnumerable_">ArrayEx.GetCachedEnumerator&lt;T&gt;(IEnumerable)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetCachedEnumerator__1_System_Collections_IEnumerable_System_Func_System_Object___0__">ArrayEx.GetCachedEnumerator&lt;T&gt;(IEnumerable, Func&lt;Object, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_System_Boolean_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetWrappedEnumerator__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__">ArrayEx.GetWrappedEnumerator&lt;T1, T2&gt;(IEnumerable&lt;T1&gt;, Func&lt;T1, T2&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetWrappedEnumerator__2_System_Collections_Generic_IEnumerable___0__">ArrayEx.GetWrappedEnumerator&lt;T1, T2&gt;(IEnumerable&lt;T1&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetRandomEnumerator__1_System_Collections_Generic_IEnumerable___0__System_Int32_System_DistinctRandomAlgorithms_System_Random_">ArrayEx.GetRandomEnumerator&lt;T&gt;(IEnumerable&lt;T&gt;, Int32, DistinctRandomAlgorithms, Random)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetRandomEnumerator__1_System_Collections_Generic_IEnumerable___0__System_DistinctRandomAlgorithms_System_Random_">ArrayEx.GetRandomEnumerator&lt;T&gt;(IEnumerable&lt;T&gt;, DistinctRandomAlgorithms, Random)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArray__1_System_Collections_IEnumerable_">ArrayEx.ToArray&lt;T&gt;(IEnumerable)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArray__2_System_Collections_IEnumerable_System_Func___0___1__System_Boolean_">ArrayEx.ToArray&lt;T, TOut&gt;(IEnumerable, Func&lt;T, TOut&gt;, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.In&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAny&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAll&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.In&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAny&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAll&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IList___0__">GeneralEx.In&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0___0___">GeneralEx.In&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.NotIn&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.NotIn&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IList___0__">GeneralEx.NotIn&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0___0___">GeneralEx.NotIn&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNull_System_Object_">GeneralEx.IsNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNotNull_System_Object_">GeneralEx.IsNotNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32__1___0_">GeneralEx.ToInt32&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32OrNull__1___0_">GeneralEx.ToInt32OrNull&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_DumpText__1_System_Collections_Generic_IEnumerable___0__System_String_System_Text_Encoding_">StreamEx.DumpText&lt;T&gt;(IEnumerable&lt;T&gt;, String, Encoding)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_DumpText__1_System_Collections_Generic_IEnumerable___0__System_String_">StreamEx.DumpText&lt;T&gt;(IEnumerable&lt;T&gt;, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_System_IO_Stream_">StreamEx.Serialize&lt;T&gt;(T, Stream)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_System_String_System_IO_FileMode_">StreamEx.Serialize&lt;T&gt;(T, String, FileMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_">StreamEx.Serialize&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Dump_System_Collections_IEnumerable_System_Type_System_IO_Stream_">StreamEx.Dump(IEnumerable, Type, Stream)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_ToHashSet__1_System_Collections_Generic_IEnumerable___0__">GenericCollectionEx.ToHashSet&lt;T&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_Count__1_System_Collections_Generic_IEnumerable___0____0_System_Func___0___0_System_Boolean__">GenericCollectionEx.Count&lt;T&gt;(IEnumerable&lt;T&gt;, T, Func&lt;T, T, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_Count__1_System_Collections_Generic_IEnumerable___0____0_">GenericCollectionEx.Count&lt;T&gt;(IEnumerable&lt;T&gt;, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_Count__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">GenericCollectionEx.Count&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_Contains__1_System_Collections_Generic_IEnumerable___0__System_Func___0_System_Boolean__">GenericCollectionEx.Contains&lt;T&gt;(IEnumerable&lt;T&gt;, Func&lt;T, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_ToLinkedList__1_System_Collections_Generic_IEnumerable___0__">GenericCollectionEx.ToLinkedList&lt;T&gt;(IEnumerable&lt;T&gt;)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_SinglyLinkedList_1.md&amp;value=---%0Auid%3A%20System.Collections.Generic.SinglyLinkedList%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/2_LinkedList/SinglyLinkedList.cs/#L20" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

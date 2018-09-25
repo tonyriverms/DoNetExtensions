@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Enum SpecialStringSplit
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Enum SpecialStringSplit
+   ">
+    <meta name="generator" content="docfx 2.39.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="System.SpecialStringSplit">
+  
+  
+  <h1 id="System_SpecialStringSplit" data-uid="System.SpecialStringSplit" class="text-break">Enum SpecialStringSplit
+  </h1>
+  <div class="markdown level0 summary"><p>Specifies some special way to split a string.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.html">System</a></h6>
+  <h6><strong>Assembly</strong>: DoNetExtension.dll</h6>
+  <h5 id="System_SpecialStringSplit_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public enum SpecialStringSplit</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="System_SpecialStringSplit_GetASCIIParts">GetASCIIParts</td>
+        <td><p>Gets all ASCII segments. For example, &quot;i*&quot; &quot;1ove&quot; &quot;you[&quot; will be extracted from &quot;i*我1ove爱you[你们&quot;.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="System_SpecialStringSplit_GetNonASCIIParts">GetNonASCIIParts</td>
+        <td><p>Gets all non-ASCII segments. For example, &quot;我&quot; &quot;爱&quot; &quot;你们&quot; will be extracted from &quot;i*我1ove爱you[你们&quot;.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="System_SpecialStringSplit_SplitASCIIPartsAndNonASCIIChars">SplitASCIIPartsAndNonASCIIChars</td>
+        <td><p>Splits into ASCII segments and non-ASCII characters. For example, &quot;i<em>我1ove爱you[你们&quot; will be split into &quot;i</em>&quot; &quot;我&quot; &quot;love&quot; &quot;爱&quot; &quot;you[&quot; &quot;你&quot; &quot;们&quot;.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="System_SpecialStringSplit_SplitASCIIPartsAndNonASCIIParts">SplitASCIIPartsAndNonASCIIParts</td>
+        <td><p>Splits into ASCII segments and non-ASCII segments. For example, &quot;i<em>我1ove爱you[你们&quot; will be split into &quot;i</em>&quot; &quot;我&quot; &quot;love&quot; &quot;爱&quot; &quot;you[&quot; &quot;你们&quot;.</p>
+</td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Singleton__1___0_">ArrayEx.Singleton&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_CreateArray__1___0_System_Int32_">ArrayEx.CreateArray&lt;SpecialStringSplit&gt;(Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_">ArrayEx.GetTrivialEnumerator&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_System_Boolean_">ArrayEx.GetTrivialEnumerator&lt;SpecialStringSplit&gt;(Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_Swap__1___0____0__">GeneralEx.Swap&lt;SpecialStringSplit&gt;(SpecialStringSplit)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.In&lt;SpecialStringSplit&gt;(IEnumerable&lt;SpecialStringSplit&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAny&lt;SpecialStringSplit&gt;(IEnumerable&lt;SpecialStringSplit&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAll&lt;SpecialStringSplit&gt;(IEnumerable&lt;SpecialStringSplit&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.In&lt;SpecialStringSplit, TValue&gt;(IDictionary&lt;SpecialStringSplit, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAny&lt;SpecialStringSplit, TValue&gt;(IDictionary&lt;SpecialStringSplit, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAll&lt;SpecialStringSplit, TValue&gt;(IDictionary&lt;SpecialStringSplit, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IList___0__">GeneralEx.In&lt;SpecialStringSplit&gt;(IList&lt;SpecialStringSplit&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0___0___">GeneralEx.In&lt;SpecialStringSplit&gt;(SpecialStringSplit[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.NotIn&lt;SpecialStringSplit&gt;(IEnumerable&lt;SpecialStringSplit&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.NotIn&lt;SpecialStringSplit, TValue&gt;(IDictionary&lt;SpecialStringSplit, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IList___0__">GeneralEx.NotIn&lt;SpecialStringSplit&gt;(IList&lt;SpecialStringSplit&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0___0___">GeneralEx.NotIn&lt;SpecialStringSplit&gt;(SpecialStringSplit[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNull_System_Object_">GeneralEx.IsNull()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNotNull_System_Object_">GeneralEx.IsNotNull()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToChar__1___0_">GeneralEx.ToChar&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToBoolean__1___0_">GeneralEx.ToBoolean&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToDateTime__1___0_">GeneralEx.ToDateTime&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToSByte__1___0_">GeneralEx.ToSByte&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToByte__1___0_">GeneralEx.ToByte&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt16__1___0_">GeneralEx.ToInt16&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToUInt16__1___0_">GeneralEx.ToUInt16&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32__1___0_">GeneralEx.ToInt32&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32OrNull__1___0_">GeneralEx.ToInt32OrNull&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToUInt32__1___0_">GeneralEx.ToUInt32&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt64__1___0_">GeneralEx.ToInt64&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToUInt64__1___0_">GeneralEx.ToUInt64&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToDouble__1___0_">GeneralEx.ToDouble&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToSingle__1___0_">GeneralEx.ToSingle&lt;SpecialStringSplit&gt;()</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_System_IO_Stream_">StreamEx.Serialize&lt;SpecialStringSplit&gt;(Stream)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_System_String_System_IO_FileMode_">StreamEx.Serialize&lt;SpecialStringSplit&gt;(String, FileMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_">StreamEx.Serialize&lt;SpecialStringSplit&gt;()</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_SpecialStringSplit.md&amp;value=---%0Auid%3A%20System.SpecialStringSplit%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/StringEx/Split/SpecialStringSplit.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

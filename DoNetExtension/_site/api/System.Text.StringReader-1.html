@@ -1,0 +1,2435 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class StringReader&lt;TState&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class StringReader&lt;TState&gt;
+   ">
+    <meta name="generator" content="docfx 2.39.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="System.Text.StringReader`1">
+  
+  
+  <h1 id="System_Text_StringReader_1" data-uid="System.Text.StringReader`1" class="text-break">Class StringReader&lt;TState&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Provides rich methods to extract information from a string instance, with a state property and related methods to facilitate construction of an automaton.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="System.Text.StringReader.html">StringReader</a></div>
+    <div class="level2"><span class="xref">StringReader&lt;TState&gt;</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_UnderlyingString">StringReader.UnderlyingString</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_EndPosition">StringReader.EndPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_CurrentPosition">StringReader.CurrentPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ComparisonType">StringReader.ComparisonType</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_EOF">StringReader.EOF</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_IsEmptyOrBlank">StringReader.IsEmptyOrBlank</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Length">StringReader.Length</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_First">StringReader.First</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Previous">StringReader.Previous</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Next">StringReader.Next</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Last">StringReader.Last</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Item_System_Int32_">StringReader.Item[Int32]</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SubstringBeforeCurrentPosition_System_Int32_">StringReader.SubstringBeforeCurrentPosition(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_TrimStart">StringReader.TrimStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_TrimEnd">StringReader.TrimEnd()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Trim">StringReader.Trim()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Advance">StringReader.Advance()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Advance_System_Int32_">StringReader.Advance(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_AdvanceToNextNonWhiteSpace">StringReader.AdvanceToNextNonWhiteSpace()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_AdvanceChar">StringReader.AdvanceChar()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Read">StringReader.Read()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Read_System_Char__">StringReader.Read(Char)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Read_System_Char_System_Boolean_">StringReader.Read(Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Read_System_Char___System_Boolean_">StringReader.Read(Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadNonLetterOrDigit">StringReader.ReadNonLetterOrDigit()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadWhiteSpace">StringReader.ReadWhiteSpace()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadWhiteSpace_System_Char__">StringReader.ReadWhiteSpace(Char)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadWhiteSpace_System_Int32_System_Boolean_">StringReader.ReadWhiteSpace(Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadWhiteSpace_System_Int32_System_String__System_Boolean_">StringReader.ReadWhiteSpace(Int32, String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char_System_Boolean_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char, Boolean, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToWhiteSpace_System_Text_StringReader_ReadOptions_">StringReader.ReadToWhiteSpace(StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToWhiteSpaceOrChar_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToWhiteSpaceOrChar(Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToWhiteSpaceOrChar_System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToWhiteSpaceOrChar(Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Count_System_Char_System_Boolean_">StringReader.Count(Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadChar_System_Char_System_Boolean_">StringReader.ReadChar(Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadChar_System_Char___System_Boolean_">StringReader.ReadChar(Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Read_System_String_System_Boolean_">StringReader.Read(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Read_System_String___System_Int32_System_Boolean_">StringReader.Read(String[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadIgCase_System_String_System_Boolean_">StringReader.ReadIgCase(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadIgCase_System_String___System_Int32_System_Boolean_">StringReader.ReadIgCase(String[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadString_System_String_System_Boolean_">StringReader.ReadString(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_CountChar_System_Char_System_Boolean_">StringReader.CountChar(Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadChar_System_Func_System_Char_System_Boolean__System_Boolean_">StringReader.ReadChar(Func&lt;Char, Boolean&gt;, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadString_System_Func_System_Char_System_Boolean__">StringReader.ReadString(Func&lt;Char, Boolean&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Read_System_String_System_Char_System_Boolean_System_Boolean_">StringReader.Read(String, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadIgCase_System_String_System_Char_System_Boolean_System_Boolean_">StringReader.ReadIgCase(String, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Read_System_String_System_Func_System_Char_System_Boolean__System_Boolean_System_Boolean_">StringReader.Read(String, Func&lt;Char, Boolean&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadIgCase_System_String_System_Func_System_Char_System_Boolean__System_Boolean_System_Boolean_">StringReader.ReadIgCase(String, Func&lt;Char, Boolean&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadFollowedByNonLetterOrDigit_System_String_System_Boolean_System_Boolean_">StringReader.ReadFollowedByNonLetterOrDigit(String, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadIgCaseFollowedByNonLetterOrDigit_System_String_System_Boolean_System_Boolean_">StringReader.ReadIgCaseFollowedByNonLetterOrDigit(String, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadFollowedByWhiteSpace_System_String_System_Boolean_">StringReader.ReadFollowedByWhiteSpace(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadIgCaseFollowedByWhiteSpace_System_String_System_Boolean_">StringReader.ReadIgCaseFollowedByWhiteSpace(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadString_System_String_System_Char_System_Boolean_System_Boolean_">StringReader.ReadString(String, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadString_System_String_System_Func_System_Char_System_Boolean__System_Boolean_System_Boolean_">StringReader.ReadString(String, Func&lt;Char, Boolean&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadStringFollowedByNonLetterOrDigit_System_String_System_Boolean_">StringReader.ReadStringFollowedByNonLetterOrDigit(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadStringFollowedByWhiteSpace_System_String_System_Boolean_">StringReader.ReadStringFollowedByWhiteSpace(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Substring_System_Int32_System_Int32_">StringReader.Substring(Int32, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Substring_System_Int32_">StringReader.Substring(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReverseRead">StringReader.ReverseRead()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Regress">StringReader.Regress()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_RegressChar">StringReader.RegressChar()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReverseReadChar_System_Char_System_Boolean_">StringReader.ReverseReadChar(Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReverseReadChar_System_Func_System_Char_System_Boolean__System_Boolean_">StringReader.ReverseReadChar(Func&lt;Char, Boolean&gt;, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReverseReadChar_System_Char___System_Boolean_">StringReader.ReverseReadChar(Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToEnd">StringReader.ReadToEnd()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToEndWithTrim">StringReader.ReadToEndWithTrim()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToEndAsReader">StringReader.ReadToEndAsReader()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToEndWithTrimAsReader">StringReader.ReadToEndWithTrimAsReader()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadUnsignedInteger_System_Boolean_">StringReader.ReadUnsignedInteger(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadInteger_System_Boolean_">StringReader.ReadInteger(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadUnsignedDecimal_System_Boolean_">StringReader.ReadUnsignedDecimal(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadDecimal_System_Boolean_">StringReader.ReadDecimal(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadQuotedString_System_Char_">StringReader.ReadQuotedString(Char)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadASCIILettersAndDigits_System_Char___">StringReader.ReadASCIILettersAndDigits(Char[])</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadVariableName">StringReader.ReadVariableName()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadWASReferenceName">StringReader.ReadWASReferenceName()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadVariableName_System_Func_System_Char_System_Boolean__System_Func_System_Char_System_Boolean__">StringReader.ReadVariableName(Func&lt;Char, Boolean&gt;, Func&lt;Char, Boolean&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitEnumerator_System_Func_System_Char_System_Boolean__System_Boolean_System_Boolean_">StringReader.GetSplitEnumerator(Func&lt;Char, Boolean&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitReaderEnumerator_System_Func_System_Char_System_Boolean__System_Boolean_System_Boolean_">StringReader.GetSplitReaderEnumerator(Func&lt;Char, Boolean&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitEnumerator_System_Char_System_Boolean_System_Boolean_">StringReader.GetSplitEnumerator(Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitReaderEnumerator_System_Char_System_Boolean_System_Boolean_">StringReader.GetSplitReaderEnumerator(Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitEnumerator_System_Char___System_Boolean_System_Boolean_">StringReader.GetSplitEnumerator(Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitReaderEnumerator_System_Char___System_Boolean_System_Boolean_">StringReader.GetSplitReaderEnumerator(Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitEnumeratorEx_System_Func_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.GetSplitEnumeratorEx(Func&lt;Char, Int32&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitReaderEnumeratorEx_System_Func_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.GetSplitReaderEnumeratorEx(Func&lt;Char, Int32&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitEnumeratorEx_System_Char___System_Boolean_System_Boolean_">StringReader.GetSplitEnumeratorEx(Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitReaderEnumeratorEx_System_Char___System_Boolean_System_Boolean_">StringReader.GetSplitReaderEnumeratorEx(Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitEnumeratorWithQuotes_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.GetSplitEnumeratorWithQuotes(Func&lt;Char, Boolean&gt;, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitEnumeratorWithQuotes_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.GetSplitEnumeratorWithQuotes(Func&lt;Char, Boolean&gt;, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitReaderEnumeratorWithQuotes_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.GetSplitReaderEnumeratorWithQuotes(Func&lt;Char, Boolean&gt;, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitReaderEnumeratorWithQuotes_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.GetSplitReaderEnumeratorWithQuotes(Func&lt;Char, Boolean&gt;, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitEnumeratorWithQuotes_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.GetSplitEnumeratorWithQuotes(Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitEnumeratorWithQuotes_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.GetSplitEnumeratorWithQuotes(Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitReaderEnumeratorWithQuotes_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.GetSplitReaderEnumeratorWithQuotes(Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitReaderEnumeratorWithQuotes_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.GetSplitReaderEnumeratorWithQuotes(Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitEnumeratorWithQuotes_System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.GetSplitEnumeratorWithQuotes(Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitEnumeratorWithQuotes_System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.GetSplitEnumeratorWithQuotes(Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitReaderEnumeratorWithQuotes_System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.GetSplitReaderEnumeratorWithQuotes(Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetSplitReaderEnumeratorWithQuotes_System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.GetSplitReaderEnumeratorWithQuotes(Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetComboEnumerator_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_">StringReader.GetComboEnumerator(Char, Char, Char, Char, Char, Char)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetComboEnumerator__1_System_Func_System_String___0__System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_">StringReader.GetComboEnumerator&lt;T&gt;(Func&lt;String, T&gt;, Char, Char, Char, Char, Char, Char)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetKeyValuePairEnumerator_System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.GetKeyValuePairEnumerator(Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetKeyValuePairReaderEnumerator_System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.GetKeyValuePairReaderEnumerator(Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Func_System_Char_System_Boolean__System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Func&lt;Char, Boolean&gt;, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Func_System_Char_System_Boolean__System_Boolean_">StringReader.ReadBeforeWithTrim(Func&lt;Char, Boolean&gt;, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Func_System_Char_System_Boolean__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Func&lt;Char, Boolean&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Func_System_Char_System_Boolean__System_Boolean_">StringReader.ReadBefore(Func&lt;Char, Boolean&gt;, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Func_System_Char_System_Boolean__System_Boolean_System_Boolean_">StringReader.ReadAfter(Func&lt;Char, Boolean&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Func&lt;Char, Boolean&gt;, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrim(Func&lt;Char, Boolean&gt;, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Func&lt;Char, Boolean&gt;, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Boolean_">StringReader.ReadBefore(Func&lt;Char, Boolean&gt;, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfter(Func&lt;Char, Boolean&gt;, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Func&lt;Char, Boolean&gt;, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrim(Func&lt;Char, Boolean&gt;, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Func&lt;Char, Boolean&gt;, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Boolean_">StringReader.ReadBefore(Func&lt;Char, Boolean&gt;, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfter(Func&lt;Char, Boolean&gt;, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Func&lt;Char, Boolean&gt;, Char, Char, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrim(Func&lt;Char, Boolean&gt;, Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Func&lt;Char, Boolean&gt;, Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBefore(Func&lt;Char, Boolean&gt;, Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfter(Func&lt;Char, Boolean&gt;, Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Func&lt;Char, Boolean&gt;, Char, Char, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrim(Func&lt;Char, Boolean&gt;, Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Func&lt;Char, Boolean&gt;, Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBefore(Func&lt;Char, Boolean&gt;, Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfter(Func&lt;Char, Boolean&gt;, Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Func&lt;Char, Boolean&gt;, Char[], Char[], Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrim(Func&lt;Char, Boolean&gt;, Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Func&lt;Char, Boolean&gt;, Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBefore(Func&lt;Char, Boolean&gt;, Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfter(Func&lt;Char, Boolean&gt;, Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Func&lt;Char, Boolean&gt;, Char[], Char[], Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrim(Func&lt;Char, Boolean&gt;, Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Func&lt;Char, Boolean&gt;, Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBefore(Func&lt;Char, Boolean&gt;, Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfter(Func&lt;Char, Boolean&gt;, Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrim(Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char_System_Boolean_">StringReader.ReadBefore(Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfter(Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char_System_Char_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char, Char, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrim(Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBefore(Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfter(Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char_System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrim(Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBefore(Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfter(Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char_System_Char_System_Char_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char, Char, Char, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char_System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrim(Char, Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char_System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char, Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char_System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBefore(Char, Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char_System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfter(Char, Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char_System_Char_System_Char_System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char, Char, Char, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char_System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrim(Char, Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char_System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char, Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char_System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBefore(Char, Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char_System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfter(Char, Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char_System_Char___System_Char___System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char, Char[], Char[], Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char_System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrim(Char, Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char_System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char, Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char_System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBefore(Char, Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char_System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfter(Char, Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char_System_Char___System_Char___System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char, Char[], Char[], Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char_System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrim(Char, Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char_System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char, Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char_System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBefore(Char, Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char_System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfter(Char, Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Boolean_">StringReader.ReadBefore(Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBefore(Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBefore(Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Char_System_Char_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Char, Char, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBefore(Char[], Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Char_System_Char_System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Char, Char, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBefore(Char[], Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Char___System_Char___System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Char[], Char[], Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBefore(Char[], Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Char___System_Char___System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Char[], Char[], Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBefore(Char[], Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Int32__System_Boolean_">StringReader.ReadBefore(Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Char_System_Char_System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Char, Char, Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBefore(Char[], Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Char___System_Char___System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Char[], Char[], Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBefore(Char[], Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Char, Char, Char, Char, Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Char, Char, Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Char, Char, Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBefore(Char[], Char, Char, Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Char, Char, Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Char, Char, Char[], Char[], Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Char, Char, Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Char, Char, Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBefore(Char[], Char, Char, Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Char, Char, Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Char[], Char[], Char, Char, Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Char[], Char[], Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Char[], Char[], Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBefore(Char[], Char[], Char[], Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Char[], Char[], Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_Char___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadTo(Char[], Char[], Char[], Char[], Char[], Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_Char___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrim(Char[], Char[], Char[], Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_Char___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrim(Char[], Char[], Char[], Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_Char___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBefore(Char[], Char[], Char[], Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_Char___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfter(Char[], Char[], Char[], Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Func_System_Char_System_Boolean__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Func&lt;Char, Boolean&gt;, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Func&lt;Char, Boolean&gt;, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Func&lt;Char, Boolean&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Func_System_Char_System_Boolean__System_Boolean_">StringReader.ReadBeforeAsReader(Func&lt;Char, Boolean&gt;, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Func_System_Char_System_Boolean__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Func&lt;Char, Boolean&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Func&lt;Char, Boolean&gt;, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Func&lt;Char, Boolean&gt;, Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Func&lt;Char, Boolean&gt;, Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char_System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char_System_Char_System_Char_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char, Char, Char, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char_System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char, Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char_System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char, Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char_System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(Char, Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char_System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char, Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char_System_Char_System_Char_System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char, Char, Char, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char_System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char, Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char_System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char, Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char_System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(Char, Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char_System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char, Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char_System_Char___System_Char___System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char, Char[], Char[], Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char_System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char, Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char_System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char, Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char_System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(Char, Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char_System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char, Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char_System_Char___System_Char___System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char, Char[], Char[], Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char_System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char, Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char_System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char, Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char_System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(Char, Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char_System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char, Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Char_System_Char_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Char, Char, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Char_System_Char_System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Char, Char, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Char___System_Char___System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Char[], Char[], Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Char___System_Char___System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Char[], Char[], Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Char_System_Char_System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Char, Char, Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Char___System_Char___System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Char[], Char[], Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Char, Char, Char, Char, Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Char, Char, Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Char, Char, Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Char, Char, Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Char, Char, Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Char, Char, Char[], Char[], Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Char, Char, Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Char, Char, Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Char, Char, Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Char, Char, Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Char[], Char[], Char, Char, Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Char[], Char[], Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Char[], Char[], Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Char[], Char[], Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Char[], Char[], Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_Char___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(Char[], Char[], Char[], Char[], Char[], Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_Char___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(Char[], Char[], Char[], Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_Char___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(Char[], Char[], Char[], Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_Char___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(Char[], Char[], Char[], Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_Char___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(Char[], Char[], Char[], Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_String_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(String, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_String_">StringReader.ReadBeforeWithTrim(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_String_System_Boolean_">StringReader.ReadAfterWithTrim(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_String_">StringReader.ReadBefore(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_String_System_Boolean_">StringReader.ReadAfter(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_String___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(String[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_String___">StringReader.ReadBeforeWithTrim(String[])</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_String___System_Boolean_">StringReader.ReadAfterWithTrim(String[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_String___">StringReader.ReadBefore(String[])</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_String___System_Boolean_">StringReader.ReadAfter(String[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_String_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(String, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_String_System_Char_System_Char_">StringReader.ReadBeforeWithTrim(String, Char, Char)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_String_System_Char_System_Char_System_Boolean_">StringReader.ReadAfterWithTrim(String, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_String_System_Char_System_Char_">StringReader.ReadBefore(String, Char, Char)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_String_System_Char_System_Char_System_Boolean_">StringReader.ReadAfter(String, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_String_System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(String, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_String_System_Char___System_Char___">StringReader.ReadBeforeWithTrim(String, Char[], Char[])</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_String_System_Char___System_Char___System_Boolean_">StringReader.ReadAfterWithTrim(String, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_String_System_Char___System_Char___">StringReader.ReadBefore(String, Char[], Char[])</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_String_System_Char___System_Char___System_Boolean_">StringReader.ReadAfter(String, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_String___System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadTo(String[], Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_String___System_Char_System_Char_">StringReader.ReadBeforeWithTrim(String[], Char, Char)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_String___System_Char_System_Char_System_Boolean_">StringReader.ReadAfterWithTrim(String[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_String___System_Char_System_Char_">StringReader.ReadBefore(String[], Char, Char)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_String___System_Char_System_Char_System_Boolean_">StringReader.ReadAfter(String[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadTo_System_String___System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadTo(String[], Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrim_System_String___System_Char___System_Char___">StringReader.ReadBeforeWithTrim(String[], Char[], Char[])</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrim_System_String___System_Char___System_Char___System_Boolean_">StringReader.ReadAfterWithTrim(String[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBefore_System_String___System_Char___System_Char___">StringReader.ReadBefore(String[], Char[], Char[])</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfter_System_String___System_Char___System_Char___System_Boolean_">StringReader.ReadAfter(String[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String_System_Boolean_">StringReader.ReadBeforeAsReader(String, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(String, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String_System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(String, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String_System_Char_System_Char_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String, Char, Char, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String_System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String, Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String_System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String, Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String_System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(String, Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String_System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String, Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String_System_Char_System_Char_System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String, Char, Char, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String_System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String, Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String_System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String, Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String_System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(String, Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String_System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String, Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String_System_Char___System_Char___System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String, Char[], Char[], Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String_System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String, Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String_System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String, Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String_System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(String, Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String_System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String, Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String_System_Char___System_Char___System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String, Char[], Char[], Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String_System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String, Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String_System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String, Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String_System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(String, Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String_System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String, Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Boolean_">StringReader.ReadBeforeAsReader(String[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(String[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(String[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Char_System_Char_System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Char, Char, Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Char_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(String[], Char, Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Char_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Char, Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Char_System_Char_System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Char, Char, Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Char_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(String[], Char, Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Char_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Char, Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Char___System_Char___System_Char_System_Char_System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Char[], Char[], Char, Char, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Char___System_Char___System_Char_System_Char_System_Boolean_">StringReader.ReadBeforeAsReader(String[], Char[], Char[], Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Char___System_Char___System_Char___System_Char___System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Char[], Char[], Char[], Char[], StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Char___System_Char___System_Char___System_Char___System_Boolean_">StringReader.ReadBeforeAsReader(String[], Char[], Char[], Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(String[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Char_System_Char_System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Char, Char, Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(String[], Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Char___System_Char___System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Char[], Char[], Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(String[], Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Char, Char, Char, Char, Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Char, Char, Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Char, Char, Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(String[], Char, Char, Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Char_System_Char_System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Char, Char, Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Char, Char, Char[], Char[], Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Char, Char, Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Char, Char, Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(String[], Char, Char, Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Char_System_Char_System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Char, Char, Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Char[], Char[], Char, Char, Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Char[], Char[], Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Char[], Char[], Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(String[], Char[], Char[], Char, Char, Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Char___System_Char___System_Char_System_Char_System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Char[], Char[], Char, Char, Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToAsReader_System_String___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Text_StringReader_ReadOptions_">StringReader.ReadToAsReader(String[], Char[], Char[], Char[], Char[], Int32, StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeWithTrimAsReader_System_String___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeWithTrimAsReader(String[], Char[], Char[], Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterWithTrimAsReader_System_String___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterWithTrimAsReader(String[], Char[], Char[], Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadBeforeAsReader_System_String___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Boolean_">StringReader.ReadBeforeAsReader(String[], Char[], Char[], Char[], Char[], Int32, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadAfterAsReader_System_String___System_Char___System_Char___System_Char___System_Char___System_Int32__System_Boolean_System_Boolean_">StringReader.ReadAfterAsReader(String[], Char[], Char[], Char[], Char[], Int32, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToMatchAsReader_System_Boolean_">StringReader.ReadToMatchAsReader(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToMatchAsReader_System_Char_System_Boolean_">StringReader.ReadToMatchAsReader(Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToMatchAsReader_System_Char_System_Char_System_Boolean_">StringReader.ReadToMatchAsReader(Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToMatchAsReader_System_Char_System_Char_System_Char_System_Boolean_">StringReader.ReadToMatchAsReader(Char, Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToMatchAsReader_System_Char___System_Char___System_Boolean_">StringReader.ReadToMatchAsReader(Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadToMatchAsReader_System_Char_System_Char___System_Char___System_Boolean_">StringReader.ReadToMatchAsReader(Char, Char[], Char[], Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_RemoveMatchedEnds_System_Char_System_Char_System_Boolean_">StringReader.RemoveMatchedEnds(Char, Char, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_RemoveBrackets_System_Boolean_">StringReader.RemoveBrackets(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_RemoveBracketsAndQuotes_System_Boolean_">StringReader.RemoveBracketsAndQuotes(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_RemoveQuotes_System_Boolean_">StringReader.RemoveQuotes(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_RemoveSquareBrackets_System_Boolean_">StringReader.RemoveSquareBrackets(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_RemoveAngleBrackets_System_Boolean_">StringReader.RemoveAngleBrackets(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_RemoveRoundBrackets_System_Boolean_">StringReader.RemoveRoundBrackets(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_RemoveBraces_System_Boolean_">StringReader.RemoveBraces(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_Func_System_Char_System_Boolean__System_Boolean_System_Boolean_">StringReader.SeekTo(Func&lt;Char, Boolean&gt;, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_Func_System_Char_System_Boolean__System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.SeekTo(Func&lt;Char, Boolean&gt;, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_Func_System_Char_System_Boolean__System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.SeekTo(Func&lt;Char, Boolean&gt;, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_Char_System_Boolean_System_Boolean_">StringReader.SeekTo(Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_Char_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.SeekTo(Char, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_Char_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.SeekTo(Char, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_Char___System_Boolean_System_Boolean_">StringReader.SeekTo(Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.SeekTo(Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.SeekTo(Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_String_System_Boolean_System_Boolean_">StringReader.SeekTo(String, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_String_System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.SeekTo(String, Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_String_System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.SeekTo(String, Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_String___System_Boolean_System_Boolean_">StringReader.SeekTo(String[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_String___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.SeekTo(String[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_String___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.SeekTo(String[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_String___System_Char___System_Char___System_Char_System_Char_System_Boolean_System_Boolean_">StringReader.SeekTo(String[], Char[], Char[], Char, Char, Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekTo_System_String___System_Char___System_Char___System_Char___System_Char___System_Boolean_System_Boolean_">StringReader.SeekTo(String[], Char[], Char[], Char[], Char[], Boolean, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SeekToNextLine_System_Boolean_">StringReader.SeekToNextLine(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadingScopeLength">StringReader.ReadingScopeLength</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_GetReadingScopeHashCode">StringReader.GetReadingScopeHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadingScopeEquals_System_String_">StringReader.ReadingScopeEquals(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadingScopeEquals_System_Text_StringReader_">StringReader.ReadingScopeEquals(StringReader)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadLine_System_Text_StringReader_ReadOptions_">StringReader.ReadLine(StringReader.ReadOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadIndentedBlock_System_Int32_System_Text_StringReader_TrimMode_System_Boolean_">StringReader.ReadIndentedBlock(Int32, StringReader.TrimMode, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_EmptyReader">StringReader.EmptyReader</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_PreserveStatus">StringReader.PreserveStatus()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_RestoreStatus_System_Text_StringReaderStatus_">StringReader.RestoreStatus(StringReaderStatus)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Contains_System_Char_">StringReader.Contains(Char)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_RemainingLineEmpty">StringReader.RemainingLineEmpty()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_RemainingLineAndNextLineEmpty">StringReader.RemainingLineAndNextLineEmpty()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadWhitespaces">StringReader.ReadWhitespaces()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadInlineWhitespaces">StringReader.ReadInlineWhitespaces()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadInlineWhitespaces_System_Boolean__">StringReader.ReadInlineWhitespaces(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ReadNonWhitespaces">StringReader.ReadNonWhitespaces()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Skip_System_Func_System_Char_System_Boolean__">StringReader.Skip(Func&lt;Char, Boolean&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SkipSpaces">StringReader.SkipSpaces()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_SkipNonSpaces">StringReader.SkipNonSpaces()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ToString">StringReader.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_Equals_System_String_">StringReader.Equals(String)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.Text.html">System.Text</a></h6>
+  <h6><strong>Assembly</strong>: DoNetExtension.dll</h6>
+  <h5 id="System_Text_StringReader_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class StringReader&lt;TState&gt; : StringReader</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TState</span></td>
+        <td><p>The type of the state object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1__ctor__0__0_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601.%23ctor(%600%2C%600%2CSystem.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L41">View Source</a>
+  </span>
+  <a id="System_Text_StringReader_1__ctor_" data-uid="System.Text.StringReader`1.#ctor*"></a>
+  <h4 id="System_Text_StringReader_1__ctor__0__0_System_String_System_Int32_" data-uid="System.Text.StringReader`1.#ctor(`0,`0,System.String,System.Int32)">StringReader(TState, TState, String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Text.StringReader-1.html">StringReader&lt;TState&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StringReader(TState initialState, TState endState, string s, int startIndex = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">initialState</span></td>
+        <td><p>Provides the initial state.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">endState</span></td>
+        <td><p>Provides the end state.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">s</span></td>
+        <td><p>The string instance to read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">startIndex</span></td>
+        <td><p>Specifies the initial position of the reader.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1__ctor__0__0_System_String_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601.%23ctor(%600%2C%600%2CSystem.String%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L28">View Source</a>
+  </span>
+  <a id="System_Text_StringReader_1__ctor_" data-uid="System.Text.StringReader`1.#ctor*"></a>
+  <h4 id="System_Text_StringReader_1__ctor__0__0_System_String_System_Int32_System_Int32_" data-uid="System.Text.StringReader`1.#ctor(`0,`0,System.String,System.Int32,System.Int32)">StringReader(TState, TState, String, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Text.StringReader-1.html">StringReader&lt;TState&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StringReader(TState initialState, TState endState, string s, int startIndex, int length)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">initialState</span></td>
+        <td><p>Provides the initial state.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">endState</span></td>
+        <td><p>Provides the end state.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">s</span></td>
+        <td><p>The string instance to read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">startIndex</span></td>
+        <td><p>Specifies the initial position of the reader.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>Specifies the maximum number of characters this reader can read from its initial position.
+This argument together with <code data-dev-comment-type="paramref" class="paramref">startIndex</code> determines this reader's reading scope.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1__ctor__0__0_System_String_System_StringComparison_.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601.%23ctor(%600%2C%600%2CSystem.String%2CSystem.StringComparison)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L66">View Source</a>
+  </span>
+  <a id="System_Text_StringReader_1__ctor_" data-uid="System.Text.StringReader`1.#ctor*"></a>
+  <h4 id="System_Text_StringReader_1__ctor__0__0_System_String_System_StringComparison_" data-uid="System.Text.StringReader`1.#ctor(`0,`0,System.String,System.StringComparison)">StringReader(TState, TState, String, StringComparison)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Text.StringReader-1.html">StringReader&lt;TState&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StringReader(TState initialState, TState endState, string s, StringComparison comparisonType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">initialState</span></td>
+        <td><p>Provides the initial state.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">endState</span></td>
+        <td><p>Provides the end state.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">s</span></td>
+        <td><p>The string instance to read.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.StringComparison</span></td>
+        <td><span class="parametername">comparisonType</span></td>
+        <td><p>Specifies a <span class="xref">System.StringComparison</span> value for string comparisons in various methods of the <a class="xref" href="System.Text.StringReader.html">StringReader</a> class.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1__ctor__0__0_System_Text_StringReader_.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601.%23ctor(%600%2C%600%2CSystem.Text.StringReader)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L53">View Source</a>
+  </span>
+  <a id="System_Text_StringReader_1__ctor_" data-uid="System.Text.StringReader`1.#ctor*"></a>
+  <h4 id="System_Text_StringReader_1__ctor__0__0_System_Text_StringReader_" data-uid="System.Text.StringReader`1.#ctor(`0,`0,System.Text.StringReader)">StringReader(TState, TState, StringReader)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Text.StringReader-1.html">StringReader&lt;TState&gt;</a> class from a <a class="xref" href="System.Text.StringReader.html">StringReader</a> instance. This constructor copies <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_UnderlyingString">UnderlyingString</a>, <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_CurrentPosition">CurrentPosition</a>, <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_EndPosition">EndPosition</a> and <a class="xref" href="System.Text.StringReader.html#System_Text_StringReader_ComparisonType">ComparisonType</a> of <code data-dev-comment-type="paramref" class="paramref">reader</code> to the new instance, but does not copy <see cref="!:StringReader.MarkedPosition"></see> property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public StringReader(TState initialState, TState endState, StringReader reader)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">initialState</span></td>
+        <td><p>Provides the initial state.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">endState</span></td>
+        <td><p>Provides the end state.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="System.Text.StringReader.html">StringReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>Provides a <a class="xref" href="System.Text.StringReader.html">StringReader</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1_EndState.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601.EndState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L90">View Source</a>
+  </span>
+  <a id="System_Text_StringReader_1_EndState_" data-uid="System.Text.StringReader`1.EndState*"></a>
+  <h4 id="System_Text_StringReader_1_EndState" data-uid="System.Text.StringReader`1.EndState">EndState</h4>
+  <div class="markdown level1 summary"><p>Gets the end state of this <a class="xref" href="System.Text.StringReader-1.html">StringReader&lt;TState&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TState EndState { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><p>The end state of this <a class="xref" href="System.Text.StringReader-1.html">StringReader&lt;TState&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1_EOS.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601.EOS%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L96">View Source</a>
+  </span>
+  <a id="System_Text_StringReader_1_EOS_" data-uid="System.Text.StringReader`1.EOS*"></a>
+  <h4 id="System_Text_StringReader_1_EOS" data-uid="System.Text.StringReader`1.EOS">EOS</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this <a class="xref" href="System.Text.StringReader-1.html">StringReader&lt;TState&gt;</a> is at its end state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EOS { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this <a class="xref" href="System.Text.StringReader-1.html">StringReader&lt;TState&gt;</a> is at its end state; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1_InitialState.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601.InitialState%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L84">View Source</a>
+  </span>
+  <a id="System_Text_StringReader_1_InitialState_" data-uid="System.Text.StringReader`1.InitialState*"></a>
+  <h4 id="System_Text_StringReader_1_InitialState" data-uid="System.Text.StringReader`1.InitialState">InitialState</h4>
+  <div class="markdown level1 summary"><p>Gets the initial state of this <a class="xref" href="System.Text.StringReader-1.html">StringReader&lt;TState&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TState InitialState { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><p>The initial state of this <a class="xref" href="System.Text.StringReader-1.html">StringReader&lt;TState&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1_State.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601.State%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L78">View Source</a>
+  </span>
+  <a id="System_Text_StringReader_1_State_" data-uid="System.Text.StringReader`1.State*"></a>
+  <h4 id="System_Text_StringReader_1_State" data-uid="System.Text.StringReader`1.State">State</h4>
+  <div class="markdown level1 summary"><p>Gets the reading state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TState State { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><p>The reading state.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1_Advance__0__0_.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601.Advance(%600%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L122">View Source</a>
+  </span>
+  <a id="System_Text_StringReader_1_Advance_" data-uid="System.Text.StringReader`1.Advance*"></a>
+  <h4 id="System_Text_StringReader_1_Advance__0__0_" data-uid="System.Text.StringReader`1.Advance(`0,`0)">Advance(TState, TState)</h4>
+  <div class="markdown level1 summary"><p>Advances the reader to the position of the first non-whitespace character in the reader's scope. The <a class="xref" href="System.Text.StringReader-1.html#System_Text_StringReader_1_State">State</a> will be set to <code data-dev-comment-type="paramref" class="paramref">epsilonState</code> if the current reading scope is empty or contains only whitespace characters, and set to <code data-dev-comment-type="paramref" class="paramref">nonEpsilonState</code> otherwise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Advance(TState epsilonState, TState nonEpsilonState)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">epsilonState</span></td>
+        <td><p>The state to set if the current reading scope is empty or contains only whitespace characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">nonEpsilonState</span></td>
+        <td><p>The state to set if the current reading scope contains at least one non-whitespace character.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1_Read__0__0_.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601.Read(%600%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L135">View Source</a>
+  </span>
+  <a id="System_Text_StringReader_1_Read_" data-uid="System.Text.StringReader`1.Read*"></a>
+  <h4 id="System_Text_StringReader_1_Read__0__0_" data-uid="System.Text.StringReader`1.Read(`0,`0)">Read(TState, TState)</h4>
+  <div class="markdown level1 summary"><p>Reads the first non-whitespace character in the reader's scope and advances the reader to the position after the first non-whitespace character. The <a class="xref" href="System.Text.StringReader-1.html#System_Text_StringReader_1_State">State</a> will be set to <code data-dev-comment-type="paramref" class="paramref">epsilonState</code> if the current reading scope is empty or contains only whitespace characters, and set to <code data-dev-comment-type="paramref" class="paramref">nonEpsilonState</code> otherwise.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public char Read(TState epsilonState, TState nonEpsilonState)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">epsilonState</span></td>
+        <td><p>The state to set if the current reading scope is empty or contains only whitespace characters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">nonEpsilonState</span></td>
+        <td><p>The state to set if the current reading scope contains at least one non-whitespace character.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><p>If there eists a non-whitespace character in the reader's scope, this method returns the first non-whitespace character; otherwise, this method returns '\0'.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1_Reset.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601.Reset%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L111">View Source</a>
+  </span>
+  <a id="System_Text_StringReader_1_Reset_" data-uid="System.Text.StringReader`1.Reset*"></a>
+  <h4 id="System_Text_StringReader_1_Reset" data-uid="System.Text.StringReader`1.Reset">Reset()</h4>
+  <div class="markdown level1 summary"><p>Resets this <a class="xref" href="System.Text.StringReader-1.html">StringReader&lt;TState&gt;</a> to its initial state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reset()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1_SetState__0_.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601.SetState(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L102">View Source</a>
+  </span>
+  <a id="System_Text_StringReader_1_SetState_" data-uid="System.Text.StringReader`1.SetState*"></a>
+  <h4 id="System_Text_StringReader_1_SetState__0_" data-uid="System.Text.StringReader`1.SetState(`0)">SetState(TState)</h4>
+  <div class="markdown level1 summary"><p>Sets the reading state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetState(TState state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>An object representing the reading state.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Singleton__1___0_">ArrayEx.Singleton&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_CreateArray__1___0_System_Int32_">ArrayEx.CreateArray&lt;T&gt;(T, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_System_Boolean_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.In&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAny&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAll&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.In&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAny&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAll&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IList___0__">GeneralEx.In&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0___0___">GeneralEx.In&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.NotIn&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.NotIn&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IList___0__">GeneralEx.NotIn&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0___0___">GeneralEx.NotIn&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNull_System_Object_">GeneralEx.IsNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNotNull_System_Object_">GeneralEx.IsNotNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32__1___0_">GeneralEx.ToInt32&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32OrNull__1___0_">GeneralEx.ToInt32OrNull&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Text_StringReader_1.md&amp;value=---%0Auid%3A%20System.Text.StringReader%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Text/StringReader/0_Core/1_StringReader_State.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

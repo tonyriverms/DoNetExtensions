@@ -1,0 +1,1396 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DateTimeEx
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DateTimeEx
+   ">
+    <meta name="generator" content="docfx 2.39.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="System.DateTimeEx">
+  
+  
+  <h1 id="System_DateTimeEx" data-uid="System.DateTimeEx" class="text-break">Class DateTimeEx
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">DateTimeEx</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.html">System</a></h6>
+  <h6><strong>Assembly</strong>: DoNetExtension.dll</h6>
+  <h5 id="System_DateTimeEx_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class DateTimeEx</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_DaysPassed_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.DaysPassed(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L184">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_DaysPassed_" data-uid="System.DateTimeEx.DaysPassed*"></a>
+  <h4 id="System_DateTimeEx_DaysPassed_System_DateTime_" data-uid="System.DateTimeEx.DaysPassed(System.DateTime)">DaysPassed(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the passed days from the time represented by this System.DateTime object till now.</p>
+<p>NOTE that if this System.DateTime object represents a future time, 
+the returned value will be negative, indicating hours to go.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double DaysPassed(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The passed days from the time represented by this System.DateTime object till now.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_DaysToGo_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.DaysToGo(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L268">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_DaysToGo_" data-uid="System.DateTimeEx.DaysToGo*"></a>
+  <h4 id="System_DateTimeEx_DaysToGo_System_DateTime_" data-uid="System.DateTimeEx.DaysToGo(System.DateTime)">DaysToGo(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the days to go from now to the time this System.DateTime represents.</p>
+<p>NOTE that if this System.DateTime object represents a past time, 
+the returned value will be negative, indicating days passed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double DaysToGo(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The days to go from now to the time this System.DateTime represents.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_Divide_System_DateTime_System_DateTime_System_Int32_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.Divide(System.DateTime%2CSystem.DateTime%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L85">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_Divide_" data-uid="System.DateTimeEx.Divide*"></a>
+  <h4 id="System_DateTimeEx_Divide_System_DateTime_System_DateTime_System_Int32_" data-uid="System.DateTimeEx.Divide(System.DateTime,System.DateTime,System.Int32)">Divide(DateTime, DateTime, Int32)</h4>
+  <div class="markdown level1 summary"><p>Evenly divides a timespan into several time points between the beginning time point and the end time point.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime[] Divide(this DateTime source, DateTime destination, int splitCount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>This System.DateTime as the beginning time point.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">destination</span></td>
+        <td><p>A System.DateTime as the end time point.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">splitCount</span></td>
+        <td><p>Indicates how many time points between the beginning time point and the end time point are returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span>[]</td>
+        <td><p>Time points between the beginning time point and the end time point the evenly divide the timespan.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_HoursPassed_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.HoursPassed(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L172">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_HoursPassed_" data-uid="System.DateTimeEx.HoursPassed*"></a>
+  <h4 id="System_DateTimeEx_HoursPassed_System_DateTime_" data-uid="System.DateTimeEx.HoursPassed(System.DateTime)">HoursPassed(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the passed hours from the time represented by this System.DateTime object till now.</p>
+<p>NOTE that if this System.DateTime object represents a future time, 
+the returned value will be negative, indicating hours to go.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double HoursPassed(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The passed hours from the time represented by this System.DateTime object till now.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_HoursToGo_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.HoursToGo(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L256">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_HoursToGo_" data-uid="System.DateTimeEx.HoursToGo*"></a>
+  <h4 id="System_DateTimeEx_HoursToGo_System_DateTime_" data-uid="System.DateTimeEx.HoursToGo(System.DateTime)">HoursToGo(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the hours to go from now to the time this System.DateTime represents.</p>
+<p>NOTE that if this System.DateTime object represents a past time, 
+the returned value will be negative, indicating hours passed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double HoursToGo(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The hours to go from now to the time this System.DateTime represents.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_IsFuture_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.IsFuture(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L102">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_IsFuture_" data-uid="System.DateTimeEx.IsFuture*"></a>
+  <h4 id="System_DateTimeEx_IsFuture_System_DateTime_" data-uid="System.DateTimeEx.IsFuture(System.DateTime)">IsFuture(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the time represented by the current System.DateTime object is a future time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsFuture(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the time represented by the current System.DateTime object is a future time; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_IsPast_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.IsPast(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L112">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_IsPast_" data-uid="System.DateTimeEx.IsPast*"></a>
+  <h4 id="System_DateTimeEx_IsPast_System_DateTime_" data-uid="System.DateTimeEx.IsPast(System.DateTime)">IsPast(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the time represented by the current System.DateTime object is a past time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPast(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>true if the time represented by the current System.DateTime object is a past time; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_MiliSecondsPassed_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.MiliSecondsPassed(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L148">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_MiliSecondsPassed_" data-uid="System.DateTimeEx.MiliSecondsPassed*"></a>
+  <h4 id="System_DateTimeEx_MiliSecondsPassed_System_DateTime_" data-uid="System.DateTimeEx.MiliSecondsPassed(System.DateTime)">MiliSecondsPassed(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the passed miliseconds from the time represented by this System.DateTime object till now.</p>
+<p>NOTE that if this System.DateTime object represents a future time, 
+the returned value will be negative, indicating seconds to go.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double MiliSecondsPassed(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The passed miliseconds from the time represented by this System.DateTime object till now.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_MilisecondsToGo_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.MilisecondsToGo(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L220">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_MilisecondsToGo_" data-uid="System.DateTimeEx.MilisecondsToGo*"></a>
+  <h4 id="System_DateTimeEx_MilisecondsToGo_System_DateTime_" data-uid="System.DateTimeEx.MilisecondsToGo(System.DateTime)">MilisecondsToGo(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the miliseconds to go from now to the time this System.DateTime represents.</p>
+<p>NOTE that if this System.DateTime object represents a past time, 
+the returned value will be negative, indicating seconds passed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double MilisecondsToGo(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The miliseconds to go from now to the time this System.DateTime represents.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_MinutesPassed_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.MinutesPassed(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L160">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_MinutesPassed_" data-uid="System.DateTimeEx.MinutesPassed*"></a>
+  <h4 id="System_DateTimeEx_MinutesPassed_System_DateTime_" data-uid="System.DateTimeEx.MinutesPassed(System.DateTime)">MinutesPassed(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the passed minutes from the time represented by this System.DateTime object till now.</p>
+<p>NOTE that if this System.DateTime object represents a future time, 
+the returned value will be negative, indicating minutes to go.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double MinutesPassed(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The passed minutes from the time represented by this System.DateTime object till now.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_MinutesToGo_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.MinutesToGo(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L244">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_MinutesToGo_" data-uid="System.DateTimeEx.MinutesToGo*"></a>
+  <h4 id="System_DateTimeEx_MinutesToGo_System_DateTime_" data-uid="System.DateTimeEx.MinutesToGo(System.DateTime)">MinutesToGo(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the minutes to go from now to the time this System.DateTime represents.</p>
+<p>NOTE that if this System.DateTime object represents a past time, 
+the returned value will be negative, indicating minutes passed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double MinutesToGo(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The minutes to go from now to the time this System.DateTime represents.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_NextSharp_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.NextSharp(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L60">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_NextSharp_" data-uid="System.DateTimeEx.NextSharp*"></a>
+  <h4 id="System_DateTimeEx_NextSharp_System_DateTime_" data-uid="System.DateTimeEx.NextSharp(System.DateTime)">NextSharp(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the next sharp clock from time represented by the current System.DateTime object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime NextSharp(this DateTime dateTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">dateTime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><p>The next sharp clock represented by a <span class="xref">System.DateTime</span> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_SecondsPassed_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.SecondsPassed(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L124">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_SecondsPassed_" data-uid="System.DateTimeEx.SecondsPassed*"></a>
+  <h4 id="System_DateTimeEx_SecondsPassed_System_DateTime_" data-uid="System.DateTimeEx.SecondsPassed(System.DateTime)">SecondsPassed(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the passed seconds from the time represented by this System.DateTime object till now.</p>
+<p>NOTE that if this System.DateTime object represents a future time, 
+the returned value will be negative, indicating seconds to go.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double SecondsPassed(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The passed seconds from the time represented by this System.DateTime object till now.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_SecondsToGo_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.SecondsToGo(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L208">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_SecondsToGo_" data-uid="System.DateTimeEx.SecondsToGo*"></a>
+  <h4 id="System_DateTimeEx_SecondsToGo_System_DateTime_" data-uid="System.DateTimeEx.SecondsToGo(System.DateTime)">SecondsToGo(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the seconds to go from now to the time this System.DateTime represents.</p>
+<p>NOTE that if this System.DateTime object represents a past time, 
+the returned value will be negative, indicating seconds passed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double SecondsToGo(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The seconds to go from now to the time this System.DateTime represents.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_Sharp_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.Sharp(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L72">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_Sharp_" data-uid="System.DateTimeEx.Sharp*"></a>
+  <h4 id="System_DateTimeEx_Sharp_System_DateTime_" data-uid="System.DateTimeEx.Sharp(System.DateTime)">Sharp(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the sharp clock from time represented by the current System.DateTime object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DateTime Sharp(this DateTime dateTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">dateTime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><p>The sharp clock represented by a <span class="xref">System.DateTime</span> object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_TicksPassed_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.TicksPassed(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L136">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_TicksPassed_" data-uid="System.DateTimeEx.TicksPassed*"></a>
+  <h4 id="System_DateTimeEx_TicksPassed_System_DateTime_" data-uid="System.DateTimeEx.TicksPassed(System.DateTime)">TicksPassed(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the passed ticks from the time represented by this System.DateTime object till now.</p>
+<p>NOTE that if this System.DateTime object represents a future time, 
+the returned value will be negative, indicating ticks to go.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long TicksPassed(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>The passed ticks from the time represented by this System.DateTime object till now.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_TicksToGo_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.TicksToGo(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L232">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_TicksToGo_" data-uid="System.DateTimeEx.TicksToGo*"></a>
+  <h4 id="System_DateTimeEx_TicksToGo_System_DateTime_" data-uid="System.DateTimeEx.TicksToGo(System.DateTime)">TicksToGo(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the ticks to go from now to the time this System.DateTime represents.</p>
+<p>NOTE that if this System.DateTime object represents a past time, 
+the returned value will be negative, indicating ticks passed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long TicksToGo(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>The ticks to go from now to the time this System.DateTime represents.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_TimeSpanPassed_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.TimeSpanPassed(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L196">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_TimeSpanPassed_" data-uid="System.DateTimeEx.TimeSpanPassed*"></a>
+  <h4 id="System_DateTimeEx_TimeSpanPassed_System_DateTime_" data-uid="System.DateTimeEx.TimeSpanPassed(System.DateTime)">TimeSpanPassed(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the timespan from the time represented by this System.DateTime object till now.</p>
+<p>NOTE that if this System.DateTime object represents a future time, 
+the returned value is a timespan to go.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TimeSpan TimeSpanPassed(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><p>The timespan from the time represented by this System.DateTime object till now.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_TimeSpanToGo_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.TimeSpanToGo(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L280">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_TimeSpanToGo_" data-uid="System.DateTimeEx.TimeSpanToGo*"></a>
+  <h4 id="System_DateTimeEx_TimeSpanToGo_System_DateTime_" data-uid="System.DateTimeEx.TimeSpanToGo(System.DateTime)">TimeSpanToGo(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Gets the timespan to go from now to the time this System.DateTime represents.</p>
+<p>NOTE that if this System.DateTime object represents a past time, 
+the returned value will be negative, indicating timespan passed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TimeSpan TimeSpanToGo(this DateTime datetime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">datetime</span></td>
+        <td><p>This System.DateTime object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.TimeSpan</span></td>
+        <td><p>The timespan to go from now to the time this System.DateTime represents.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_ToHttpHeaderString_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.ToHttpHeaderString(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L10">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_ToHttpHeaderString_" data-uid="System.DateTimeEx.ToHttpHeaderString*"></a>
+  <h4 id="System_DateTimeEx_ToHttpHeaderString_System_DateTime_" data-uid="System.DateTimeEx.ToHttpHeaderString(System.DateTime)">ToHttpHeaderString(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Converts the value of the current <span class="xref">System.DateTime</span> object to its equivalent HTTP-formated string representation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string ToHttpHeaderString(this DateTime dateTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">dateTime</span></td>
+        <td><p>This <span class="xref">System.DateTime</span> object to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p>A string representing date and time, usually used as HTTP headers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_ToUnixTimeStamp_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.ToUnixTimeStamp(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L20">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_ToUnixTimeStamp_" data-uid="System.DateTimeEx.ToUnixTimeStamp*"></a>
+  <h4 id="System_DateTimeEx_ToUnixTimeStamp_System_DateTime_" data-uid="System.DateTimeEx.ToUnixTimeStamp(System.DateTime)">ToUnixTimeStamp(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Converts the current <span class="xref">System.DateTime</span> object to its equivalent unix time stamp as a <span class="xref">System.Int64</span>. A single unit in this timestamp represents 1 second.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long ToUnixTimeStamp(this DateTime dateTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">dateTime</span></td>
+        <td><p>This <span class="xref">System.DateTime</span> object to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>A unix time stamp represented by a <span class="xref">System.Int64</span> indicating seconds passed since Jan 01 1970 00:00:00.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_ToUnixTimeStampDouble_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.ToUnixTimeStampDouble(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L40">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_ToUnixTimeStampDouble_" data-uid="System.DateTimeEx.ToUnixTimeStampDouble*"></a>
+  <h4 id="System_DateTimeEx_ToUnixTimeStampDouble_System_DateTime_" data-uid="System.DateTimeEx.ToUnixTimeStampDouble(System.DateTime)">ToUnixTimeStampDouble(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Converts the current <span class="xref">System.DateTime</span> object to its equivalent unix time stamp represented by a <span class="xref">System.Double</span>. The milliseconds are represented by the decimal part of this <span class="xref">System.Double</span>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double ToUnixTimeStampDouble(this DateTime dateTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">dateTime</span></td>
+        <td><p>This <span class="xref">System.DateTime</span> object to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>The unix time stamp represented by a <span class="xref">System.Double</span> indicating seconds passed since Jan 01 1970 00:00:00.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_ToUnixTimeStampMilliseconds_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.ToUnixTimeStampMilliseconds(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L30">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_ToUnixTimeStampMilliseconds_" data-uid="System.DateTimeEx.ToUnixTimeStampMilliseconds*"></a>
+  <h4 id="System_DateTimeEx_ToUnixTimeStampMilliseconds_System_DateTime_" data-uid="System.DateTimeEx.ToUnixTimeStampMilliseconds(System.DateTime)">ToUnixTimeStampMilliseconds(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Converts the current <span class="xref">System.DateTime</span> object to its equivalent unix time stamp a a <span class="xref">System.Int64</span>. A single unit in this timestamp represents 1 millisecond.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long ToUnixTimeStampMilliseconds(this DateTime dateTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">dateTime</span></td>
+        <td><p>This <span class="xref">System.DateTime</span> object to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>A unix time stamp represented by a <span class="xref">System.Int64</span> indicating seconds passed since Jan 01 1970 00:00:00.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx_ToUnixTimeStampMillisecondsDouble_System_DateTime_.md&amp;value=---%0Auid%3A%20System.DateTimeEx.ToUnixTimeStampMillisecondsDouble(System.DateTime)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L50">View Source</a>
+  </span>
+  <a id="System_DateTimeEx_ToUnixTimeStampMillisecondsDouble_" data-uid="System.DateTimeEx.ToUnixTimeStampMillisecondsDouble*"></a>
+  <h4 id="System_DateTimeEx_ToUnixTimeStampMillisecondsDouble_System_DateTime_" data-uid="System.DateTimeEx.ToUnixTimeStampMillisecondsDouble(System.DateTime)">ToUnixTimeStampMillisecondsDouble(DateTime)</h4>
+  <div class="markdown level1 summary"><p>Converts the current <span class="xref">System.DateTime</span> object to its equivalent unix time stamp a a <span class="xref">System.Double</span>. A single unit in this timestamp represents 1 millisecond.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double ToUnixTimeStampMillisecondsDouble(this DateTime dateTime)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.DateTime</span></td>
+        <td><span class="parametername">dateTime</span></td>
+        <td><p>This <span class="xref">System.DateTime</span> object to convert.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>A unix time stamp represented by a <span class="xref">System.Int64</span> indicating seconds passed since Jan 01 1970 00:00:00.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_DateTimeEx.md&amp;value=---%0Auid%3A%20System.DateTimeEx%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/DateTimeEx.cs/#L3" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

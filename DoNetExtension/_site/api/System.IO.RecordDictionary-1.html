@@ -1,0 +1,1076 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RecordDictionary&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RecordDictionary&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.39.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="System.IO.RecordDictionary`1">
+  
+  
+  <h1 id="System_IO_RecordDictionary_1" data-uid="System.IO.RecordDictionary`1" class="text-break">Class RecordDictionary&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Provides methods to organize records represented by a set of System.IO.RecordStream objects in a dictionary-like approach,
+and optimizes the space occupancy.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">RecordDictionary&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="System.IO.IRecord.html">IRecord</a></div>
+    <div><a class="xref" href="System.IO.IBasicRecord.html">IBasicRecord</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.IO.html">System.IO</a></h6>
+  <h6><strong>Assembly</strong>: DoNetExtension.dll</h6>
+  <h5 id="System_IO_RecordDictionary_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class RecordDictionary&lt;T&gt; : IRecord, IBasicRecord where T : IBasicRecord, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1__ctor.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L27">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1__ctor_" data-uid="System.IO.RecordDictionary`1.#ctor*"></a>
+  <h4 id="System_IO_RecordDictionary_1__ctor" data-uid="System.IO.RecordDictionary`1.#ctor">RecordDictionary()</h4>
+  <div class="markdown level1 summary"><p>DO NOT use this constructor. This constructor makes any instance a viable child of another instance of this class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RecordDictionary()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1__ctor_System_IO_Stream_.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.%23ctor(System.IO.Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L57">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1__ctor_" data-uid="System.IO.RecordDictionary`1.#ctor*"></a>
+  <h4 id="System_IO_RecordDictionary_1__ctor_System_IO_Stream_" data-uid="System.IO.RecordDictionary`1.#ctor(System.IO.Stream)">RecordDictionary(Stream)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of System.IO.RecordDictionary object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RecordDictionary(Stream baseStream)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">baseStream</span></td>
+        <td><p>A System.IO.Stream that stores both section information and the real data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1__ctor_System_IO_Stream_System_Int64_.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.%23ctor(System.IO.Stream%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L67">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1__ctor_" data-uid="System.IO.RecordDictionary`1.#ctor*"></a>
+  <h4 id="System_IO_RecordDictionary_1__ctor_System_IO_Stream_System_Int64_" data-uid="System.IO.RecordDictionary`1.#ctor(System.IO.Stream,System.Int64)">RecordDictionary(Stream, Int64)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of System.IO.RecordDictionary object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RecordDictionary(Stream baseStream, long infoPosition)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">baseStream</span></td>
+        <td><p>A System.IO.Stream that stores both section information and the data.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">infoPosition</span></td>
+        <td><p>The position of the section information in the info-stream.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1__ctor_System_IO_Stream_System_Int64_System_IO_Stream_.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.%23ctor(System.IO.Stream%2CSystem.Int64%2CSystem.IO.Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L99">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1__ctor_" data-uid="System.IO.RecordDictionary`1.#ctor*"></a>
+  <h4 id="System_IO_RecordDictionary_1__ctor_System_IO_Stream_System_Int64_System_IO_Stream_" data-uid="System.IO.RecordDictionary`1.#ctor(System.IO.Stream,System.Int64,System.IO.Stream)">RecordDictionary(Stream, Int64, Stream)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of System.IO.RecordDictionary object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RecordDictionary(Stream infoStream, long infoPosition, Stream dataStream)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">infoStream</span></td>
+        <td><p>A System.IO.Stream that stores section infomation.
+The section information will be stored at the current position of this stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">infoPosition</span></td>
+        <td><p>The position of the section information in the stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">dataStream</span></td>
+        <td><p>A System.IO.Stream that stores real data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1__ctor_System_IO_Stream_System_Int64_System_IO_Stream_System_Int32_.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.%23ctor(System.IO.Stream%2CSystem.Int64%2CSystem.IO.Stream%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L81">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1__ctor_" data-uid="System.IO.RecordDictionary`1.#ctor*"></a>
+  <h4 id="System_IO_RecordDictionary_1__ctor_System_IO_Stream_System_Int64_System_IO_Stream_System_Int32_" data-uid="System.IO.RecordDictionary`1.#ctor(System.IO.Stream,System.Int64,System.IO.Stream,System.Int32)">RecordDictionary(Stream, Int64, Stream, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of System.IO.RecordDictionary object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RecordDictionary(Stream infoStream, long infoPosition, Stream dataStream, int initialCapability)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">infoStream</span></td>
+        <td><p>A System.IO.Stream that stores section infomation.
+The section information will be stored at the current position of this stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">infoPosition</span></td>
+        <td><p>The position of the section information in the stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">dataStream</span></td>
+        <td><p>A System.IO.Stream that stores real data.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">initialCapability</span></td>
+        <td><p>The initial capability of this record group.
+The default value is the same as that of a System.Collection.Generic.List{T} class.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1__ctor_System_IO_Stream_System_IO_Stream_.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.%23ctor(System.IO.Stream%2CSystem.IO.Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L48">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1__ctor_" data-uid="System.IO.RecordDictionary`1.#ctor*"></a>
+  <h4 id="System_IO_RecordDictionary_1__ctor_System_IO_Stream_System_IO_Stream_" data-uid="System.IO.RecordDictionary`1.#ctor(System.IO.Stream,System.IO.Stream)">RecordDictionary(Stream, Stream)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of System.IO.RecordDictionary object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RecordDictionary(Stream infoStream, Stream dataStream)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">infoStream</span></td>
+        <td><p>A System.IO.Stream that stores section infomation.
+The section information will be stored at the current position of this stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">dataStream</span></td>
+        <td><p>A System.IO.Stream that stores real data.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1__ctor_System_IO_Stream_System_IO_Stream_System_Int32_.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.%23ctor(System.IO.Stream%2CSystem.IO.Stream%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L37">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1__ctor_" data-uid="System.IO.RecordDictionary`1.#ctor*"></a>
+  <h4 id="System_IO_RecordDictionary_1__ctor_System_IO_Stream_System_IO_Stream_System_Int32_" data-uid="System.IO.RecordDictionary`1.#ctor(System.IO.Stream,System.IO.Stream,System.Int32)">RecordDictionary(Stream, Stream, Int32)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of System.IO.RecordDictionary object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RecordDictionary(Stream infoStream, Stream dataStream, int initialCapability)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">infoStream</span></td>
+        <td><p>A System.IO.Stream that stores section infomation.
+The section information will be stored at the current position of this stream.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">dataStream</span></td>
+        <td><p>A System.IO.Stream that stores real data.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">initialCapability</span></td>
+        <td><p>The initial capability of this record group.
+The default value is the same as that of a System.Collection.Generic.List{T} class.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_Count.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L321">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_Count_" data-uid="System.IO.RecordDictionary`1.Count*"></a>
+  <h4 id="System_IO_RecordDictionary_1_Count" data-uid="System.IO.RecordDictionary`1.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the number of records in this record dictionary. This record dictionary must already have been loaded when you access this property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_InfoPosition.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.InfoPosition%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L332">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_InfoPosition_" data-uid="System.IO.RecordDictionary`1.InfoPosition*"></a>
+  <h4 id="System_IO_RecordDictionary_1_InfoPosition" data-uid="System.IO.RecordDictionary`1.InfoPosition">InfoPosition</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long InfoPosition { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_Item_System_String_.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.Item(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L177">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_Item_" data-uid="System.IO.RecordDictionary`1.Item*"></a>
+  <h4 id="System_IO_RecordDictionary_1_Item_System_String_" data-uid="System.IO.RecordDictionary`1.Item(System.String)">Item[String]</h4>
+  <div class="markdown level1 summary"><p>Retrieves a record in this record dictionary by key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T this[string key] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>A record with the specified key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_ReadMoreInfo.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.ReadMoreInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L316">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_ReadMoreInfo_" data-uid="System.IO.RecordDictionary`1.ReadMoreInfo*"></a>
+  <h4 id="System_IO_RecordDictionary_1_ReadMoreInfo" data-uid="System.IO.RecordDictionary`1.ReadMoreInfo">ReadMoreInfo</h4>
+  <div class="markdown level1 summary"><p>Sets a delegation method to read additional LENGTH-FIXED information.
+If this property is set to an bugged method for the most part a validity-check failure will occure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Action&lt;Stream&gt; ReadMoreInfo { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">System.IO.Stream</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_WriteMoreInfo.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.WriteMoreInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L310">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_WriteMoreInfo_" data-uid="System.IO.RecordDictionary`1.WriteMoreInfo*"></a>
+  <h4 id="System_IO_RecordDictionary_1_WriteMoreInfo" data-uid="System.IO.RecordDictionary`1.WriteMoreInfo">WriteMoreInfo</h4>
+  <div class="markdown level1 summary"><p>Sets a delegation method to write additional LENGTH-FIXED information.
+DO NOT write any data of indefinite or changable length, such as a linked list.
+If this property is set to an bugged method the data in the info-stream can be corrupted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Action&lt;Stream&gt; WriteMoreInfo { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">System.IO.Stream</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_Add_System_String__0_.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.Add(System.String%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L120">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_Add_" data-uid="System.IO.RecordDictionary`1.Add*"></a>
+  <h4 id="System_IO_RecordDictionary_1_Add_System_String__0_" data-uid="System.IO.RecordDictionary`1.Add(System.String,`0)">Add(String, T)</h4>
+  <div class="markdown level1 summary"><p>Adds a compatible record to this record dictionary. Like an ordinary dictionary every record must have a unique key.
+Call this method after you initialize this dictionary by calling LoadInfo method, or an InvalidOperationException will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(string key, T record)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">record</span></td>
+        <td><p>The record to be added.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_AddNew_System_String_.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.AddNew(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L136">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_AddNew_" data-uid="System.IO.RecordDictionary`1.AddNew*"></a>
+  <h4 id="System_IO_RecordDictionary_1_AddNew_System_String_" data-uid="System.IO.RecordDictionary`1.AddNew(System.String)">AddNew(String)</h4>
+  <div class="markdown level1 summary"><p>Adds an empty record of type System.IO.RecordStream to this record group.
+You can write data to this empty record later by retrieving it by key and using it as a regular System.IO.Stream.
+Call this method after you initialize this dictionary by calling LoadInfo method, or an InvalidOperationException will be thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddNew(string key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_Clear.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L298">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_Clear_" data-uid="System.IO.RecordDictionary`1.Clear*"></a>
+  <h4 id="System_IO_RecordDictionary_1_Clear" data-uid="System.IO.RecordDictionary`1.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Removes all the data of all records. But the management information will be retained.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_ContainsKey_System_String_.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.ContainsKey(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L110">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_ContainsKey_" data-uid="System.IO.RecordDictionary`1.ContainsKey*"></a>
+  <h4 id="System_IO_RecordDictionary_1_ContainsKey_System_String_" data-uid="System.IO.RecordDictionary`1.ContainsKey(System.String)">ContainsKey(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsKey(string key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_LoadInfo.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.LoadInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L201">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_LoadInfo_" data-uid="System.IO.RecordDictionary`1.LoadInfo*"></a>
+  <h4 id="System_IO_RecordDictionary_1_LoadInfo" data-uid="System.IO.RecordDictionary`1.LoadInfo">LoadInfo()</h4>
+  <div class="markdown level1 summary"><p>Loads information necessary for record management. Call this method before calling any other operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void LoadInfo()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_Remove_System_String_.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.Remove(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L154">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_Remove_" data-uid="System.IO.RecordDictionary`1.Remove*"></a>
+  <h4 id="System_IO_RecordDictionary_1_Remove_System_String_" data-uid="System.IO.RecordDictionary`1.Remove(System.String)">Remove(String)</h4>
+  <div class="markdown level1 summary"><p>Removes a record specified by its key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Remove(string key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_RemoveAll.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.RemoveAll%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L165">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_RemoveAll_" data-uid="System.IO.RecordDictionary`1.RemoveAll*"></a>
+  <h4 id="System_IO_RecordDictionary_1_RemoveAll" data-uid="System.IO.RecordDictionary`1.RemoveAll">RemoveAll()</h4>
+  <div class="markdown level1 summary"><p>Removes all records in this record dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveAll()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_SaveInfo.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.SaveInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L250">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_SaveInfo_" data-uid="System.IO.RecordDictionary`1.SaveInfo*"></a>
+  <h4 id="System_IO_RecordDictionary_1_SaveInfo" data-uid="System.IO.RecordDictionary`1.SaveInfo">SaveInfo()</h4>
+  <div class="markdown level1 summary"><p>Saves record management information.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SaveInfo()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_UnloadInfo.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.UnloadInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L286">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_UnloadInfo_" data-uid="System.IO.RecordDictionary`1.UnloadInfo*"></a>
+  <h4 id="System_IO_RecordDictionary_1_UnloadInfo" data-uid="System.IO.RecordDictionary`1.UnloadInfo">UnloadInfo()</h4>
+  <div class="markdown level1 summary"><p>Unloads record management information.
+The unloaded information is able to be reloaded again later.
+Once this information is unloaded, this record is not retrievable before the LoadInfo method is called.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void UnloadInfo()</code></pre>
+  </div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_System_IO_IBasicRecord_DataStream.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.System%23IO%23IBasicRecord%23DataStream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L344">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_System_IO_IBasicRecord_DataStream_" data-uid="System.IO.RecordDictionary`1.System#IO#IBasicRecord#DataStream*"></a>
+  <h4 id="System_IO_RecordDictionary_1_System_IO_IBasicRecord_DataStream" data-uid="System.IO.RecordDictionary`1.System#IO#IBasicRecord#DataStream">IBasicRecord.DataStream</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Stream IBasicRecord.DataStream { get; set; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_System_IO_IBasicRecord_InfoStream.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.System%23IO%23IBasicRecord%23InfoStream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L338">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_System_IO_IBasicRecord_InfoStream_" data-uid="System.IO.RecordDictionary`1.System#IO#IBasicRecord#InfoStream*"></a>
+  <h4 id="System_IO_RecordDictionary_1_System_IO_IBasicRecord_InfoStream" data-uid="System.IO.RecordDictionary`1.System#IO#IBasicRecord#InfoStream">IBasicRecord.InfoStream</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Stream IBasicRecord.InfoStream { get; set; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_System_IO_IRecord_ReadMoreInfo.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.System%23IO%23IRecord%23ReadMoreInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L357">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_System_IO_IRecord_ReadMoreInfo_" data-uid="System.IO.RecordDictionary`1.System#IO#IRecord#ReadMoreInfo*"></a>
+  <h4 id="System_IO_RecordDictionary_1_System_IO_IRecord_ReadMoreInfo" data-uid="System.IO.RecordDictionary`1.System#IO#IRecord#ReadMoreInfo">IRecord.ReadMoreInfo</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Action&lt;Stream&gt; IRecord.ReadMoreInfo { get; set; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">System.IO.Stream</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1_System_IO_IRecord_WriteMoreInfo.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601.System%23IO%23IRecord%23WriteMoreInfo%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L356">View Source</a>
+  </span>
+  <a id="System_IO_RecordDictionary_1_System_IO_IRecord_WriteMoreInfo_" data-uid="System.IO.RecordDictionary`1.System#IO#IRecord#WriteMoreInfo*"></a>
+  <h4 id="System_IO_RecordDictionary_1_System_IO_IRecord_WriteMoreInfo" data-uid="System.IO.RecordDictionary`1.System#IO#IRecord#WriteMoreInfo">IRecord.WriteMoreInfo</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Action&lt;Stream&gt; IRecord.WriteMoreInfo { get; set; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<span class="xref">System.IO.Stream</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.IO.IRecord.html">IRecord</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.IBasicRecord.html">IBasicRecord</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Singleton__1___0_">ArrayEx.Singleton&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_CreateArray__1___0_System_Int32_">ArrayEx.CreateArray&lt;T&gt;(T, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_System_Boolean_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.In&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAny&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAll&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.In&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAny&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAll&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IList___0__">GeneralEx.In&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0___0___">GeneralEx.In&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.NotIn&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.NotIn&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IList___0__">GeneralEx.NotIn&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0___0___">GeneralEx.NotIn&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNull_System_Object_">GeneralEx.IsNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNotNull_System_Object_">GeneralEx.IsNotNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32__1___0_">GeneralEx.ToInt32&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32OrNull__1___0_">GeneralEx.ToInt32OrNull&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.RecordOperations.html#System_IO_RecordOperations_CheckCompatibility_System_IO_IRecord_System_IO_IRecord_">RecordOperations.CheckCompatibility(IRecord, IRecord)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_System_IO_Stream_">StreamEx.Serialize&lt;T&gt;(T, Stream)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_System_String_System_IO_FileMode_">StreamEx.Serialize&lt;T&gt;(T, String, FileMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_">StreamEx.Serialize&lt;T&gt;(T)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_IO_RecordDictionary_1.md&amp;value=---%0Auid%3A%20System.IO.RecordDictionary%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/IO/RecordDictionary.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

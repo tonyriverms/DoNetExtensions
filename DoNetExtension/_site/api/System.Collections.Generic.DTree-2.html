@@ -1,0 +1,2169 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DTree&lt;TKey, TValue&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DTree&lt;TKey, TValue&gt;
+   ">
+    <meta name="generator" content="docfx 2.39.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="System.Collections.Generic.DTree`2">
+  
+  
+  <h1 id="System_Collections_Generic_DTree_2" data-uid="System.Collections.Generic.DTree`2" class="text-break">Class DTree&lt;TKey, TValue&gt;
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">DTree&lt;TKey, TValue&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="System.Collections.Generic.IDTree-2.html">IDTree</a>&lt;TKey, TValue&gt;</div>
+    <div><a class="xref" href="System.Collections.Generic.ITree-1.html">ITree</a>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IDictionary</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;, TValue&gt;</div>
+    <div><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;, TValue&gt;&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;, TValue&gt;&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.Collections.Generic.html">System.Collections.Generic</a></h6>
+  <h6><strong>Assembly</strong>: DoNetExtension.dll</h6>
+  <h5 id="System_Collections_Generic_DTree_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DTree&lt;TKey, TValue&gt; : IDTree&lt;TKey, TValue&gt;, ITree&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;, IDictionary&lt;IList&lt;TKey&gt;, TValue&gt;, ICollection&lt;KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt;&gt;, IEnumerable&lt;KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt;&gt;, IEnumerable&lt;DTree&lt;TKey, TValue&gt;&gt;, IEnumerable&lt;IList&lt;TKey&gt;&gt;, IEnumerable</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2__ctor.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L55">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2__ctor_" data-uid="System.Collections.Generic.DTree`2.#ctor*"></a>
+  <h4 id="System_Collections_Generic_DTree_2__ctor" data-uid="System.Collections.Generic.DTree`2.#ctor">DTree()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DTree()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2__ctor__0__1_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.%23ctor(%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L57">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2__ctor_" data-uid="System.Collections.Generic.DTree`2.#ctor*"></a>
+  <h4 id="System_Collections_Generic_DTree_2__ctor__0__1_" data-uid="System.Collections.Generic.DTree`2.#ctor(`0,`1)">DTree(TKey, TValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DTree(TKey key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Count.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L280">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Count_" data-uid="System.Collections.Generic.DTree`2.Count*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Count" data-uid="System.Collections.Generic.DTree`2.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the number of direct children in this tree node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_HasChildren.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.HasChildren%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L260">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_HasChildren_" data-uid="System.Collections.Generic.DTree`2.HasChildren*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_HasChildren" data-uid="System.Collections.Generic.DTree`2.HasChildren">HasChildren</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this tree node has children.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasChildren { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Item__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Item(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L170">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Item_" data-uid="System.Collections.Generic.DTree`2.Item*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Item__0_" data-uid="System.Collections.Generic.DTree`2.Item(`0)">Item[TKey]</h4>
+  <div class="markdown level1 summary"><p>Gets the child node associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DTree&lt;TKey, TValue&gt; this[TKey childKey] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">childKey</span></td>
+        <td><p>The key of the child node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;</td>
+        <td><p>The child node associated with the specified key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Item_System_Collections_Generic_IList__0__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Item(System.Collections.Generic.IList%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L442">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Item_" data-uid="System.Collections.Generic.DTree`2.Item*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Item_System_Collections_Generic_IList__0__" data-uid="System.Collections.Generic.DTree`2.Item(System.Collections.Generic.IList{`0})">Item[IList&lt;TKey&gt;]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value associated with the specified path in this tree.
+An exception will be thrown if the path does not exist in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue this[IList&lt;TKey&gt; path] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Key.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Key%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L81">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Key_" data-uid="System.Collections.Generic.DTree`2.Key*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Key" data-uid="System.Collections.Generic.DTree`2.Key">Key</h4>
+  <div class="markdown level1 summary"><p>Gets the key associated with this tree node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TKey Key { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Parent.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Parent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L89">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Parent_" data-uid="System.Collections.Generic.DTree`2.Parent*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Parent" data-uid="System.Collections.Generic.DTree`2.Parent">Parent</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the parent of this tree node. If this tree node is root, a null reference will be returned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DTree&lt;TKey, TValue&gt; Parent { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Paths.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Paths%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L545">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Paths_" data-uid="System.Collections.Generic.DTree`2.Paths*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Paths" data-uid="System.Collections.Generic.DTree`2.Paths">Paths</h4>
+  <div class="markdown level1 summary"><p>Gets a collection containing all paths in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;TKey[]&gt; Paths { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TKey[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Value.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L77">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Value_" data-uid="System.Collections.Generic.DTree`2.Value*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Value" data-uid="System.Collections.Generic.DTree`2.Value">Value</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value of this tree node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue Value { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Values.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Values%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L553">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Values_" data-uid="System.Collections.Generic.DTree`2.Values*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Values" data-uid="System.Collections.Generic.DTree`2.Values">Values</h4>
+  <div class="markdown level1 summary"><p>Gets a collection containing all values in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;TValue&gt; Values { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Add_System_Collections_Generic_IList__0___1_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Add(System.Collections.Generic.IList%7B%600%7D%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L533">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Add_" data-uid="System.Collections.Generic.DTree`2.Add*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Add_System_Collections_Generic_IList__0___1_" data-uid="System.Collections.Generic.DTree`2.Add(System.Collections.Generic.IList{`0},`1)">Add(IList&lt;TKey&gt;, TValue)</h4>
+  <div class="markdown level1 summary"><p>Adds a value together with the path it is to associate to this tree.
+An exception will be thrown if the path already exists in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(IList&lt;TKey&gt; key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to be associated with the specified path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Add_System_Collections_Generic_IList__0___1_System_Action_System_Collections_Generic_DTree__0__1___.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Add(System.Collections.Generic.IList%7B%600%7D%2C%601%2CSystem.Action%7BSystem.Collections.Generic.DTree%7B%600%2C%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L503">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Add_" data-uid="System.Collections.Generic.DTree`2.Add*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Add_System_Collections_Generic_IList__0___1_System_Action_System_Collections_Generic_DTree__0__1___" data-uid="System.Collections.Generic.DTree`2.Add(System.Collections.Generic.IList{`0},`1,System.Action{System.Collections.Generic.DTree{`0,`1}})">Add(IList&lt;TKey&gt;, TValue, Action&lt;DTree&lt;TKey, TValue&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a value together with the path it is to associate to this tree.
+An exception will be thrown if the path already exists in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DTree&lt;TKey, TValue&gt; Add(IList&lt;TKey&gt; path, TValue value, Action&lt;DTree&lt;TKey, TValue&gt;&gt; nodeCreated)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>A path consists of several keys.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to be associated with the specified path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;&gt;</td>
+        <td><span class="parametername">nodeCreated</span></td>
+        <td><p>A function called everytime a new node is created.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;</td>
+        <td><p>The node that stores the value associated with the specified path,
+if the path and value are successfully added;
+otherwise a <span class="xref">System.ArgumentException</span> will be thrown.
+This node is also the last node along the path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Add_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList__0___1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Add(System.Collections.Generic.KeyValuePair%7BSystem.Collections.Generic.IList%7B%600%7D%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L516">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Add_" data-uid="System.Collections.Generic.DTree`2.Add*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Add_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList__0___1__" data-uid="System.Collections.Generic.DTree`2.Add(System.Collections.Generic.KeyValuePair{System.Collections.Generic.IList{`0},`1})">Add(KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a value together with its associated path to this tree.
+An exception will be thrown if the path already exists in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt; pair)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;, TValue&gt;</td>
+        <td><span class="parametername">pair</span></td>
+        <td><p>The path-value pair to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_AddChild__0__1_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.AddChild(%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L124">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_AddChild_" data-uid="System.Collections.Generic.DTree`2.AddChild*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_AddChild__0__1_" data-uid="System.Collections.Generic.DTree`2.AddChild(`0,`1)">AddChild(TKey, TValue)</h4>
+  <div class="markdown level1 summary"><p>Adds a new child node with the specified key/value pair to this tree node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DTree&lt;TKey, TValue&gt; AddChild(TKey key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the child node to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value of the child node to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;</td>
+        <td><p>The added new child node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_AddChild_System_Collections_Generic_DTree__0__1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.AddChild(System.Collections.Generic.DTree%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L156">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_AddChild_" data-uid="System.Collections.Generic.DTree`2.AddChild*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_AddChild_System_Collections_Generic_DTree__0__1__" data-uid="System.Collections.Generic.DTree`2.AddChild(System.Collections.Generic.DTree{`0,`1})">AddChild(DTree&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a child node to this tree node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddChild(DTree&lt;TKey, TValue&gt; node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td><p>The child node to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_AddChild_System_Collections_Generic_KeyValuePair__0__1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.AddChild(System.Collections.Generic.KeyValuePair%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L147">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_AddChild_" data-uid="System.Collections.Generic.DTree`2.AddChild*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_AddChild_System_Collections_Generic_KeyValuePair__0__1__" data-uid="System.Collections.Generic.DTree`2.AddChild(System.Collections.Generic.KeyValuePair{`0,`1})">AddChild(KeyValuePair&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a new child node with the specified key/value pair to this tree node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DTree&lt;TKey, TValue&gt; AddChild(KeyValuePair&lt;TKey, TValue&gt; pair)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">pair</span></td>
+        <td><p>The key/value pair of the child node to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;</td>
+        <td><p>The added new child node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Clear.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L250">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Clear_" data-uid="System.Collections.Generic.DTree`2.Clear*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Clear" data-uid="System.Collections.Generic.DTree`2.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Clears all descendants from this tree node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Contains_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList__0___1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Contains(System.Collections.Generic.KeyValuePair%7BSystem.Collections.Generic.IList%7B%600%7D%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L322">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Contains_" data-uid="System.Collections.Generic.DTree`2.Contains*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Contains_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList__0___1__" data-uid="System.Collections.Generic.DTree`2.Contains(System.Collections.Generic.KeyValuePair{System.Collections.Generic.IList{`0},`1})">Contains(KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified path-value pair exists in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Contains(KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt; pair)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;, TValue&gt;</td>
+        <td><span class="parametername">pair</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the specified path-value pair exists in the current tree; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_ContainsPath_System_Collections_Generic_IList__0__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.ContainsPath(System.Collections.Generic.IList%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L299">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_ContainsPath_" data-uid="System.Collections.Generic.DTree`2.ContainsPath*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_ContainsPath_System_Collections_Generic_IList__0__" data-uid="System.Collections.Generic.DTree`2.ContainsPath(System.Collections.Generic.IList{`0})">ContainsPath(IList&lt;TKey&gt;)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified path exists in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsPath(IList&lt;TKey&gt; path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>A path consists of several keys.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the specified path exists in the current tree; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_CopyTo_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList__0___1____System_Int32_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.CopyTo(System.Collections.Generic.KeyValuePair%7BSystem.Collections.Generic.IList%7B%600%7D%2C%601%7D%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L267">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_CopyTo_" data-uid="System.Collections.Generic.DTree`2.CopyTo*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_CopyTo_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList__0___1____System_Int32_" data-uid="System.Collections.Generic.DTree`2.CopyTo(System.Collections.Generic.KeyValuePair{System.Collections.Generic.IList{`0},`1}[],System.Int32)">CopyTo(KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt;[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Copies all path-value pairs in this tree to an existing one-dimensional <span class="xref">System.Array</span>, starting at the specified array index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CopyTo(KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt;[] array, int arrayIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;, TValue&gt;[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>The one-dimensional <span class="xref">System.Array</span> that is the destination of the path-value pairs copied from this tree.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">arrayIndex</span></td>
+        <td><p>The zero-based index in <code data-dev-comment-type="paramref" class="paramref">array</code> at which copying begins.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_GetKeyEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.GetKeyEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L581">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_GetKeyEnumerator_" data-uid="System.Collections.Generic.DTree`2.GetKeyEnumerator*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_GetKeyEnumerator" data-uid="System.Collections.Generic.DTree`2.GetKeyEnumerator">GetKeyEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through all keys in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;TKey&gt; GetKeyEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;TKey&gt;</td>
+        <td><p>An enumerator that iterates through all keys in this tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_GetPathEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.GetPathEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L591">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_GetPathEnumerator_" data-uid="System.Collections.Generic.DTree`2.GetPathEnumerator*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_GetPathEnumerator" data-uid="System.Collections.Generic.DTree`2.GetPathEnumerator">GetPathEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through all paths in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;IList&lt;TKey&gt;&gt; GetPathEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;&gt;</td>
+        <td><p>An enumerator that iterates through all paths in this tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_GetValueEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.GetValueEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L606">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_GetValueEnumerator_" data-uid="System.Collections.Generic.DTree`2.GetValueEnumerator*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_GetValueEnumerator" data-uid="System.Collections.Generic.DTree`2.GetValueEnumerator">GetValueEnumerator()</h4>
+  <div class="markdown level1 summary"><p>Returns an enumerator that iterates through all values in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;TValue&gt; GetValueEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;TValue&gt;</td>
+        <td><p>An enumerator that iterates through all values in this tree.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Next.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Next%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L230">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Next_" data-uid="System.Collections.Generic.DTree`2.Next*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Next" data-uid="System.Collections.Generic.DTree`2.Next">Next()</h4>
+  <div class="markdown level1 summary"><p>Randomly returns a leaf descendant of this tree node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DTree&lt;TKey, TValue&gt; Next()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;</td>
+        <td><p>A random leaf descendant of this tree node.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Remove_System_Collections_Generic_IList__0__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Remove(System.Collections.Generic.IList%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L362">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Remove_" data-uid="System.Collections.Generic.DTree`2.Remove*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Remove_System_Collections_Generic_IList__0__" data-uid="System.Collections.Generic.DTree`2.Remove(System.Collections.Generic.IList{`0})">Remove(IList&lt;TKey&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes a descendant node associated with the specified path.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(IList&lt;TKey&gt; path)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>A path consists of several keys.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the specified path exists in this tree and the descendant node associated with that path is successfully removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_Remove_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList__0___1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.Remove(System.Collections.Generic.KeyValuePair%7BSystem.Collections.Generic.IList%7B%600%7D%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L382">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_Remove_" data-uid="System.Collections.Generic.DTree`2.Remove*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_Remove_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList__0___1__" data-uid="System.Collections.Generic.DTree`2.Remove(System.Collections.Generic.KeyValuePair{System.Collections.Generic.IList{`0},`1})">Remove(KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes a descendant node associated with the specified path-value pair.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Remove(KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt; pair)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;, TValue&gt;</td>
+        <td><span class="parametername">pair</span></td>
+        <td><p>The path-value pair to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the specified path exists in this tree and the descendant node associated with that path is successfully removed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_RemoveChild__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.RemoveChild(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L199">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_RemoveChild_" data-uid="System.Collections.Generic.DTree`2.RemoveChild*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_RemoveChild__0_" data-uid="System.Collections.Generic.DTree`2.RemoveChild(`0)">RemoveChild(TKey)</h4>
+  <div class="markdown level1 summary"><p>Removes the child node associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveChild(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the child node associated with the specified key is successfully removed; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_RemoveChild_System_Collections_Generic_DTree__0__1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.RemoveChild(System.Collections.Generic.DTree%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L221">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_RemoveChild_" data-uid="System.Collections.Generic.DTree`2.RemoveChild*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_RemoveChild_System_Collections_Generic_DTree__0__1__" data-uid="System.Collections.Generic.DTree`2.RemoveChild(System.Collections.Generic.DTree{`0,`1})">RemoveChild(DTree&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes the specified child node from this tree node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool RemoveChild(DTree&lt;TKey, TValue&gt; node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td><p>The child node to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the child node is successfully removed; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_TryAdd_System_Collections_Generic_IList__0___1_System_Action_System_Collections_Generic_DTree__0__1___.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.TryAdd(System.Collections.Generic.IList%7B%600%7D%2C%601%2CSystem.Action%7BSystem.Collections.Generic.DTree%7B%600%2C%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L462">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_TryAdd_" data-uid="System.Collections.Generic.DTree`2.TryAdd*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_TryAdd_System_Collections_Generic_IList__0___1_System_Action_System_Collections_Generic_DTree__0__1___" data-uid="System.Collections.Generic.DTree`2.TryAdd(System.Collections.Generic.IList{`0},`1,System.Action{System.Collections.Generic.DTree{`0,`1}})">TryAdd(IList&lt;TKey&gt;, TValue, Action&lt;DTree&lt;TKey, TValue&gt;&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds a value together with the path it is to associate to this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DTree&lt;TKey, TValue&gt; TryAdd(IList&lt;TKey&gt; path, TValue value, Action&lt;DTree&lt;TKey, TValue&gt;&gt; nodeCreated = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>A path consists of several keys.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value associated with the specified path.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;&gt;</td>
+        <td><span class="parametername">nodeCreated</span></td>
+        <td><p>A function called everytime a new node is created.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;</td>
+        <td><p>A node that stores the value associated with the specified path, if the path and value are both successfully added;
+<code>null</code> if a value is already associated with the path.
+This node is also the last node along the path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_TryGetChild__0_System_Collections_Generic_DTree__0__1___.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.TryGetChild(%600%2CSystem.Collections.Generic.DTree%7B%600%2C%601%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L184">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_TryGetChild_" data-uid="System.Collections.Generic.DTree`2.TryGetChild*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_TryGetChild__0_System_Collections_Generic_DTree__0__1___" data-uid="System.Collections.Generic.DTree`2.TryGetChild(`0,System.Collections.Generic.DTree{`0,`1}@)">TryGetChild(TKey, out DTree&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets the child node associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetChild(TKey childKey, out DTree&lt;TKey, TValue&gt; child)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">childKey</span></td>
+        <td><p>The key of the child node.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">child</span></td>
+        <td><p>Returns the child node associated with the specified key, if the key is found; otherwise, <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_TryGetNode_System_Collections_Generic_IList__0__System_Collections_Generic_DTree__0__1___.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.TryGetNode(System.Collections.Generic.IList%7B%600%7D%2CSystem.Collections.Generic.DTree%7B%600%2C%601%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L393">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_TryGetNode_" data-uid="System.Collections.Generic.DTree`2.TryGetNode*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_TryGetNode_System_Collections_Generic_IList__0__System_Collections_Generic_DTree__0__1___" data-uid="System.Collections.Generic.DTree`2.TryGetNode(System.Collections.Generic.IList{`0},System.Collections.Generic.DTree{`0,`1}@)">TryGetNode(IList&lt;TKey&gt;, out DTree&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets the descendant node of this tree associated with the specified path. The path should already exist in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetNode(IList&lt;TKey&gt; path, out DTree&lt;TKey, TValue&gt; node)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>A path consists of several keys.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">node</span></td>
+        <td><p>Returns the descendant node associated with the specified path, if the path exists in this tree; otherwise, <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the specified path exists in this tree and the descendant node associated with that path is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_TryGetValue_System_Collections_Generic_IList__0___1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.TryGetValue(System.Collections.Generic.IList%7B%600%7D%2C%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L404">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_TryGetValue_" data-uid="System.Collections.Generic.DTree`2.TryGetValue*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_TryGetValue_System_Collections_Generic_IList__0___1__" data-uid="System.Collections.Generic.DTree`2.TryGetValue(System.Collections.Generic.IList{`0},`1@)">TryGetValue(IList&lt;TKey&gt;, out TValue)</h4>
+  <div class="markdown level1 summary"><p>Gets the value associated with the specified path in this tree. The path should already exist in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetValue(IList&lt;TKey&gt; path, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>A path consists of several keys.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Returns the value asociated with the specified path, if the path exists in this tree; otherwise, <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the specified path exists in this tree and the value associated with that path is returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_TrySetValue_System_Collections_Generic_IList__0___1_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.TrySetValue(System.Collections.Generic.IList%7B%600%7D%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L426">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_TrySetValue_" data-uid="System.Collections.Generic.DTree`2.TrySetValue*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_TrySetValue_System_Collections_Generic_IList__0___1_" data-uid="System.Collections.Generic.DTree`2.TrySetValue(System.Collections.Generic.IList{`0},`1)">TrySetValue(IList&lt;TKey&gt;, TValue)</h4>
+  <div class="markdown level1 summary"><p>Sets the value associated with the specified path in this tree. The path should already exist in this tree.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TrySetValue(IList&lt;TKey&gt; path, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;</td>
+        <td><span class="parametername">path</span></td>
+        <td><p>A path consists of several keys.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to be associated with the specified path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if the specified path exists in this tree and the value is successfully associated with that path.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList_TKey__TValue___IsReadOnly.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BSystem%23Collections%23Generic%23IList%7BTKey%7D%2CTValue%7D%7D%23IsReadOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L285">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList_TKey__TValue___IsReadOnly_" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#Collections#Generic#IList{TKey},TValue}}#IsReadOnly*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList_TKey__TValue___IsReadOnly" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#Collections#Generic#IList{TKey},TValue}}#IsReadOnly">ICollection&lt;KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt;&gt;.IsReadOnly</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt;&gt;.IsReadOnly { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_System_Collections_Generic_IDictionary_System_Collections_Generic_IList_TKey__TValue__ContainsKey_System_Collections_Generic_IList__0__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.System%23Collections%23Generic%23IDictionary%7BSystem%23Collections%23Generic%23IList%7BTKey%7D%2CTValue%7D%23ContainsKey(System.Collections.Generic.IList%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L312">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_System_Collections_Generic_IDictionary_System_Collections_Generic_IList_TKey__TValue__ContainsKey_" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#IDictionary{System#Collections#Generic#IList{TKey},TValue}#ContainsKey*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_System_Collections_Generic_IDictionary_System_Collections_Generic_IList_TKey__TValue__ContainsKey_System_Collections_Generic_IList__0__" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#IDictionary{System#Collections#Generic#IList{TKey},TValue}#ContainsKey(System.Collections.Generic.IList{`0})">IDictionary&lt;IList&lt;TKey&gt;, TValue&gt;.ContainsKey(IList&lt;TKey&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IDictionary&lt;IList&lt;TKey&gt;, TValue&gt;.ContainsKey(IList&lt;TKey&gt; key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;</td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_System_Collections_Generic_IDictionary_System_Collections_Generic_IList_TKey__TValue__Keys.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.System%23Collections%23Generic%23IDictionary%7BSystem%23Collections%23Generic%23IList%7BTKey%7D%2CTValue%7D%23Keys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L558">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_System_Collections_Generic_IDictionary_System_Collections_Generic_IList_TKey__TValue__Keys_" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#IDictionary{System#Collections#Generic#IList{TKey},TValue}#Keys*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_System_Collections_Generic_IDictionary_System_Collections_Generic_IList_TKey__TValue__Keys" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#IDictionary{System#Collections#Generic#IList{TKey},TValue}#Keys">IDictionary&lt;IList&lt;TKey&gt;, TValue&gt;.Keys</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICollection&lt;IList&lt;TKey&gt;&gt; IDictionary&lt;IList&lt;TKey&gt;, TValue&gt;.Keys { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_System_Collections_Generic_IDictionary_System_Collections_Generic_IList_TKey__TValue__Values.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.System%23Collections%23Generic%23IDictionary%7BSystem%23Collections%23Generic%23IList%7BTKey%7D%2CTValue%7D%23Values%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L559">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_System_Collections_Generic_IDictionary_System_Collections_Generic_IList_TKey__TValue__Values_" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#IDictionary{System#Collections#Generic#IList{TKey},TValue}#Values*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_System_Collections_Generic_IDictionary_System_Collections_Generic_IList_TKey__TValue__Values" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#IDictionary{System#Collections#Generic#IList{TKey},TValue}#Values">IDictionary&lt;IList&lt;TKey&gt;, TValue&gt;.Values</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICollection&lt;TValue&gt; IDictionary&lt;IList&lt;TKey&gt;, TValue&gt;.Values { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;TValue&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_DTree_TKey_TValue___GetEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.System%23Collections%23Generic%23IEnumerable%7BSystem%23Collections%23Generic%23DTree%7BTKey%2CTValue%7D%7D%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L566">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_DTree_TKey_TValue___GetEnumerator_" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#DTree{TKey,TValue}}#GetEnumerator*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_DTree_TKey_TValue___GetEnumerator" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#DTree{TKey,TValue}}#GetEnumerator">IEnumerable&lt;DTree&lt;TKey, TValue&gt;&gt;.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator&lt;DTree&lt;TKey, TValue&gt;&gt; IEnumerable&lt;DTree&lt;TKey, TValue&gt;&gt;.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<a class="xref" href="System.Collections.Generic.DTree-2.html">DTree</a>&lt;TKey, TValue&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_IList_TKey___GetEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.System%23Collections%23Generic%23IEnumerable%7BSystem%23Collections%23Generic%23IList%7BTKey%7D%7D%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L597">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_IList_TKey___GetEnumerator_" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#IList{TKey}}#GetEnumerator*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_IList_TKey___GetEnumerator" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#IList{TKey}}#GetEnumerator">IEnumerable&lt;IList&lt;TKey&gt;&gt;.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator&lt;IList&lt;TKey&gt;&gt; IEnumerable&lt;IList&lt;TKey&gt;&gt;.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList_TKey__TValue___GetEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.System%23Collections%23Generic%23IEnumerable%7BSystem%23Collections%23Generic%23KeyValuePair%7BSystem%23Collections%23Generic%23IList%7BTKey%7D%2CTValue%7D%7D%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L571">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList_TKey__TValue___GetEnumerator_" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#KeyValuePair{System#Collections#Generic#IList{TKey},TValue}}#GetEnumerator*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_System_Collections_Generic_IList_TKey__TValue___GetEnumerator" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#KeyValuePair{System#Collections#Generic#IList{TKey},TValue}}#GetEnumerator">IEnumerable&lt;KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt;&gt;.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator&lt;KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt;&gt; IEnumerable&lt;KeyValuePair&lt;IList&lt;TKey&gt;, TValue&gt;&gt;.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;<span class="xref">System.Collections.Generic.IList</span>&lt;TKey&gt;, TValue&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_System_Collections_Generic_ITree_System_Collections_Generic_KeyValuePair_TKey_TValue___Children.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.System%23Collections%23Generic%23ITree%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CTValue%7D%7D%23Children%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L107">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_System_Collections_Generic_ITree_System_Collections_Generic_KeyValuePair_TKey_TValue___Children_" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#ITree{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Children*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_System_Collections_Generic_ITree_System_Collections_Generic_KeyValuePair_TKey_TValue___Children" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#ITree{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Children">ITree&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Children</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IList&lt;ITree&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;&gt; ITree&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Children { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;<a class="xref" href="System.Collections.Generic.ITree-1.html">ITree</a>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_System_Collections_Generic_ITree_System_Collections_Generic_KeyValuePair_TKey_TValue___Parent.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.System%23Collections%23Generic%23ITree%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CTValue%7D%7D%23Parent%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L84">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_System_Collections_Generic_ITree_System_Collections_Generic_KeyValuePair_TKey_TValue___Parent_" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#ITree{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Parent*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_System_Collections_Generic_ITree_System_Collections_Generic_KeyValuePair_TKey_TValue___Parent" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#ITree{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Parent">ITree&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Parent</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ITree&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; ITree&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Parent { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="System.Collections.Generic.ITree-1.html">ITree</a>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_System_Collections_Generic_ITree_System_Collections_Generic_KeyValuePair_TKey_TValue___Value.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.System%23Collections%23Generic%23ITree%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CTValue%7D%7D%23Value%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L67">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_System_Collections_Generic_ITree_System_Collections_Generic_KeyValuePair_TKey_TValue___Value_" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#ITree{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Value*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_System_Collections_Generic_ITree_System_Collections_Generic_KeyValuePair_TKey_TValue___Value" data-uid="System.Collections.Generic.DTree`2.System#Collections#Generic#ITree{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Value">ITree&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Value</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">KeyValuePair&lt;TKey, TValue&gt; ITree&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Value { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2_System_Collections_IEnumerable_GetEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602.System%23Collections%23IEnumerable%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L561">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_DTree_2_System_Collections_IEnumerable_GetEnumerator_" data-uid="System.Collections.Generic.DTree`2.System#Collections#IEnumerable#GetEnumerator*"></a>
+  <h4 id="System_Collections_Generic_DTree_2_System_Collections_IEnumerable_GetEnumerator" data-uid="System.Collections.Generic.DTree`2.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="System.Collections.Generic.IDTree-2.html">IDTree&lt;TKey, TValue&gt;</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.ITree-1.html">ITree&lt;T&gt;</a>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.ICollection&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_IsEmpty__1_System_Collections_Generic_ICollection___0__">ArrayEx.IsEmpty&lt;T&gt;(ICollection&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_IsNotEmpty__1_System_Collections_Generic_ICollection___0__">ArrayEx.IsNotEmpty&lt;T&gt;(ICollection&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_IsNullOrEmpty__1_System_Collections_Generic_ICollection___0__">ArrayEx.IsNullOrEmpty&lt;T&gt;(ICollection&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_IsNotNullOrEmpty__1_System_Collections_Generic_ICollection___0__">ArrayEx.IsNotNullOrEmpty&lt;T&gt;(ICollection&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToConcatString_System_Collections_IEnumerable_System_String_">ArrayEx.ToConcatString(IEnumerable, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToConcatString_System_Collections_IEnumerable_System_Char_">ArrayEx.ToConcatString(IEnumerable, Char)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Singleton__1___0_">ArrayEx.Singleton&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_CreateArray__1___0_System_Int32_">ArrayEx.CreateArray&lt;T&gt;(T, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetCachedEnumerator__1_System_Collections_IEnumerable_">ArrayEx.GetCachedEnumerator&lt;T&gt;(IEnumerable)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetCachedEnumerator__1_System_Collections_IEnumerable_System_Func_System_Object___0__">ArrayEx.GetCachedEnumerator&lt;T&gt;(IEnumerable, Func&lt;Object, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_System_Boolean_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArray__1_System_Collections_IEnumerable_">ArrayEx.ToArray&lt;T&gt;(IEnumerable)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArray__2_System_Collections_IEnumerable_System_Func___0___1__System_Boolean_">ArrayEx.ToArray&lt;T, TOut&gt;(IEnumerable, Func&lt;T, TOut&gt;, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToValueIndexedDictionary__2_System_Collections_Generic_IDictionary___0___1__">ArrayEx.ToValueIndexedDictionary&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToDictionary__2_System_Collections_Generic_IEnumerable_System_Object__">ArrayEx.ToDictionary&lt;TKey, TValue&gt;(IEnumerable&lt;Object&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToValueIndexedDictionary__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IDictionary___1___0__">ArrayEx.ToValueIndexedDictionary&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IDictionary&lt;TValue, TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_TryGetValueOrDefault__2_System_Collections_Generic_IDictionary___0___1____0___1_">ArrayEx.TryGetValueOrDefault&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey, TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_TryGetValues__2_System_Collections_Generic_IDictionary___0___1____0___">ArrayEx.TryGetValues&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_TryAdd__2_System_Collections_Generic_IDictionary___0___1____0___1_">ArrayEx.TryAdd&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey, TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_SetOrAdd__2_System_Collections_Generic_IDictionary___0___1____0___1_">ArrayEx.SetOrAdd&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey, TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Update__2_System_Collections_Generic_IDictionary___0___1____0___1_">ArrayEx.Update&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey, TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Update__2_System_Collections_Generic_IDictionary___0___1____0___1_System_Func___1___1_System_Boolean__">ArrayEx.Update&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey, TValue, Func&lt;TValue, TValue, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Add__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair___0___1___">ArrayEx.Add&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Add__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IEnumerator_System_Collections_Generic_KeyValuePair___0___1___">ArrayEx.Add&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Add__2_System_Collections_Generic_IDictionary___0___1__System_Func___1___0__System_Collections_Generic_IEnumerable___1__">ArrayEx.Add&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, Func&lt;TValue, TKey&gt;, IEnumerable&lt;TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Add__2_System_Collections_Generic_IDictionary___0___1____0_____1___">ArrayEx.Add&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey[], TValue[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_AddWithDuplicationCheck__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IEnumerable_System_Pair___0___1___">ArrayEx.AddWithDuplicationCheck&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IEnumerable&lt;Pair&lt;TKey, TValue&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_AddWithDuplicationCheck__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair___0___1___">ArrayEx.AddWithDuplicationCheck&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_AddWithDuplicationCheck__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IEnumerator_System_Collections_Generic_KeyValuePair___0___1___">ArrayEx.AddWithDuplicationCheck&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToKeysAndValues__2_System_Collections_Generic_IDictionary___0___1____0______1____">ArrayEx.ToKeysAndValues&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, out TKey[], out TValue[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Stat__2_System_Collections_Generic_IDictionary___0___1____0___1_">ArrayEx.Stat&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey, TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.In&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAny&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAll&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.In&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAny&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAll&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IList___0__">GeneralEx.In&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0___0___">GeneralEx.In&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.NotIn&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.NotIn&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IList___0__">GeneralEx.NotIn&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0___0___">GeneralEx.NotIn&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNull_System_Object_">GeneralEx.IsNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNotNull_System_Object_">GeneralEx.IsNotNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32__1___0_">GeneralEx.ToInt32&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32OrNull__1___0_">GeneralEx.ToInt32OrNull&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_System_IO_Stream_">StreamEx.Serialize&lt;T&gt;(T, Stream)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_System_String_System_IO_FileMode_">StreamEx.Serialize&lt;T&gt;(T, String, FileMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_">StreamEx.Serialize&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Dump_System_Collections_IEnumerable_System_Type_System_IO_Stream_">StreamEx.Dump(IEnumerable, Type, Stream)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_Remove__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_ICollection___0__">GenericCollectionEx.Remove&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, ICollection&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_RemoveByValue__2_System_Collections_Generic_IDictionary___0___1____1_">GenericCollectionEx.RemoveByValue&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_RemoveByValue__2_System_Collections_Generic_IDictionary___0___1__System_Func___1_System_Boolean__">GenericCollectionEx.RemoveByValue&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, Func&lt;TValue, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_ContainsAnyKey__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IList___0__">GenericCollectionEx.ContainsAnyKey&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IList&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_ContainsAllKeys__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IList___0__">GenericCollectionEx.ContainsAllKeys&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IList&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.TreeEx.html#System_Collections_Generic_TreeEx_GetDepth__1_System_Collections_Generic_ITree___0__">TreeEx.GetDepth&lt;T&gt;(ITree&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.TreeEx.html#System_Collections_Generic_TreeEx_GetPath__2_System_Collections_Generic_IDTree___0___1__">TreeEx.GetPath&lt;TKey, TValue&gt;(IDTree&lt;TKey, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.TreeEx.html#System_Collections_Generic_TreeEx_GetBreadthFirstEnumerator__1_System_Collections_Generic_ITree___0__">TreeEx.GetBreadthFirstEnumerator&lt;T&gt;(ITree&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.TreeEx.html#System_Collections_Generic_TreeEx_GetPreOrderEnumerator__1_System_Collections_Generic_ITree___0__">TreeEx.GetPreOrderEnumerator&lt;T&gt;(ITree&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.TreeEx.html#System_Collections_Generic_TreeEx_GetPostOrderEnumerator__1_System_Collections_Generic_ITree___0__">TreeEx.GetPostOrderEnumerator&lt;T&gt;(ITree&lt;T&gt;)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_DTree_2.md&amp;value=---%0Auid%3A%20System.Collections.Generic.DTree%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/DTree.cs/#L53" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

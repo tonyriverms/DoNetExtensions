@@ -1,0 +1,1838 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ReadOnlyArrayDictionary&lt;TKey, TValue&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ReadOnlyArrayDictionary&lt;TKey, TValue&gt;
+   ">
+    <meta name="generator" content="docfx 2.39.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2">
+  
+  
+  <h1 id="System_Collections_Generic_ReadOnlyArrayDictionary_2" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2" class="text-break">Class ReadOnlyArrayDictionary&lt;TKey, TValue&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Implements <span class="xref">System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;</span>, <span class="xref">System.Collections.Generic.IReadOnlyDictionary&lt;TKey, TValue&gt;</span> and <span class="xref">System.Collections.Generic.IList&lt;T&gt;</span> using a <code data-dev-comment-type="typeparamref" class="typeparamref">TKey</code> array and a <code data-dev-comment-type="typeparamref" class="typeparamref">TValue</code> array.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">ReadOnlyArrayDictionary&lt;TKey, TValue&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.Generic.IDictionary</span>&lt;TKey, TValue&gt;</div>
+    <div><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IReadOnlyDictionary</span>&lt;TKey, TValue&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IList</span>&lt;TValue&gt;</div>
+    <div><span class="xref">System.Collections.Generic.ICollection</span>&lt;TValue&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.Collections.Generic.html">System.Collections.Generic</a></h6>
+  <h6><strong>Assembly</strong>: DoNetExtension.dll</h6>
+  <h5 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ReadOnlyArrayDictionary&lt;TKey, TValue&gt; : IDictionary&lt;TKey, TValue&gt;, ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;, IReadOnlyDictionary&lt;TKey, TValue&gt;, IReadOnlyCollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;, IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;, IList&lt;TValue&gt;, ICollection&lt;TValue&gt;, IEnumerable&lt;TValue&gt;, IEnumerable</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>The type of keys in this dictionary.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>The type of values in this dictionary.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2__ctor__0____1___.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.%23ctor(%600%5B%5D%2C%601%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L25">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2__ctor_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.#ctor*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2__ctor__0____1___" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.#ctor(`0[],`1[])">ReadOnlyArrayDictionary(TKey[], TValue[])</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Collections.Generic.ReadOnlyArrayDictionary-2.html">ReadOnlyArrayDictionary&lt;TKey, TValue&gt;</a> class using a <code data-dev-comment-type="typeparamref" class="typeparamref">TKey</code> array and a <code data-dev-comment-type="typeparamref" class="typeparamref">TValue</code> array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ReadOnlyArrayDictionary(TKey[] keys, TValue[] values)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TKey[]</td>
+        <td><span class="parametername">keys</span></td>
+        <td><p>An <code data-dev-comment-type="typeparamref" class="typeparamref">TKey</code> array whose element at an index <code>i</code> is the key associated with the <code>i</code>th element in <code data-dev-comment-type="paramref" class="paramref">values</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td>TValue[]</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>The <code data-dev-comment-type="typeparamref" class="typeparamref">TValue</code> array whose element at an index <code>i</code> is using the <code>i</code>th element in <code data-dev-comment-type="paramref" class="paramref">values</code> as the key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_Count.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L99">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_Count_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.Count*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_Count" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.Count">Count</h4>
+  <div class="markdown level1 summary"><p>Gets the number of key/value pairs contained in this <a class="xref" href="System.Collections.Generic.ReadOnlyArrayDictionary-2.html">ReadOnlyArrayDictionary&lt;TKey, TValue&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_Item__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.Item(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L91">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_Item_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.Item*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_Item__0_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.Item(`0)">Item[TKey]</h4>
+  <div class="markdown level1 summary"><p>Gets the value associated with the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue this[TKey key] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get or set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><p>The value associated with the specified key. If the specified key is not found, a get operation throws a <span class="xref">System.Collections.Generic.KeyNotFoundException</span>, and a set operation creates a new value with the specified key.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_Keys.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.Keys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L59">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_Keys_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.Keys*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_Keys" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.Keys">Keys</h4>
+  <div class="markdown level1 summary"><p>Gets a collection containing the keys in this <a class="xref" href="System.Collections.Generic.ReadOnlyArrayDictionary-2.html">ReadOnlyArrayDictionary&lt;TKey, TValue&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;TKey&gt; Keys { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TKey&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_Values.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.Values%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L81">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_Values_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.Values*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_Values" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.Values">Values</h4>
+  <div class="markdown level1 summary"><p>Gets a collection containing the values in this <a class="xref" href="System.Collections.Generic.ReadOnlyArrayDictionary-2.html">ReadOnlyArrayDictionary&lt;TKey, TValue&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;TValue&gt; Values { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_ContainsKey__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.ContainsKey(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L51">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_ContainsKey_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.ContainsKey*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_ContainsKey__0_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.ContainsKey(`0)">ContainsKey(TKey)</h4>
+  <div class="markdown level1 summary"><p>Determines whether this <a class="xref" href="System.Collections.Generic.ReadOnlyArrayDictionary-2.html">ReadOnlyArrayDictionary&lt;TKey, TValue&gt;</a> contains a specific key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsKey(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to locate in this <a class="xref" href="System.Collections.Generic.ReadOnlyArrayDictionary-2.html">ReadOnlyArrayDictionary&lt;TKey, TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this <a class="xref" href="System.Collections.Generic.ReadOnlyArrayDictionary-2.html">ReadOnlyArrayDictionary&lt;TKey, TValue&gt;</a> contains a value with the specified key; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_IndexOf__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.IndexOf(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L36">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_IndexOf_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.IndexOf*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_IndexOf__0_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.IndexOf(`0)">IndexOf(TKey)</h4>
+  <div class="markdown level1 summary"><p>Gets the index of specific key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int IndexOf(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key to locate in this <a class="xref" href="System.Collections.Generic.ReadOnlyArrayDictionary-2.html">ReadOnlyArrayDictionary&lt;TKey, TValue&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>The index of the specific key if the key exists in this <a class="xref" href="System.Collections.Generic.ReadOnlyArrayDictionary-2.html">ReadOnlyArrayDictionary&lt;TKey, TValue&gt;</a>; otherwise -1.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_TryGetValue__0__1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.TryGetValue(%600%2C%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L73">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_TryGetValue_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.TryGetValue*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_TryGetValue__0__1__" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.TryGetValue(`0,`1@)">TryGetValue(TKey, out TValue)</h4>
+  <div class="markdown level1 summary"><p>Gets the value associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetValue(TKey key, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to get.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the value parameter. This parameter is passed uninitialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><code>true</code> if this <a class="xref" href="System.Collections.Generic.ReadOnlyArrayDictionary-2.html">ReadOnlyArrayDictionary&lt;TKey, TValue&gt;</a> contains a value with the specified key; otherwise, <code>false</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Add_System_Collections_Generic_KeyValuePair__0__1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CTValue%7D%7D%23Add(System.Collections.Generic.KeyValuePair%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L160">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Add_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Add*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Add_System_Collections_Generic_KeyValuePair__0__1__" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Add(System.Collections.Generic.KeyValuePair{`0,`1})">ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Add(KeyValuePair&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Add(KeyValuePair&lt;TKey, TValue&gt; item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Clear.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CTValue%7D%7D%23Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L165">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Clear_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Clear*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Clear" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Clear">ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Clear()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Contains_System_Collections_Generic_KeyValuePair__0__1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CTValue%7D%7D%23Contains(System.Collections.Generic.KeyValuePair%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L170">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Contains_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Contains*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Contains_System_Collections_Generic_KeyValuePair__0__1__" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Contains(System.Collections.Generic.KeyValuePair{`0,`1})">ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Contains(KeyValuePair&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Contains(KeyValuePair&lt;TKey, TValue&gt; item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___CopyTo_System_Collections_Generic_KeyValuePair__0__1____System_Int32_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CTValue%7D%7D%23CopyTo(System.Collections.Generic.KeyValuePair%7B%600%2C%601%7D%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L178">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___CopyTo_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#CopyTo*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___CopyTo_System_Collections_Generic_KeyValuePair__0__1____System_Int32_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)">ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.CopyTo(KeyValuePair&lt;TKey, TValue&gt;[], Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.CopyTo(KeyValuePair&lt;TKey, TValue&gt;[] array, int arrayIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;[]</td>
+        <td><span class="parametername">array</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">arrayIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Count.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CTValue%7D%7D%23Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L184">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Count_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Count*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Count" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Count">ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Count</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Count { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___IsReadOnly.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CTValue%7D%7D%23IsReadOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L189">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___IsReadOnly_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#IsReadOnly*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___IsReadOnly" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#IsReadOnly">ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.IsReadOnly</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.IsReadOnly { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Remove_System_Collections_Generic_KeyValuePair__0__1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CTValue%7D%7D%23Remove(System.Collections.Generic.KeyValuePair%7B%600%2C%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L194">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Remove_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Remove*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Remove_System_Collections_Generic_KeyValuePair__0__1__" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Remove(System.Collections.Generic.KeyValuePair{`0,`1})">ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Remove(KeyValuePair&lt;TKey, TValue&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.Remove(KeyValuePair&lt;TKey, TValue&gt; item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;</td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Add__1_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BTValue%7D%23Add(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L234">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Add_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#Add*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Add__1_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#Add(`1)">ICollection&lt;TValue&gt;.Add(TValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection&lt;TValue&gt;.Add(TValue item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Clear.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BTValue%7D%23Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L239">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Clear_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#Clear*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Clear" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#Clear">ICollection&lt;TValue&gt;.Clear()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection&lt;TValue&gt;.Clear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Contains__1_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BTValue%7D%23Contains(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L244">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Contains_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#Contains*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Contains__1_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#Contains(`1)">ICollection&lt;TValue&gt;.Contains(TValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;TValue&gt;.Contains(TValue item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__CopyTo__1___System_Int32_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BTValue%7D%23CopyTo(%601%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L249">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__CopyTo_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#CopyTo*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__CopyTo__1___System_Int32_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#CopyTo(`1[],System.Int32)">ICollection&lt;TValue&gt;.CopyTo(TValue[], Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection&lt;TValue&gt;.CopyTo(TValue[] array, int arrayIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TValue[]</td>
+        <td><span class="parametername">array</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">arrayIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Count.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BTValue%7D%23Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L254">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Count_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#Count*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Count" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#Count">ICollection&lt;TValue&gt;.Count</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int ICollection&lt;TValue&gt;.Count { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__IsReadOnly.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BTValue%7D%23IsReadOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L259">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__IsReadOnly_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#IsReadOnly*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__IsReadOnly" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#IsReadOnly">ICollection&lt;TValue&gt;.IsReadOnly</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;TValue&gt;.IsReadOnly { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Remove__1_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23ICollection%7BTValue%7D%23Remove(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L269">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Remove_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#Remove*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_ICollection_TValue__Remove__1_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#ICollection{TValue}#Remove(`1)">ICollection&lt;TValue&gt;.Remove(TValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;TValue&gt;.Remove(TValue item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Add__0__1_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CTValue%7D%23Add(%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L106">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Add_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#Add*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Add__0__1_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#Add(`0,`1)">IDictionary&lt;TKey, TValue&gt;.Add(TKey, TValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IDictionary&lt;TKey, TValue&gt;.Add(TKey key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__ContainsKey__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CTValue%7D%23ContainsKey(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L111">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__ContainsKey_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#ContainsKey*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__ContainsKey__0_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#ContainsKey(`0)">IDictionary&lt;TKey, TValue&gt;.ContainsKey(TKey)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IDictionary&lt;TKey, TValue&gt;.ContainsKey(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Item__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CTValue%7D%23Item(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L146">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Item_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#Item*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Item__0_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#Item(`0)">IDictionary&lt;TKey, TValue&gt;.Item[TKey]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TValue IDictionary&lt;TKey, TValue&gt;.this[TKey key] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Keys.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CTValue%7D%23Keys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L116">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Keys_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#Keys*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Keys" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#Keys">IDictionary&lt;TKey, TValue&gt;.Keys</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICollection&lt;TKey&gt; IDictionary&lt;TKey, TValue&gt;.Keys { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;TKey&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Remove__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CTValue%7D%23Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L121">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Remove_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#Remove*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Remove__0_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#Remove(`0)">IDictionary&lt;TKey, TValue&gt;.Remove(TKey)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IDictionary&lt;TKey, TValue&gt;.Remove(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__TryGetValue__0__1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CTValue%7D%23TryGetValue(%600%2C%601%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L126">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__TryGetValue_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#TryGetValue*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__TryGetValue__0__1__" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#TryGetValue(`0,`1@)">IDictionary&lt;TKey, TValue&gt;.TryGetValue(TKey, out TValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IDictionary&lt;TKey, TValue&gt;.TryGetValue(TKey key, out TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Values.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CTValue%7D%23Values%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L141">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Values_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#Values*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IDictionary_TKey_TValue__Values" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IDictionary{TKey,TValue}#Values">IDictionary&lt;TKey, TValue&gt;.Values</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICollection&lt;TValue&gt; IDictionary&lt;TKey, TValue&gt;.Values { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;TValue&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_TKey_TValue___GetEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IEnumerable%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CTValue%7D%7D%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L199">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_TKey_TValue___GetEnumerator_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#KeyValuePair{TKey,TValue}}#GetEnumerator*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_TKey_TValue___GetEnumerator" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#KeyValuePair{TKey,TValue}}#GetEnumerator">IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt; IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, TValue&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IEnumerable_TValue__GetEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IEnumerable%7BTValue%7D%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L274">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IEnumerable_TValue__GetEnumerator_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IEnumerable{TValue}#GetEnumerator*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IEnumerable_TValue__GetEnumerator" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IEnumerable{TValue}#GetEnumerator">IEnumerable&lt;TValue&gt;.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator&lt;TValue&gt; IEnumerable&lt;TValue&gt;.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;TValue&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IList_TValue__IndexOf__1_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IList%7BTValue%7D%23IndexOf(%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L264">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IList_TValue__IndexOf_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IList{TValue}#IndexOf*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IList_TValue__IndexOf__1_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IList{TValue}#IndexOf(`1)">IList&lt;TValue&gt;.IndexOf(TValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int IList&lt;TValue&gt;.IndexOf(TValue item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IList_TValue__Insert_System_Int32__1_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IList%7BTValue%7D%23Insert(System.Int32%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L211">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IList_TValue__Insert_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IList{TValue}#Insert*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IList_TValue__Insert_System_Int32__1_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IList{TValue}#Insert(System.Int32,`1)">IList&lt;TValue&gt;.Insert(Int32, TValue)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IList&lt;TValue&gt;.Insert(int index, TValue item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IList_TValue__Item_System_Int32_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IList%7BTValue%7D%23Item(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L221">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IList_TValue__Item_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IList{TValue}#Item*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IList_TValue__Item_System_Int32_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IList{TValue}#Item(System.Int32)">IList&lt;TValue&gt;.Item[Int32]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TValue IList&lt;TValue&gt;.this[int index] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IList_TValue__RemoveAt_System_Int32_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23Generic%23IList%7BTValue%7D%23RemoveAt(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L216">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IList_TValue__RemoveAt_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IList{TValue}#RemoveAt*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_Generic_IList_TValue__RemoveAt_System_Int32_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#Generic#IList{TValue}#RemoveAt(System.Int32)">IList&lt;TValue&gt;.RemoveAt(Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IList&lt;TValue&gt;.RemoveAt(int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">index</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_IEnumerable_GetEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602.System%23Collections%23IEnumerable%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L205">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_IEnumerable_GetEnumerator_" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#IEnumerable#GetEnumerator*"></a>
+  <h4 id="System_Collections_Generic_ReadOnlyArrayDictionary_2_System_Collections_IEnumerable_GetEnumerator" data-uid="System.Collections.Generic.ReadOnlyArrayDictionary`2.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.ICollection&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IReadOnlyDictionary&lt;TKey, TValue&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IReadOnlyCollection&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IList&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.ICollection&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArrayOrNull__1_System_Collections_Generic_IList___0__">ArrayEx.ToArrayOrNull&lt;T&gt;(IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArrayOrNull__1_System_Collections_Generic_IList___0__System_Int32_">ArrayEx.ToArrayOrNull&lt;T&gt;(IList&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArrayThenClear__1_System_Collections_Generic_IList___0__">ArrayEx.ToArrayThenClear&lt;T&gt;(IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArrayOrNullThenClear__1_System_Collections_Generic_IList___0__">ArrayEx.ToArrayOrNullThenClear&lt;T&gt;(IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToConcatString_System_Collections_IEnumerable_System_String_">ArrayEx.ToConcatString(IEnumerable, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToConcatString_System_Collections_IEnumerable_System_Char_">ArrayEx.ToConcatString(IEnumerable, Char)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_SubArray__1_System_Collections_Generic_IList___0__System_Int32_System_Int32_">ArrayEx.SubArray&lt;T&gt;(IList&lt;T&gt;, Int32, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_SubFirst__1_System_Collections_Generic_IList___0__System_Int32_">ArrayEx.SubFirst&lt;T&gt;(IList&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_SubLast__1_System_Collections_Generic_IList___0__System_Int32_">ArrayEx.SubLast&lt;T&gt;(IList&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ForEach__1_System_Collections_Generic_IList___0__System_Action___0__">ArrayEx.ForEach&lt;T&gt;(IList&lt;T&gt;, Action&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ForEach__1_System_Collections_Generic_IList___0__System_Action_System_Int32___0__">ArrayEx.ForEach&lt;T&gt;(IList&lt;T&gt;, Action&lt;Int32, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ForEach__1_System_Collections_Generic_IList___0__System_Func_System_Int32___0_System_Boolean__">ArrayEx.ForEach&lt;T&gt;(IList&lt;T&gt;, Func&lt;Int32, T, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ForEach__1_System_Collections_Generic_IList___0__System_Func___0_System_Boolean__">ArrayEx.ForEach&lt;T&gt;(IList&lt;T&gt;, Func&lt;T, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Singleton__1___0_">ArrayEx.Singleton&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_CreateArray__1___0_System_Int32_">ArrayEx.CreateArray&lt;T&gt;(T, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetCachedEnumerator__1_System_Collections_IEnumerable_">ArrayEx.GetCachedEnumerator&lt;T&gt;(IEnumerable)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetCachedEnumerator__1_System_Collections_IEnumerable_System_Func_System_Object___0__">ArrayEx.GetCachedEnumerator&lt;T&gt;(IEnumerable, Func&lt;Object, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_System_Boolean_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Shuffle__1_System_Collections_Generic_IList___0__System_Random_">ArrayEx.Shuffle&lt;T&gt;(IList&lt;T&gt;, Random)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ShuffleCopyNonNull__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__System_Random_">ArrayEx.ShuffleCopyNonNull&lt;T&gt;(IList&lt;T&gt;, IList&lt;T&gt;, Random)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetRandomEnumerator__1_System_Collections_Generic_IList___0__System_Int32_System_DistinctRandomAlgorithms_System_Random_">ArrayEx.GetRandomEnumerator&lt;T&gt;(IList&lt;T&gt;, Int32, DistinctRandomAlgorithms, Random)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetRandomEnumerator__1_System_Collections_Generic_IList___0__System_DistinctRandomAlgorithms_System_Random_">ArrayEx.GetRandomEnumerator&lt;T&gt;(IList&lt;T&gt;, DistinctRandomAlgorithms, Random)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArray__1_System_Collections_IEnumerable_">ArrayEx.ToArray&lt;T&gt;(IEnumerable)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArray__2_System_Collections_IEnumerable_System_Func___0___1__System_Boolean_">ArrayEx.ToArray&lt;T, TOut&gt;(IEnumerable, Func&lt;T, TOut&gt;, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_SetValue__1_System_Collections_Generic_IList___0____0_System_Int32_System_Int32_">ArrayEx.SetValue&lt;T&gt;(IList&lt;T&gt;, T, Int32, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_SetValue__1_System_Collections_Generic_IList___0____0_System_Int32_">ArrayEx.SetValue&lt;T&gt;(IList&lt;T&gt;, T, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_SetValue__1_System_Collections_Generic_IList___0____0_">ArrayEx.SetValue&lt;T&gt;(IList&lt;T&gt;, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToValueIndexedDictionary__2_System_Collections_Generic_IDictionary___0___1__">ArrayEx.ToValueIndexedDictionary&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToValueIndexedDictionary__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IDictionary___1___0__">ArrayEx.ToValueIndexedDictionary&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IDictionary&lt;TValue, TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_TryGetValueOrDefault__2_System_Collections_Generic_IDictionary___0___1____0___1_">ArrayEx.TryGetValueOrDefault&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey, TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_TryGetValues__2_System_Collections_Generic_IDictionary___0___1____0___">ArrayEx.TryGetValues&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_TryAdd__2_System_Collections_Generic_IDictionary___0___1____0___1_">ArrayEx.TryAdd&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey, TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_SetOrAdd__2_System_Collections_Generic_IDictionary___0___1____0___1_">ArrayEx.SetOrAdd&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey, TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Update__2_System_Collections_Generic_IDictionary___0___1____0___1_">ArrayEx.Update&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey, TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Update__2_System_Collections_Generic_IDictionary___0___1____0___1_System_Func___1___1_System_Boolean__">ArrayEx.Update&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey, TValue, Func&lt;TValue, TValue, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Add__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair___0___1___">ArrayEx.Add&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Add__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IEnumerator_System_Collections_Generic_KeyValuePair___0___1___">ArrayEx.Add&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Add__2_System_Collections_Generic_IDictionary___0___1__System_Func___1___0__System_Collections_Generic_IEnumerable___1__">ArrayEx.Add&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, Func&lt;TValue, TKey&gt;, IEnumerable&lt;TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Add__2_System_Collections_Generic_IDictionary___0___1____0_____1___">ArrayEx.Add&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey[], TValue[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_AddWithDuplicationCheck__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IEnumerable_System_Pair___0___1___">ArrayEx.AddWithDuplicationCheck&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IEnumerable&lt;Pair&lt;TKey, TValue&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_AddWithDuplicationCheck__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair___0___1___">ArrayEx.AddWithDuplicationCheck&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IEnumerable&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_AddWithDuplicationCheck__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IEnumerator_System_Collections_Generic_KeyValuePair___0___1___">ArrayEx.AddWithDuplicationCheck&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IEnumerator&lt;KeyValuePair&lt;TKey, TValue&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToKeysAndValues__2_System_Collections_Generic_IDictionary___0___1____0______1____">ArrayEx.ToKeysAndValues&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, out TKey[], out TValue[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Stat__2_System_Collections_Generic_IDictionary___0___1____0___1_">ArrayEx.Stat&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TKey, TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.In&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAny&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAll&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.In&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAny&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAll&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IList___0__">GeneralEx.In&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0___0___">GeneralEx.In&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.NotIn&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.NotIn&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IList___0__">GeneralEx.NotIn&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0___0___">GeneralEx.NotIn&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNull_System_Object_">GeneralEx.IsNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNotNull_System_Object_">GeneralEx.IsNotNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32__1___0_">GeneralEx.ToInt32&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32OrNull__1___0_">GeneralEx.ToInt32OrNull&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Dump_System_Collections_IEnumerable_System_Type_System_IO_Stream_">StreamEx.Dump(IEnumerable, Type, Stream)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_IndexOf__1_System_Collections_Generic_IList___0__System_Func___0_System_Boolean__System_Int32_">GenericCollectionEx.IndexOf&lt;T&gt;(IList&lt;T&gt;, Func&lt;T, Boolean&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_IndexOfSubList__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__">GenericCollectionEx.IndexOfSubList&lt;T&gt;(IList&lt;T&gt;, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_IndexOfSubList__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__System_Func___0___0_System_Boolean__">GenericCollectionEx.IndexOfSubList&lt;T&gt;(IList&lt;T&gt;, IList&lt;T&gt;, Func&lt;T, T, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_SequenceEqual__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__">GenericCollectionEx.SequenceEqual&lt;T&gt;(IList&lt;T&gt;, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_SequenceEqual__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__System_Func___0___0_System_Boolean__">GenericCollectionEx.SequenceEqual&lt;T&gt;(IList&lt;T&gt;, IList&lt;T&gt;, Func&lt;T, T, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_InsertFirst__1_System_Collections_Generic_IList___0____0_">GenericCollectionEx.InsertFirst&lt;T&gt;(IList&lt;T&gt;, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_ToReversedArray__1_System_Collections_Generic_IList___0__">GenericCollectionEx.ToReversedArray&lt;T&gt;(IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_Remove__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_ICollection___0__">GenericCollectionEx.Remove&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, ICollection&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_RemoveByValue__2_System_Collections_Generic_IDictionary___0___1____1_">GenericCollectionEx.RemoveByValue&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, TValue)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_RemoveByValue__2_System_Collections_Generic_IDictionary___0___1__System_Func___1_System_Boolean__">GenericCollectionEx.RemoveByValue&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, Func&lt;TValue, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_GetSegmentEnumerator__1_System_Collections_Generic_IList___0__System_Int32_">GenericCollectionEx.GetSegmentEnumerator&lt;T&gt;(IList&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_GetSegmentEnumerator__1_System_Collections_Generic_IList___0__System_Int32_System_Int32_">GenericCollectionEx.GetSegmentEnumerator&lt;T&gt;(IList&lt;T&gt;, Int32, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_AddRange__1_System_Collections_Generic_IList___0__System_Collections_Generic_IEnumerator___0__System_Int32___">GenericCollectionEx.AddRange&lt;T&gt;(IList&lt;T&gt;, IEnumerator&lt;T&gt;, Int32[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_ToArray__1_System_Collections_Generic_IList___0__System_Int32___">GenericCollectionEx.ToArray&lt;T&gt;(IList&lt;T&gt;, Int32[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_AddDistinct__1_System_Collections_Generic_IList___0____0_">GenericCollectionEx.AddDistinct&lt;T&gt;(IList&lt;T&gt;, T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_AddRangeDistinct__1_System_Collections_Generic_IList___0__System_Collections_Generic_IEnumerable___0__">GenericCollectionEx.AddRangeDistinct&lt;T&gt;(IList&lt;T&gt;, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_AddRange__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__System_Int32_">GenericCollectionEx.AddRange&lt;T&gt;(IList&lt;T&gt;, IList&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_AddRange__1_System_Collections_Generic_IList___0__System_Collections_Generic_IList___0__System_Int32_System_Int32_">GenericCollectionEx.AddRange&lt;T&gt;(IList&lt;T&gt;, IList&lt;T&gt;, Int32, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_RemoveLast__1_System_Collections_Generic_IList___0__">GenericCollectionEx.RemoveLast&lt;T&gt;(IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_PopLast__1_System_Collections_Generic_IList___0__">GenericCollectionEx.PopLast&lt;T&gt;(IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_Remove__1_System_Collections_Generic_IList___0__System_Func___0_System_Boolean__">GenericCollectionEx.Remove&lt;T&gt;(IList&lt;T&gt;, Func&lt;T, Boolean&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_ContainsAnyKey__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IList___0__">GenericCollectionEx.ContainsAnyKey&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IList&lt;TKey&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.GenericCollectionEx.html#System_Collections_Generic_GenericCollectionEx_ContainsAllKeys__2_System_Collections_Generic_IDictionary___0___1__System_Collections_Generic_IList___0__">GenericCollectionEx.ContainsAllKeys&lt;TKey, TValue&gt;(IDictionary&lt;TKey, TValue&gt;, IList&lt;TKey&gt;)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_ReadOnlyArrayDictionary_2.md&amp;value=---%0Auid%3A%20System.Collections.Generic.ReadOnlyArrayDictionary%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/ReadOnlyArrayDictionary.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

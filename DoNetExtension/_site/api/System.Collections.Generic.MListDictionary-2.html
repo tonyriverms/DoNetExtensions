@@ -1,0 +1,1153 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MListDictionary&lt;TKey, TValue&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MListDictionary&lt;TKey, TValue&gt;
+   ">
+    <meta name="generator" content="docfx 2.39.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="System.Collections.Generic.MListDictionary`2">
+  
+  
+  <h1 id="System_Collections_Generic_MListDictionary_2" data-uid="System.Collections.Generic.MListDictionary`2" class="text-break">Class MListDictionary&lt;TKey, TValue&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a collection of key/value pairs. Different values can be mapped to the same key. Recommended for collections that typically contain 10 keys or less.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="System.Collections.Generic.ListDictionary-2.html">ListDictionary</a>&lt;TKey, <span class="xref">System.Collections.Generic.LinkedList</span>&lt;TValue&gt;&gt;</div>
+    <div class="level2"><span class="xref">MListDictionary&lt;TKey, TValue&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.Generic.IDictionary</span>&lt;TKey, <span class="xref">System.Collections.Generic.LinkedList</span>&lt;TValue&gt;&gt;</div>
+    <div><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, <span class="xref">System.Collections.Generic.LinkedList</span>&lt;TValue&gt;&gt;&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, <span class="xref">System.Collections.Generic.LinkedList</span>&lt;TValue&gt;&gt;&gt;</div>
+    <div><a class="xref" href="System.Collections.Generic.IMDictionary-2.html">IMDictionary</a>&lt;TKey, TValue&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IDictionary</span>&lt;TKey, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;&gt;</div>
+    <div><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;&gt;&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;&gt;&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_Add__0__1_">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.Add(TKey, LinkedList&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_ContainsKey__0_">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.ContainsKey(TKey)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_Keys">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.Keys</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_Remove__0_">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.Remove(TKey)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_TryGetValue__0__1__">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.TryGetValue(TKey, LinkedList&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_TrySetOrAddValue__0__1_">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.TrySetOrAddValue(TKey, LinkedList&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_TrySetValue__0__1_">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.TrySetValue(TKey, LinkedList&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_Values">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.Values</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_Item__0_">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.Item[TKey]</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_Add_System_Collections_Generic_KeyValuePair__0__1__">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.Add(KeyValuePair&lt;TKey, LinkedList&lt;TValue&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_Clear">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_Contains_System_Collections_Generic_KeyValuePair__0__1__">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.Contains(KeyValuePair&lt;TKey, LinkedList&lt;TValue&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_CopyTo_System_Collections_Generic_KeyValuePair__0__1____System_Int32_">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.CopyTo(KeyValuePair&lt;TKey, LinkedList&lt;TValue&gt;&gt;[], Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_Count">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_GetEnumerator">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___IsReadOnly">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.ICollection&lt;KeyValuePair&lt;TKey, LinkedList&lt;TValue&gt;&gt;&gt;.IsReadOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_TValue___Remove_System_Collections_Generic_KeyValuePair__0__1__">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.ICollection&lt;KeyValuePair&lt;TKey, LinkedList&lt;TValue&gt;&gt;&gt;.Remove(KeyValuePair&lt;TKey, LinkedList&lt;TValue&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="System.Collections.Generic.ListDictionary-2.html#System_Collections_Generic_ListDictionary_2_System_Collections_IEnumerable_GetEnumerator">ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="System.Collections.Generic.html">System.Collections.Generic</a></h6>
+  <h6><strong>Assembly</strong>: DoNetExtension.dll</h6>
+  <h5 id="System_Collections_Generic_MListDictionary_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MListDictionary&lt;TKey, TValue&gt; : ListDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;, IDictionary&lt;TKey, LinkedList&lt;TValue&gt;&gt;, ICollection&lt;KeyValuePair&lt;TKey, LinkedList&lt;TValue&gt;&gt;&gt;, IEnumerable&lt;KeyValuePair&lt;TKey, LinkedList&lt;TValue&gt;&gt;&gt;, IMDictionary&lt;TKey, TValue&gt;, IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;, ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;, IEnumerable&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;, IEnumerable</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>The type of keys in this dictionary.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>The type of values in this dictionary.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="System_Collections_Generic_MListDictionary_2_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class inherits from the <a class="xref" href="System.Collections.Generic.ListDictionary-2.html">ListDictionary&lt;TKey, TValue&gt;</a> class and you may directly operate on the underlying linked list. However, NOTE that the <code>this</code> indexer is modified to return a <code data-dev-comment-type="typeparamref" class="typeparamref">TValue</code> array instead of a linked list.</p>
+<p>This class also implements the <a class="xref" href="System.Collections.Generic.IMDictionary-2.html">IMDictionary&lt;TKey, TValue&gt;</a> interface, but it is highly not recommended to operate on the underlying linked list through this interface.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2__ctor.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L22">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2__ctor_" data-uid="System.Collections.Generic.MListDictionary`2.#ctor*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2__ctor" data-uid="System.Collections.Generic.MListDictionary`2.#ctor">MListDictionary()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="System.Collections.Generic.MListDictionary-2.html">MListDictionary&lt;TKey, TValue&gt;</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MListDictionary()</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_Item__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.Item(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L103">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_Item_" data-uid="System.Collections.Generic.MListDictionary`2.Item*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_Item__0_" data-uid="System.Collections.Generic.MListDictionary`2.Item(`0)">Item[TKey]</h4>
+  <div class="markdown level1 summary"><p>Gets the values associated with the specified key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TValue[] this[TKey key] { get; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the values to get.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TValue[]</td>
+        <td><p>The values associated with the specified key it the key is found; otherwise, <code>null</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_TotalCount.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.TotalCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L53">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_TotalCount_" data-uid="System.Collections.Generic.MListDictionary`2.TotalCount*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_TotalCount" data-uid="System.Collections.Generic.MListDictionary`2.TotalCount">TotalCount</h4>
+  <div class="markdown level1 summary"><p>Gets the total number of key/value pairs contained in this dictionary.</p>
+<p>NOTE that this value may be different from property <code>Keys.Count</code> and <code>Values.Count</code>. To get the number of keys, use <code>Keys.Count</code> instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TotalCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_Add__0__1_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.Add(%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L63">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_Add_" data-uid="System.Collections.Generic.MListDictionary`2.Add*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_Add__0__1_" data-uid="System.Collections.Generic.MListDictionary`2.Add(`0,`1)">Add(TKey, TValue)</h4>
+  <div class="markdown level1 summary"><p>Adds a value associated with the specified key to this dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(TKey key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_Add__0_System_Collections_Generic_IList__1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.Add(%600%2CSystem.Collections.Generic.IList%7B%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L82">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_Add_" data-uid="System.Collections.Generic.MListDictionary`2.Add*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_Add__0_System_Collections_Generic_IList__1__" data-uid="System.Collections.Generic.MListDictionary`2.Add(`0,System.Collections.Generic.IList{`1})">Add(TKey, IList&lt;TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Adds values associated with the specified key to this dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(TKey key, IList&lt;TValue&gt; values)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the values to add.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;TValue&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_Remove__0__1_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.Remove(%600%2C%601)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L29">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_Remove_" data-uid="System.Collections.Generic.MListDictionary`2.Remove*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_Remove__0__1_" data-uid="System.Collections.Generic.MListDictionary`2.Remove(`0,`1)">Remove(TKey, TValue)</h4>
+  <div class="markdown level1 summary"><p>Removes a value associated with the specified key from this dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Remove(TKey key, TValue value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the value to remove.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>The value to remove. Multiple values associated with one key are allowed in this dictionary, so this argument is needed to remove the value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_Remove__0_System_Collections_Generic_IList__1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.Remove(%600%2CSystem.Collections.Generic.IList%7B%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L41">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_Remove_" data-uid="System.Collections.Generic.MListDictionary`2.Remove*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_Remove__0_System_Collections_Generic_IList__1__" data-uid="System.Collections.Generic.MListDictionary`2.Remove(`0,System.Collections.Generic.IList{`1})">Remove(TKey, IList&lt;TValue&gt;)</h4>
+  <div class="markdown level1 summary"><p>Removes values associated with the specified key from this dictionary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Remove(TKey key, IList&lt;TValue&gt; values)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>The key of the values to remove.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IList</span>&lt;TValue&gt;</td>
+        <td><span class="parametername">values</span></td>
+        <td><p>A list of the values to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____Add_System_Collections_Generic_KeyValuePair__0_System_Collections_Generic_IEnumerable__1___.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%7D%23Add(System.Collections.Generic.KeyValuePair%7B%600%2CSystem.Collections.Generic.IEnumerable%7B%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L165">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____Add_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#Add*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____Add_System_Collections_Generic_KeyValuePair__0_System_Collections_Generic_IEnumerable__1___" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#Add(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.IEnumerable{`1}})">ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.Add(KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.Add(KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt; item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;&gt;</td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____Contains_System_Collections_Generic_KeyValuePair__0_System_Collections_Generic_IEnumerable__1___.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%7D%23Contains(System.Collections.Generic.KeyValuePair%7B%600%2CSystem.Collections.Generic.IEnumerable%7B%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L171">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____Contains_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#Contains*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____Contains_System_Collections_Generic_KeyValuePair__0_System_Collections_Generic_IEnumerable__1___" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#Contains(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.IEnumerable{`1}})">ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.Contains(KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.Contains(KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt; item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;&gt;</td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____CopyTo_System_Collections_Generic_KeyValuePair__0_System_Collections_Generic_IEnumerable__1_____System_Int32_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%7D%23CopyTo(System.Collections.Generic.KeyValuePair%7B%600%2CSystem.Collections.Generic.IEnumerable%7B%601%7D%7D%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L177">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____CopyTo_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#CopyTo*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____CopyTo_System_Collections_Generic_KeyValuePair__0_System_Collections_Generic_IEnumerable__1_____System_Int32_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#CopyTo(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.IEnumerable{`1}}[],System.Int32)">ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.CopyTo(KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;[], Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.CopyTo(KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;[] array, int arrayIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;&gt;[]</td>
+        <td><span class="parametername">array</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">arrayIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____Count.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%7D%23Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L189">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____Count_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#Count*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____Count" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#Count">ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.Count</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.Count { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____IsReadOnly.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%7D%23IsReadOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L194">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____IsReadOnly_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#IsReadOnly*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____IsReadOnly" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#IsReadOnly">ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.IsReadOnly</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.IsReadOnly { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____Remove_System_Collections_Generic_KeyValuePair__0_System_Collections_Generic_IEnumerable__1___.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23ICollection%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%7D%23Remove(System.Collections.Generic.KeyValuePair%7B%600%2CSystem.Collections.Generic.IEnumerable%7B%601%7D%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L199">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____Remove_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#Remove*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____Remove_System_Collections_Generic_KeyValuePair__0_System_Collections_Generic_IEnumerable__1___" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#Remove(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.IEnumerable{`1}})">ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.Remove(KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool ICollection&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.Remove(KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt; item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;&gt;</td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Add__0_System_Collections_Generic_IEnumerable__1__.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%23Add(%600%2CSystem.Collections.Generic.IEnumerable%7B%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L117">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Add_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IEnumerable{TValue}}#Add*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Add__0_System_Collections_Generic_IEnumerable__1__" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IEnumerable{TValue}}#Add(`0,System.Collections.Generic.IEnumerable{`1})">IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;.Add(TKey, IEnumerable&lt;TValue&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;.Add(TKey key, IEnumerable&lt;TValue&gt; value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Item__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%23Item(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L153">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Item_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IEnumerable{TValue}}#Item*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Item__0_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IEnumerable{TValue}}#Item(`0)">IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;.Item[TKey]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;TValue&gt; IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;.this[TKey key] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Keys.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%23Keys%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L123">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Keys_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IEnumerable{TValue}}#Keys*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Keys" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IEnumerable{TValue}}#Keys">IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;.Keys</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICollection&lt;TKey&gt; IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;.Keys { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;TKey&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Remove__0_.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%23Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L128">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Remove_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IEnumerable{TValue}}#Remove*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Remove__0_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IEnumerable{TValue}}#Remove(`0)">IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;.Remove(TKey)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;.Remove(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___TryGetValue__0_System_Collections_Generic_IEnumerable__1___.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%23TryGetValue(%600%2CSystem.Collections.Generic.IEnumerable%7B%601%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L133">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___TryGetValue_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IEnumerable{TValue}}#TryGetValue*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___TryGetValue__0_System_Collections_Generic_IEnumerable__1___" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IEnumerable{TValue}}#TryGetValue(`0,System.Collections.Generic.IEnumerable{`1}@)">IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;.TryGetValue(TKey, out IEnumerable&lt;TValue&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;.TryGetValue(TKey key, out IEnumerable&lt;TValue&gt; value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;</td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Values.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23IDictionary%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%23Values%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L148">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Values_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IEnumerable{TValue}}#Values*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IDictionary_TKey_System_Collections_Generic_IEnumerable_TValue___Values" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IEnumerable{TValue}}#Values">IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;.Values</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ICollection&lt;IEnumerable&lt;TValue&gt;&gt; IDictionary&lt;TKey, IEnumerable&lt;TValue&gt;&gt;.Values { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____GetEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23Generic%23IEnumerable%7BSystem%23Collections%23Generic%23KeyValuePair%7BTKey%2CSystem%23Collections%23Generic%23IEnumerable%7BTValue%7D%7D%7D%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L211">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____GetEnumerator_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#GetEnumerator*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_Generic_IEnumerable_System_Collections_Generic_KeyValuePair_TKey_System_Collections_Generic_IEnumerable_TValue____GetEnumerator" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IEnumerable{TValue}}}#GetEnumerator">IEnumerable&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt; IEnumerable&lt;KeyValuePair&lt;TKey, IEnumerable&lt;TValue&gt;&gt;&gt;.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;<span class="xref">System.Collections.Generic.KeyValuePair</span>&lt;TKey, <span class="xref">System.Collections.Generic.IEnumerable</span>&lt;TValue&gt;&gt;&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2_System_Collections_IEnumerable_GetEnumerator.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602.System%23Collections%23IEnumerable%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L222">View Source</a>
+  </span>
+  <a id="System_Collections_Generic_MListDictionary_2_System_Collections_IEnumerable_GetEnumerator_" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#IEnumerable#GetEnumerator*"></a>
+  <h4 id="System_Collections_Generic_MListDictionary_2_System_Collections_IEnumerable_GetEnumerator" data-uid="System.Collections.Generic.MListDictionary`2.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.ICollection&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <a class="xref" href="System.Collections.Generic.IMDictionary-2.html">IMDictionary&lt;TKey, TValue&gt;</a>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IDictionary&lt;TKey, TValue&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.ICollection&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToConcatString_System_Collections_IEnumerable_System_String_">ArrayEx.ToConcatString(IEnumerable, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToConcatString_System_Collections_IEnumerable_System_Char_">ArrayEx.ToConcatString(IEnumerable, Char)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_Singleton__1___0_">ArrayEx.Singleton&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_CreateArray__1___0_System_Int32_">ArrayEx.CreateArray&lt;T&gt;(T, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetCachedEnumerator__1_System_Collections_IEnumerable_">ArrayEx.GetCachedEnumerator&lt;T&gt;(IEnumerable)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetCachedEnumerator__1_System_Collections_IEnumerable_System_Func_System_Object___0__">ArrayEx.GetCachedEnumerator&lt;T&gt;(IEnumerable, Func&lt;Object, T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_GetTrivialEnumerator__1___0_System_Boolean_">ArrayEx.GetTrivialEnumerator&lt;T&gt;(T, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArray__1_System_Collections_IEnumerable_">ArrayEx.ToArray&lt;T&gt;(IEnumerable)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.ArrayEx.html#System_ArrayEx_ToArray__2_System_Collections_IEnumerable_System_Func___0___1__System_Boolean_">ArrayEx.ToArray&lt;T, TOut&gt;(IEnumerable, Func&lt;T, TOut&gt;, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.In&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAny&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__1___0_System_Collections_Generic_IEnumerable___0____">GeneralEx.InAll&lt;T&gt;(T, IEnumerable&lt;T&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.In&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAny__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAny&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_InAll__2___0_System_Collections_Generic_IDictionary___0___1____">GeneralEx.InAll&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0_System_Collections_Generic_IList___0__">GeneralEx.In&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_In__1___0___0___">GeneralEx.In&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IEnumerable___0__">GeneralEx.NotIn&lt;T&gt;(T, IEnumerable&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__2___0_System_Collections_Generic_IDictionary___0___1__">GeneralEx.NotIn&lt;T, TValue&gt;(T, IDictionary&lt;T, TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0_System_Collections_Generic_IList___0__">GeneralEx.NotIn&lt;T&gt;(T, IList&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_NotIn__1___0___0___">GeneralEx.NotIn&lt;T&gt;(T, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNull_System_Object_">GeneralEx.IsNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_IsNotNull_System_Object_">GeneralEx.IsNotNull(Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32__1___0_">GeneralEx.ToInt32&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.GeneralEx.html#System_GeneralEx_ToInt32OrNull__1___0_">GeneralEx.ToInt32OrNull&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_System_IO_Stream_">StreamEx.Serialize&lt;T&gt;(T, Stream)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_System_String_System_IO_FileMode_">StreamEx.Serialize&lt;T&gt;(T, String, FileMode)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Serialize__1___0_">StreamEx.Serialize&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="System.IO.StreamEx.html#System_IO_StreamEx_Dump_System_Collections_IEnumerable_System_Type_System_IO_Stream_">StreamEx.Dump(IEnumerable, Type, Stream)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/new/master/apiSpec/new?filename=System_Collections_Generic_MListDictionary_2.md&amp;value=---%0Auid%3A%20System.Collections.Generic.MListDictionary%602%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/tonyriverms/DoNetExtension/blob/master/DoNetExtension/System/Collections/Generic/1_Dictionaries/MDictionary/MListDictionary.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
