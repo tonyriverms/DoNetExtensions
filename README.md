@@ -1,5 +1,5 @@
 # .NET Extensions
-The project aims to provide hundreds of fully-documented, tested, and useful extension methods to existing standard .NET classes, which we have accumulated through the years. 
+The project aims to provide hundreds of fully-documented, tested, and useful extension methods to existing standard .NET classes. The API documentation is at https://donetex.github.io/api/index.html.
 
 We have been coding with .NET for more than ten years, and we notice many standard classes (like array, list, dictionary, etc.) lack rich methods to facilitate their use and quick development. Although each piece extension method in this library is not much, we believe as a whole they bring great convenience and help enhance producitivity for other .NET programmers.
 
